@@ -14,7 +14,7 @@ intents = discord.Intents.default()
 bot = commands.Bot(command_prefix='! ', intents=intents)
 
 GROUP_ID = 10261023
-TOKEN = "put tocken here"
+TOKEN = "put token here"
 
 # Channel IDs
 CUSTOMER_HEAD_OP_CHANNEL = 1271730077939535913
