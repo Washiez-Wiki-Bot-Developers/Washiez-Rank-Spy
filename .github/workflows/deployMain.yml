@@ -1,4 +1,4 @@
-name: Deploy to SFTP on push to main
+name: Deploy to SFTP on main push
 
 on:
   push:
@@ -7,20 +7,31 @@ on:
 
 jobs:
   deploy:
-    name: Deploy to SFTP Server
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Upload via SFTP
-        uses: appleboy/sftp-action@v0.0.4
-        with:
-          host: ${{ secrets.SFTP_HOST }}
-          username: ${{ secrets.SFTP_USER }}
-          password: ${{ secrets.SFTP_PASS }}  # Or use 'key' and 'passphrase' if using SSH key auth
-          port: 2022
-          source: "."                         # Consider using something more specific like `dist/**`
-          target: "/"                         # Remote directory to upload to
-          strip_components: 0
+      - name: Install tools, filter files, upload via SFTP, and clean up
+        env:
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+          SFTP_PORT: 2022
+          SFTP_USER: ${{ secrets.SFTP_USER }}
+          SFTP_PASS: ${{ secrets.SFTP_PASS }}
+        run: |
+          echo "Installing required tools..."
+          sudo apt-get update && sudo apt-get install -y lftp rsync git
+
+          echo "Preparing filtered files (honoring .gitignore)..."
+          mkdir filtered
+          rsync -a --exclude-from='.gitignore' ./ filtered/
+
+          echo "Uploading to SFTP root via lftp..."
+          lftp -u "$SFTP_USER","$SFTP_PASS" sftp://$SFTP_HOST:$SFTP_PORT <<EOF
+          mirror -R ./filtered /
+          bye
+          EOF
+
+          echo "Cleaning up temporary files..."
+          rm -rf filtered
