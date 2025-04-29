@@ -19,7 +19,7 @@ jobs:
           host: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USER }}
           password: ${{ secrets.SFTP_PASS }} # Or use key/passphrase
-          port: ${{ secrets.SFTP_PORT }}
+          port: 2022
           source: "."  # Adjust this to only include what you need (e.g., `dist/**`)
           target: "/"
           strip_components: 0
