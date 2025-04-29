@@ -7,6 +7,7 @@ on:
 
 jobs:
   deploy:
+    name: Deploy to SFTP Server
     runs-on: ubuntu-latest
 
     steps:
@@ -14,12 +15,12 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Upload via SFTP
-        uses: appleboy/drone-sftp
+        uses: appleboy/sftp-action@v0.0.4
         with:
           host: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USER }}
-          password: ${{ secrets.SFTP_PASS }} # Or use key/passphrase
+          password: ${{ secrets.SFTP_PASS }}  # Or use 'key' and 'passphrase' if using SSH key auth
           port: 2022
-          source: "."  # Adjust this to only include what you need (e.g., `dist/**`)
-          target: "/"
+          source: "."                         # Consider using something more specific like `dist/**`
+          target: "/"                         # Remote directory to upload to
           strip_components: 0
