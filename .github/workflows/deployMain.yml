@@ -1,0 +1,25 @@
+name: Deploy to SFTP on push to main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Upload via SFTP
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USER }}
+          password: ${{ secrets.SFTP_PASS }} # Or use key/passphrase
+          port: 22
+          source: "."  # Adjust this to only include what you need (e.g., `dist/**`)
+          target: "/"
+          strip_components: 0
