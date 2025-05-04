@@ -9,6 +9,7 @@ import datetime  # Keep for potential future use
 import gc  # Explicitly import garbage collector if needed later
 from discord_report_error_logs import DiscordErrorHandler
 import math
+import os, dotenv
 
 # Set up logging
 logging.basicConfig(
@@ -19,7 +20,6 @@ logger = logging.getLogger("bot")
 intents = discord.Intents.default()
 intents.presences = False  # Presences are not strictly needed for this functionality
 intents.members = False  # Members intent is not needed unless you check discord members
-intents. = True  # Enable commands intent for command handling
 bot = commands.Bot(command_prefix="! ", intents=intents)
 
 # Add DiscordErrorHandler
@@ -33,26 +33,58 @@ logger.addHandler(discord_error_handler)
 # --- Configuration ---
 GROUP_ID = 10261023
 # WARNING: Exposing token directly in code is a security risk! (Keeping user's token as requested)
-TOKEN = "TOKEN HERE"
+TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 
-# --- Channel IDs (Using user's last provided IDs) ---
-ENTRY_TEAM_CHANNEL = 1361321812859813908
-SUPERVISION_TEAM_CHANNEL = 1361321834913726538
-MANAGEMENT_TEAM_CHANNEL = 1361321849400725786
-CYCLE_INFO_CHANNEL = 1361321875807932587  # For cycle summary
-STARTUP_STATUS_CHANNEL = (
-    1361321875807932587  # For startup message (Same as Cycle Info in user's last code)
-)
+# --- Channel IDs ---
+# Define channel mappings for each environment mode
+CHANNEL_IDs = {
+    "debug": {
+        "ENTRY_TEAM_CHANNEL": 1361321812859813908,
+        "SUPERVISION_TEAM_CHANNEL": 1361321834913726538,
+        "MANAGEMENT_TEAM_CHANNEL": 1361321849400725786,
+        "CYCLE_INFO_CHANNEL": 1328352565443694644,
+        "STARTUP_STATUS_CHANNEL": 1328352565443694644,
+    },
+    "local_debug": {
+        "CYCLE_INFO_CHANNEL": 1361321875807932587,
+        "STARTUP_STATUS_CHANNEL": 1361321875807932587,
+    },
+    "PROD": {
+        "ENTRY_TEAM_CHANNEL": 1271730077939535913,
+        "SUPERVISION_TEAM_CHANNEL": 1271730172692795435,
+        "MANAGEMENT_TEAM_CHANNEL": 1271730208130469920,
+        "CYCLE_INFO_CHANNEL": 1328352565443694644,
+        "STARTUP_STATUS_CHANNEL": 1328352565443694644,
+    },
+}
+
+ENV_MODE = os.getenv("ENVIRONMENT_MODE", "debug")
+
+current_CHANNEL_IDs = CHANNEL_IDs.get(ENV_MODE, CHANNEL_IDs["debug"])
+
+ENV_MODE_DEBUG = ENV_MODE == "debug"
+ENV_MODE_PROD = ENV_MODE == "PROD"
+ENV_MODE_LOC_DEBUG = ENV_MODE == "local_debug"
 
 ESTIMATED_TIME_LOG_CHANNEL = 1368547558489587932
+ENTRY_TEAM_CHANNEL = current_CHANNEL_IDs.get("ENTRY_TEAM_CHANNEL")
+SUPERVISION_TEAM_CHANNEL = current_CHANNEL_IDs.get("SUPERVISION_TEAM_CHANNEL")
+MANAGEMENT_TEAM_CHANNEL = current_CHANNEL_IDs.get("MANAGEMENT_TEAM_CHANNEL")
+CYCLE_INFO_CHANNEL = current_CHANNEL_IDs.get("CYCLE_INFO_CHANNEL")
+STARTUP_STATUS_CHANNEL = current_CHANNEL_IDs.get("STARTUP_STATUS_CHANNEL")
+
+
+use_real_pings = ENV_MODE_PROD and not ENV_MODE_DEBUG and not ENV_MODE_LOC_DEBUG | False
 
 # Role mention IDs (Using user's last provided IDs)
-# LOW_RANK_ROLE_MENTION = "<@&1328338426713342023>" # Corresponds to ENTRY_TEAM_CHANNEL
-# MID_RANK_ROLE_MENTION = "<@&1328338484104134688>" # Corresponds to SUPERVISION_TEAM_CHANNEL
-# HIGH_RANK_ROLE_MENTION = "<@&1328338542132330506>" # Corresponds to MANAGEMENT_TEAM_CHANNEL
-LOW_RANK_ROLE_MENTION = "LR PING HERE"  # Corresponds to ENTRY_TEAM_CHANNEL
-MID_RANK_ROLE_MENTION = "MR PING HERE"  # Corresponds to SUPERVISION_TEAM_CHANNEL
-HIGH_RANK_ROLE_MENTION = "HR PING HERE"  # Corresponds to MANAGEMENT_TEAM_CHANNEL
+if use_real_pings:
+    LOW_RANK_ROLE_MENTION = "<@&1328338426713342023>" # Corresponds to ENTRY_TEAM_CHANNEL
+    MID_RANK_ROLE_MENTION = "<@&1328338484104134688>" # Corresponds to SUPERVISION_TEAM_CHANNEL
+    HIGH_RANK_ROLE_MENTION = "<@&1328338542132330506>" # Corresponds to MANAGEMENT_TEAM_CHANNEL
+else:
+    LOW_RANK_ROLE_MENTION = "LR PING HERE"  # Corresponds to ENTRY_TEAM_CHANNEL
+    MID_RANK_ROLE_MENTION = "MR PING HERE"  # Corresponds to SUPERVISION_TEAM_CHANNEL
+    HIGH_RANK_ROLE_MENTION = "HR PING HERE"  # Corresponds to MANAGEMENT_TEAM_CHANNEL
 
 DATA_FILE = "info.json"
 file_lock = asyncio.Lock()
