@@ -1,13 +1,15 @@
-import aiohttp
 import asyncio
 import json
 import logging
 import time
 import os
+import sys
+
+import aiohttp
 
 import discord
 from discord.ext import commands
-import dotenv
+import dotenv, hashlib
 
 from discord_report_error_logs import DiscordErrorHandler
 
@@ -37,8 +39,10 @@ dotenv.load_dotenv()
 GROUP_ID = 10261023
 TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 
-with open("info.json", "rb") as f:
-    print(hashlib.file_digest(f, "sha256").hexdigest())
+APP_FILE_HASH = ""
+
+with open("app.py", "rb") as f:
+    APP_FILE_HASH = hashlib.sha256(f.read()).hexdigest()
 
 
 # Channel IDs
@@ -55,6 +59,8 @@ TIME_TRACKING_CHANNEL_ID = 1328352565443694644
 LOW_RANK_ROLE_MENTION = "LaRPING"
 MID_RANK_ROLE_MENTION = "MiRPING"
 HIGH_RANK_ROLE_MENTION = "HiRPING"
+
+global shutdown_scheduled
 
 DATA_FILE = 'info.json'
 file_lock = asyncio.Lock()
@@ -138,7 +144,7 @@ async def fetch_users_in_role(session, group_id, role_id):
         except Exception as e:
             logger.error(f"Error fetching users for role {role_id}: {e}")
             break
-    return users
+    return users 
 
 async def monitor_role_changes():
     async with aiohttp.ClientSession() as session:
@@ -158,6 +164,7 @@ async def monitor_role_changes():
             users_checked = 0
 
             for role in roles:
+                break
                 users = await fetch_users_in_role(session, GROUP_ID, role['id'])
                 for user in users:
                     user_id = str(user['userId'])
@@ -206,12 +213,21 @@ async def monitor_role_changes():
             if time_channel:
                 await time_channel.send(summary)
             logger.info("✅ Cycle complete.")
-            await asyncio.sleep(180)  # Check every 3 minutes
+            # await asyncio.sleep(180)  # Check every 3 minutes
+            
+            latest_app_hash = hashlib.sha256(open("app.py", "rb").read()).hexdigest()
+
+            if latest_app_hash != APP_FILE_HASH:
+                logger.info("App file has changed. Restarting bot...")
+                shutdown_scheduled = True
+                time_channel = bot.get_channel(TIME_TRACKING_CHANNEL_ID)
+                if time_channel:
+                    await time_channel.send("# 🔄 App file changed, bot will shutdown. \n We are at the end of the monitor role changes loop, will shutdown...\n## Please restart via console.\n-# Pings: <@1081153729153224766>, <@1114892999474815126>")
+                await bot.close()
             
             if shutdown_scheduled:
                 logger.info("Shutdown scheduled. Exiting monitor loop.")
                 break
-
 async def safe_monitor_wrapper():
     while True:
         try:
