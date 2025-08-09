@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger('bot')
 
 # ? Normal Text Log file logging
-file_handler = logging.FileHandler("bot.log")
+file_handler = logging.FileHandler("bot.log", encoding="utf-8")
 file_handler.setLevel(logging.DEBUG)  # ? Set to DEBUG to capture all logs
 logger.addHandler(file_handler)
 
@@ -37,16 +37,24 @@ dotenv.load_dotenv()
 GROUP_ID = 10261023
 TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 
+with open("info.json", "rb") as f:
+    print(hashlib.file_digest(f, "sha256").hexdigest())
+
+
 # Channel IDs
 CUSTOMER_HEAD_OP_CHANNEL = 1271730077939535913
 SHIFT_LEADER_GEN_MANAGER_CHANNEL = 1271730172692795435
 JUNIOR_DIRECTOR_CHAIRMAN_CHANNEL = 1271730208130469920
 TIME_TRACKING_CHANNEL_ID = 1328352565443694644
 
-# Role mention IDs
-LOW_RANK_ROLE_MENTION = "<@&1328338426713342023>"
-MID_RANK_ROLE_MENTION = "<@&1328338484104134688>"
-HIGH_RANK_ROLE_MENTION = "<@&1328338542132330506>"
+# # Role mention IDs
+# LOW_RANK_ROLE_MENTION = "<@&1328338426713342023>"
+# MID_RANK_ROLE_MENTION = "<@&1328338484104134688>"
+# HIGH_RANK_ROLE_MENTION = "<@&1328338542132330506>"
+
+LOW_RANK_ROLE_MENTION = "LaRPING"
+MID_RANK_ROLE_MENTION = "MiRPING"
+HIGH_RANK_ROLE_MENTION = "HiRPING"
 
 DATA_FILE = 'info.json'
 file_lock = asyncio.Lock()
@@ -64,7 +72,7 @@ HIGH_RANKS = [
 async def load_data():
     async with file_lock:
         try:
-            with open(DATA_FILE, 'r') as f:
+            with open(DATA_FILE, 'r', encoding='utf-8') as f:
                 return json.load(f)
         except (FileNotFoundError, json.JSONDecodeError):
             logger.info("Data file missing or corrupt. Creating fresh.")
@@ -73,8 +81,8 @@ async def load_data():
 async def save_data(data):
     async with file_lock:
         try:
-            with open(DATA_FILE, 'w') as f:
-                json.dump(data, f)
+            with open(DATA_FILE, 'w', encoding='utf-8') as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
             logger.info("Data saved.")
         except Exception as e:
             logger.error(f"Failed saving data: {e}")
@@ -171,7 +179,9 @@ async def monitor_role_changes():
                                     message = f"{profile_link} has been {action} from {prev_role_name} to {current_rank} {mention}"
                                     message_obj = await channel.send(message)
                                     try:
-                                        await message_obj.publish()
+                                        message_obj_result = await message_obj.publish()
+                                        if message_obj_result:
+                                            logger.info(f"Published message: {message_obj_result.id}")
                                     except discord.Forbidden as e:
                                         print(f"Failed to publish: {e}")
                                     except discord.HTTPException as e:
@@ -197,6 +207,10 @@ async def monitor_role_changes():
                 await time_channel.send(summary)
             logger.info("✅ Cycle complete.")
             await asyncio.sleep(180)  # Check every 3 minutes
+            
+            if shutdown_scheduled:
+                logger.info("Shutdown scheduled. Exiting monitor loop.")
+                break
 
 async def safe_monitor_wrapper():
     while True:
