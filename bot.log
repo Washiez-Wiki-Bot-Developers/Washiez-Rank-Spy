@@ -1,0 +1,849 @@
+2026-02-02 00:19:45,515 [root] WARNING: Logtail not available or environment not set. Skipping LogtailHandler.
+2026-02-02 00:19:54,269 [root] WARNING: Logtail not available or environment not set. Skipping LogtailHandler.
+2026-02-02 00:20:31,311 [root] WARNING: Logtail not available or environment not set. Skipping LogtailHandler.
+2026-02-02 00:21:26,762 [root] WARNING: Logtail not available or environment not set. Skipping LogtailHandler.
+2026-02-02 00:21:29,331 [root] WARNING: Logtail not available or environment not set. Skipping LogtailHandler.
+2026-02-02 00:21:50,689 [root] WARNING: Logtail not available or environment not set. Skipping LogtailHandler.
+2026-02-02 00:22:06,221 [root] WARNING: Logtail not available or environment not set. Skipping LogtailHandler.
+2026-02-02 00:22:18,565 [root] WARNING: Logtail not available or environment not set. Skipping LogtailHandler.
+2026-02-02 00:22:24,475 [root] WARNING: Logtail not available or environment not set. Skipping LogtailHandler.
+DISCORD_BOT_TOKEN missing.
+2026-02-02 00:22:24,752 [bot] ERROR: DISCORD_BOT_TOKEN missing.
+2026-02-02 00:22:40,812 [root] WARNING: Logtail not available or environment not set. Skipping LogtailHandler.
+2026-02-02 00:22:41,076 [discord.client] INFO: logging in using static token
+2026-02-02 00:22:41,276 [discord.gateway] INFO: Shard ID None has sent the IDENTIFY payload.
+2026-02-02 00:22:41,449 [discord.gateway] INFO: Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-b-09n9",{"micros":151365,"calls":["id_created",{"micros":609,"calls":[]},"session_lookup_time",{"micros":1185,"calls":[]},"session_lookup_finished",{"micros":10,"calls":[]},"discord-sessions-prd-2-10",{"micros":147918,"calls":["start_session",{"micros":131996,"calls":["discord-api-rpc-565869498d-64xbz",{"micros":51542,"calls":["get_user",{"micros":5105},"get_guilds",{"micros":9667},"send_scheduled_deletion_message",{"micros":16},"guild_join_requests",{"micros":4},"authorized_ip_coro",{"micros":12},"pending_payments",{"micros":685},"apex_experiments",{"micros":72395},"user_activities",{"micros":9},"played_application_ids",{"micros":12},"linked_users",{"micros":4},"ad_personalization_toggles_disabled",{"micros":4},"regional_feature_config",{"micros":3}]}]},"starting_guild_connect",{"micros":33,"calls":[]},"presence_started",{"micros":8270,"calls":[]},"guilds_started",{"micros":61,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":7522,"calls":[]},"connect_finished",{"micros":7539,"calls":[]},"build_ready",{"micros":15,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":0,"calls":[]}]}]}] (Session ID: b5c7bbf993f53332c969e161f779aa01).
+Logged in as WWPenguinSpy#9722
+2026-02-02 00:22:43,531 [bot] INFO: Logged in as WWPenguinSpy#9722
+2026-02-02 00:22:53,237 [discord.client] INFO: Cleaning up tasks.
+2026-02-02 00:22:53,240 [discord.client] INFO: Cleaning up after 1 tasks.
+2026-02-02 00:22:53,243 [discord.client] INFO: All tasks finished cancelling.
+2026-02-02 00:22:53,245 [discord.client] INFO: Closing the event loop.
+2026-02-02 00:22:57,234 [root] WARNING: Logtail not available or environment not set. Skipping LogtailHandler.
+2026-02-02 00:22:57,509 [discord.client] INFO: logging in using static token
+2026-02-02 00:22:57,657 [discord.gateway] INFO: Shard ID None has sent the IDENTIFY payload.
+2026-02-02 00:22:57,810 [discord.gateway] INFO: Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-b-0kqh",{"micros":131636,"calls":["id_created",{"micros":489,"calls":[]},"session_lookup_time",{"micros":395,"calls":[]},"session_lookup_finished",{"micros":10,"calls":[]},"discord-sessions-prd-2-1",{"micros":130278,"calls":["start_session",{"micros":126253,"calls":["discord-api-rpc-565869498d-b8sk6",{"micros":77558,"calls":["get_user",{"micros":31329},"get_guilds",{"micros":12205},"send_scheduled_deletion_message",{"micros":10},"guild_join_requests",{"micros":2},"authorized_ip_coro",{"micros":13},"pending_payments",{"micros":491},"apex_experiments",{"micros":36633},"user_activities",{"micros":13},"played_application_ids",{"micros":4},"linked_users",{"micros":3},"ad_personalization_toggles_disabled",{"micros":3},"regional_feature_config",{"micros":3}]}]},"starting_guild_connect",{"micros":31,"calls":[]},"presence_started",{"micros":369,"calls":[]},"guilds_started",{"micros":59,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":3538,"calls":[]},"connect_finished",{"micros":3550,"calls":[]},"build_ready",{"micros":13,"calls":[]},"clean_ready",{"micros":0,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":0,"calls":[]}]}]}] (Session ID: e1e873ea11bd3d1a068a02d079739247).
+Logged in as WWPenguinSpy#9722
+2026-02-02 00:22:59,876 [bot] INFO: Logged in as WWPenguinSpy#9722
+Loading commands extension.
+2026-02-02 00:22:59,912 [bot.commands] INFO: Loading commands extension.
+Commands registered successfully.
+2026-02-02 00:22:59,914 [bot.commands] INFO: Commands registered successfully.
+2026-02-02 00:22:59,916 [async_json] INFO: Data file missing. Creating fresh.
+Starting monitor task...
+2026-02-02 00:23:00,029 [bot] INFO: Starting monitor task...
+🧼 Starting monitoring loop #1
+2026-02-02 00:23:00,031 [bot] INFO: 🧼 Starting monitoring loop #1
+2026-02-02 00:23:00,277 [async_json] INFO: Data file missing. Creating fresh.
+Processing role: Guest
+2026-02-02 00:23:00,279 [bot] INFO: Processing role: Guest
+Processing role: Customer
+2026-02-02 00:23:00,284 [bot] INFO: Processing role: Customer
+Processing role: Contributor
+2026-02-02 00:23:00,291 [bot] INFO: Processing role: Contributor
+Processing role: Allied Representative
+2026-02-02 00:23:00,302 [bot] INFO: Processing role: Allied Representative
+Finished processing role: Guest
+2026-02-02 00:23:00,405 [bot] INFO: Finished processing role: Guest
+⏳ Role finished: Guest | Still running:
+- Customer: 0/495571 (495571 left)
+- Contributor: 0/7 (7 left)
+- Allied Representative: 0/13 (13 left)
+2026-02-02 00:23:00,406 [bot] INFO: ⏳ Role finished: Guest | Still running:
+- Customer: 0/495571 (495571 left)
+- Contributor: 0/7 (7 left)
+- Allied Representative: 0/13 (13 left)
+Processing role: Trainee
+2026-02-02 00:23:00,408 [bot] INFO: Processing role: Trainee
+Finished processing role: Contributor
+2026-02-02 00:23:00,552 [bot] INFO: Finished processing role: Contributor
+⏳ Role finished: Contributor | Still running:
+- Customer: 0/495571 (495571 left)
+- Allied Representative: 0/13 (13 left)
+- Trainee: 0/744634 (744634 left)
+2026-02-02 00:23:00,554 [bot] INFO: ⏳ Role finished: Contributor | Still running:
+- Customer: 0/495571 (495571 left)
+- Allied Representative: 0/13 (13 left)
+- Trainee: 0/744634 (744634 left)
+Processing role: Junior Operator
+2026-02-02 00:23:00,556 [bot] INFO: Processing role: Junior Operator
+Finished processing role: Allied Representative
+2026-02-02 00:23:00,574 [bot] INFO: Finished processing role: Allied Representative
+⏳ Role finished: Allied Representative | Still running:
+- Customer: 0/495571 (495571 left)
+- Trainee: 0/744634 (744634 left)
+- Junior Operator: 0/301426 (301426 left)
+2026-02-02 00:23:00,576 [bot] INFO: ⏳ Role finished: Allied Representative | Still running:
+- Customer: 0/495571 (495571 left)
+- Trainee: 0/744634 (744634 left)
+- Junior Operator: 0/301426 (301426 left)
+Processing role: Senior Operator
+2026-02-02 00:23:00,578 [bot] INFO: Processing role: Senior Operator
+2026-02-02 00:23:36,548 [discord.client] INFO: Cleaning up tasks.
+2026-02-02 00:23:36,549 [discord.client] INFO: Cleaning up after 30 tasks.
+2026-02-02 00:23:36,552 [discord.client] INFO: All tasks finished cancelling.
+2026-02-02 00:23:36,553 [discord.client] INFO: Closing the event loop.
+2026-02-02 00:56:30,303 [root] WARNING: Logtail not available or environment not set. Skipping LogtailHandler.
+2026-02-02 00:56:30,372 [discord.client] INFO: logging in using static token
+2026-02-02 00:56:30,538 [discord.gateway] INFO: Shard ID None has sent the IDENTIFY payload.
+2026-02-02 00:56:30,819 [discord.gateway] INFO: Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-d-vdk8",{"micros":258627,"calls":["id_created",{"micros":627,"calls":[]},"session_lookup_time",{"micros":279,"calls":[]},"session_lookup_finished",{"micros":11,"calls":[]},"discord-sessions-prd-2-105",{"micros":256199,"calls":["start_session",{"micros":223780,"calls":["discord-api-rpc-565869498d-9d69p",{"micros":129494,"calls":["get_user",{"micros":40576},"get_guilds",{"micros":3398},"send_scheduled_deletion_message",{"micros":15},"guild_join_requests",{"micros":1571},"authorized_ip_coro",{"micros":12},"pending_payments",{"micros":582},"apex_experiments",{"micros":74578},"user_activities",{"micros":8},"played_application_ids",{"micros":4},"linked_users",{"micros":4},"ad_personalization_toggles_disabled",{"micros":4},"regional_feature_config",{"micros":3}]}]},"starting_guild_connect",{"micros":47,"calls":[]},"presence_started",{"micros":17988,"calls":[]},"guilds_started",{"micros":54,"calls":[]},"lobbies_started",{"micros":6,"calls":[]},"guilds_connect",{"micros":0,"calls":[]},"presence_connect",{"micros":14294,"calls":[]},"connect_finished",{"micros":14309,"calls":[]},"build_ready",{"micros":12,"calls":[]},"clean_ready",{"micros":0,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":0,"calls":[]}]}]}] (Session ID: 512d3eeef1b17d79c83ac40a72b24c00).
+Logged in as WWPenguinSpy#9722
+2026-02-02 00:56:32,919 [bot] INFO: Logged in as WWPenguinSpy#9722
+Loading commands extension.
+2026-02-02 00:56:32,968 [bot.commands] INFO: Loading commands extension.
+Commands registered successfully.
+2026-02-02 00:56:32,971 [bot.commands] INFO: Commands registered successfully.
+2026-02-02 00:56:32,973 [async_json] INFO: Data file missing. Creating fresh.
+Starting monitor task...
+2026-02-02 00:56:33,235 [bot] INFO: Starting monitor task...
+..........
+✅ Channel test successful for cycle-info (1414253925917393037)
+**********
+2026-02-02 00:56:33,662 [bot] INFO: ..........
+✅ Channel test successful for cycle-info (1414253925917393037)
+**********
+..........
+✅ Channel test successful for etc (1414253780236501023)
+**********
+2026-02-02 00:56:33,920 [bot] INFO: ..........
+✅ Channel test successful for etc (1414253780236501023)
+**********
+..........
+✅ Channel test successful for stc (1414253842677104661)
+**********
+2026-02-02 00:56:34,289 [bot] INFO: ..........
+✅ Channel test successful for stc (1414253842677104661)
+**********
+..........
+✅ Channel test successful for mtc (1414253804425187531)
+**********
+2026-02-02 00:56:35,005 [bot] INFO: ..........
+✅ Channel test successful for mtc (1414253804425187531)
+**********
+....................
+✅ Channel test completed
+********************
+2026-02-02 00:56:35,007 [bot] INFO: ....................
+✅ Channel test completed
+********************
+🧼 Starting monitoring loop #1
+2026-02-02 00:56:35,009 [bot] INFO: 🧼 Starting monitoring loop #1
+2026-02-02 00:56:35,068 [async_json] INFO: Data file missing. Creating fresh.
+Processing role: Guest
+2026-02-02 00:56:35,069 [bot] INFO: Processing role: Guest
+Processing role: Customer
+2026-02-02 00:56:35,075 [bot] INFO: Processing role: Customer
+Processing role: Contributor
+2026-02-02 00:56:35,083 [bot] INFO: Processing role: Contributor
+Processing role: Allied Representative
+2026-02-02 00:56:35,093 [bot] INFO: Processing role: Allied Representative
+Finished processing role: Guest
+2026-02-02 00:56:35,118 [bot] INFO: Finished processing role: Guest
+⏳ Role finished: Guest | Still running:
+- Customer: 0/495578 (495578 left)
+- Contributor: 0/7 (7 left)
+- Allied Representative: 0/13 (13 left)
+2026-02-02 00:56:35,120 [bot] INFO: ⏳ Role finished: Guest | Still running:
+- Customer: 0/495578 (495578 left)
+- Contributor: 0/7 (7 left)
+- Allied Representative: 0/13 (13 left)
+Processing role: Trainee
+2026-02-02 00:56:35,123 [bot] INFO: Processing role: Trainee
+Finished processing role: Contributor
+2026-02-02 00:56:35,177 [bot] INFO: Finished processing role: Contributor
+⏳ Role finished: Contributor | Still running:
+- Customer: 0/495578 (495578 left)
+- Allied Representative: 0/13 (13 left)
+- Trainee: 0/744665 (744665 left)
+2026-02-02 00:56:35,178 [bot] INFO: ⏳ Role finished: Contributor | Still running:
+- Customer: 0/495578 (495578 left)
+- Allied Representative: 0/13 (13 left)
+- Trainee: 0/744665 (744665 left)
+Processing role: Junior Operator
+2026-02-02 00:56:35,181 [bot] INFO: Processing role: Junior Operator
+Finished processing role: Allied Representative
+2026-02-02 00:56:35,188 [bot] INFO: Finished processing role: Allied Representative
+⏳ Role finished: Allied Representative | Still running:
+- Customer: 0/495578 (495578 left)
+- Trainee: 0/744665 (744665 left)
+- Junior Operator: 0/301425 (301425 left)
+2026-02-02 00:56:35,189 [bot] INFO: ⏳ Role finished: Allied Representative | Still running:
+- Customer: 0/495578 (495578 left)
+- Trainee: 0/744665 (744665 left)
+- Junior Operator: 0/301425 (301425 left)
+Processing role: Senior Operator
+2026-02-02 00:56:35,191 [bot] INFO: Processing role: Senior Operator
+semaphore_info command invoked.
+2026-02-02 00:57:24,087 [bot.commands] INFO: semaphore_info command invoked.
+2026-02-02 00:57:32,634 [discord.client] INFO: Cleaning up tasks.
+2026-02-02 00:57:32,636 [discord.client] INFO: Cleaning up after 30 tasks.
+2026-02-02 00:57:32,641 [discord.client] INFO: All tasks finished cancelling.
+2026-02-02 00:57:32,643 [discord.client] INFO: Closing the event loop.
+2026-02-02 00:57:34,582 [root] WARNING: Logtail not available or environment not set. Skipping LogtailHandler.
+2026-02-02 00:57:34,650 [discord.client] INFO: logging in using static token
+2026-02-02 00:57:34,796 [discord.gateway] INFO: Shard ID None has sent the IDENTIFY payload.
+2026-02-02 00:57:35,102 [discord.gateway] INFO: Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-b-4ts0",{"micros":281999,"calls":["id_created",{"micros":507,"calls":[]},"session_lookup_time",{"micros":333,"calls":[]},"session_lookup_finished",{"micros":11,"calls":[]},"discord-sessions-prd-2-151",{"micros":280757,"calls":["start_session",{"micros":262306,"calls":["discord-api-rpc-565869498d-c8bj6",{"micros":54539,"calls":["get_user",{"micros":8914},"get_guilds",{"micros":3483},"send_scheduled_deletion_message",{"micros":12},"guild_join_requests",{"micros":542},"authorized_ip_coro",{"micros":8},"pending_payments",{"micros":456},"apex_experiments",{"micros":179436},"user_activities",{"micros":7},"played_application_ids",{"micros":4},"linked_users",{"micros":4},"ad_personalization_toggles_disabled",{"micros":3},"regional_feature_config",{"micros":3}]}]},"starting_guild_connect",{"micros":31,"calls":[]},"presence_started",{"micros":269,"calls":[]},"guilds_started",{"micros":67,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":18051,"calls":[]},"connect_finished",{"micros":18065,"calls":[]},"build_ready",{"micros":16,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":0,"calls":[]}]}]}] (Session ID: 2824e255c0f0bdb3d22c8b4c07480fa5).
+Logged in as WWPenguinSpy#9722
+2026-02-02 00:57:37,184 [bot] INFO: Logged in as WWPenguinSpy#9722
+Loading commands extension.
+2026-02-02 00:57:37,225 [bot.commands] INFO: Loading commands extension.
+Commands registered successfully.
+2026-02-02 00:57:37,228 [bot.commands] INFO: Commands registered successfully.
+2026-02-02 00:57:37,230 [async_json] INFO: Data file missing. Creating fresh.
+Starting monitor task...
+2026-02-02 00:57:37,347 [bot] INFO: Starting monitor task...
+..........
+✅ Channel test successful for cycle-info (1414253925917393037)
+**********
+2026-02-02 00:57:37,779 [bot] INFO: ..........
+✅ Channel test successful for cycle-info (1414253925917393037)
+**********
+..........
+✅ Channel test successful for etc (1414253780236501023)
+**********
+2026-02-02 00:57:38,067 [bot] INFO: ..........
+✅ Channel test successful for etc (1414253780236501023)
+**********
+..........
+✅ Channel test successful for stc (1414253842677104661)
+**********
+2026-02-02 00:57:38,285 [bot] INFO: ..........
+✅ Channel test successful for stc (1414253842677104661)
+**********
+..........
+✅ Channel test successful for mtc (1414253804425187531)
+**********
+2026-02-02 00:57:39,053 [bot] INFO: ..........
+✅ Channel test successful for mtc (1414253804425187531)
+**********
+....................
+✅ Channel test completed
+********************
+2026-02-02 00:57:39,055 [bot] INFO: ....................
+✅ Channel test completed
+********************
+🧼 Starting monitoring loop #1
+2026-02-02 00:57:39,057 [bot] INFO: 🧼 Starting monitoring loop #1
+2026-02-02 00:57:39,102 [async_json] INFO: Data file missing. Creating fresh.
+Processing role: Guest
+2026-02-02 00:57:39,104 [bot] INFO: Processing role: Guest
+Processing role: Customer
+2026-02-02 00:57:39,110 [bot] INFO: Processing role: Customer
+Processing role: Contributor
+2026-02-02 00:57:39,119 [bot] INFO: Processing role: Contributor
+Processing role: Allied Representative
+2026-02-02 00:57:39,132 [bot] INFO: Processing role: Allied Representative
+Finished processing role: Guest
+2026-02-02 00:57:39,155 [bot] INFO: Finished processing role: Guest
+⏳ Role finished: Guest | Still running:
+- Customer: 0/495576 (495576 left)
+- Contributor: 0/7 (7 left)
+- Allied Representative: 0/13 (13 left)
+2026-02-02 00:57:39,157 [bot] INFO: ⏳ Role finished: Guest | Still running:
+- Customer: 0/495576 (495576 left)
+- Contributor: 0/7 (7 left)
+- Allied Representative: 0/13 (13 left)
+Processing role: Trainee
+2026-02-02 00:57:39,160 [bot] INFO: Processing role: Trainee
+Finished processing role: Contributor
+2026-02-02 00:57:39,207 [bot] INFO: Finished processing role: Contributor
+⏳ Role finished: Contributor | Still running:
+- Customer: 0/495576 (495576 left)
+- Allied Representative: 0/13 (13 left)
+- Trainee: 0/744667 (744667 left)
+2026-02-02 00:57:39,209 [bot] INFO: ⏳ Role finished: Contributor | Still running:
+- Customer: 0/495576 (495576 left)
+- Allied Representative: 0/13 (13 left)
+- Trainee: 0/744667 (744667 left)
+Processing role: Junior Operator
+2026-02-02 00:57:39,211 [bot] INFO: Processing role: Junior Operator
+Finished processing role: Allied Representative
+2026-02-02 00:57:39,216 [bot] INFO: Finished processing role: Allied Representative
+⏳ Role finished: Allied Representative | Still running:
+- Customer: 0/495576 (495576 left)
+- Trainee: 0/744667 (744667 left)
+- Junior Operator: 0/301425 (301425 left)
+2026-02-02 00:57:39,218 [bot] INFO: ⏳ Role finished: Allied Representative | Still running:
+- Customer: 0/495576 (495576 left)
+- Trainee: 0/744667 (744667 left)
+- Junior Operator: 0/301425 (301425 left)
+Processing role: Senior Operator
+2026-02-02 00:57:39,220 [bot] INFO: Processing role: Senior Operator
+ping command invoked.
+2026-02-02 00:57:46,421 [bot.commands] INFO: ping command invoked.
+Processing role: Head Operator
+2026-02-02 00:58:03,259 [bot] INFO: Processing role: Head Operator
+Processing role: Shift Leader
+2026-02-02 00:58:03,266 [bot] INFO: Processing role: Shift Leader
+Processing role: Supervisor
+2026-02-02 00:58:03,285 [bot] INFO: Processing role: Supervisor
+Processing role: Assistant Manager
+2026-02-02 00:58:03,327 [bot] INFO: Processing role: Assistant Manager
+Processing role: General Manager
+2026-02-02 00:58:04,500 [bot] INFO: Processing role: General Manager
+Processing role: Junior Director
+2026-02-02 00:58:04,511 [bot] INFO: Processing role: Junior Director
+Processing role: Senior Director
+2026-02-02 00:58:04,525 [bot] INFO: Processing role: Senior Director
+Processing role: Head Director
+2026-02-02 00:58:04,568 [bot] INFO: Processing role: Head Director
+Processing role: Corporate Intern
+2026-02-02 00:58:05,740 [bot] INFO: Processing role: Corporate Intern
+Processing role: Junior Corporate
+2026-02-02 00:58:05,751 [bot] INFO: Processing role: Junior Corporate
+Processing role: Senior Corporate
+2026-02-02 00:58:05,762 [bot] INFO: Processing role: Senior Corporate
+Processing role: Head Corporate
+2026-02-02 00:58:05,810 [bot] INFO: Processing role: Head Corporate
+Processing role: Automation
+2026-02-02 00:58:06,979 [bot] INFO: Processing role: Automation
+Processing role: Chief Human Resources Officer
+2026-02-02 00:58:06,991 [bot] INFO: Processing role: Chief Human Resources Officer
+Processing role: Chief Public Relations Officer
+2026-02-02 00:58:06,999 [bot] INFO: Processing role: Chief Public Relations Officer
+Processing role: Chief Operating Officer
+2026-02-02 00:58:07,045 [bot] INFO: Processing role: Chief Operating Officer
+Processing role: Chief Administrative Officer
+2026-02-02 00:58:08,221 [bot] INFO: Processing role: Chief Administrative Officer
+Processing role: Developer
+2026-02-02 00:58:08,237 [bot] INFO: Processing role: Developer
+Processing role: Vice Chairman
+2026-02-02 00:58:08,248 [bot] INFO: Processing role: Vice Chairman
+Processing role: Chairman
+2026-02-02 00:58:08,285 [bot] INFO: Processing role: Chairman
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61219874/users?limit=100&sortOrder=Asc&cursor=eyJrZXkiOiJpZF8yendBQUFZb0NhT2dkenhjSnVLNVpMWENkIiwic29ydE9yZGVyIjoiQXNjIiwicGFnaW5nRGlyZWN0aW9uIjoiRm9yd2FyZCIsInBhZ2VOdW1iZXIiOjEsImRpc2NyaW1pbmF0b3IiOiJncm91cElkOjEwMjYxMDIzcm9sZVNldElkOjYxMjE5ODc0IiwiY291bnQiOjEwMH0KYWY0ZjRlNzFhOTc2MThlZTAzNjA3N2E2OTZmMGM0MTY4MDc0YjMwNzdjNjg0ZWIzOTU3ZTA5NzhkZDBmYjZjZQ=='
+2026-02-02 00:58:09,528 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61219874/users?limit=100&sortOrder=Asc&cursor=eyJrZXkiOiJpZF8yendBQUFZb0NhT2dkenhjSnVLNVpMWENkIiwic29ydE9yZGVyIjoiQXNjIiwicGFnaW5nRGlyZWN0aW9uIjoiRm9yd2FyZCIsInBhZ2VOdW1iZXIiOjEsImRpc2NyaW1pbmF0b3IiOiJncm91cElkOjEwMjYxMDIzcm9sZVNldElkOjYxMjE5ODc0IiwiY291bnQiOjEwMH0KYWY0ZjRlNzFhOTc2MThlZTAzNjA3N2E2OTZmMGM0MTY4MDc0YjMwNzdjNjg0ZWIzOTU3ZTA5NzhkZDBmYjZjZQ=='
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61911341/users?limit=100&sortOrder=Asc&cursor=eyJrZXkiOiJpZF8yendBQUFZb0ItbUpaenk0WXNnZ0RIbmVCIiwic29ydE9yZGVyIjoiQXNjIiwicGFnaW5nRGlyZWN0aW9uIjoiRm9yd2FyZCIsInBhZ2VOdW1iZXIiOjEsImRpc2NyaW1pbmF0b3IiOiJncm91cElkOjEwMjYxMDIzcm9sZVNldElkOjYxOTExMzQxIiwiY291bnQiOjEwMH0KNmQwYzAwMWFiMDYxYzVlNWQyMDQ0OGVmODc1YTJhYTM0YzgyOTAzOTYwMDk2YjA2ODFlZWExMjM0ZTM1NDRiNg=='
+2026-02-02 00:58:09,530 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61911341/users?limit=100&sortOrder=Asc&cursor=eyJrZXkiOiJpZF8yendBQUFZb0ItbUpaenk0WXNnZ0RIbmVCIiwic29ydE9yZGVyIjoiQXNjIiwicGFnaW5nRGlyZWN0aW9uIjoiRm9yd2FyZCIsInBhZ2VOdW1iZXIiOjEsImRpc2NyaW1pbmF0b3IiOiJncm91cElkOjEwMjYxMDIzcm9sZVNldElkOjYxOTExMzQxIiwiY291bnQiOjEwMH0KNmQwYzAwMWFiMDYxYzVlNWQyMDQ0OGVmODc1YTJhYTM0YzgyOTAzOTYwMDk2YjA2ODFlZWExMjM0ZTM1NDRiNg=='
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61221274/users?limit=100&sortOrder=Asc&cursor=eyJrZXkiOiJpZF8yendBQUFZb0NrVWN5enkzZVlsNUFZeDduIiwic29ydE9yZGVyIjoiQXNjIiwicGFnaW5nRGlyZWN0aW9uIjoiRm9yd2FyZCIsInBhZ2VOdW1iZXIiOjEsImRpc2NyaW1pbmF0b3IiOiJncm91cElkOjEwMjYxMDIzcm9sZVNldElkOjYxMjIxMjc0IiwiY291bnQiOjEwMH0KOTI3MmE0NjgyNjZiYTY3MDkyMDVhNjhiMjJlYWU1MTcxMTQzNjI5YTZlMzIxM2VlMmYwOWFjNzdhNGQxZDQ3ZA=='
+2026-02-02 00:58:09,532 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61221274/users?limit=100&sortOrder=Asc&cursor=eyJrZXkiOiJpZF8yendBQUFZb0NrVWN5enkzZVlsNUFZeDduIiwic29ydE9yZGVyIjoiQXNjIiwicGFnaW5nRGlyZWN0aW9uIjoiRm9yd2FyZCIsInBhZ2VOdW1iZXIiOjEsImRpc2NyaW1pbmF0b3IiOiJncm91cElkOjEwMjYxMDIzcm9sZVNldElkOjYxMjIxMjc0IiwiY291bnQiOjEwMH0KOTI3MmE0NjgyNjZiYTY3MDkyMDVhNjhiMjJlYWU1MTcxMTQzNjI5YTZlMzIxM2VlMmYwOWFjNzdhNGQxZDQ3ZA=='
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222552/users?limit=100&sortOrder=Asc&cursor=eyJrZXkiOiJpZF8yendBQUFZb0s0OG1OendjWjlybl9lc3NiIiwic29ydE9yZGVyIjoiQXNjIiwicGFnaW5nRGlyZWN0aW9uIjoiRm9yd2FyZCIsInBhZ2VOdW1iZXIiOjEsImRpc2NyaW1pbmF0b3IiOiJncm91cElkOjEwMjYxMDIzcm9sZVNldElkOjYxMjIyNTUyIiwiY291bnQiOjEwMH0KNGMyZjI2ZjEzOGVlYjU0MGYwMjNmN2E2MTRlNmIzYjRiMmQ1ODZjMWY3NDg2YmQ0NjRlMzQ5YTMzN2YxZmY1OA=='
+2026-02-02 00:58:09,534 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222552/users?limit=100&sortOrder=Asc&cursor=eyJrZXkiOiJpZF8yendBQUFZb0s0OG1OendjWjlybl9lc3NiIiwic29ydE9yZGVyIjoiQXNjIiwicGFnaW5nRGlyZWN0aW9uIjoiRm9yd2FyZCIsInBhZ2VOdW1iZXIiOjEsImRpc2NyaW1pbmF0b3IiOiJncm91cElkOjEwMjYxMDIzcm9sZVNldElkOjYxMjIyNTUyIiwiY291bnQiOjEwMH0KNGMyZjI2ZjEzOGVlYjU0MGYwMjNmN2E2MTRlNmIzYjRiMmQ1ODZjMWY3NDg2YmQ0NjRlMzQ5YTMzN2YxZmY1OA=='
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222193/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:09,535 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222193/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222134/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:09,537 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222134/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222531/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:09,538 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222531/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61221017/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:09,539 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61221017/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222504/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:09,541 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222504/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61219873/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:09,542 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61219873/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222063/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:09,544 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222063/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/89716775/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:09,545 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/89716775/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/89635960/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:09,546 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/89635960/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61911398/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:09,548 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61911398/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63063938/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:09,550 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63063938/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63063949/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:09,551 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63063949/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/84741341/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:09,553 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/84741341/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63063963/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:09,555 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63063963/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63064002/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:09,556 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63064002/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63064038/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:09,558 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63064038/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/78067555/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:09,559 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/78067555/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/71902502/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:09,560 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/71902502/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63064135/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:09,561 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63064135/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61219872/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:09,562 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61219872/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:09,564 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:09,565 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:09,566 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:09,567 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:09,568 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:09,569 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:09,569 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:09,570 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:09,571 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:09,572 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:09,573 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:09,574 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:09,575 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:09,576 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:09,577 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:09,578 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:09,579 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:09,580 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:09,580 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:09,582 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:09,583 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:09,584 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:09,584 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:09,585 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:09,586 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:09,587 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:09,588 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:09,589 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:09,590 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:09,591 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:09,592 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:09,593 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:09,594 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:09,594 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:09,595 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:09,596 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:09,597 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:09,598 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:09,599 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:09,600 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:09,601 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:09,602 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:09,603 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:09,605 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:09,606 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:09,607 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:09,608 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:09,609 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+threads_tasks command invoked.
+2026-02-02 00:58:09,973 [bot.commands] INFO: threads_tasks command invoked.
+2026-02-02 00:58:17,944 [discord.client] INFO: Cleaning up tasks.
+2026-02-02 00:58:17,945 [discord.client] INFO: Cleaning up after 2 tasks.
+2026-02-02 00:58:17,949 [discord.client] INFO: All tasks finished cancelling.
+2026-02-02 00:58:17,951 [discord.client] INFO: Closing the event loop.
+2026-02-02 00:58:21,341 [root] WARNING: Logtail not available or environment not set. Skipping LogtailHandler.
+2026-02-02 00:58:21,419 [discord.client] INFO: logging in using static token
+2026-02-02 00:58:21,600 [discord.gateway] INFO: Shard ID None has sent the IDENTIFY payload.
+2026-02-02 00:58:21,730 [discord.gateway] INFO: Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-c-49w1",{"micros":107251,"calls":["id_created",{"micros":844,"calls":[]},"session_lookup_time",{"micros":2442,"calls":[]},"session_lookup_finished",{"micros":12,"calls":[]},"discord-sessions-prd-2-74",{"micros":103011,"calls":["start_session",{"micros":90132,"calls":["discord-api-continuous-canary-rpc-545fb59995-9q9q7",{"micros":39613,"calls":["get_user",{"micros":7156},"get_guilds",{"micros":3909},"send_scheduled_deletion_message",{"micros":15},"guild_join_requests",{"micros":4},"authorized_ip_coro",{"micros":9},"pending_payments",{"micros":658},"apex_experiments",{"micros":43647},"user_activities",{"micros":6},"played_application_ids",{"micros":3},"linked_users",{"micros":9},"ad_personalization_toggles_disabled",{"micros":3},"regional_feature_config",{"micros":5}]}]},"starting_guild_connect",{"micros":32,"calls":[]},"presence_started",{"micros":2994,"calls":[]},"guilds_started",{"micros":61,"calls":[]},"lobbies_started",{"micros":1,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":9756,"calls":[]},"connect_finished",{"micros":9772,"calls":[]},"build_ready",{"micros":17,"calls":[]},"clean_ready",{"micros":0,"calls":[]},"optimize_ready",{"micros":1,"calls":[]},"split_ready",{"micros":0,"calls":[]}]}]}] (Session ID: 57af1de7d0717326dd8e68b18d7fb345).
+Logged in as WWPenguinSpy#9722
+2026-02-02 00:58:23,802 [bot] INFO: Logged in as WWPenguinSpy#9722
+Loading commands extension.
+2026-02-02 00:58:23,839 [bot.commands] INFO: Loading commands extension.
+Commands registered successfully.
+2026-02-02 00:58:23,841 [bot.commands] INFO: Commands registered successfully.
+Starting monitor task...
+2026-02-02 00:58:24,004 [bot] INFO: Starting monitor task...
+..........
+✅ Channel test successful for cycle-info (1414253925917393037)
+**********
+2026-02-02 00:58:24,402 [bot] INFO: ..........
+✅ Channel test successful for cycle-info (1414253925917393037)
+**********
+..........
+✅ Channel test successful for etc (1414253780236501023)
+**********
+2026-02-02 00:58:24,814 [bot] INFO: ..........
+✅ Channel test successful for etc (1414253780236501023)
+**********
+..........
+✅ Channel test successful for stc (1414253842677104661)
+**********
+2026-02-02 00:58:25,068 [bot] INFO: ..........
+✅ Channel test successful for stc (1414253842677104661)
+**********
+..........
+✅ Channel test successful for mtc (1414253804425187531)
+**********
+2026-02-02 00:58:25,668 [bot] INFO: ..........
+✅ Channel test successful for mtc (1414253804425187531)
+**********
+....................
+✅ Channel test completed
+********************
+2026-02-02 00:58:25,670 [bot] INFO: ....................
+✅ Channel test completed
+********************
+🧼 Starting monitoring loop #1
+2026-02-02 00:58:25,671 [bot] INFO: 🧼 Starting monitoring loop #1
+Processing role: Guest
+2026-02-02 00:58:25,728 [bot] INFO: Processing role: Guest
+Processing role: Customer
+2026-02-02 00:58:25,733 [bot] INFO: Processing role: Customer
+Processing role: Contributor
+2026-02-02 00:58:25,740 [bot] INFO: Processing role: Contributor
+Processing role: Allied Representative
+2026-02-02 00:58:25,750 [bot] INFO: Processing role: Allied Representative
+Processing role: Trainee
+2026-02-02 00:58:26,985 [bot] INFO: Processing role: Trainee
+Processing role: Junior Operator
+2026-02-02 00:58:27,008 [bot] INFO: Processing role: Junior Operator
+Processing role: Senior Operator
+2026-02-02 00:58:27,020 [bot] INFO: Processing role: Senior Operator
+Processing role: Head Operator
+2026-02-02 00:58:27,031 [bot] INFO: Processing role: Head Operator
+Processing role: Shift Leader
+2026-02-02 00:58:28,232 [bot] INFO: Processing role: Shift Leader
+Processing role: Supervisor
+2026-02-02 00:58:28,269 [bot] INFO: Processing role: Supervisor
+Processing role: Assistant Manager
+2026-02-02 00:58:28,281 [bot] INFO: Processing role: Assistant Manager
+Processing role: General Manager
+2026-02-02 00:58:28,296 [bot] INFO: Processing role: General Manager
+Processing role: Junior Director
+2026-02-02 00:58:29,482 [bot] INFO: Processing role: Junior Director
+Processing role: Senior Director
+2026-02-02 00:58:29,511 [bot] INFO: Processing role: Senior Director
+Processing role: Head Director
+2026-02-02 00:58:29,521 [bot] INFO: Processing role: Head Director
+Processing role: Corporate Intern
+2026-02-02 00:58:29,536 [bot] INFO: Processing role: Corporate Intern
+Processing role: Junior Corporate
+2026-02-02 00:58:30,722 [bot] INFO: Processing role: Junior Corporate
+Processing role: Senior Corporate
+2026-02-02 00:58:30,751 [bot] INFO: Processing role: Senior Corporate
+Processing role: Head Corporate
+2026-02-02 00:58:30,784 [bot] INFO: Processing role: Head Corporate
+Processing role: Automation
+2026-02-02 00:58:30,788 [bot] INFO: Processing role: Automation
+Processing role: Chief Human Resources Officer
+2026-02-02 00:58:31,964 [bot] INFO: Processing role: Chief Human Resources Officer
+Processing role: Chief Public Relations Officer
+2026-02-02 00:58:31,996 [bot] INFO: Processing role: Chief Public Relations Officer
+Processing role: Chief Operating Officer
+2026-02-02 00:58:32,021 [bot] INFO: Processing role: Chief Operating Officer
+Processing role: Chief Administrative Officer
+2026-02-02 00:58:32,029 [bot] INFO: Processing role: Chief Administrative Officer
+Processing role: Developer
+2026-02-02 00:58:33,207 [bot] INFO: Processing role: Developer
+Processing role: Vice Chairman
+2026-02-02 00:58:33,239 [bot] INFO: Processing role: Vice Chairman
+Processing role: Chairman
+2026-02-02 00:58:33,259 [bot] INFO: Processing role: Chairman
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61219875/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,497 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61219875/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61219874/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,499 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61219874/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61221330/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,501 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61221330/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/78427215/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,502 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/78427215/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61911341/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,503 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61911341/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61221274/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,505 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61221274/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222552/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,507 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222552/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222193/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,508 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222193/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222134/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,510 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222134/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222531/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,512 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222531/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61221017/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,514 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61221017/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222504/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,516 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222504/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61219873/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,518 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61219873/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222063/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,519 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222063/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/89716775/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,521 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/89716775/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/89635960/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,523 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/89635960/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61911398/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,525 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61911398/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63063938/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,526 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63063938/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63063949/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,528 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63063949/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/84741341/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,529 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/84741341/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63063963/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,530 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63063963/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63064002/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,532 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63064002/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63064038/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,534 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63064038/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/78067555/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,535 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/78067555/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/71902502/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,536 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/71902502/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63064135/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,538 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63064135/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61219872/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,539 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61219872/users?limit=100&sortOrder=Asc'
+2026-02-02 00:58:34,541 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,542 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,543 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,544 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,545 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,546 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,547 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,549 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,550 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,551 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,552 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,552 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,553 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,554 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,556 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,557 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,558 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,558 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,559 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,560 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,561 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,562 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,563 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,564 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,565 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,566 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,568 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,569 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,570 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,572 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,573 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,574 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,575 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,576 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,577 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,578 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,579 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,580 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,581 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,582 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,583 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,584 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,585 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,586 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,587 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,589 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,590 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,591 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,593 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,594 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,596 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,597 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:34,598 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 00:58:34,600 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 00:58:43,287 [discord.client] INFO: Cleaning up tasks.
+2026-02-02 00:58:43,289 [discord.client] INFO: Cleaning up after 2 tasks.
+2026-02-02 00:58:43,292 [discord.client] INFO: All tasks finished cancelling.
+2026-02-02 00:58:43,293 [discord.client] INFO: Closing the event loop.
+2026-02-02 01:00:45,452 [root] WARNING: Logtail not available or environment not set. Skipping LogtailHandler.
+2026-02-02 01:00:45,528 [discord.client] INFO: logging in using static token
+2026-02-02 01:00:45,713 [discord.gateway] INFO: Shard ID None has sent the IDENTIFY payload.
+2026-02-02 01:00:45,842 [discord.gateway] INFO: Shard ID None has connected to Gateway: ["gateway-prd-arm-us-east1-c-6tv4",{"micros":109235,"calls":["id_created",{"micros":370,"calls":[]},"session_lookup_time",{"micros":296,"calls":[]},"session_lookup_finished",{"micros":10,"calls":[]},"discord-sessions-prd-2-173",{"micros":108243,"calls":["start_session",{"micros":89177,"calls":["discord-api-rpc-565869498d-vjh6h",{"micros":48998,"calls":["get_user",{"micros":5074},"get_guilds",{"micros":2925},"send_scheduled_deletion_message",{"micros":15},"guild_join_requests",{"micros":3754},"authorized_ip_coro",{"micros":10},"pending_payments",{"micros":503},"apex_experiments",{"micros":33774},"user_activities",{"micros":5},"played_application_ids",{"micros":3},"linked_users",{"micros":2},"ad_personalization_toggles_disabled",{"micros":2},"regional_feature_config",{"micros":2}]}]},"starting_guild_connect",{"micros":29,"calls":[]},"presence_started",{"micros":393,"calls":[]},"guilds_started",{"micros":74,"calls":[]},"lobbies_started",{"micros":2,"calls":[]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":18538,"calls":[]},"connect_finished",{"micros":18554,"calls":[]},"build_ready",{"micros":12,"calls":[]},"clean_ready",{"micros":1,"calls":[]},"optimize_ready",{"micros":0,"calls":[]},"split_ready",{"micros":0,"calls":[]}]}]}] (Session ID: 5a4c73b5de9ceccbd9f51a2f29622f22).
+Logged in as WWPenguinSpy#9722
+2026-02-02 01:00:47,914 [bot] INFO: Logged in as WWPenguinSpy#9722
+Loading commands extension.
+2026-02-02 01:00:47,958 [bot.commands] INFO: Loading commands extension.
+Commands registered successfully.
+2026-02-02 01:00:47,961 [bot.commands] INFO: Commands registered successfully.
+Starting monitor task...
+2026-02-02 01:00:48,087 [bot] INFO: Starting monitor task...
+..........
+✅ Channel test successful for cycle-info (1414253925917393037)
+**********
+2026-02-02 01:00:48,376 [bot] INFO: ..........
+✅ Channel test successful for cycle-info (1414253925917393037)
+**********
+..........
+✅ Channel test successful for etc (1414253780236501023)
+**********
+2026-02-02 01:00:48,641 [bot] INFO: ..........
+✅ Channel test successful for etc (1414253780236501023)
+**********
+..........
+✅ Channel test successful for stc (1414253842677104661)
+**********
+2026-02-02 01:00:48,964 [bot] INFO: ..........
+✅ Channel test successful for stc (1414253842677104661)
+**********
+..........
+✅ Channel test successful for mtc (1414253804425187531)
+**********
+2026-02-02 01:00:50,086 [bot] INFO: ..........
+✅ Channel test successful for mtc (1414253804425187531)
+**********
+....................
+✅ Channel test completed
+********************
+2026-02-02 01:00:50,088 [bot] INFO: ....................
+✅ Channel test completed
+********************
+🧼 Starting monitoring loop #1
+2026-02-02 01:00:50,090 [bot] INFO: 🧼 Starting monitoring loop #1
+Processing role: Guest
+2026-02-02 01:00:50,148 [bot] INFO: Processing role: Guest
+Processing role: Customer
+2026-02-02 01:00:50,154 [bot] INFO: Processing role: Customer
+Processing role: Contributor
+2026-02-02 01:00:50,163 [bot] INFO: Processing role: Contributor
+Processing role: Allied Representative
+2026-02-02 01:00:50,174 [bot] INFO: Processing role: Allied Representative
+Finished processing role: Guest
+2026-02-02 01:00:50,197 [bot] INFO: Finished processing role: Guest
+⏳ Role finished: Guest | Still running:
+- Customer: 0/495575 (495575 left)
+- Contributor: 0/7 (7 left)
+- Allied Representative: 0/13 (13 left)
+2026-02-02 01:00:50,198 [bot] INFO: ⏳ Role finished: Guest | Still running:
+- Customer: 0/495575 (495575 left)
+- Contributor: 0/7 (7 left)
+- Allied Representative: 0/13 (13 left)
+Processing role: Trainee
+2026-02-02 01:00:50,201 [bot] INFO: Processing role: Trainee
+Finished processing role: Contributor
+2026-02-02 01:00:50,256 [bot] INFO: Finished processing role: Contributor
+⏳ Role finished: Contributor | Still running:
+- Customer: 0/495575 (495575 left)
+- Allied Representative: 0/13 (13 left)
+- Trainee: 0/744671 (744671 left)
+2026-02-02 01:00:50,257 [bot] INFO: ⏳ Role finished: Contributor | Still running:
+- Customer: 0/495575 (495575 left)
+- Allied Representative: 0/13 (13 left)
+- Trainee: 0/744671 (744671 left)
+Processing role: Junior Operator
+2026-02-02 01:00:50,259 [bot] INFO: Processing role: Junior Operator
+Finished processing role: Allied Representative
+2026-02-02 01:00:50,264 [bot] INFO: Finished processing role: Allied Representative
+⏳ Role finished: Allied Representative | Still running:
+- Customer: 0/495575 (495575 left)
+- Trainee: 0/744671 (744671 left)
+- Junior Operator: 0/301425 (301425 left)
+2026-02-02 01:00:50,266 [bot] INFO: ⏳ Role finished: Allied Representative | Still running:
+- Customer: 0/495575 (495575 left)
+- Trainee: 0/744671 (744671 left)
+- Junior Operator: 0/301425 (301425 left)
+Processing role: Senior Operator
+2026-02-02 01:00:50,268 [bot] INFO: Processing role: Senior Operator
+Processing role: Head Operator
+2026-02-02 01:01:20,395 [bot] INFO: Processing role: Head Operator
+Processing role: Shift Leader
+2026-02-02 01:01:20,406 [bot] INFO: Processing role: Shift Leader
+Processing role: Supervisor
+2026-02-02 01:01:20,430 [bot] INFO: Processing role: Supervisor
+Processing role: Assistant Manager
+2026-02-02 01:01:20,474 [bot] INFO: Processing role: Assistant Manager
+Processing role: General Manager
+2026-02-02 01:01:21,640 [bot] INFO: Processing role: General Manager
+Processing role: Junior Director
+2026-02-02 01:01:21,647 [bot] INFO: Processing role: Junior Director
+Processing role: Senior Director
+2026-02-02 01:01:21,669 [bot] INFO: Processing role: Senior Director
+Processing role: Head Director
+2026-02-02 01:01:21,712 [bot] INFO: Processing role: Head Director
+Processing role: Corporate Intern
+2026-02-02 01:01:22,881 [bot] INFO: Processing role: Corporate Intern
+Processing role: Junior Corporate
+2026-02-02 01:01:22,888 [bot] INFO: Processing role: Junior Corporate
+Processing role: Senior Corporate
+2026-02-02 01:01:22,920 [bot] INFO: Processing role: Senior Corporate
+Processing role: Head Corporate
+2026-02-02 01:01:22,950 [bot] INFO: Processing role: Head Corporate
+Processing role: Automation
+2026-02-02 01:01:24,122 [bot] INFO: Processing role: Automation
+Processing role: Chief Human Resources Officer
+2026-02-02 01:01:24,152 [bot] INFO: Processing role: Chief Human Resources Officer
+Processing role: Chief Public Relations Officer
+2026-02-02 01:01:24,162 [bot] INFO: Processing role: Chief Public Relations Officer
+Processing role: Chief Operating Officer
+2026-02-02 01:01:24,200 [bot] INFO: Processing role: Chief Operating Officer
+Processing role: Chief Administrative Officer
+2026-02-02 01:01:25,364 [bot] INFO: Processing role: Chief Administrative Officer
+Processing role: Developer
+2026-02-02 01:01:25,393 [bot] INFO: Processing role: Developer
+Processing role: Vice Chairman
+2026-02-02 01:01:25,404 [bot] INFO: Processing role: Vice Chairman
+Processing role: Chairman
+2026-02-02 01:01:25,441 [bot] INFO: Processing role: Chairman
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61219874/users?limit=100&sortOrder=Asc&cursor=eyJrZXkiOiJpZF8yendBQUFZb0NTY1NMendmUkU4U2lGYkJPIiwic29ydE9yZGVyIjoiQXNjIiwicGFnaW5nRGlyZWN0aW9uIjoiRm9yd2FyZCIsInBhZ2VOdW1iZXIiOjEsImRpc2NyaW1pbmF0b3IiOiJncm91cElkOjEwMjYxMDIzcm9sZVNldElkOjYxMjE5ODc0IiwiY291bnQiOjEwMH0KZTMxMTg5OWJkZjRlYTVhYjVmZmM0OGM0MjU2NTczMjYxOWIwMGVmOTNhMTdhMjA0MzY2ZGQ3ZGU4NWY1NzFmNw=='
+2026-02-02 01:01:26,680 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61219874/users?limit=100&sortOrder=Asc&cursor=eyJrZXkiOiJpZF8yendBQUFZb0NTY1NMendmUkU4U2lGYkJPIiwic29ydE9yZGVyIjoiQXNjIiwicGFnaW5nRGlyZWN0aW9uIjoiRm9yd2FyZCIsInBhZ2VOdW1iZXIiOjEsImRpc2NyaW1pbmF0b3IiOiJncm91cElkOjEwMjYxMDIzcm9sZVNldElkOjYxMjE5ODc0IiwiY291bnQiOjEwMH0KZTMxMTg5OWJkZjRlYTVhYjVmZmM0OGM0MjU2NTczMjYxOWIwMGVmOTNhMTdhMjA0MzY2ZGQ3ZGU4NWY1NzFmNw=='
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61911341/users?limit=100&sortOrder=Asc&cursor=eyJrZXkiOiJpZF8yendBQUFZb0I1TVJWenhlRGM1V1dMdXYtIiwic29ydE9yZGVyIjoiQXNjIiwicGFnaW5nRGlyZWN0aW9uIjoiRm9yd2FyZCIsInBhZ2VOdW1iZXIiOjEsImRpc2NyaW1pbmF0b3IiOiJncm91cElkOjEwMjYxMDIzcm9sZVNldElkOjYxOTExMzQxIiwiY291bnQiOjEwMH0KN2JlMTI4Yzk0NWM3MzJjNjA0ZTQyMTA4N2Q2YjU5MmU2ZjljY2EwMzM0ODg0N2JkMGI0MTg5NjQ4YTVjODUxYQ=='
+2026-02-02 01:01:26,686 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61911341/users?limit=100&sortOrder=Asc&cursor=eyJrZXkiOiJpZF8yendBQUFZb0I1TVJWenhlRGM1V1dMdXYtIiwic29ydE9yZGVyIjoiQXNjIiwicGFnaW5nRGlyZWN0aW9uIjoiRm9yd2FyZCIsInBhZ2VOdW1iZXIiOjEsImRpc2NyaW1pbmF0b3IiOiJncm91cElkOjEwMjYxMDIzcm9sZVNldElkOjYxOTExMzQxIiwiY291bnQiOjEwMH0KN2JlMTI4Yzk0NWM3MzJjNjA0ZTQyMTA4N2Q2YjU5MmU2ZjljY2EwMzM0ODg0N2JkMGI0MTg5NjQ4YTVjODUxYQ=='
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61221274/users?limit=100&sortOrder=Asc&cursor=eyJrZXkiOiJpZF8yendBQUFZb0NlYnlaenoxaWduRGJiVUZ0Iiwic29ydE9yZGVyIjoiQXNjIiwicGFnaW5nRGlyZWN0aW9uIjoiRm9yd2FyZCIsInBhZ2VOdW1iZXIiOjEsImRpc2NyaW1pbmF0b3IiOiJncm91cElkOjEwMjYxMDIzcm9sZVNldElkOjYxMjIxMjc0IiwiY291bnQiOjEwMH0KZDgwNmUyOWRkNjFjMmEwYTg3OGRjYjU0OTc2NDdjZWJkY2ZkNDVhNWYzMTFiMDQxMjM2NmYyOTRjYzFkZThmYQ=='
+2026-02-02 01:01:26,688 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61221274/users?limit=100&sortOrder=Asc&cursor=eyJrZXkiOiJpZF8yendBQUFZb0NlYnlaenoxaWduRGJiVUZ0Iiwic29ydE9yZGVyIjoiQXNjIiwicGFnaW5nRGlyZWN0aW9uIjoiRm9yd2FyZCIsInBhZ2VOdW1iZXIiOjEsImRpc2NyaW1pbmF0b3IiOiJncm91cElkOjEwMjYxMDIzcm9sZVNldElkOjYxMjIxMjc0IiwiY291bnQiOjEwMH0KZDgwNmUyOWRkNjFjMmEwYTg3OGRjYjU0OTc2NDdjZWJkY2ZkNDVhNWYzMTFiMDQxMjM2NmYyOTRjYzFkZThmYQ=='
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222552/users?limit=100&sortOrder=Asc&cursor=eyJrZXkiOiJpZF8yendBQUFZb0lOano0enlkT3JHV3U3S0VBIiwic29ydE9yZGVyIjoiQXNjIiwicGFnaW5nRGlyZWN0aW9uIjoiRm9yd2FyZCIsInBhZ2VOdW1iZXIiOjEsImRpc2NyaW1pbmF0b3IiOiJncm91cElkOjEwMjYxMDIzcm9sZVNldElkOjYxMjIyNTUyIiwiY291bnQiOjEwMH0KMGNkNzdkY2E4NGQ2MTMxMTFhODdjZGUyODRhZDQ4M2U4NTk2NWE3YjJkNzFhOTU5OTQ5ZTZmODBjMDhmZDg1Zg=='
+2026-02-02 01:01:26,689 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222552/users?limit=100&sortOrder=Asc&cursor=eyJrZXkiOiJpZF8yendBQUFZb0lOano0enlkT3JHV3U3S0VBIiwic29ydE9yZGVyIjoiQXNjIiwicGFnaW5nRGlyZWN0aW9uIjoiRm9yd2FyZCIsInBhZ2VOdW1iZXIiOjEsImRpc2NyaW1pbmF0b3IiOiJncm91cElkOjEwMjYxMDIzcm9sZVNldElkOjYxMjIyNTUyIiwiY291bnQiOjEwMH0KMGNkNzdkY2E4NGQ2MTMxMTFhODdjZGUyODRhZDQ4M2U4NTk2NWE3YjJkNzFhOTU5OTQ5ZTZmODBjMDhmZDg1Zg=='
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222193/users?limit=100&sortOrder=Asc'
+2026-02-02 01:01:26,691 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222193/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222134/users?limit=100&sortOrder=Asc'
+2026-02-02 01:01:26,692 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222134/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222531/users?limit=100&sortOrder=Asc'
+2026-02-02 01:01:26,693 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222531/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61221017/users?limit=100&sortOrder=Asc'
+2026-02-02 01:01:26,695 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61221017/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222504/users?limit=100&sortOrder=Asc'
+2026-02-02 01:01:26,696 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222504/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61219873/users?limit=100&sortOrder=Asc'
+2026-02-02 01:01:26,697 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61219873/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222063/users?limit=100&sortOrder=Asc'
+2026-02-02 01:01:26,698 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222063/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/89716775/users?limit=100&sortOrder=Asc'
+2026-02-02 01:01:26,700 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/89716775/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/89635960/users?limit=100&sortOrder=Asc'
+2026-02-02 01:01:26,701 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/89635960/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61911398/users?limit=100&sortOrder=Asc'
+2026-02-02 01:01:26,702 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61911398/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63063938/users?limit=100&sortOrder=Asc'
+2026-02-02 01:01:26,704 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63063938/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63063949/users?limit=100&sortOrder=Asc'
+2026-02-02 01:01:26,705 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63063949/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/84741341/users?limit=100&sortOrder=Asc'
+2026-02-02 01:01:26,706 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/84741341/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63063963/users?limit=100&sortOrder=Asc'
+2026-02-02 01:01:26,707 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63063963/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63064002/users?limit=100&sortOrder=Asc'
+2026-02-02 01:01:26,708 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63064002/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63064038/users?limit=100&sortOrder=Asc'
+2026-02-02 01:01:26,710 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63064038/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/78067555/users?limit=100&sortOrder=Asc'
+2026-02-02 01:01:26,711 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/78067555/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/71902502/users?limit=100&sortOrder=Asc'
+2026-02-02 01:01:26,712 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/71902502/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63064135/users?limit=100&sortOrder=Asc'
+2026-02-02 01:01:26,713 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63064135/users?limit=100&sortOrder=Asc'
+Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61219872/users?limit=100&sortOrder=Asc'
+2026-02-02 01:01:26,714 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61219872/users?limit=100&sortOrder=Asc'
+2026-02-02 01:01:26,716 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 01:01:26,717 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 01:01:26,718 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 01:01:26,719 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 01:01:26,720 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 01:01:26,721 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 01:01:26,722 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 01:01:26,723 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 01:01:26,724 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 01:01:26,724 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 01:01:26,725 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 01:01:26,726 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 01:01:26,727 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 01:01:26,728 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 01:01:26,729 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 01:01:26,730 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 01:01:26,731 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 01:01:26,732 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 01:01:26,733 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 01:01:26,733 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 01:01:26,734 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 01:01:26,735 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 01:01:26,736 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 01:01:26,737 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 01:01:26,738 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 01:01:26,739 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 01:01:26,740 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 01:01:26,741 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 01:01:26,742 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 01:01:26,743 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 01:01:26,744 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 01:01:26,745 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 01:01:26,746 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 01:01:26,747 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 01:01:26,748 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 01:01:26,749 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 01:01:26,749 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 01:01:26,750 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 01:01:26,751 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 01:01:26,752 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 01:01:26,753 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 01:01:26,754 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 01:01:26,755 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 01:01:26,757 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 01:01:26,758 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 01:01:26,758 [utils] WARNING: safe_send: channel 1414253925917393037 not found
+2026-02-02 01:01:26,759 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-02-02 01:01:26,760 [utils] WARNING: safe_send: channel 1414253925917393037 not found
