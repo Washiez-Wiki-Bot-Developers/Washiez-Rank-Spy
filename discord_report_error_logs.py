@@ -3,6 +3,7 @@ import asyncio
 import discord
 import logging
 from typing import Union, Optional
+# import dotenv
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)

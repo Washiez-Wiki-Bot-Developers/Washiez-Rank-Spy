@@ -1,0 +1,18 @@
+{
+    "921531891": {
+        "restricted": true,
+        "reason": "Roblox API replies with old cache data causing issues.",
+        "restriction":{
+            "rank_from": "Supervisor",
+            "rank_to": "Shift Leader",
+            "until": "indefinite"
+        }
+    },
+    "2048509558": {
+        "restricted": true,
+        "restriction":{
+            "rank_from": "Supervisor",
+            "rank_to":"Shift Leader"
+        }
+    }
+}

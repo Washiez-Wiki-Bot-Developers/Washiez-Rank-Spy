@@ -1,0 +1,20 @@
+Process 1223588: python -u app.py
+Python v3.13.3 (/usr/bin/python3.13)
+
+Thread 1223588 (idle): "MainThread"
+    select (selectors.py:452)
+    _run_once (asyncio/base_events.py:1996)
+    run_forever (asyncio/base_events.py:677)
+    run (discord/client.py:772)
+    <module> (app.py:249)
+Thread 1223589 (idle): "asyncio_0"
+    _worker (concurrent/futures/thread.py:90)
+    run (threading.py:992)
+    _bootstrap_inner (threading.py:1041)
+    _bootstrap (threading.py:1012)
+Thread 1223590 (idle): "Thread-1"
+    wait (threading.py:363)
+    wait (threading.py:659)
+    run (discord/gateway.py:141)
+    _bootstrap_inner (threading.py:1041)
+    _bootstrap (threading.py:1012)

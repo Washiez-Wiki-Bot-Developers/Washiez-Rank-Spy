@@ -1,0 +1,1049 @@
+# Copyright (c) 2023 Rankspy (Washiez Variant) by Washiez Wiki Bot Developers
+attribution = "Rankspy by Washiez Wiki Bot Developers, based on original work from MartinAstrea.\n Made with 🧼🫧 by WW:BD, Martin and MrT!\n Licensed under MIT License until further revision."
+import asyncio
+import json
+import logging
+import time
+import os, gc
+import sys, math
+from io import BytesIO
+import aiofiles
+
+
+# import user_rank_history
+
+# from typing import cast, Optional, Union, Tuple
+from typing import Union, Optional, Tuple
+
+from colorama import Fore, Style
+
+import aiohttp
+
+# Stop discord loggers from propagating to root
+logging.getLogger("discord").propagate = False
+logging.getLogger("discord.app_commands.tree").propagate = False
+
+import discord
+from discord.ext import commands
+
+print(discord.__version__)  # pylint: disable=E1101
+
+import dotenv, hashlib
+
+from discord_report_error_logs import DiscordErrorHandler
+from coloured_log_handler import ColorFormatter
+
+
+# --- Logging setup ---
+logger = logging.getLogger("bot")
+logger.propagate = False
+logger.setLevel(logging.DEBUG)
+
+asyncio.set_event_loop(asyncio.new_event_loop())
+# DISCORD
+intents = discord.Intents.default()
+intents.guilds = True
+bot = commands.Bot(command_prefix="! ", intents=intents, reconnect=True)
+
+dotenv.load_dotenv()
+
+GROUP_ID = 10261023
+TOKEN = os.getenv("DISCORD_BOT_TOKEN")
+
+ENABLE_ROPROXY_USAGE_FIRST_PRIORITY = False
+
+# Add DiscordErrorHandler
+ERROR_LOG_CHANNEL = 
+discord_error_handler = DiscordErrorHandler(bot, ERROR_LOG_CHANNEL)
+discord_error_handler.setLevel(logging.ERROR)  # Only handle ERROR level logs
+formatter = logging.Formatter("%(asctime)s:%(levelname)s:%(name)s:%(filename)s:%(lineno)d: %(message)s")
+discord_error_handler.setFormatter(formatter)
+logger.addHandler(discord_error_handler)
+
+# Console handler (short time + colors)
+console_handler = logging.StreamHandler(sys.stdout)
+console_handler.setFormatter(ColorFormatter())  # datefmt="%YY-%MM-%DD %H:%M:%S"))
+logger.addHandler(console_handler)
+
+# ? Normal Text Log file logging
+file_handler = logging.FileHandler("bot.log", encoding="utf-8")
+file_handler.setLevel(logging.DEBUG)  # ? Set to DEBUG to capture all logs
+logger.addHandler(file_handler)
+
+# ? Error Text Log file logging
+error_file_handler = logging.FileHandler("ERRORbot.log", encoding="utf-8")
+error_file_handler.setLevel(logging.ERROR)  # ? Set to DEBUG to capture all logs
+logger.addHandler(error_file_handler)
+
+global shutdown_scheduled
+shutdown_scheduled = False
+
+APP_FILE_HASH = ""
+
+with open("app.py", "rb") as f:
+    APP_FILE_HASH = hashlib.sha256(f.read()).hexdigest()
+
+MAX_CHARS_DISCORD = 2000
+
+# Channel IDs
+CUSTOMER_HEAD_OP_CHANNEL = os.getenv("CUSTOMER_HEAD_OP_CHANNEL_ID", 1413641192712704100)
+SHIFT_LEADER_GEN_MANAGER_CHANNEL = os.getenv("SHIFT_LEADER_GEN_MANAGER_CHANNEL_ID", 1413641215420924035)
+JUNIOR_DIRECTOR_CHAIRMAN_CHANNEL = os.getenv("JUNIOR_DIRECTOR_CHAIRMAN_CHANNEL_ID", 1413641231908737135)
+TIME_TRACKING_CHANNEL_ID = os.getenv("TIME_TRACKING_CHANNEL_ID", 1413643164887285951)
+
+
+# # Role mention IDs
+LOW_RANK_ROLE_MENTION = "<@&1328338426713342023>"
+MID_RANK_ROLE_MENTION = "<@&1328338484104134688>"
+HIGH_RANK_ROLE_MENTION = "<@&1328338542132330506>"
+
+# LOW_RANK_ROLE_MENTION = "LaRPING"
+# MID_RANK_ROLE_MENTION = "MiRPING"
+# HIGH_RANK_ROLE_MENTION = "HiRPING"
+
+DATA_FILE = "info.json"
+file_lock = asyncio.Lock()
+
+LOW_RANKS = [
+    "Customer",
+    "Trainee",
+    "Junior Operator",
+    "Senior Operator",
+    "Head Operator",
+]
+MID_RANKS = ["Shift Leader", "Supervisor", "Assistant Manager", "General Manager"]
+HIGH_RANKS = [
+    "Junior Director",
+    "Senior Director",
+    "Head Director",
+    "Corporate Intern",
+    "Junior Corporate",
+    "Senior Corporate",
+    "Head Corporate",
+    "Automation",
+    "Chief Human Resources Officer",
+    "Chief Public Relations Officer",
+    "Chief Operating Officer",
+    "Chief Administrative Officer",
+    "Developer",
+    "Vice Chairman",
+    "Chairman",
+]
+
+async def changes_txt(message:str):
+    """Append a message to changes.txt with a timestamp."""
+    timestamp = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime())
+    async with aiofiles.open("changes.txt", "a", encoding="utf-8") as f:
+        # current_file = f.read()
+        await f.write(f"[{timestamp}] {message}\n")
+
+async def safe_send(
+    message: str,
+    channel_id: Optional[int] = None,
+    # channel: Optional[
+    #     Union[discord.TextChannel, discord.Thread, discord.DMChannel]
+    # ] = None,
+    # bot: Optional[discord.Client] = bot,
+    message_critical: bool = True,
+) -> Optional[Union[discord.Message, bool]]:
+    """
+    Safely send a message to a channel with retries.
+
+    - Retries indefinitely for connection/HTTP issues.
+    - Retries up to 3 times for Forbidden errors.
+    - Works in both discord.py and Pycord.
+    """
+
+    # if channel is None:
+    #     if bot is None or channel_id is None:
+    #         raise ValueError("Must provide either channel or (bot and channel_id).")
+    #     if hasattr(bot, "get_channel") and isinstance(channel, (discord.TextChannel, discord.Thread, discord.DMChannel)):
+    #         channel = bot.get_channel(channel_id)
+    #     else:
+    #         ValueError("Bot does not support get_channel method or was given a unsupported channel type (PrivateChannel, etc.).")
+    #     if channel is None:
+    #         raise ValueError(f"Channel with ID {channel_id} not found.")
+
+    if channel_id is not None:
+        channel = bot.get_channel(channel_id)
+        if channel is None:
+            raise ValueError(f"Channel with ID {channel_id} not found.")
+    else:
+        raise ValueError("Must provide channel_id.")
+    
+    forbidden_attempts = 0
+    attempts = 0
+
+    while True:
+        try:
+            from typing import cast
+            channel = cast(discord.abc.Messageable, channel)
+
+            if not hasattr(channel, "send"):
+                raise ValueError("Provided channel does not support sending messages.")
+
+            return await channel.send(message)
+        except discord.Forbidden as e:
+            forbidden_attempts += 1
+
+            if os.getenv("ENVIRONMENT_MODE") == "local_debug":
+                logger.debug(
+                    f"safe_send: Forbidden when attempting to send. Understood it's {str(os.getenv('ENVIROMENT_MODE'))}. Will ignore."
+                )
+                return True
+
+            logger.error(f"safe_send: Forbidden (attempt {forbidden_attempts}) - {e}")
+            if forbidden_attempts >= 3:
+                logger.error("safe_send: Giving up after 3 Forbidden attempts.")
+                return False
+            await asyncio.sleep(2)  # small backoff before retry
+        except (discord.HTTPException, discord.ConnectionClosed, OSError) as e:
+            logger.warning(f"safe_send: transient error, retrying - {e}")
+            attempts += 1
+
+            if not message_critical and attempts >= 5:
+                logger.warning(
+                    "safe_send: Attempting to safely send messages has failed. Function returning False."
+                )
+                return False
+            await asyncio.sleep(2)  # backoff before retry
+        except Exception as e:
+            logger.exception(f"safe_send: unexpected error - {e}")
+            attempts += 1
+            if not message_critical and attempts >= 5:
+                logger.warning(
+                    "safe_send: Attempting to safely send messages has failed. Function returning False."
+                )
+                return False
+
+
+from string import ascii_uppercase
+
+
+async def convert_to_simplified(data):
+    user_roles = data["user_roles"]
+
+    # Create unique role IDs (preserve order)
+    unique_roles = list(dict.fromkeys(user_roles.values()))
+
+    if len(unique_roles) > len(ascii_uppercase):
+        raise ValueError("Too many unique roles to map to single letters.")
+
+    # Map shorthand letters (A, B, C, …) to role IDs
+    role_map = {
+        letter: role_id for letter, role_id in zip(ascii_uppercase, unique_roles)
+    }
+
+    # Invert role_map for lookup
+    reverse_map = {role_id: letter for letter, role_id in role_map.items()}
+
+    # Replace role IDs with shorthand
+    simplified_user_roles = {
+        user: reverse_map[role] for user, role in user_roles.items()
+    }
+
+    # Final structure
+    simplified = {"role_map": role_map, "user_roles": simplified_user_roles}
+    return simplified
+
+
+async def convert_from_simplified(simplified_data):
+    role_map = simplified_data["role_map"]
+    user_roles = simplified_data["user_roles"]
+
+    expanded_user_roles = {
+        user: role_map[shorthand] for user, shorthand in user_roles.items()
+    }
+
+    expanded = {"user_roles": expanded_user_roles}
+    return expanded
+
+
+async def load_data(file_name: str = DATA_FILE):
+    async with file_lock:
+        try:
+            async with aiofiles.open(file_name, "r", encoding="utf-8") as file:
+                contents = await file.read()
+                data = json.loads(contents)  # string → dict
+                if "role_map" in data:  # already simplified
+                    data = await convert_from_simplified(data)
+                return data
+        except (FileNotFoundError, json.JSONDecodeError):
+            logger.info("Data file missing or corrupt. Creating fresh.")
+            return {"user_roles": {}}
+
+
+async def save_data(data, file_name: str = DATA_FILE):
+    async with file_lock:
+        try:
+            data["epoch_last_edited"] = time.time()
+            simplified = await convert_to_simplified(data)
+            async with aiofiles.open(file_name, "w", encoding="utf-8") as f:
+                await f.write(json.dumps(simplified, ensure_ascii=False, indent=2))
+            logger.info("Data saved.")
+        except Exception as e:
+            logger.error(f"Failed saving data: {e}")
+
+
+data = asyncio.run(load_data())
+
+
+def get_rank_category_and_mention(rank_name):
+    if rank_name in LOW_RANKS:
+        return CUSTOMER_HEAD_OP_CHANNEL, LOW_RANK_ROLE_MENTION
+    elif rank_name in MID_RANKS:
+        return SHIFT_LEADER_GEN_MANAGER_CHANNEL, MID_RANK_ROLE_MENTION
+    elif rank_name in HIGH_RANKS:
+        return JUNIOR_DIRECTOR_CHAIRMAN_CHANNEL, HIGH_RANK_ROLE_MENTION
+    return None, None
+
+
+def get_rank_index(rank_name):
+    if rank_name in LOW_RANKS:
+        return LOW_RANKS.index(rank_name)
+    elif rank_name in MID_RANKS:
+        return len(LOW_RANKS) + MID_RANKS.index(rank_name)
+    elif rank_name in HIGH_RANKS:
+        return len(LOW_RANKS) + len(MID_RANKS) + HIGH_RANKS.index(rank_name)
+    return -1
+
+
+async def retrieve_roproxy_url(url):
+    url = url.replace("roblox.com", "roproxy.com")
+    return url
+
+
+async def fetch_roles(session, group_id):
+    base_url = f"https://groups.roblox.com/v1/groups/{group_id}/roles"
+    try:
+        async with session.get(
+            base_url, timeout=aiohttp.ClientTimeout(total=10)
+        ) as response:
+            if response.status == 429:
+                # Rate limited — switch to RoProxy
+                roproxy_url = retrieve_roproxy_url(base_url)
+                logger.warning(f"Rate limited. Retrying with RoProxy: {roproxy_url}")
+                async with session.get(
+                    roproxy_url, timeout=aiohttp.ClientTimeout(total=10)
+                ) as proxy_response:
+                    if proxy_response.status != 200:
+                        logger.error(f"RoProxy failed: {proxy_response.status}")
+                        return []
+                    data = await proxy_response.json()
+                    return data.get("roles", [])
+            elif response.status != 200:
+                logger.error(f"Failed to fetch roles: {response.status}")
+                return []
+            data = await response.json()
+            return data.get("roles", [])
+    except Exception as e:
+        logger.error(f"Error fetching roles: {e}")
+        return []
+
+async def fetch_users_in_role(session, group_id, role_id, role_member_count="?"):
+    users = []
+    cursor = ""
+    logger.debug(f"Fetching users for role {role_id} in group {group_id}.")
+
+    time_start = time.time()
+    elapsed_time = 0.0
+
+    from rich.progress import Progress, TextColumn, BarColumn, TimeElapsedColumn
+
+    # Create the progress bar ONCE
+    with Progress(
+        TextColumn(
+            f"Fetched {{task.completed}}/{{task.total}} ({{task.percentage:>3.0f}}%) users for role {role_id}"
+        ),
+        BarColumn(),
+        TextColumn("[{task.fields[ups]} u/s]"),
+        TextColumn("({task.fields[time_remaining]} left)"),
+        TimeElapsedColumn(),
+        refresh_per_second=5,
+        transient=True,  # hides when done
+    ) as progress:
+
+        total_count = (
+            int(role_member_count) if role_member_count not in (None, "?") else 0
+        )
+        task = progress.add_task(
+            "Fetching", total=total_count, ups="0", time_remaining="?"
+        )
+
+        while True:
+            url = f"https://groups.roblox.com/v1/groups/{group_id}/roles/{role_id}/users?limit=100&sortOrder=Asc"
+            if ENABLE_ROPROXY_USAGE_FIRST_PRIORITY:
+                url = await retrieve_roproxy_url(url)
+
+            if cursor:
+                url += f"&cursor={cursor}"
+
+            try:
+                async with session.get(
+                    url, timeout=aiohttp.ClientTimeout(total=10)
+                ) as response:
+                    if response.status != 200 and not response.status == 429:
+                        logger.error(
+                            f"Failed to fetch users for role {role_id}: {response.status}"
+                        )
+                        return users
+
+                    data = await response.json()
+
+                    if response.status == 429:
+                        logger.warning(
+                            f"Rate limited on Roblox API for role {role_id}."
+                        )
+
+                        async with session.get(
+                            url, timeout=aiohttp.ClientTimeout(total=10)
+                        ) as response:
+                            # Rate limited — switch to RoProxy
+                            roproxy_url = retrieve_roproxy_url(url)
+                            logger.warning(
+                                f"Rate limited. Retrying with RoProxy: {roproxy_url}"
+                            )
+                            async with session.get(
+                                roproxy_url, timeout=aiohttp.ClientTimeout(total=10)
+                            ) as proxy_response:
+                                if proxy_response.status != 200:
+                                    logger.error(
+                                        f"RoProxy failed: {proxy_response.status}"
+                                    )
+
+                            data = await proxy_response.json()
+
+                    users.extend(data["data"])
+                    cursor = data.get("nextPageCursor", "")
+
+                    # Calculate stats
+                    if total_count:
+                        try:
+                            percentage: Union[str, float] = (
+                                math.ceil((len(users) / total_count * 100) * 100) / 100
+                            )
+                        except ZeroDivisionError as e:
+                            logger.error(f"ZeroDivisionError for role {role_id}: {e}")
+                            percentage = "?"
+                    else:
+                        percentage = "?"
+
+                    if len(users) == total_count and total_count:
+                        logger.debug(
+                            f"Fetched all {total_count} users for role {role_id}."
+                        )
+                        percentage = 100.0
+
+                    current_time = time.time()
+                    since_last_cycle = current_time - (time_start + elapsed_time)
+                    elapsed_time = current_time - time_start
+
+                    try:
+                        users_per_sec = (
+                            math.ceil(len(data["data"]) / since_last_cycle * 10) / 10
+                        )
+                    except ZeroDivisionError:
+                        users_per_sec = "?"
+
+                    average_users_per_sec = (
+                        math.ceil(len(users) / elapsed_time * 10) / 10
+                    )
+
+                    estimated_remaining_time = "?"
+                    if average_users_per_sec == 0:
+                        estimated_remaining_time = "?"
+                    else:
+                        try:
+                            users_remaining = total_count - len(users) if total_count else 0
+                            estimated_remaining_time = (
+                                time.strftime(
+                                    "%H:%M:%S",
+                                    time.gmtime(
+                                        float(users_remaining)
+                                        / float(average_users_per_sec)
+                                    ),
+                                )
+                                + " "
+                            )
+                        except (ZeroDivisionError, ValueError):
+                            estimated_remaining_time = "?"
+
+                    # Update the SAME progress task
+                    progress.update(
+                        task,
+                        completed=len(users),
+                        ups=f"{users_per_sec}",
+                        time_remaining=estimated_remaining_time,
+                    )
+
+                    if not cursor:
+                        break
+
+            except Exception as e:
+                logger.error(f"Error fetching users for role {role_id}: {e}")
+                break
+
+    logger.info(
+        f"{role_id}: Completed fetching. We have {len(users)} users for role {role_id}."
+    )
+    return users
+
+
+async def to_file_discord(content: str, name: str):
+    try:
+        file_content = BytesIO(content.encode("utf-8"))
+        file_content.seek(0)
+        discord_file = discord.File(file_content, filename=name)
+        return discord_file
+    except Exception as e:
+        logger.error(f"Error creating Discord file: {e}")
+        return None
+
+
+@bot.slash_command(name="rinse_test", description="Test the bot's response time.")
+async def fling_test(interaction: discord.Interaction):
+    received_rough = time.monotonic()
+
+    # Defer the response so you can edit it later
+    await interaction.response.defer(ephemeral=True)
+
+    before = time.monotonic()
+    # Simulate some processing delay (optional)
+    await interaction.edit_original_response(content="Pinging...")
+    after = time.monotonic()
+
+    latency = round((after - before) * 1000)
+    await interaction.edit_original_response(
+        content=f"🧼 Foam response time: {latency} ms\nRequest received at {time.gmtime(received_rough)} sec — suds flow optimal 🫧"
+    )
+
+    logger.info("Fling test command executed successfully.")
+
+
+csv_jdplus_str = ""
+try:
+    with open("jdplus_users.csv", "r", encoding="utf-8") as f:
+        csv_jdplus_str = f.read()
+except (FileNotFoundError, json.JSONDecodeError) as e:
+    logger.info("CSV file missing or corrupt. Creating fresh.")
+    csv_jdplus_str = ""
+except Exception as e:
+    logger.error(f"Error reading CSV file: {e}")
+    csv_jdplus_str = ""
+
+jdplus_users = 0
+
+
+@bot.slash_command(
+    name="csv_jdplus", description="Returns a CSV with Junior Director+ users' ID."
+)
+async def csv_jdplus(interaction: discord.Interaction):
+    await interaction.response.defer(ephemeral=True)
+
+    logger.debug(f"Current CSV string length: {len(csv_jdplus_str)}")
+    logger.debug(csv_jdplus_str)
+
+    file = await to_file_discord(csv_jdplus_str, "jdplus_users.csv")
+
+    amount_of_ids = csv_jdplus_str.count(",") + 1 if csv_jdplus_str else 0
+
+    if file is None:
+        await interaction.followup.send(
+            content="❌ Error creating CSV file.\nFile is None. Please contact <@1114892999474815126>.",
+            ephemeral=True,
+        )
+        return
+
+    try:
+        await interaction.followup.send(
+            content=f"Here is the CSV file with Junior Director+ users' IDs ({amount_of_ids} users):",
+            ephemeral=True,
+            file=file,
+        )
+
+        logger.info("CSV Junior Director+ command executed successfully.")
+    except Exception as e:
+        logger.error(f"Error sending CSV file: {e}")
+        try:
+            await interaction.followup.send(
+                content="❌ Error sending CSV file.", ephemeral=True
+            )
+        except Exception as e:
+            logger.error(f"Error sending error message: {e}")
+
+
+pickup = True
+
+ALL_RANKS = []
+ALL_RANKS.extend(LOW_RANKS)
+ALL_RANKS.extend(MID_RANKS)
+ALL_RANKS.extend(HIGH_RANKS)
+
+LOW_HIGH_RANKS = []
+LOW_HIGH_RANKS.extend(LOW_RANKS)
+LOW_HIGH_RANKS.extend(MID_RANKS)
+
+global LOOP_COUNT, AWAITING_SHUTDOWN
+
+AWAITING_SHUTDOWN = False
+LOOP_COUNT = 0
+note = []
+# abcdefgh
+
+
+async def monitor_role_changes(disallowed_rank_names:Optional[list]=None):
+    global LOOP_COUNT, AWAITING_SHUTDOWN, shutdown_scheduled, pickup, csv_jdplus_str
+    LOOP_COUNT += 1
+
+    asyncio.create_task(
+        safe_send(
+            f"🧼 Starting a new monitoring loop... All alright I think? *informs <@1114892999474815126>*\n-# disallowed_rank_names: ``{disallowed_rank_names}``",
+            TIME_TRACKING_CHANNEL_ID,
+        )
+    )
+
+    async with aiohttp.ClientSession() as session:
+        file_path = "pickup_last_checking.txt"
+
+        pickup = False
+        pickup_rank = ""
+        if os.path.exists(file_path):
+            with open(file_path, "r", encoding="utf-8") as f:
+                last_checking = f.read().strip()
+                logger.info(f"Last checking was at: {last_checking}")
+                pickup = True
+                pickup_rank = last_checking
+        else:
+            print(f"{file_path} does not exist.")
+        
+        if pickup and disallowed_rank_names and str(pickup_rank) in disallowed_rank_names:
+            pickup = False
+
+        while True:
+            times = {}
+            start_time = time.time()
+            logger.info("🔎 Checking for role changes...")
+
+            csv_jdplus_str_in_progress = ""
+
+            logger.info("Fetching roles from Roblox API...")
+            roles = await fetch_roles(session, GROUP_ID)
+            if not roles:
+                logger.debug(
+                    "No roles found or failed to fetch roles. Retrying in 10 seconds..."
+                )
+                await asyncio.sleep(10)
+                continue
+
+            logger.debug(f"Fetched {len(roles)} roles from Roblox API.")
+
+            # print(f"\n\n{disallowed_rank_names}\n{roles}\n\n")
+
+            if disallowed_rank_names:
+                logger.debug(
+                    "Removing roles from fetched list so only goes through the restricted role."
+                )
+                # iterate over role names directly
+                for role_name in disallowed_rank_names:
+                    # find the role object in roles that matches this name
+                    roles = [r for r in roles if r["name"] != role_name]
+
+                logger.debug(
+                    f"Removed roles to restricted set of roles. \nRestricted to:{disallowed_rank_names}\nWe have {roles}"
+                )
+
+            all_changes_loop = {}
+
+            roles_dict = {role["id"]: role["name"] for role in roles}
+            data = await load_data()
+
+            roles_processed = 0
+            users_checked = 0
+
+            logger.debug("Starting role change checks, for-loop for roles.")
+            total_roles = len(roles)
+            for i_roles, role in enumerate(roles, start=1):
+                if pickup:
+                    if role["name"] != pickup_rank:
+                        logger.info(
+                            f"Skipping role {role['name']} until we reach pickup."
+                        )
+                        continue
+                    else:
+                        logger.info(
+                            f"Reached pickup rank: {pickup_rank}. Resuming checks."
+                        )
+                        pickup = False
+                        # Remove the pickup file after reaching the rank
+                        if os.path.exists(file_path):
+                            os.remove(file_path)
+                            logger.info(f"Removed pickup file: {file_path}")
+
+                cur_role_start = time.monotonic()
+
+                with open("pickup_last_checking.txt", "w", encoding="utf-8") as f:
+                    f.write(role["name"])
+
+                all_changes_role = []
+
+                logger.info(
+                    f"Starting the loop for {role['name']} with ID {role['id']}."
+                )
+
+                await bot.change_presence(
+                    activity=discord.Game(f"Monitoring role changes: {role['name']}")
+                )
+
+                # Queued send - queue messages to max chars to limit messages sent.
+                enable_queued_send = role["name"] not in HIGH_RANKS
+                queue = ""
+
+                logger.debug(
+                    f"Fetching users for role {role['name']} with ID {role['id']}."
+                )
+                users = await fetch_users_in_role(
+                    session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+                )
+                logger.debug("Starting role change checks, for-loop for users.")
+                total_users = len(users)
+                for i_users, user in enumerate(users, start=1):
+                    logger.debug(
+                        f"[U {i_users}/{total_users}] Processing {user['username']} with ID {user['userId']}. [R {i_roles}/{total_roles}]"
+                    )
+
+                    user_id = str(user["userId"])
+                    current_rank = role["name"]
+                    current_index = get_rank_index(current_rank)
+
+                    if role["name"] in HIGH_RANKS:
+                        include_comma = "" if csv_jdplus_str_in_progress == "" else ","
+                        csv_jdplus_str_in_progress = (
+                            f"{csv_jdplus_str_in_progress}{include_comma}{user_id}"
+                        )
+                        logger.debug(
+                            f"Added {user['username']} ({user_id}) to Junior Director+ CSV string."
+                        )
+                        logger.debug(
+                            f"Current CSV string length: {len(csv_jdplus_str_in_progress)}"
+                        )
+
+                    if user_id in data["user_roles"]:
+                        prev_role_id = data["user_roles"][user_id]
+                        prev_role_name = roles_dict.get(prev_role_id, "Unknown")
+                        prev_index = get_rank_index(prev_role_name)
+
+                        # logger.debug(f"Promotion Check: {user["username"]}")
+                        # logger.debug(f"has_proper_rank_index  {current_index != -1}")
+                        # logger.debug(f"prev_rank_proper_index {prev_index != -1}")
+                        # logger.debug(f"Changes: {current_index != prev_index}")
+
+                        if (
+                            current_index != -1
+                            and prev_index != -1
+                            and current_index != prev_index
+                        ):
+
+                            action = (
+                                "promoted" if current_index > prev_index else "demoted"
+                            )
+                            channel_id, mention = get_rank_category_and_mention(
+                                current_rank
+                            )
+
+                            # log_in_mt_too = False
+                            prev_channel_id, prev_mention = (
+                                get_rank_category_and_mention(prev_role_name)
+                            )
+
+                            if (
+                                prev_channel_id == JUNIOR_DIRECTOR_CHAIRMAN_CHANNEL
+                                and action == "demoted"
+                            ):
+                                channel_id = JUNIOR_DIRECTOR_CHAIRMAN_CHANNEL
+
+                            if channel_id:
+                                channel = bot.get_channel(channel_id)
+                                channel_name = getattr(channel, "name", "N/A")
+                                
+                                del channel
+
+                                # if not isinstance(channel, discord.TextChannel):
+                                #     channelid = ""
+
+                                #     if channel is not None and hasattr(channel, "id"):
+                                #         channelid = channel.id
+
+                                #     logger.exception(
+                                #         f"Channel {channelid} is not a TextChannel."
+                                #     )
+
+                                # if True or isinstance(channel, (discord.TextChannel)):
+                                profile_link = f"[{user['username']}](<https://www.roblox.com/users/{user['userId']}/profile>)"
+                                message = f"{profile_link} has been {action} from {prev_role_name} to {current_rank} {mention}"
+
+                                message_obj = None
+
+                                if enable_queued_send:
+                                    if (
+                                        len(queue) + len(message)
+                                        > MAX_CHARS_DISCORD
+                                    ):
+                                        logger.info(
+                                            f"📢 Releasing (aka sending) queued message to {channel_name} ({channel_id})"
+                                        )
+                                        asyncio.create_task(
+                                            safe_send(queue, channel_id=channel_id)
+                                        )
+                                        asyncio.create_task(
+                                            changes_txt(queue)
+                                        )
+                                        queue = ""
+                                    queue += message + "\n"
+                                    logger.debug(f"Queued message: {message}")
+
+                                    if user == users[-1]:
+                                        asyncio.create_task(
+                                            safe_send(queue, channel_id=channel_id)
+                                        )
+                                else:
+                                    asyncio.create_task(
+                                        safe_send(message, channel_id=channel_id)
+                                    )
+                                    asyncio.create_task(
+                                        changes_txt(message)
+                                    )
+
+                                logger.info(f"📢 {message}")
+
+                                rank_map = {
+                                    **dict.fromkeys(LOW_RANKS, "Low"),
+                                    **dict.fromkeys(MID_RANKS, "Mid"),
+                                    **dict.fromkeys(HIGH_RANKS, "High"),
+                                }
+
+                                staff_team = rank_map.get(current_rank, "Unknown")
+
+                                change = {
+                                    "user": user["username"],
+                                    "userId": user["userId"],
+                                    "action": action,
+                                    "from": prev_role_name,
+                                    "to": current_rank,
+                                    "mention": mention,
+                                    "message_id": getattr(message_obj, "id", None),
+                                    "channel_id": channel_id,
+                                    "timestamp_discovered_change": time.time(),
+                                    "staff_team": staff_team,
+                                }
+
+                                # asyncio.create_task(user_rank_history.update_user_history(
+                                #     str(user_id), change
+                                # ))
+
+                                all_changes_loop.setdefault(staff_team, []).append(
+                                    change
+                                )
+                                all_changes_role.append(change)
+                                # else:
+                                #     logger.exception(
+                                #         f"Channel {getattr(channel, 'name', None)} ({getattr(channel, 'id', None)}) is not a TextChannel or NewsChannel."
+                                #     )
+                    data["user_roles"][user_id] = role["id"]
+                    users_checked += 1
+
+                    # asyncio.create_task(user_rank_history.ensure_user_exists(user_id, user["username"], current_rank))
+                roles_processed += 1
+                cur_role_end = time.monotonic()
+                cur_role_time_taken = cur_role_end - cur_role_start
+                times[role["name"]] = cur_role_time_taken
+
+            await save_data(data)
+            end_time = time.time()
+            duration = end_time - start_time
+
+            with open(
+                "app_changes_log.json", "w", encoding="utf-8"
+            ) as changes_log_file:
+                json.dump(
+                    all_changes_loop,
+                    changes_log_file,
+                    ensure_ascii=False,
+                    indent=2,
+                )
+
+            summary = (
+                f"## 📊 **Cycle Summary**\n"
+                f"* ✅ Processed {roles_processed}/{len(roles)} roles.\n"
+                f"* 👥 Checked **{users_checked}** user entries.\n"
+                f"* ⏱ Time taken: **{duration:.2f} seconds**.\n"
+                f"* 🕐 Started at <t:{int(start_time)}:T>, ended at <t:{int(end_time)}:T>.\n"
+                f"* This loop is disallowed for ``{str(disallowed_rank_names)}``\n"
+                "-# Ping: <@1114892999474815126>"
+            )
+            # time_channel = bot.get_channel(TIME_TRACKING_CHANNEL_ID)
+            # if time_channel and isinstance(time_channel, discord.TextChannel):
+            #     asyncio.create_task(safe_send(summary, channel=time_channel))
+            asyncio.create_task(safe_send(summary, channel_id=TIME_TRACKING_CHANNEL_ID))
+
+            file_path = "pickup_last_checking.txt"
+
+            if os.path.exists(file_path):
+                os.remove(file_path)
+                print(f"{file_path} has been deleted.")
+            else:
+                print(f"{file_path} does not exist.")
+            pickup = False
+
+            logger.info(f"✅ Cycle complete. {duration:.2f} seconds taken.")
+
+            # print("\n"+csv_jdplus_str_in_progress+"\n")
+
+            csv_jdplus_str = csv_jdplus_str_in_progress
+            csv_jdplus_str_in_progress = ""
+
+            logger.debug(times)
+
+            latest_app_hash = hashlib.sha256(open("app.py", "rb").read()).hexdigest()
+
+            # with open("app_changes_log.json", "w", encoding="utf-8") as changes_log_file:
+            #     json.dump(all_changes_loop, changes_log_file, ensure_ascii=False, indent=2)
+            # Hiya +345787877878787878787
+
+            shutdown_scheduled = False
+
+            if AWAITING_SHUTDOWN:
+                shutdown_scheduled = True
+                logger.info(
+                    "Already awaiting shutdown. Proceeding to close bot for this instance of loop..."
+                )
+
+            if latest_app_hash != APP_FILE_HASH:
+                logger.info("App file has changed. Restarting bot...")
+                shutdown_scheduled = True
+                # time_channel = bot.get_channel(TIME_TRACKING_CHANNEL_ID)
+                # if time_channel and isinstance(time_channel, discord.TextChannel):
+                #     asyncio.create_task(
+                #         safe_send(
+                #             f"# 🔄 App file changed, bot will shutdown. \n We are at the end of the monitor role changes loop, will shutdown...",
+                #             channel
+                #         ),
+                #     )
+
+                await safe_send(
+                    f"# 🔄 App file changed, bot will shutdown. \n We are at the end of the monitor role changes loop, will shutdown...",
+                    TIME_TRACKING_CHANNEL_ID
+                )
+
+                AWAITING_SHUTDOWN = True
+
+            if shutdown_scheduled:
+                logger.info("Shutdown scheduled. Checking for other loops...")
+                if LOOP_COUNT == 1:
+                    logger.info("This is the only loop. Proceeding to close bot...")
+                else:
+                    logger.info(f"There are {LOOP_COUNT} loops...")
+                    logger.info("Setting AWAITING_SHUTDOWN to True...")
+                    LOOP_COUNT -= 1
+                    AWAITING_SHUTDOWN = True
+                    logger.info("Exiting this monitor loop without closing bot...")
+                    return True
+
+                await bot.close()
+                logger.info("Bot closed successfully.")
+                return True
+
+            await asyncio.sleep(180)  # Check every 3 minutes
+
+
+async def safe_monitor_wrapper(disallowed_rank_names=None):
+    quit_func = None
+    while True:
+        try:
+            quit_func = await monitor_role_changes(disallowed_rank_names)
+        except (KeyboardInterrupt, SystemExit):
+            logger.info("Shutdown signal received. Exiting monitor loop.")
+            logger.info("saving data before exit...")
+            await save_data(data)
+            break
+        except Exception as e:
+            logger.error(f"‼️ monitor_role_changes crashed: {e}")
+            await asyncio.sleep(10)
+        # finally:
+        if quit_func == True:
+            logger.info(
+                "Exiting safe monitor wrapper as monitor_role_changes returned quit=True."
+            )
+            break
+
+
+@bot.event
+async def on_ready():
+    get_latest_git_commitid = None
+    try:
+        import get_latest_git_commitid
+    except (ImportError, NameError) as e:
+        logger.error(
+            f"Failed to import get_latest_git_commitid: {e}\n You may ignore this error."
+        )
+
+    if not bot.user:
+        logger.error("Bot user is not set. Exiting.")
+        sys.exit(1)
+
+    logger.info(f"Logged in as {bot.user.name}")
+    await bot.change_presence(activity=discord.Game("Monitoring role changes"))
+    try:
+        if get_latest_git_commitid is not None:
+            APP_FILE_GIT_HASH = get_latest_git_commitid.get_latest_commit(
+                "app.py", short=True
+            )
+        else:
+            APP_FILE_GIT_HASH = "N/A"
+    except Exception as e:
+        logger.error(f"Failed to get latest git commit: {e}")
+        APP_FILE_GIT_HASH = "N/A"
+
+    print("\n\n")
+    logger.info(Fore.GREEN + "WELCOME TO RANKSPY!" + Style.RESET_ALL)
+    logger.info(attribution)
+    # logger.info("Latest Version: N/A")
+    logger.info(
+        f"Latest Git Commit ID for app.py: {APP_FILE_GIT_HASH} + Further non-commited revisions."
+    )
+    logger.info(f"App file hash: {APP_FILE_HASH}")
+    print("\n\n")
+
+    try:
+        # Sync the command tree globally
+        await bot.sync_commands()
+
+        print("Command tree synced globally!")
+    except Exception as e:
+        print(f"Failed to sync command tree: {e}")
+
+    logger.info("Starting monitor_role_changes task...")
+    # bot.loop.create_task(safe_monitor_wrapper())
+    logger.info(
+        "Starting monitor_role_changes restricted to High Ranks (MGMT+) & Middle Ranks (ST) only."
+    )
+    bot.loop.create_task(safe_monitor_wrapper(LOW_RANKS))
+
+    logger.info("Running monitor_role_changes restricted to Entry Team.")
+    all_except_ET = []
+    all_except_ET.extend(MID_RANKS)
+    all_except_ET.extend(HIGH_RANKS)
+    print(all_except_ET)
+    bot.loop.create_task(safe_monitor_wrapper(all_except_ET))
+
+    # bot.loop.create_task(user_rank_history.history_writer())
+
+
+if __name__ == "__main__":
+    if TOKEN is None:
+        logger.error("DISCORD_BOT_TOKEN not set in .env file.")
+        sys.exit(1)
+    try:
+        bot.run(TOKEN)
+    except Exception as e:
+        logger.error(f"Error running bot: {e}")
+
