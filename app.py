@@ -54,23 +54,11 @@ HIGH_RANK_ROLE_MENTION = "<@&1328338542132330506>"
 DATA_FILE = "info.json"
 file_lock = asyncio.Lock()
 
-LOW_RANKS = [
-    "Customer",
-    "Trainee",
-    "Junior Operator",
-    "Senior Operator",
-    "Head Operator",
-]
+LOW_RANKS = ["Customer", "Trainee", "Junior Operator", "Senior Operator", "Head Operator"]
 MID_RANKS = ["Shift Leader", "Supervisor", "Assistant Manager", "General Manager"]
-HIGH_RANKS = [
-    "Junior Director",
-    "Senior Director",
-    "Head Director",
-    "Corporate Intern",
-    "Junior Corporate",
-    "Senior Corporate",
-    "Head Corporate",
-    "Automation",
+MGMT_RANKS = ["Junior Director", "Senior Director", "Head Director"]
+CORP_RANKS = ["Corporate Intern", "Junior Corporate", "Senior Corporate"]
+LS_RANKS = [
     "Chief Human Resources Officer",
     "Chief Public Relations Officer",
     "Chief Operating Officer",
@@ -79,6 +67,9 @@ HIGH_RANKS = [
     "Vice Chairman",
     "Chairman",
 ]
+ET_RANKS = LOW_RANKS
+ST_RANKS = MID_RANKS
+HIGH_RANKS = MGMT_RANKS + CORP_RANKS + LS_RANKS
 
 ENABLE_ROPROXY_USAGE_FIRST_PRIORITY = False
 
@@ -175,7 +166,9 @@ async def fetch_users_in_role(
 
             data = await response.json()
 
-            if response.status == 429:
+            if response.status == 429 or str(response.status).startswith("5"):
+                if str(response.status).startswith("5"):
+                    logger.warn("FUIR: 5xx error. This might be a sign of servers failing or block.")
                 roproxy_url = await retrieve_roproxy_url(url)
                 async with session.get(roproxy_url) as proxy_response:
                     if proxy_response.status != 200:
@@ -286,7 +279,7 @@ async def monitor_role_changes(disallowed_rank_names=None):
                             if channel_id:
                                 channel = bot.get_channel(channel_id)
                                 if channel:
-                                    profile_link = f"[{user['username']}](<https://www.roblox.com/users/{user['userId']}/profile>)"
+                                    profile_link = f"[{user['username']}](<https://www.roblox.com/users/{user['userId']}/profile>)" # ({user['userId']})"
                                     message = f"{profile_link} has been {action} from {prev_role_name} to {current_rank} {mention}"
                                     message_obj = await channel.send(message)
 
@@ -329,57 +322,55 @@ async def safe_monitor_wrapper(disallowed_rank_names=None):
             logger.error(f"‼️ monitor_role_changes crashed: {e}")
             await asyncio.sleep(10)
 
+# @bot.slash_command(name="rinse_test", description="Test the bot's response time.")
+# async def rinse_test(ctx: discord.ApplicationContext):
+#     received_rough = time.monotonic()
+#     await ctx.defer(ephemeral=True)
+#     before = time.monotonic()
+#     await ctx.edit(content="Pinging...")
+#     after = time.monotonic()
+#     latency = round((after - before) * 1000)
+#     await ctx.edit(
+#         content=f"🧼 Foam response time: {latency} ms\nRequest received at {time.gmtime(received_rough)} sec — suds flow optimal 🫧"
+#     )
 
-@bot.slash_command(name="rinse_test", description="Test the bot's response time.")
-async def rinse_test(ctx: discord.ApplicationContext):
-    received_rough = time.monotonic()
-    await ctx.defer(ephemeral=True)
-    before = time.monotonic()
-    await ctx.edit(content="Pinging...")
-    after = time.monotonic()
-    latency = round((after - before) * 1000)
-    await ctx.edit(
-        content=f"🧼 Foam response time: {latency} ms\nRequest received at {time.gmtime(received_rough)} sec — suds flow optimal 🫧"
-    )
+# @bot.slash_command(
+#     name="threads_tasks",
+#     description="List all thread names and their asyncio tasks",
+#     default_member_permissions=discord.Permissions(administrator=True),
+# )
+# async def threads_tasks_apps_command(ctx: discord.ApplicationContext):
+#     threads_info = await threads_tasks()
+#     output = []
 
+#     # Build the text output
+#     for name, ident, tasks in threads_info:
+#         output.append(f"**Thread:** {name} (id={ident})")
+#         if tasks:
+#             output.append("  Tasks:")
+#             for t in tasks:
+#                 output.append(f"   - {t}")
+#         else:
+#             output.append("  No asyncio tasks")
 
-@bot.slash_command(
-    name="threads_tasks",
-    description="List all thread names and their asyncio tasks",
-    default_member_permissions=discord.Permissions(administrator=True),
-)
-async def threads_tasks_apps_command(ctx: discord.ApplicationContext):
-    threads_info = await threads_tasks()
-    output = []
+#     # Join into one big string
+#     full_text = "\n".join(output)
 
-    # Build the text output
-    for name, ident, tasks in threads_info:
-        output.append(f"**Thread:** {name} (id={ident})")
-        if tasks:
-            output.append("  Tasks:")
-            for t in tasks:
-                output.append(f"   - {t}")
-        else:
-            output.append("  No asyncio tasks")
+#     # Split into chunks of <=2000 characters
+#     split_per_two_thousand = [
+#         full_text[i : i + 2000] for i in range(0, len(full_text), 2000)
+#     ]
 
-    # Join into one big string
-    full_text = "\n".join(output)
+#     # Debug logging after the split
+#     for idx, part in enumerate(split_per_two_thousand):
+#         logging.debug(f"Chunk {idx} length: {len(part)}")
 
-    # Split into chunks of <=2000 characters
-    split_per_two_thousand = [
-        full_text[i : i + 2000] for i in range(0, len(full_text), 2000)
-    ]
+#     # Send first chunk as the initial response
+#     await ctx.respond(split_per_two_thousand[0])
 
-    # Debug logging after the split
-    for idx, part in enumerate(split_per_two_thousand):
-        logging.debug(f"Chunk {idx} length: {len(part)}")
-
-    # Send first chunk as the initial response
-    await ctx.respond(split_per_two_thousand[0])
-
-    # Send the rest as follow-ups
-    for part in split_per_two_thousand[1:]:
-        await ctx.send_followup(part)
+#     # Send the rest as follow-ups
+#     for part in split_per_two_thousand[1:]:
+#         await ctx.send_followup(part)
 
 list_of_channels = [
     TIME_TRACKING_CHANNEL_ID,
@@ -387,6 +378,49 @@ list_of_channels = [
     SHIFT_LEADER_GEN_MANAGER_CHANNEL,
     JUNIOR_DIRECTOR_CHAIRMAN_CHANNEL,
 ]
+
+# -------------------- CHANNEL TESTING --------------------
+async def test_single_channel_send_publish_react(channel):
+    chan = bot.get_channel(channel) or await bot.fetch_channel(channel)
+    if not chan:
+        return False, None
+
+    logger.debug(f"Testing channel: {chan.name} ({chan.id})")
+    logger.debug(f"Channel type: {chan.type}")
+
+    logger.debug("Sending test message...")
+    success, msg = await chan.send(
+        f"-# Testing bot permissions ({chan.name})",
+        channel_id=chan.id,
+        bot=bot,
+        silent=True,
+    )
+
+    if not success or not msg:
+        return False, None
+
+    logger.debug("Adding reaction to test message...")
+    # await safe_reaction(msg, emoji="✅", bot=bot)
+    msg = await msg.add_reaction("✅")
+
+    if chan.type == discord.ChannelType.news:
+        logger.debug("Publishing test message...")
+        msg.publish()
+        # asyncio.create_task(safe_publish(msg.id, channel_id=chan.id, bot=bot))
+
+    published_msg = msg
+
+    # if chan.type == discord.ChannelType.news:
+    #     published_msg = await safe_publish(msg.id, channel_id=chan.id)
+
+    # try:
+    #     await msg.delete()
+    # except Exception:
+    #     pass
+
+    logger.info(f"{'.' * 10}\n✅ Channel test successful for {chan.name} ({chan.id})\n{'*' * 10}")
+
+    return True, msg
 
 @bot.slash_command(
     name="test_publish", description="Test publishing to one or all channels"
@@ -406,12 +440,12 @@ async def test_publish(interaction: discord.Interaction, channel: str):
     if channel == "all":
         results = []
         for cid in list_of_channels:
-            success, msg = await test_single_channel_send_publish(cid)
+            success, msg = await test_single_channel_send_publish_react(cid)
             results.append(f"{'✅' if success else '❌'} <#{cid}>")
         await interaction.followup.send("\n".join(results))
     else:
         cid = int(channel)
-        success, msg = await test_single_channel_send_publish(cid)
+        success, msg = await test_single_channel_send_publish_react(cid)
         await interaction.followup(
             content=f"{'✅' if success else '❌'} <#{cid}> — {msg}"
         )
@@ -432,12 +466,19 @@ async def on_ready():
         all_lower_HO = []
         all_lower_HO.extend(LOW_RANKS)
         all_lower_HO.remove("Head Operator")
+        all_lower_HO.remove("Customer") #Incase of demotions
         role_monitor_task = bot.loop.create_task(safe_monitor_wrapper(all_lower_HO))
     else:
         logger.info("Monitor task already running, not starting another.")
 
+if __name__ == "__main__":
+    try:
+        bot.load_extension("commands")  # This loads the commands from commands.py
+        # bot.load_extension("special_patches")  # This loads the commands from special_patches.py
+    except Exception as e:
+        logger.error(f"Failed to load commands extension: {e}")
 
-try:
-    bot.run(TOKEN)
-except Exception as e:
-    logger.error(f"Error running bot: {e}")
+    try:
+        bot.run(TOKEN)
+    except Exception as e:
+        logger.error(f"Error running bot: {e}")
