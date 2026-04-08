@@ -11,6 +11,7 @@ from discord.ext import commands
 import dotenv
 
 from discord_report_error_logs import DiscordErrorHandler
+from utils import safe_send, safe_send_and_pub, safe_reaction, safe_publish
 import special_patches
 
 asyncio.set_event_loop(asyncio.new_event_loop())
@@ -21,8 +22,11 @@ bot = commands.Bot(command_prefix="! ", intents=intents, reconnect=True)
 
 # Set up logging
 import logging_setup
+
 logger: logging.Logger = logging_setup.setup_logging(
-    rankspy_default_level=True, bot=bot, error_channel_id=os.getenv("TIME_TRACKING_CHANNEL_ID")
+    rankspy_default_level=True,
+    bot=bot,
+    error_channel_id=os.getenv("TIME_TRACKING_CHANNEL_ID"),
 )
 logger = cast(logging.Logger, logger)
 
@@ -54,7 +58,13 @@ HIGH_RANK_ROLE_MENTION = "<@&1328338542132330506>"
 DATA_FILE = "info.json"
 file_lock = asyncio.Lock()
 
-LOW_RANKS = ["Customer", "Trainee", "Junior Operator", "Senior Operator", "Head Operator"]
+LOW_RANKS = [
+    "Customer",
+    "Trainee",
+    "Junior Operator",
+    "Senior Operator",
+    "Head Operator",
+]
 MID_RANKS = ["Shift Leader", "Supervisor", "Assistant Manager", "General Manager"]
 MGMT_RANKS = ["Junior Director", "Senior Director", "Head Director"]
 CORP_RANKS = ["Corporate Intern", "Junior Corporate", "Senior Corporate"]
@@ -72,6 +82,7 @@ ST_RANKS = MID_RANKS
 HIGH_RANKS = MGMT_RANKS + CORP_RANKS + LS_RANKS
 
 ENABLE_ROPROXY_USAGE_FIRST_PRIORITY = False
+
 
 async def load_data():
     async with file_lock:
@@ -121,7 +132,9 @@ async def retrieve_roproxy_url(url):
 async def fetch_roles(session, group_id):
     base_url = f"https://groups.roblox.com/v1/groups/{group_id}/roles"
     try:
-        async with session.get(base_url, timeout=aiohttp.ClientTimeout(total=10)) as response:
+        async with session.get(
+            base_url, timeout=aiohttp.ClientTimeout(total=10)
+        ) as response:
             if response.status == 429:
                 # Rate limited — switch to RoProxy
                 roproxy_url = await retrieve_roproxy_url(base_url)
@@ -143,6 +156,7 @@ async def fetch_roles(session, group_id):
         logger.error(f"Error fetching roles: {e}")
         return []
 
+
 async def fetch_users_in_role(
     session: aiohttp.ClientSession,
     group_id: int,
@@ -160,22 +174,32 @@ async def fetch_users_in_role(
         if ENABLE_ROPROXY_USAGE_FIRST_PRIORITY:
             url = await retrieve_roproxy_url(url)
 
-        async with session.get(url, timeout=aiohttp.ClientTimeout(total=10)) as response:
-            if response.status not in (200, 429):
-                raise RuntimeError(f"HTTP {response.status}")
+        tries = 0
+        while True:
+            async with session.get(
+                url, timeout=aiohttp.ClientTimeout(total=10)
+            ) as response:
+                if response.status not in (200, 429) or str(response.status).startswith("5"):
+                    raise RuntimeError(f"HTTP {response.status}")
 
-            data = await response.json()
+                data = await response.json()
 
-            if response.status == 429 or str(response.status).startswith("5"):
-                if str(response.status).startswith("5"):
-                    logger.warn("FUIR: 5xx error. This might be a sign of servers failing or block.")
-                roproxy_url = await retrieve_roproxy_url(url)
-                async with session.get(roproxy_url) as proxy_response:
-                    if proxy_response.status != 200:
-                        raise RuntimeError("RoProxy failed")
-                    data = await proxy_response.json()
+                if response.status == 429 or str(response.status).startswith("5"):
+                    if str(response.status).startswith("5"):
+                        logger.warning(
+                            "FUIR: 5xx error. This might be a sign of servers failing or block."
+                        )
+                        tries += 1
+                        if tries > 3:
+                            raise RuntimeError("Too many 5xx errors, aborting.")
+                        continue
+                    roproxy_url = await retrieve_roproxy_url(url)
+                    async with session.get(roproxy_url) as proxy_response:
+                        if proxy_response.status != 200:
+                            raise RuntimeError("RoProxy failed")
+                        data = await proxy_response.json()
 
-            return data
+                return data
 
     # Initial fetch (blocking)
     data = await fetch_page(cursor)
@@ -202,7 +226,7 @@ async def fetch_users_in_role(
             next_page_task = None
         else:
             data = await fetch_page(data["nextPageCursor"])
-    
+
     return users
 
 
@@ -279,18 +303,21 @@ async def monitor_role_changes(disallowed_rank_names=None):
                             if channel_id:
                                 channel = bot.get_channel(channel_id)
                                 if channel:
-                                    profile_link = f"[{user['username']}](<https://www.roblox.com/users/{user['userId']}/profile>)" # ({user['userId']})"
+                                    profile_link = f"[{user['username']}](<https://www.roblox.com/users/{user['userId']}/profile>)"  # ({user['userId']})"
                                     message = f"{profile_link} has been {action} from {prev_role_name} to {current_rank} {mention}"
-                                    message_obj = await channel.send(message)
+                                    # message_obj = await channel.send(message)
+                                    message_obj = await safe_send_and_pub(
+                                        message=message, channel_id=channel_id, bot=bot
+                                    )
 
                                     data["user_roles"][user_id] = role["id"]
 
-                                    try:
-                                        await message_obj.publish()
-                                    except discord.Forbidden as e:
-                                        print(f"Failed to publish: {e}")
-                                    except discord.HTTPException as e:
-                                        print(f"HTTP error during publish: {e}")
+                                    # try:
+                                    #     await message_obj.publish()
+                                    # except discord.Forbidden as e:
+                                    #     print(f"Failed to publish: {e}")
+                                    # except discord.HTTPException as e:
+                                    #     print(f"HTTP error during publish: {e}")
                                     logger.info(f"📢 {message}")
                     data["user_roles"][user_id] = role["id"]
                     users_checked += 1
@@ -309,7 +336,8 @@ async def monitor_role_changes(disallowed_rank_names=None):
             )
             time_channel = bot.get_channel(TIME_TRACKING_CHANNEL_ID)
             if time_channel:
-                await time_channel.send(summary)
+                # await time_channel.send(summary)
+                await safe_send(summary, channel_id=TIME_TRACKING_CHANNEL_ID, bot=bot)
             logger.info("✅ Cycle complete.")
             await asyncio.sleep(180)  # Check every 3 minutes
 
@@ -319,8 +347,9 @@ async def safe_monitor_wrapper(disallowed_rank_names=None):
         try:
             await monitor_role_changes(disallowed_rank_names)
         except Exception as e:
-            logger.error(f"‼️ monitor_role_changes crashed: {e}")
+            logger.error(f"‼️ monitor_role_changes crashed: {e}", exc_info=True)
             await asyncio.sleep(10)
+
 
 # @bot.slash_command(name="rinse_test", description="Test the bot's response time.")
 # async def rinse_test(ctx: discord.ApplicationContext):
@@ -379,6 +408,7 @@ list_of_channels = [
     JUNIOR_DIRECTOR_CHAIRMAN_CHANNEL,
 ]
 
+
 # -------------------- CHANNEL TESTING --------------------
 async def test_single_channel_send_publish_react(channel):
     chan = bot.get_channel(channel) or await bot.fetch_channel(channel)
@@ -418,9 +448,12 @@ async def test_single_channel_send_publish_react(channel):
     # except Exception:
     #     pass
 
-    logger.info(f"{'.' * 10}\n✅ Channel test successful for {chan.name} ({chan.id})\n{'*' * 10}")
+    logger.info(
+        f"{'.' * 10}\n✅ Channel test successful for {chan.name} ({chan.id})\n{'*' * 10}"
+    )
 
     return True, msg
+
 
 @bot.slash_command(
     name="test_publish", description="Test publishing to one or all channels"
@@ -466,10 +499,12 @@ async def on_ready():
         all_lower_HO = []
         all_lower_HO.extend(LOW_RANKS)
         all_lower_HO.remove("Head Operator")
-        all_lower_HO.remove("Customer") #Incase of demotions
+        all_lower_HO.remove("Customer")  # Incase of demotions
+        all_lower_HO.append("Member")
         role_monitor_task = bot.loop.create_task(safe_monitor_wrapper(all_lower_HO))
     else:
         logger.info("Monitor task already running, not starting another.")
+
 
 if __name__ == "__main__":
     try:
