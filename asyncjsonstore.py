@@ -6,16 +6,14 @@ import time
 import logging
 from string import ascii_uppercase
 
-from typing import Optional
-
 logger_fs_manipulator = logging.getLogger("async_json")
 
 class AsyncJSONStore:
-    def __init__(self, data_file: str, file_lock: Optional[asyncio.Lock] = None):
+    def __init__(self, data_file: str, file_lock: asyncio.Lock | None = None):
         self.data_file = data_file
         self.file_lock = file_lock or asyncio.Lock()
         self._queue: asyncio.Queue[tuple[str, object]] = asyncio.Queue()
-        self._worker_task: Optional[asyncio.Task] = None
+        self._worker_task: asyncio.Task | None = None
 
     # ---------------- Worker lifecycle ----------------
     async def _worker(self) -> None:
@@ -80,7 +78,7 @@ class AsyncJSONStore:
         """Enqueue a JSON write. Preserves enqueue order."""
         await self._queue.put((path, obj))
 
-    async def read_json(self, path: str) -> Optional[object]:
+    async def read_json(self, path: str) -> object | None:
         """Read JSON file using aiofiles + orjson."""
         try:
             async with aiofiles.open(path, mode="rb") as f:

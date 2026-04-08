@@ -1,0 +1,16 @@
+{
+  "Mid": [
+    {
+      "user": "heavenaaaa",
+      "userId": 921531891,
+      "action": "promoted",
+      "from": "Shift Leader",
+      "to": "Supervisor",
+      "mention": "<@&1328338484104134688>",
+      "message_id": null,
+      "channel_id": 1414253842677104661,
+      "timestamp_discovered_change": 1763068114.3849235,
+      "staff_team": "Mid"
+    }
+  ]
+}

@@ -14,5 +14,14 @@
             "rank_from": "Supervisor",
             "rank_to":"Shift Leader"
         }
+    },
+    "2594350248": {
+        "restricted": true,
+        "reason":"RoAPI OldCache Data",
+        "restriction":{
+            "rank_from": "Supervisor",
+            "rank_to": "Shift Leader",
+            "until": "indefinite"
+        }
     }
 }

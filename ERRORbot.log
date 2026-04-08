@@ -74,3 +74,171 @@
 2026-02-02 01:01:26,712 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/71902502/users?limit=100&sortOrder=Asc'
 2026-02-02 01:01:26,713 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63064135/users?limit=100&sortOrder=Asc'
 2026-02-02 01:01:26,714 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61219872/users?limit=100&sortOrder=Asc'
+2026-02-02 18:04:14,994 [bot] ERROR: DISCORD_BOT_TOKEN missing.
+2026-02-02 18:05:25,200 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61219874/users?limit=100&sortOrder=Asc&cursor=eyJrZXkiOiJpZF8yendBQUFZb0NtY1NWeno3NXkybVhRLWwyIiwic29ydE9yZGVyIjoiQXNjIiwicGFnaW5nRGlyZWN0aW9uIjoiRm9yd2FyZCIsInBhZ2VOdW1iZXIiOjEsImRpc2NyaW1pbmF0b3IiOiJncm91cElkOjEwMjYxMDIzcm9sZVNldElkOjYxMjE5ODc0IiwiY291bnQiOjEwMH0KMzgxZTU3NzcxOGMzNjQ1ZmE3NjczN2Y4MGVmMDlkNTRjYTY1ZjcxZmZjZTYwNGI2Y2MyYjljOWYwNzI0N2YzZg=='
+2026-02-02 18:05:25,203 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61911341/users?limit=100&sortOrder=Asc&cursor=eyJrZXkiOiJpZF8yendBQUFZb0NENVhhenhxYUxIQWlZYzBaIiwic29ydE9yZGVyIjoiQXNjIiwicGFnaW5nRGlyZWN0aW9uIjoiRm9yd2FyZCIsInBhZ2VOdW1iZXIiOjEsImRpc2NyaW1pbmF0b3IiOiJncm91cElkOjEwMjYxMDIzcm9sZVNldElkOjYxOTExMzQxIiwiY291bnQiOjEwMH0KYTg4ZTVjMzhjZjFkZTA1ZGJiZjVkNGNiMjg3M2Y4YmVjOTA4YzRjNDlmZjUyMDA2NTcyNzc3ZGNlMjlkYzQ0Yw=='
+2026-02-02 18:05:25,205 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61221274/users?limit=100&sortOrder=Asc&cursor=eyJrZXkiOiJpZF8yendBQUFZb0N0S1R5enlKczFINFJCUDRyIiwic29ydE9yZGVyIjoiQXNjIiwicGFnaW5nRGlyZWN0aW9uIjoiRm9yd2FyZCIsInBhZ2VOdW1iZXIiOjEsImRpc2NyaW1pbmF0b3IiOiJncm91cElkOjEwMjYxMDIzcm9sZVNldElkOjYxMjIxMjc0IiwiY291bnQiOjEwMH0KMjBmYWU3ODYwMzk2N2M4MGEyMWVmMzk4MjFhYzg0NmEzNzk1NjUxY2ZlZDU3OGU4Zjc0MGM2OTFjYWNlZGVkNA=='
+2026-02-02 18:05:25,207 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222552/users?limit=100&sortOrder=Asc&cursor=eyJrZXkiOiJpZF8yendBQUFZb05SWFFEenl2RmlYTlFEUVo5Iiwic29ydE9yZGVyIjoiQXNjIiwicGFnaW5nRGlyZWN0aW9uIjoiRm9yd2FyZCIsInBhZ2VOdW1iZXIiOjEsImRpc2NyaW1pbmF0b3IiOiJncm91cElkOjEwMjYxMDIzcm9sZVNldElkOjYxMjIyNTUyIiwiY291bnQiOjEwMH0KMmUzYWJiYjZiNDc3MjcwM2VhNzkxMjExOWZjOGQ4ZmZlMjcxODI0NGNkMGQwMjM4MmNlMTMxMTNmMTVmZjFjYg=='
+2026-02-02 18:05:25,209 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222193/users?limit=100&sortOrder=Asc'
+2026-02-02 18:05:25,211 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222134/users?limit=100&sortOrder=Asc'
+2026-02-02 18:05:25,212 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222531/users?limit=100&sortOrder=Asc'
+2026-02-02 18:05:25,214 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61221017/users?limit=100&sortOrder=Asc'
+2026-02-02 18:05:25,215 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222504/users?limit=100&sortOrder=Asc'
+2026-02-02 18:05:25,216 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61219873/users?limit=100&sortOrder=Asc'
+2026-02-02 18:05:25,218 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61222063/users?limit=100&sortOrder=Asc'
+2026-02-02 18:05:25,219 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/89716775/users?limit=100&sortOrder=Asc'
+2026-02-02 18:05:25,221 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/89635960/users?limit=100&sortOrder=Asc'
+2026-02-02 18:05:25,222 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61911398/users?limit=100&sortOrder=Asc'
+2026-02-02 18:05:25,223 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63063938/users?limit=100&sortOrder=Asc'
+2026-02-02 18:05:25,225 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63063949/users?limit=100&sortOrder=Asc'
+2026-02-02 18:05:25,226 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/84741341/users?limit=100&sortOrder=Asc'
+2026-02-02 18:05:25,227 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63063963/users?limit=100&sortOrder=Asc'
+2026-02-02 18:05:25,229 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63064002/users?limit=100&sortOrder=Asc'
+2026-02-02 18:05:25,230 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63064038/users?limit=100&sortOrder=Asc'
+2026-02-02 18:05:25,232 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/78067555/users?limit=100&sortOrder=Asc'
+2026-02-02 18:05:25,233 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/71902502/users?limit=100&sortOrder=Asc'
+2026-02-02 18:05:25,234 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/63064135/users?limit=100&sortOrder=Asc'
+2026-02-02 18:05:25,235 [bot] ERROR: Role task failed: 429, message='Too Many Requests', url='https://groups.roproxy.com/v1/groups/10261023/roles/61219872/users?limit=100&sortOrder=Asc'
+2026-02-02 22:27:50,256 [bot.commands] ERROR: Error in role_checking command: 'Bot' object has no attribute 'ROLE_PROGRESS_LOCK'
+2026-02-02 22:33:35,175 [bot.commands] ERROR: Error in role_checking command: 'Bot' object has no attribute 'ROLE_PROGRESS'
+2026-04-08 23:35:31,003 [bot] ERROR: Failed to load commands extension: Extension 'commands' raised an error: ModuleNotFoundError: No module named 'roblox'
+2026-04-08 23:36:39,145 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:36:39,147 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:36:39,149 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:36:39,150 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:36:39,151 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:36:39,152 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:36:39,153 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:36:39,154 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:36:39,155 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:36:39,156 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:36:39,157 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:36:39,158 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:36:39,159 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:36:39,160 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:36:39,161 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:36:39,162 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:36:39,163 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:36:39,164 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:36:39,165 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:36:39,165 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:40:30,529 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:40:30,530 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:40:30,531 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:40:30,532 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:40:30,533 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:40:30,534 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:40:30,535 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:40:30,536 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:40:30,536 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:40:30,537 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:40:30,538 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:40:30,539 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:40:30,540 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:40:30,541 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:40:30,542 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:40:30,542 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:40:30,543 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:40:30,544 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:40:30,545 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:40:30,546 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:43:49,725 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:43:49,727 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:43:49,728 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:43:49,730 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:43:49,731 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:43:49,732 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:43:49,733 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:43:49,734 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:43:49,735 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:43:49,736 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:43:49,737 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:43:49,738 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:43:49,739 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:43:49,740 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:43:49,741 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:43:49,742 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:43:49,743 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:43:49,744 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:43:49,745 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:43:49,746 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:47:06,983 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:47:06,984 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:47:06,985 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:47:06,986 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:47:06,987 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:47:06,988 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:47:06,989 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:47:06,990 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:47:06,991 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:47:06,992 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:47:06,993 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:47:06,994 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:47:06,995 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:47:06,996 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:47:06,997 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:47:06,998 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:47:06,999 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:47:07,000 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:47:07,001 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:47:07,002 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:50:52,052 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:50:52,053 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:50:52,054 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:50:52,055 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:50:52,056 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:50:52,057 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:50:52,058 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:50:52,059 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:50:52,060 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:50:52,061 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:50:52,062 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:50:52,063 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:50:52,063 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:50:52,064 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:50:52,065 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:50:52,066 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:50:52,067 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:50:52,068 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:50:52,069 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:50:52,070 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:54:18,800 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:54:18,801 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:54:18,802 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:54:18,803 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:54:18,803 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:54:18,804 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:54:18,805 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:54:18,806 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:54:18,807 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:54:18,808 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:54:18,808 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:54:18,809 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:54:18,810 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:54:18,811 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:54:18,812 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:54:18,813 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:54:18,814 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:54:18,815 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:54:18,816 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:54:18,817 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:57:45,726 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:57:45,727 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:57:45,728 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:57:45,729 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:57:45,730 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:57:45,731 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:57:45,732 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:57:45,733 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:57:45,734 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:57:45,735 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:57:45,736 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:57:45,736 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:57:45,737 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:57:45,738 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:57:45,739 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:57:45,740 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:57:45,741 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:57:45,742 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:57:45,742 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-08 23:57:45,743 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429

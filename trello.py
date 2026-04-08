@@ -2,6 +2,7 @@ import requests
 import re
 import json
 from datetime import datetime
+import asyncio
 
 # Configuration / Defaults
 BOARD_NAME_MAP = {
@@ -9,13 +10,15 @@ BOARD_NAME_MAP = {
     "8ttvsMXg": "WCH",
 }
 
+
 # -----------------------------
 # Trello Fetching
 # -----------------------------
 def fetch_cards(board_id, api_key=None, token=None):
     """Fetch all cards from a Trello board."""
     url = f"https://api.trello.com/1/boards/{board_id}/cards"
-    params = {"fields": "name,desc"}
+    # params = {"fields": "name,desc"}
+    params = {"fields": "name,desc,id,shortUrl"}
 
     if api_key and token:
         params["key"] = api_key
@@ -25,6 +28,29 @@ def fetch_cards(board_id, api_key=None, token=None):
     response.raise_for_status()
 
     return response.json()
+
+
+def fetch_meta_bgimg_140(board_id, api_key=None, token=None):
+    """
+    Fetch the 140px background image URL for a Trello board.
+    """
+    url = f"https://api.trello.com/1/boards/{board_id}"
+
+    params = {"key": api_key, "token": token, "fields": "name", "prefs": "backgroundImageScaled"}
+
+    response = requests.get(url, params=params)
+    response.raise_for_status()
+    data = response.json()
+
+    # backgroundImageScaled is a list of sizes
+    scaled = data.get("prefs", {}).get("backgroundImageScaled", [])
+
+    # Find the 140px image
+    for img in scaled:
+        if img.get("width") == 140:
+            return img.get("url")
+
+    return None
 
 
 def get_roblox_user_id(username):
@@ -51,14 +77,24 @@ def get_group_rank_name(user_id, group_id):
 
 
 def find_cards_by_username(cards, roblox_username, required_rank=None, group_id=None):
-    """Find cards for a specific Roblox user, optionally filtering by rank and group."""
+    """Find cards for a specific Roblox user, Optionally filtering by rank and group."""
     username = roblox_username.lower()
 
     matches = [
-        {"name": card["name"], "desc": card["desc"]}
+        {
+            "id": card.get("id"),
+            "name": card.get("name"),
+            "desc": card.get("desc"),
+            "shortUrl": card.get("shortUrl"),
+        }
         for card in cards
         if username in card["name"].lower()
     ]
+
+    print(
+        f"Found {len(matches)} card(s) matching username '{roblox_username}' before rank filtering."
+    )
+    print(matches)
 
     if not required_rank:
         return matches
@@ -90,6 +126,7 @@ def json_safe(obj):
 # -----------------------------
 # Parsing Logic
 # -----------------------------
+
 
 def parse_us_numeric_date(date_str):
     """Parse dates in MM/DD/YY or MM/DD/YYYY format."""
@@ -187,6 +224,7 @@ def parse_card(card):
 # Main Function (Can be reused as a module)
 # -----------------------------
 
+
 def trello_to_json(roblox_username=None, group_id=None, required_rank=None, board_id="hcDUWrFo"):
     """Fetch cards, filter by username and rank, and write to JSON."""
     cards = fetch_cards(board_id)
@@ -202,6 +240,96 @@ def trello_to_json(roblox_username=None, group_id=None, required_rank=None, boar
         json.dump(data, f, indent=4, default=json_safe)
 
     return matching_cards
+
+
+def format_date(date_str):
+    """Convert DD/MM/YYYY → MM/DD/YYYY if possible."""
+    if not date_str:
+        return ""
+
+    parts = date_str.split("/")
+    if len(parts) == 3:
+        return f"{parts[1]}/{parts[0]}/{parts[2]}"
+    return date_str
+
+
+def display_results(cards, roblox_username, board_id):
+    """Pretty-print matching card results."""
+    if not cards:
+        print("No matching cards found.")
+        return
+
+    print(f"Card Found: {len(cards)} card(s) matching '{roblox_username}'\n")
+    print("-=" * 20 + "-\n")
+
+    for card in cards:
+        print("Title:", card["name"])
+
+        latest_update = card["name"].split(" | ")[-1].strip()
+        print("Latest Update:", format_date(latest_update), "(DD/MM/YYYY)")
+        print("=" * 40)
+
+        parsed = parse_card(card)
+        print(parsed)
+        print()
+
+        for section in ("Staff of the Week", "Awards"):
+            if parsed.get(section):
+                print(f"{section}:")
+                for item in parsed[section]:
+                    print(f"- {item}")
+                print()
+
+        if parsed.get("Corporate Progression"):
+            print("Corporate Progression Timeline:")
+            for role, details in parsed["Corporate Progression"].items():
+                members = ", ".join(details["members"])
+                print(f"- {role}: {details['date']} [{members}]")
+
+        print("\n\nDescription:")
+        print(card["desc"])
+
+        print("\n" + "^" * 40)
+        cr = parsed.get("current_rank")
+        if cr:
+            print(
+                f"Promotion information for {roblox_username}: "
+                f"{cr['rank']} ({cr['group']}, {cr['date']})"
+            )
+        else:
+            print(f"Promotion information for {roblox_username}: N/A")
+        print(f"Latest Update: {format_date(latest_update)} (DD/MM/YYYY)")
+        print(f"Card ID: {card.get('id', 'N/A')}")
+
+        entry = parsed.get("Entry Team", {})
+        supervision = parsed.get("Supervision Team", {})
+        management = parsed.get("Management Team", {})
+        corporate = parsed.get("Corporate Team", {})
+
+        all_rank_groups = [entry, supervision, management, corporate]
+
+        for rank_group in all_rank_groups:
+            for rank, details in rank_group.items():
+                if rank == "Dept":
+                    continue  # skip metadata
+
+                date = details.get("date", "N/A")
+                promoter = ", ".join(details.get("promoter", [])) or "N/A"
+
+                print(f"Rank: {rank}, Date: {date}, Promoter: {promoter}")
+
+            print("-" * 40)
+
+        print(
+            f"Board: {BOARD_NAME_MAP.get(board_id, 'Unknown Board')} (ID: {board_id})"
+        )  #! COMPLETE BOARD_ID
+        print("Link to Board:", f"https://trello.com/b/{board_id}")
+        card_id = card.get("id")
+        short_url = card.get("shortUrl")
+        if card_id:
+            print("Link to Card:", short_url)
+        else:
+            print("Link to Card: N/A")
 
 
 # -----------------------------
@@ -225,7 +353,17 @@ def main():
     if roblox_username == "" and required_rank == "":
         print("No input provided. Using Defaults for demonstration.")
         roblox_username = "hollvys"
-        required_rank = "Head Corporate"
+        # required_rank = "Head Corporate" GG Holly. Thanks for your service. :D 28/09/26 (intl. date) 1774659800
+
+    from roblox import RobloxUser
+
+    roblox_username = asyncio.run(
+        RobloxUser.create(roblox_username)
+    ).username  # Overwrite Roblox username if username has changed
+    # and user was found correctly with old username.
+
+    del RobloxUser
+
     if group_id == "":
         group_id = 10261023
     if group_id == "" and required_rank != "":
@@ -245,10 +383,19 @@ def main():
         roblox_username=roblox_username,
         group_id=group_id,
         required_rank=required_rank,
-        board_id=BOARD_ID
+        board_id=BOARD_ID,
     )
 
     print(f"Found {len(matching_cards)} matching cards.")
+
+    display_results(matching_cards, roblox_username, BOARD_ID)
+    data = []
+    # for card in matching_cards:
+    #     data.append([card, parse_card(card)])
+    #     with open("trello.json", "w", encoding="utf-8") as f:
+    #         import json
+
+    #         json.dump(data, f, indent=4)
 
 
 # -----------------------------
@@ -256,3 +403,5 @@ def main():
 # -----------------------------
 if __name__ == "__main__":
     main()
+else:
+    del display_results, format_date, main

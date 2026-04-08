@@ -1,7 +1,7 @@
 import asyncio
 import json
 import logging
-import time
+import time, datetime
 import os, sys
 import aiohttp
 
@@ -17,7 +17,8 @@ from rich.progress import Progress, SpinnerColumn, BarColumn, TextColumn, TimeEl
 
 console = Console()
 
-from utils import safe_send, safe_send_and_pub, safe_reaction, safe_publish
+from utils import safe_send, safe_send_and_pub, safe_reaction, safe_publish, fetch_git_revision
+from chains import * # ! CHANGE
 # import wiki
 
 
@@ -28,10 +29,17 @@ import logging_setup
 
 asyncio.set_event_loop(asyncio.new_event_loop())
 
+
+class MyBot(commands.Bot):
+    ROLE_PROGRESS_LOCK: asyncio.Lock  # Tell Pylance this exists
+    ROLE_PROGRESS: dict[str, dict[str, int | bool | float]]
+    roblox_limiter: "RobloxLimiter"
+
+
 global bot
 intents = discord.Intents.default()
 intents.guilds = True
-bot = commands.Bot(command_prefix="! ", intents=intents, reconnect=True)
+bot = MyBot(command_prefix="! ", intents=intents, reconnect=True)
 
 
 logger: logging.Logger = logging_setup.setup_logging(
@@ -103,13 +111,17 @@ LS_RANKS = [
 ET_RANKS = LOW_RANKS
 ST_RANKS = MID_RANKS
 HIGH_RANKS = MGMT_RANKS + CORP_RANKS + LS_RANKS
-
+ALL_RANKS = ET_RANKS + MID_RANKS + HIGH_RANKS
+ALL_M_RANKS_LIST = [ET_RANKS, ST_RANKS, MGMT_RANKS, CORP_RANKS, LS_RANKS]
 
 role_monitor_task: asyncio.Task | None = None
 AWAITING_SHUTDOWN = False
 shutdown_scheduled = False
 
 csv_jdplus_str = ""
+
+with open("app.py", "r") as f:
+    APP_FILE_HASH = hash(f.read())
 
 # ASYNC JSON STORE
 from asyncjsonstore import AsyncJSONStore
@@ -129,16 +141,21 @@ _last_presence_update = 0.0
 
 from collections import defaultdict
 
-ROLE_PROGRESS: dict[str, dict[str, int | bool]] = defaultdict(
-    lambda: {"checked": 0, "total": 0, "done": False}
+from collections import defaultdict
+import asyncio
+
+ROLE_PROGRESS: dict[str, dict[str, int | bool | float]] = defaultdict(
+    lambda: {"checked": 0, "total": 0, "done": False, "start": 0.0}
 )
-ROLE_PROGRESS_LOCK = asyncio.Lock()
+
+ROLE_PROGRESS_LOCK: asyncio.Lock = asyncio.Lock()
+
 bot.ROLE_PROGRESS_LOCK = ROLE_PROGRESS_LOCK
+bot.ROLE_PROGRESS = ROLE_PROGRESS
 
 ROBLOX_RPS = 6  # safe sustained rate
 ROBLOX_BURST = 8  # allows prefetch overlap
 ROBLOX_429_STREAK = 0
-
 
 class RobloxLimiter:
     def __init__(self, rate, burst):
@@ -179,7 +196,7 @@ async def update_discord_presence(force: bool = False):
     if not force and now - _last_presence_update < PRESENCE_UPDATE_INTERVAL:
         return
 
-    async with ROLE_PROGRESS_LOCK:
+    async with bot.ROLE_PROGRESS_LOCK:
         total_roles = len(ROLE_PROGRESS)
         done_roles = sum(1 for r in ROLE_PROGRESS.values() if r["done"])
         users_checked = sum(r["checked"] for r in ROLE_PROGRESS.values())
@@ -193,10 +210,8 @@ async def update_discord_presence(force: bool = False):
         logger.debug(f"Presence update skipped: {e}")
 
 
-async def to_roproxy(url: str) -> str:
-    return url.replace("roblox.com", "roproxy.com")
-
-
+from utils import to_roproxy
+import chains
 retrieve_roproxy_url = to_roproxy
 
 
@@ -242,44 +257,44 @@ async def fetch_users_in_role(
     role_id: int,
     role_member_count: int | None = None,
 ) -> AsyncGenerator[dict, None]:
+    
+    # 1. Config & State
     cursor = ""
     next_page_task: asyncio.Task | None = None
-
-    logger.debug(f"Fetching users in role {role_id} of group {group_id}...")
-
     fetched = 0
     start = last_progress_update = time.monotonic()
-
     timeout = aiohttp.ClientTimeout(total=10)
+    
+    total = int(role_member_count) if role_member_count not in (None, "?") else 0
+    logger.debug(f"Fetching users in role {role_id} of group {group_id}...")
 
-    from rich.progress import Progress, TextColumn, BarColumn, TimeElapsedColumn
-
-    async def fetch_page(c: str):
+    # 2. Helper for API Requests
+    async def fetch_page(c: str) -> dict:
         await roblox_limiter.wait()
-
-        url = (
-            f"https://groups.roblox.com/v1/groups/{group_id}/roles/"
-            f"{role_id}/users?limit=100&sortOrder=Asc"
-        )
-        if c:
-            url += f"&cursor={c}"
+        
+        base_url = f"https://groups.roblox.com/v1/groups/{group_id}/roles/{role_id}/users?limit=100&sortOrder=Asc"
+        url = f"{base_url}&cursor={c}" if c else base_url
 
         if ENABLE_ROPROXY_USAGE_FIRST_PRIORITY:
             url = await retrieve_roproxy_url(url)
 
-        async with session.get(url, timeout=timeout) as r:
-            if r.status == 429:
-                await asyncio.sleep(1.2)  # cooldown
+        async with session.get(url, timeout=timeout) as response:
+            # Handle standard success
+            if response.status == 200:
+                return await response.json()
+            
+            # Handle rate limits or server errors with proxy fallback
+            if response.status == 429 or 500 <= response.status < 600:
+                logger.warning(f"FUIR: Status {response.status}. Attempting RoProxy fallback.")
                 proxy_url = await retrieve_roproxy_url(url)
-                async with session.get(proxy_url, timeout=timeout) as pr:
-                    pr.raise_for_status()
-                    return await pr.json()
+                async with session.get(proxy_url) as proxy_res:
+                    if proxy_res.status == 200:
+                        return await proxy_res.json()
+                    raise RuntimeError(f"RoProxy fallback failed with status {proxy_res.status}")
+            
+            raise RuntimeError(f"HTTP Error {response.status} for URL: {url}")
 
-            r.raise_for_status()
-            return await r.json()
-
-    total = int(role_member_count) if role_member_count not in (None, "?") else None
-
+    # 3. Main Loop with Progress Bar
     with Progress(
         TextColumn("Fetched {task.completed}/{task.total}"),
         BarColumn(),
@@ -288,63 +303,67 @@ async def fetch_users_in_role(
         refresh_per_second=4,
         transient=True,
     ) as progress:
-        task = progress.add_task(
-            f"Role {role_id}",
-            total=total or 0,
-            ups="0",
-        )
-
-        data = await fetch_page(cursor)
+        task = progress.add_task(f"Role {role_id}", total=total, ups="0")
+        
+        # Initial fetch
+        current_data = await fetch_page(cursor)
 
         while True:
-            users = data["data"]
-            prefetch_at = len(users) >> 1  # faster than //
+            users = current_data.get("data", [])
+            next_cursor = current_data.get("nextPageCursor")
+            prefetch_threshold = len(users) >> 1  # 50% through current batch
 
             for i, user in enumerate(users):
-                if i == prefetch_at and not next_page_task and data.get("nextPageCursor"):
-                    next_page_task = asyncio.create_task(fetch_page(data["nextPageCursor"]))
-
-                if i == prefetch_at and not next_page_task and data.get("nextPageCursor"):
-                    next_page_task = asyncio.create_task(fetch_page(data["nextPageCursor"]))
+                # Trigger prefetch for next page mid-way through current batch
+                if i == prefetch_threshold and next_cursor and not next_page_task:
+                    next_page_task = asyncio.create_task(fetch_page(next_cursor))
 
                 fetched += 1
                 now = time.monotonic()
 
-                # Throttle progress updates (~5x/sec max)
+                # Update UI at most 5 times per second
                 if now - last_progress_update >= 0.2:
                     elapsed = now - start
-                    ups = round(fetched / elapsed, 1) if elapsed else "?"
-
-                    progress.update(
-                        task,
-                        completed=fetched,
-                        ups=str(ups),
-                    )
+                    ups = round(fetched / elapsed, 1) if elapsed > 0 else 0
+                    progress.update(task, completed=fetched, ups=str(ups))
                     last_progress_update = now
+
+                # Presence updates at major milestones
+                if total > 0:
+                    percent = (fetched / total) * 100
+                    if percent in (0, 50, 100):
+                        asyncio.create_task(update_discord_presence())
 
                 yield user
 
-                # At 0%, 50%, 100% progress, update Discord presence
-                if total:
-                    progress_percent = (fetched / total * 100) if total > 0 else 0
-                    if progress_percent in (0, 50, 100):
-                        asyncio.create_task(update_discord_presence())
-            cursor = data.get("nextPageCursor")
-            if not cursor:
+            # Prepare for next iteration
+            if not next_cursor:
                 break
-
-            data = await next_page_task if next_page_task else await fetch_page(cursor)
+                
+            # Use prefetched data or fetch now if task wasn't started
+            current_data = await next_page_task if next_page_task else await fetch_page(next_cursor)
             next_page_task = None
-    logger.debug(f"Completed fetching users in role {role_id}.")
 
-
+    logger.debug(f"Completed fetching {fetched} users in role {role_id}.")
 # -------------------- RANK ORDER --------------------
 RANK_ORDER = {}
 priority = 1
-for group in (HIGH_RANKS, MID_RANKS, LOW_RANKS):
-    for rank in group:
-        RANK_ORDER[rank] = priority
-        priority += 1
+# for group in (HIGH_RANKS, MID_RANKS, LOW_RANKS):
+#     for rank in group:
+#         RANK_ORDER[rank] = priority
+#         priority += 1
+
+
+def can_use_asyncio_run() -> bool:
+    """
+    Returns True if asyncio.run() can be safely called
+    (i.e., no running event loop exists).
+    """
+    try:
+        return asyncio.get_running_loop() is None
+    except RuntimeError:
+        # No running loop, safe to use asyncio.run()
+        return True
 
 
 async def get_all_ranks():
@@ -352,23 +371,24 @@ async def get_all_ranks():
         return await fetch_roles(session, GROUP_ID)
 
 
-all_ranks = asyncio.run(get_all_ranks())
+all_the_ranks: list = []
+if can_use_asyncio_run():
+    all_the_ranks = asyncio.run(get_all_ranks())
 
-print(all_ranks)
-for rank in all_ranks:
-    print(rank)
-    RANK_ORDER[rank["name"]] = rank["rank"]
-    print(f"rank added: {rank['name']} → {rank['rank']}")
-    # if rank["name"] not in RANK_ORDER:
+if all_the_ranks:
+    # print(all_ranks)
+    for rank in all_the_ranks:
+        # print(rank)
+        RANK_ORDER[rank["name"]] = rank["rank"]
+        # print(f"rank added: {rank['name']} → {rank['rank']}")
+        # if rank["name"] not in RANK_ORDER:
 
-del get_all_ranks, all_ranks
-
-
-def get_rank_index(rank: str) -> int:
+global GET_RANK_INDEX
+def GET_RANK_INDEX(rank: str) -> int:
     # return RANK_ORDER.get(rank, -1)
     # print(f"{rank}: {RANK_ORDER.get(rank, -1)}")
     return RANK_ORDER.get(rank, -1)
-
+get_rank_index = GET_RANK_INDEX
 
 for rank in LOW_RANKS + MID_RANKS + HIGH_RANKS:
     if rank not in RANK_ORDER:
@@ -390,7 +410,17 @@ async def flush_role_change_queue(
     queue: list[str],
     channel_id: int | None,
     channel_name: str | None,
+    queue_user_id: list[int] | None = None
 ):
+    """
+    # flush_role_change_queue 
+    Sends a list of message queued in one channel
+
+    :param queue: (list[str]) The list of messages to flush as a single batch.
+    :param channel_id: (int | None) The channel ID to send the batch to. If None, the function will return without sending.
+    :param channel_name: (str | None) The name of the channel (for logging purposes). Can be None if channel_id is None.
+    :param queue_user_id: (list[int] | None, optional) The list of user IDs associated with the queued messages. This is for chains. Defaults to None. Can be found otherwise.
+    """
     if not queue or not channel_id:
         return
 
@@ -403,9 +433,9 @@ async def flush_role_change_queue(
 
     try:
         if channel_id == JUNIOR_DIRECTOR_CHAIRMAN_CHANNEL:
-            asyncio.create_task(safe_send_and_pub(message, channel_id=channel_id, bot=bot))
+            asyncio.create_task(chains.store_run_func(queue_user_id, safe_send_and_pub(message, channel_id=channel_id, bot=bot)))
         else:
-            asyncio.create_task(safe_send(message, channel_id=channel_id, bot=bot))
+            asyncio.create_task(chains.store_run_func(queue_user_id, safe_send(message, channel_id=channel_id, bot=bot)))
 
         # asyncio.create_task(changes_txt(message))
 
@@ -414,10 +444,37 @@ async def flush_role_change_queue(
         logger.error(f"Failed flushing queued messages to {channel_name} ({channel_id}): {e}")
 
 
-async def monitor_role_changes(disallowed_rank_names: Optional[list] = None):
-    global LOOP_COUNT, AWAITING_SHUTDOWN, shutdown_scheduled, csv_jdplus_str, changes
+async def monitor_role_changes(
+    disallowed_rank_names: Optional[list] = None,
+    stop_after_one_loop: bool = False,
+    test_mode: bool = False,
+):
+    global LOOP_COUNT, AWAITING_SHUTDOWN, shutdown_scheduled, csv_jdplus_str, changes, RANKS_INITIALIZED
     LOOP_COUNT += 1
     logger.info(f"🧼 Starting monitoring loop #{LOOP_COUNT}")
+    
+    disallowed_rank_names.append("Member")
+
+    RANKS_INITIALIZED = False
+
+    # Initialize RANK_ORDER asynchronously inside the running event loop
+    if not RANKS_INITIALIZED:
+        try:
+            async with aiohttp.ClientSession() as session:
+                all_ranks = await fetch_roles(session, GROUP_ID)
+
+            for rank in all_ranks:
+                RANK_ORDER[rank["name"]] = rank["rank"]
+
+            RANKS_INITIALIZED = True
+        except Exception as e:
+            logger.exception(f"Failed initializing ranks: {e}")
+
+    AWAITING_SHUTDOWN = stop_after_one_loop
+    if test_mode:
+        AWAITING_SHUTDOWN = test_mode
+
+    role_time_used = {}
 
     asyncio.create_task(
         safe_send(
@@ -455,13 +512,16 @@ async def monitor_role_changes(disallowed_rank_names: Optional[list] = None):
                     role_name = role["name"]
                     role_id = role["id"]
 
-                    async with ROLE_PROGRESS_LOCK:
+                    async with bot.ROLE_PROGRESS_LOCK:
                         ROLE_PROGRESS[role_name]["checked"] = 0
                         ROLE_PROGRESS[role_name]["total"] = role["memberCount"]
                         ROLE_PROGRESS[role_name]["done"] = False
 
+                        ROLE_PROGRESS[role_name]["start"] = time.time()
+
                     enable_queue = role_name not in HIGH_RANKS
                     queue = []
+                    queue_user_id = []
                     last_channel_id = None
                     last_channel_name = None
 
@@ -494,20 +554,49 @@ async def monitor_role_changes(disallowed_rank_names: Optional[list] = None):
                             users_checked += 1
                             progress.update(task, advance=1)
 
-                            async with ROLE_PROGRESS_LOCK:
+                            async with bot.ROLE_PROGRESS_LOCK:
                                 ROLE_PROGRESS[role_name]["checked"] = users_checked
 
                             user_id = str(user["userId"])
                             current_rank = role_name
                             current_index = get_rank_index(current_rank)
 
+                            # logger.debug(
+                            #     f"DBG: checking user store presence: user_id={user_id} "
+                            #     f"in_store={'yes' if user_id in data.get('user_roles', {}) else 'no'}"
+                            # )
+                            # logger.debug(
+                            #     f"DBG: user_id={user_id} current_rank={current_rank} current_index={current_index}"
+                            # )
+
                             if role_name in HIGH_RANKS:
                                 local_csv += ("," if local_csv else "") + user_id
 
                             if user_id in data["user_roles"]:
                                 prev_role_id = data["user_roles"][user_id]
-                                prev_rank = roles_dict.get(prev_role_id)
+
+                                # `prev_role_id` in the store may be either:
+                                # - an integer role id (preferred),
+                                # - a numeric string role id,
+                                # - or a role name string from older data.
+                                prev_rank = None
+                                try:
+                                    if isinstance(prev_role_id, (int, float)):
+                                        prev_rank = roles_dict.get(int(prev_role_id))
+                                    elif isinstance(prev_role_id, str):
+                                        if prev_role_id.isdigit():
+                                            prev_rank = roles_dict.get(int(prev_role_id))
+                                        else:
+                                            # assume it's already a role name
+                                            prev_rank = prev_role_id
+                                except Exception:
+                                    prev_rank = None
+
                                 prev_index = get_rank_index(prev_rank)
+
+                                # logger.debug(
+                                #     f"DBG: prev_role_id={prev_role_id} prev_rank={prev_rank} prev_index={prev_index}"
+                                # )
 
                                 if prev_rank and current_index != prev_index and prev_index != -1:
                                     # action = "promoted" if current_index > prev_index else "demoted"
@@ -516,9 +605,14 @@ async def monitor_role_changes(disallowed_rank_names: Optional[list] = None):
                                     else:
                                         action = "demoted"
 
-                                    if not special_patches.check_user(
+                                    check_pass = special_patches.check_user(
                                         user, current_rank, prev_rank, action
-                                    ):
+                                    )
+                                    # logger.debug(
+                                    #     f"DBG: special_patches.check_user -> {check_pass} for user={user_id} "
+                                    #     f"action={action} from={prev_rank} to={current_rank}"
+                                    # )
+                                    if not check_pass:
                                         continue
 
                                     channel_id, mention = get_rank_channel(
@@ -526,9 +620,8 @@ async def monitor_role_changes(disallowed_rank_names: Optional[list] = None):
                                     )
                                     channel = bot.get_channel(channel_id)
                                     channel_name = getattr(channel, "name", "N/A")
-
                                     message = (
-                                        f"[{user['username']}](<https://www.roblox.com/users/{user['userId']}/profile>) "
+                                        f"[{user['username']}](<https://www.roblox.com/users/{user['userId']}/profile{await chains.get_build_chain_params_for_user(user['userId'], bot, True)}>) "
                                         f"has been {action} from {prev_rank} to {current_rank} {mention}"
                                     )
 
@@ -546,8 +639,10 @@ async def monitor_role_changes(disallowed_rank_names: Optional[list] = None):
                                                 queue,
                                                 last_channel_id,
                                                 last_channel_name,
+                                                queue_user_id
                                             )
                                         queue.append(message + "\n")
+                                        queue_user_id.append(user_id)
                                         last_channel_id = channel_id
                                         last_channel_name = channel_name
                                     else:
@@ -567,11 +662,16 @@ async def monitor_role_changes(disallowed_rank_names: Optional[list] = None):
                                             "timestamp": time.time(),
                                         }
                                     )
+                                    # Record the user's current role id so we update the store after processing
+                                    try:
+                                        role_updates[str(user["userId"])] = role_id
+                                    except Exception:
+                                        role_updates[user_id] = role_id
 
                     await flush_role_change_queue(queue, last_channel_id, last_channel_name)
 
                     logger.info(f"Finished processing role: {role_name}")
-                    async with ROLE_PROGRESS_LOCK:
+                    async with bot.ROLE_PROGRESS_LOCK:
                         ROLE_PROGRESS[role_name]["done"] = True
 
                         still_running = {
@@ -583,14 +683,36 @@ async def monitor_role_changes(disallowed_rank_names: Optional[list] = None):
                         for name, info in still_running.items():
                             checked = info["checked"]
                             total = info["total"]
-                            remaining = total - checked if total else "?"
-                            lines.append(f"- {name}: {checked}/{total} ({remaining} left)")
+
+                            remaining = total - checked if total else None
+
+                            time_elapsed = time.time() - info["start"]
+                            ups = checked / time_elapsed if time_elapsed > 0 else 0.0
+
+                            if checked == 0:
+                                eta_str = "(N/A)"
+                            elif remaining is not None and ups > 0:
+                                time_remaining = int(remaining / ups)
+                                eta_str = f"~{str(datetime.timedelta(seconds=time_remaining))}"
+                            else:
+                                eta_str = "?"
+
+                            remaining_str = str(remaining) if remaining is not None else "?"
+                            progress_str = f"{checked}/{total}" if total else f"{checked}/?"
+
+                            lines.append(
+                                f"- {name}: {progress_str} ({remaining_str} left, {eta_str} remaining)"
+                            )
+                        time_elapsed = time.time() - ROLE_PROGRESS[role_name]["start"]
 
                         logger.info(
-                            "⏳ Role finished: %s | Still running:\n%s",
+                            "⏳ Role finished: %s (%s) | Still running:\n%s",
                             role_name,
+                            time_elapsed,
                             "\n".join(lines),
                         )
+
+                        role_time_used[role_name] = time_elapsed
                     else:
                         logger.info(f"✅ Role finished: {role_name} | No roles remaining")
 
@@ -641,9 +763,25 @@ async def monitor_role_changes(disallowed_rank_names: Optional[list] = None):
             # asyncio.create_task(wiki.update_wiki_recent_rank_changes(changes))
             # asyncio.create_task(wiki.update_wiki_all_JDP(data))
 
+            if test_mode:
+                return {
+                    "total_duration_s": duration,
+                    "users_checked_total": users_checked_total,
+                    "total_users_in_group": sum(r["memberCount"] for r in roles),
+                    "roles_processed": len(changes),
+                    "changes": changes,
+                    "role_time_used": role_time_used,
+                }
+
             shutdown_scheduled = False
             if AWAITING_SHUTDOWN:
                 shutdown_scheduled = True
+                
+            with open("app.py", "r") as f:
+                new_hash = hash(f.read())
+                if new_hash != APP_FILE_HASH:
+                    logger.warning("app.py file changed during execution. Scheduling shutdown.")
+                    shutdown_scheduled = True
 
             if shutdown_scheduled:
                 LOOP_COUNT -= 1
@@ -651,7 +789,7 @@ async def monitor_role_changes(disallowed_rank_names: Optional[list] = None):
                     await bot.close()
                 return True
 
-            if sys.platform != "win32":
+            if True:  # sys.platform != "win32":
                 await asyncio.sleep(180)
 
 
@@ -732,12 +870,12 @@ async def safe_monitor_wrapper(disallowed_rank_names=None):
         ]
     )
 
-    await safe_send_and_pub(
-        "-# ||Testing safe_send_and_pub to Junior Director+ channel.|| Please ignore.",
-        channel_id=JUNIOR_DIRECTOR_CHAIRMAN_CHANNEL,
-        bot=bot,
-        silent=True,
-    )
+    # await safe_send_and_pub(
+    #     "-# ||Testing safe_send_and_pub to Junior Director+ channel.|| Please ignore.",
+    #     channel_id=JUNIOR_DIRECTOR_CHAIRMAN_CHANNEL,
+    #     bot=bot,
+    #     silent=True,
+    # )
 
     while True:
         try:
@@ -748,37 +886,57 @@ async def safe_monitor_wrapper(disallowed_rank_names=None):
         except (KeyboardInterrupt, SystemExit):
             logger.info("Shutdown signal received.")
             await save_data(data)
+
             sys.exit(0)
         except Exception as e:
             logger.error(f"‼️ monitor_role_changes crashed: {e}")
             await asyncio.sleep(10)
 
-
 # -------------------- BOT READY --------------------
+
 @bot.event
 async def on_ready():
+    # Only use 'global' if you are re-assigning these variables in this scope
     global role_monitor_task, data
 
+    # 1. Initialization & Logging
+    git_hash = fetch_git_revision()
+    
     logger.info(f"Logged in as {bot.user}")
     await bot.change_presence(activity=discord.Game("Monitoring role changes"))
+    
+    print("\n\n")
+    logger.info(f"WELCOME TO RANKSPY!")
+    logger.info(f"Latest Git Commit ID for app.py: {git_hash} + Further non-commited revisions.")
+    logger.info(f"App file hash: {APP_FILE_HASH}")
+    print("\n\n")
 
+    # 2. Data Loading
     data = await load_data()
-    # await test_data_file_operations()
 
+    # 3. Notification
     channel = bot.get_channel(TIME_TRACKING_CHANNEL_ID)
     if channel:
         await channel.send("🧼 Bot is online and monitoring role changes!")
 
-    if not role_monitor_task or role_monitor_task.done():
+    # 4. Background Task Management
+    # Ensure task only starts if ~~we are in the main execution (or run by SOCKS) and~~ task isn't already running
+    should_start_task = (
+        # __name__ == "__main__" and 
+        (role_monitor_task is None or role_monitor_task.done())
+    ) 
+
+    if should_start_task:
         logger.info("Starting monitor task...")
-        restricted = []
-        # restricted = LOW_RANKS.copy()
-        # restricted += ["Shift Leader", "Supervisor", "Assistant Manager"]
+        
+        # Build restricted list from MID_RANKS
+        # Easily extendable by adding lists: restricted = MID_RANKS + LOW_RANKS
+        restricted = list(MID_RANKS) 
+
         role_monitor_task = bot.loop.create_task(
             safe_monitor_wrapper(restricted),
             name="rank_monitor_task",
         )
-
 
 # -------------------- ENTRYPOINT --------------------
 if __name__ == "__main__":
