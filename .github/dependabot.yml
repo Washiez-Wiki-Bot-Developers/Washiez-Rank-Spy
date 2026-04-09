@@ -1,0 +1,7 @@
+version: 2
+updates:
+  - package-ecosystem: "pip" # Use "pip" for requirements.txt, Pipfile, or poetry
+    directory: "/"           # Location of your manifest files
+    schedule:
+      interval: "weekly"     # Options: daily, weekly, monthly
+    open-pull-requests-limit: 10 # Optional: prevents being flooded with PRs
