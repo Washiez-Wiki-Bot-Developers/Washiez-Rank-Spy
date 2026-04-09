@@ -282,3 +282,37 @@
 2026-04-09 00:04:39,535 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
 2026-04-09 00:04:39,536 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
 2026-04-09 00:04:39,537 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:07:24,443 [bot.commands] ERROR: role_checking failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy-STAGING/commands.py", line 488, in role_checking
+    await ctx.followup.send(msg)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy-STAGING/.venv/lib/python3.13/site-packages/discord/webhook/async_.py", line 1881, in send
+    data = await adapter.execute_webhook(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy-STAGING/.venv/lib/python3.13/site-packages/discord/webhook/async_.py", line 226, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In content: Must be 2000 or fewer in length.
+2026-04-09 00:08:19,132 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:08:19,133 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:08:19,134 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:08:19,135 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:08:19,136 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:08:19,137 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:08:19,138 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:08:19,139 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:08:19,140 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:08:19,141 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:08:19,142 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:08:19,143 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:08:19,144 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:08:19,145 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:08:19,146 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:08:19,147 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:08:19,148 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:08:19,149 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:08:19,150 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:08:19,151 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
