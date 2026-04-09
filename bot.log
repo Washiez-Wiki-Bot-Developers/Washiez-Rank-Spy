@@ -11252,3 +11252,1831 @@ Role task failed: RoProxy fallback failed with status 429
 2026-04-09 00:22:05,461 [utils] WARNING: safe_send: channel 1332185599859359774 not found
 2026-04-09 00:22:05,462 [utils] WARNING: safe_send: channel 1332185599859359774 not found
 2026-04-09 00:22:05,464 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+Processing role: Guest
+Processing role: Guest
+2026-04-09 00:25:05,518 [bot] INFO: Processing role: Guest
+Processing role: Customer
+Processing role: Customer
+2026-04-09 00:25:05,522 [bot] INFO: Processing role: Customer
+Processing role: Contributor
+Processing role: Contributor
+2026-04-09 00:25:05,528 [bot] INFO: Processing role: Contributor
+Processing role: Allied Representative
+Processing role: Allied Representative
+2026-04-09 00:25:05,538 [bot] INFO: Processing role: Allied Representative
+Finished processing role: Guest
+Finished processing role: Guest
+2026-04-09 00:25:05,566 [bot] INFO: Finished processing role: Guest
+⏳ Role finished: Guest (0.04787182807922363) | Still running:
+- Customer: 0/525497 (525497 left, (N/A) remaining)
+- Contributor: 0/7 (7 left, (N/A) remaining)
+- Allied Representative: 0/14 (14 left, (N/A) remaining)
+- Trainee: 26500/779504 (753004 left, ~1:37:53 remaining)
+- Junior Operator: 28300/305556 (277256 left, ~0:33:44 remaining)
+- Senior Operator: 29098/95547 (66449 left, ~0:07:51 remaining)
+- Head Operator: 0/273635 (273635 left, (N/A) remaining)
+- Junior Director: 0/82 (82 left, (N/A) remaining)
+- Senior Director: 0/59 (59 left, (N/A) remaining)
+- Head Director: 0/32 (32 left, (N/A) remaining)
+- Corporate Intern: 0/1 (1 left, (N/A) remaining)
+- Junior Corporate: 0/30 (30 left, (N/A) remaining)
+- Senior Corporate: 0/16 (16 left, (N/A) remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+⏳ Role finished: Guest (0.04787182807922363) | Still running:
+- Customer: 0/525497 (525497 left, (N/A) remaining)
+- Contributor: 0/7 (7 left, (N/A) remaining)
+- Allied Representative: 0/14 (14 left, (N/A) remaining)
+- Trainee: 26500/779504 (753004 left, ~1:37:53 remaining)
+- Junior Operator: 28300/305556 (277256 left, ~0:33:44 remaining)
+- Senior Operator: 29098/95547 (66449 left, ~0:07:51 remaining)
+- Head Operator: 0/273635 (273635 left, (N/A) remaining)
+- Junior Director: 0/82 (82 left, (N/A) remaining)
+- Senior Director: 0/59 (59 left, (N/A) remaining)
+- Head Director: 0/32 (32 left, (N/A) remaining)
+- Corporate Intern: 0/1 (1 left, (N/A) remaining)
+- Junior Corporate: 0/30 (30 left, (N/A) remaining)
+- Senior Corporate: 0/16 (16 left, (N/A) remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+2026-04-09 00:25:05,567 [bot] INFO: ⏳ Role finished: Guest (0.04787182807922363) | Still running:
+- Customer: 0/525497 (525497 left, (N/A) remaining)
+- Contributor: 0/7 (7 left, (N/A) remaining)
+- Allied Representative: 0/14 (14 left, (N/A) remaining)
+- Trainee: 26500/779504 (753004 left, ~1:37:53 remaining)
+- Junior Operator: 28300/305556 (277256 left, ~0:33:44 remaining)
+- Senior Operator: 29098/95547 (66449 left, ~0:07:51 remaining)
+- Head Operator: 0/273635 (273635 left, (N/A) remaining)
+- Junior Director: 0/82 (82 left, (N/A) remaining)
+- Senior Director: 0/59 (59 left, (N/A) remaining)
+- Head Director: 0/32 (32 left, (N/A) remaining)
+- Corporate Intern: 0/1 (1 left, (N/A) remaining)
+- Junior Corporate: 0/30 (30 left, (N/A) remaining)
+- Senior Corporate: 0/16 (16 left, (N/A) remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+Processing role: Trainee
+Processing role: Trainee
+2026-04-09 00:25:05,573 [bot] INFO: Processing role: Trainee
+Finished processing role: Contributor
+Finished processing role: Contributor
+2026-04-09 00:25:05,608 [bot] INFO: Finished processing role: Contributor
+⏳ Role finished: Contributor (0.07773375511169434) | Still running:
+- Customer: 0/525497 (525497 left, (N/A) remaining)
+- Allied Representative: 0/14 (14 left, (N/A) remaining)
+- Trainee: 0/779505 (779505 left, (N/A) remaining)
+- Junior Operator: 28300/305556 (277256 left, ~0:33:44 remaining)
+- Senior Operator: 29098/95547 (66449 left, ~0:07:51 remaining)
+- Head Operator: 0/273635 (273635 left, (N/A) remaining)
+- Junior Director: 0/82 (82 left, (N/A) remaining)
+- Senior Director: 0/59 (59 left, (N/A) remaining)
+- Head Director: 0/32 (32 left, (N/A) remaining)
+- Corporate Intern: 0/1 (1 left, (N/A) remaining)
+- Junior Corporate: 0/30 (30 left, (N/A) remaining)
+- Senior Corporate: 0/16 (16 left, (N/A) remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+⏳ Role finished: Contributor (0.07773375511169434) | Still running:
+- Customer: 0/525497 (525497 left, (N/A) remaining)
+- Allied Representative: 0/14 (14 left, (N/A) remaining)
+- Trainee: 0/779505 (779505 left, (N/A) remaining)
+- Junior Operator: 28300/305556 (277256 left, ~0:33:44 remaining)
+- Senior Operator: 29098/95547 (66449 left, ~0:07:51 remaining)
+- Head Operator: 0/273635 (273635 left, (N/A) remaining)
+- Junior Director: 0/82 (82 left, (N/A) remaining)
+- Senior Director: 0/59 (59 left, (N/A) remaining)
+- Head Director: 0/32 (32 left, (N/A) remaining)
+- Corporate Intern: 0/1 (1 left, (N/A) remaining)
+- Junior Corporate: 0/30 (30 left, (N/A) remaining)
+- Senior Corporate: 0/16 (16 left, (N/A) remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+2026-04-09 00:25:05,609 [bot] INFO: ⏳ Role finished: Contributor (0.07773375511169434) | Still running:
+- Customer: 0/525497 (525497 left, (N/A) remaining)
+- Allied Representative: 0/14 (14 left, (N/A) remaining)
+- Trainee: 0/779505 (779505 left, (N/A) remaining)
+- Junior Operator: 28300/305556 (277256 left, ~0:33:44 remaining)
+- Senior Operator: 29098/95547 (66449 left, ~0:07:51 remaining)
+- Head Operator: 0/273635 (273635 left, (N/A) remaining)
+- Junior Director: 0/82 (82 left, (N/A) remaining)
+- Senior Director: 0/59 (59 left, (N/A) remaining)
+- Head Director: 0/32 (32 left, (N/A) remaining)
+- Corporate Intern: 0/1 (1 left, (N/A) remaining)
+- Junior Corporate: 0/30 (30 left, (N/A) remaining)
+- Senior Corporate: 0/16 (16 left, (N/A) remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+Processing role: Junior Operator
+Processing role: Junior Operator
+2026-04-09 00:25:05,615 [bot] INFO: Processing role: Junior Operator
+Finished processing role: Allied Representative
+Finished processing role: Allied Representative
+2026-04-09 00:25:05,625 [bot] INFO: Finished processing role: Allied Representative
+⏳ Role finished: Allied Representative (0.08395075798034668) | Still running:
+- Customer: 0/525497 (525497 left, (N/A) remaining)
+- Trainee: 0/779505 (779505 left, (N/A) remaining)
+- Junior Operator: 0/305556 (305556 left, (N/A) remaining)
+- Senior Operator: 29098/95547 (66449 left, ~0:07:51 remaining)
+- Head Operator: 0/273635 (273635 left, (N/A) remaining)
+- Junior Director: 0/82 (82 left, (N/A) remaining)
+- Senior Director: 0/59 (59 left, (N/A) remaining)
+- Head Director: 0/32 (32 left, (N/A) remaining)
+- Corporate Intern: 0/1 (1 left, (N/A) remaining)
+- Junior Corporate: 0/30 (30 left, (N/A) remaining)
+- Senior Corporate: 0/16 (16 left, (N/A) remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+⏳ Role finished: Allied Representative (0.08395075798034668) | Still running:
+- Customer: 0/525497 (525497 left, (N/A) remaining)
+- Trainee: 0/779505 (779505 left, (N/A) remaining)
+- Junior Operator: 0/305556 (305556 left, (N/A) remaining)
+- Senior Operator: 29098/95547 (66449 left, ~0:07:51 remaining)
+- Head Operator: 0/273635 (273635 left, (N/A) remaining)
+- Junior Director: 0/82 (82 left, (N/A) remaining)
+- Senior Director: 0/59 (59 left, (N/A) remaining)
+- Head Director: 0/32 (32 left, (N/A) remaining)
+- Corporate Intern: 0/1 (1 left, (N/A) remaining)
+- Junior Corporate: 0/30 (30 left, (N/A) remaining)
+- Senior Corporate: 0/16 (16 left, (N/A) remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+2026-04-09 00:25:05,626 [bot] INFO: ⏳ Role finished: Allied Representative (0.08395075798034668) | Still running:
+- Customer: 0/525497 (525497 left, (N/A) remaining)
+- Trainee: 0/779505 (779505 left, (N/A) remaining)
+- Junior Operator: 0/305556 (305556 left, (N/A) remaining)
+- Senior Operator: 29098/95547 (66449 left, ~0:07:51 remaining)
+- Head Operator: 0/273635 (273635 left, (N/A) remaining)
+- Junior Director: 0/82 (82 left, (N/A) remaining)
+- Senior Director: 0/59 (59 left, (N/A) remaining)
+- Head Director: 0/32 (32 left, (N/A) remaining)
+- Corporate Intern: 0/1 (1 left, (N/A) remaining)
+- Junior Corporate: 0/30 (30 left, (N/A) remaining)
+- Senior Corporate: 0/16 (16 left, (N/A) remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+Processing role: Senior Operator
+Processing role: Senior Operator
+2026-04-09 00:25:05,631 [bot] INFO: Processing role: Senior Operator
+FUIR: Status 504. Attempting RoProxy fallback.
+FUIR: Status 504. Attempting RoProxy fallback.
+2026-04-09 00:25:12,504 [bot] WARNING: FUIR: Status 504. Attempting RoProxy fallback.
+FUIR: Status 504. Attempting RoProxy fallback.
+FUIR: Status 504. Attempting RoProxy fallback.
+2026-04-09 00:25:12,520 [bot] WARNING: FUIR: Status 504. Attempting RoProxy fallback.
+FUIR: Status 504. Attempting RoProxy fallback.
+FUIR: Status 504. Attempting RoProxy fallback.
+2026-04-09 00:25:12,535 [bot] WARNING: FUIR: Status 504. Attempting RoProxy fallback.
+FUIR: Status 504. Attempting RoProxy fallback.
+FUIR: Status 504. Attempting RoProxy fallback.
+2026-04-09 00:25:12,548 [bot] WARNING: FUIR: Status 504. Attempting RoProxy fallback.
+FUIR: Status 504. Attempting RoProxy fallback.
+FUIR: Status 504. Attempting RoProxy fallback.
+2026-04-09 00:25:13,694 [bot] WARNING: FUIR: Status 504. Attempting RoProxy fallback.
+FUIR: Status 504. Attempting RoProxy fallback.
+FUIR: Status 504. Attempting RoProxy fallback.
+2026-04-09 00:25:13,714 [bot] WARNING: FUIR: Status 504. Attempting RoProxy fallback.
+Processing role: Head Operator
+Processing role: Head Operator
+2026-04-09 00:25:14,586 [bot] INFO: Processing role: Head Operator
+Processing role: Junior Director
+Processing role: Junior Director
+2026-04-09 00:25:14,597 [bot] INFO: Processing role: Junior Director
+Finished processing role: Junior Director
+Finished processing role: Junior Director
+2026-04-09 00:25:15,518 [bot] INFO: Finished processing role: Junior Director
+⏳ Role finished: Junior Director (0.9198353290557861) | Still running:
+- Customer: 6499/525497 (518998 left, ~0:13:18 remaining)
+- Trainee: 6100/779505 (773405 left, ~0:21:00 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:21 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:20 remaining)
+- Head Operator: 0/273635 (273635 left, (N/A) remaining)
+- Senior Director: 0/59 (59 left, (N/A) remaining)
+- Head Director: 0/32 (32 left, (N/A) remaining)
+- Corporate Intern: 0/1 (1 left, (N/A) remaining)
+- Junior Corporate: 0/30 (30 left, (N/A) remaining)
+- Senior Corporate: 0/16 (16 left, (N/A) remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+⏳ Role finished: Junior Director (0.9198353290557861) | Still running:
+- Customer: 6499/525497 (518998 left, ~0:13:18 remaining)
+- Trainee: 6100/779505 (773405 left, ~0:21:00 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:21 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:20 remaining)
+- Head Operator: 0/273635 (273635 left, (N/A) remaining)
+- Senior Director: 0/59 (59 left, (N/A) remaining)
+- Head Director: 0/32 (32 left, (N/A) remaining)
+- Corporate Intern: 0/1 (1 left, (N/A) remaining)
+- Junior Corporate: 0/30 (30 left, (N/A) remaining)
+- Senior Corporate: 0/16 (16 left, (N/A) remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+2026-04-09 00:25:15,519 [bot] INFO: ⏳ Role finished: Junior Director (0.9198353290557861) | Still running:
+- Customer: 6499/525497 (518998 left, ~0:13:18 remaining)
+- Trainee: 6100/779505 (773405 left, ~0:21:00 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:21 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:20 remaining)
+- Head Operator: 0/273635 (273635 left, (N/A) remaining)
+- Senior Director: 0/59 (59 left, (N/A) remaining)
+- Head Director: 0/32 (32 left, (N/A) remaining)
+- Corporate Intern: 0/1 (1 left, (N/A) remaining)
+- Junior Corporate: 0/30 (30 left, (N/A) remaining)
+- Senior Corporate: 0/16 (16 left, (N/A) remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+Processing role: Senior Director
+Processing role: Senior Director
+2026-04-09 00:25:15,525 [bot] INFO: Processing role: Senior Director
+Finished processing role: Senior Director
+Finished processing role: Senior Director
+2026-04-09 00:25:15,597 [bot] INFO: Finished processing role: Senior Director
+⏳ Role finished: Senior Director (0.07217550277709961) | Still running:
+- Customer: 6599/525497 (518898 left, ~0:13:12 remaining)
+- Trainee: 6200/779505 (773305 left, ~0:20:50 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:25 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:21 remaining)
+- Head Operator: 100/273635 (273535 left, ~0:46:06 remaining)
+- Head Director: 0/32 (32 left, (N/A) remaining)
+- Corporate Intern: 0/1 (1 left, (N/A) remaining)
+- Junior Corporate: 0/30 (30 left, (N/A) remaining)
+- Senior Corporate: 0/16 (16 left, (N/A) remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+⏳ Role finished: Senior Director (0.07217550277709961) | Still running:
+- Customer: 6599/525497 (518898 left, ~0:13:12 remaining)
+- Trainee: 6200/779505 (773305 left, ~0:20:50 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:25 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:21 remaining)
+- Head Operator: 100/273635 (273535 left, ~0:46:06 remaining)
+- Head Director: 0/32 (32 left, (N/A) remaining)
+- Corporate Intern: 0/1 (1 left, (N/A) remaining)
+- Junior Corporate: 0/30 (30 left, (N/A) remaining)
+- Senior Corporate: 0/16 (16 left, (N/A) remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+2026-04-09 00:25:15,598 [bot] INFO: ⏳ Role finished: Senior Director (0.07217550277709961) | Still running:
+- Customer: 6599/525497 (518898 left, ~0:13:12 remaining)
+- Trainee: 6200/779505 (773305 left, ~0:20:50 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:25 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:21 remaining)
+- Head Operator: 100/273635 (273535 left, ~0:46:06 remaining)
+- Head Director: 0/32 (32 left, (N/A) remaining)
+- Corporate Intern: 0/1 (1 left, (N/A) remaining)
+- Junior Corporate: 0/30 (30 left, (N/A) remaining)
+- Senior Corporate: 0/16 (16 left, (N/A) remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+Processing role: Head Director
+Processing role: Head Director
+2026-04-09 00:25:15,604 [bot] INFO: Processing role: Head Director
+Finished processing role: Head Director
+Finished processing role: Head Director
+2026-04-09 00:25:15,663 [bot] INFO: Finished processing role: Head Director
+⏳ Role finished: Head Director (0.05978679656982422) | Still running:
+- Customer: 6699/525497 (518798 left, ~0:13:05 remaining)
+- Trainee: 6300/779505 (773205 left, ~0:20:38 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:28 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:22 remaining)
+- Head Operator: 200/273635 (273435 left, ~0:24:33 remaining)
+- Corporate Intern: 0/1 (1 left, (N/A) remaining)
+- Junior Corporate: 0/30 (30 left, (N/A) remaining)
+- Senior Corporate: 0/16 (16 left, (N/A) remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+⏳ Role finished: Head Director (0.05978679656982422) | Still running:
+- Customer: 6699/525497 (518798 left, ~0:13:05 remaining)
+- Trainee: 6300/779505 (773205 left, ~0:20:38 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:28 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:22 remaining)
+- Head Operator: 200/273635 (273435 left, ~0:24:33 remaining)
+- Corporate Intern: 0/1 (1 left, (N/A) remaining)
+- Junior Corporate: 0/30 (30 left, (N/A) remaining)
+- Senior Corporate: 0/16 (16 left, (N/A) remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+2026-04-09 00:25:15,665 [bot] INFO: ⏳ Role finished: Head Director (0.05978679656982422) | Still running:
+- Customer: 6699/525497 (518798 left, ~0:13:05 remaining)
+- Trainee: 6300/779505 (773205 left, ~0:20:38 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:28 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:22 remaining)
+- Head Operator: 200/273635 (273435 left, ~0:24:33 remaining)
+- Corporate Intern: 0/1 (1 left, (N/A) remaining)
+- Junior Corporate: 0/30 (30 left, (N/A) remaining)
+- Senior Corporate: 0/16 (16 left, (N/A) remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+Processing role: Corporate Intern
+Processing role: Corporate Intern
+2026-04-09 00:25:15,670 [bot] INFO: Processing role: Corporate Intern
+Finished processing role: Corporate Intern
+Finished processing role: Corporate Intern
+2026-04-09 00:25:15,741 [bot] INFO: Finished processing role: Corporate Intern
+⏳ Role finished: Corporate Intern (0.07160449028015137) | Still running:
+- Customer: 6699/525497 (518798 left, ~0:13:11 remaining)
+- Trainee: 6300/779505 (773205 left, ~0:20:47 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:31 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:23 remaining)
+- Head Operator: 300/273635 (273335 left, ~0:17:32 remaining)
+- Junior Corporate: 0/30 (30 left, (N/A) remaining)
+- Senior Corporate: 0/16 (16 left, (N/A) remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+⏳ Role finished: Corporate Intern (0.07160449028015137) | Still running:
+- Customer: 6699/525497 (518798 left, ~0:13:11 remaining)
+- Trainee: 6300/779505 (773205 left, ~0:20:47 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:31 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:23 remaining)
+- Head Operator: 300/273635 (273335 left, ~0:17:32 remaining)
+- Junior Corporate: 0/30 (30 left, (N/A) remaining)
+- Senior Corporate: 0/16 (16 left, (N/A) remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+2026-04-09 00:25:15,743 [bot] INFO: ⏳ Role finished: Corporate Intern (0.07160449028015137) | Still running:
+- Customer: 6699/525497 (518798 left, ~0:13:11 remaining)
+- Trainee: 6300/779505 (773205 left, ~0:20:47 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:31 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:23 remaining)
+- Head Operator: 300/273635 (273335 left, ~0:17:32 remaining)
+- Junior Corporate: 0/30 (30 left, (N/A) remaining)
+- Senior Corporate: 0/16 (16 left, (N/A) remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+Processing role: Junior Corporate
+Processing role: Junior Corporate
+2026-04-09 00:25:15,748 [bot] INFO: Processing role: Junior Corporate
+Finished processing role: Junior Corporate
+Finished processing role: Junior Corporate
+2026-04-09 00:25:15,826 [bot] INFO: Finished processing role: Junior Corporate
+⏳ Role finished: Junior Corporate (0.07769012451171875) | Still running:
+- Customer: 6799/525497 (518698 left, ~0:13:05 remaining)
+- Trainee: 6400/779505 (773105 left, ~0:20:38 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:35 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:24 remaining)
+- Head Operator: 300/273635 (273335 left, ~0:18:49 remaining)
+- Senior Corporate: 0/16 (16 left, (N/A) remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+⏳ Role finished: Junior Corporate (0.07769012451171875) | Still running:
+- Customer: 6799/525497 (518698 left, ~0:13:05 remaining)
+- Trainee: 6400/779505 (773105 left, ~0:20:38 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:35 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:24 remaining)
+- Head Operator: 300/273635 (273335 left, ~0:18:49 remaining)
+- Senior Corporate: 0/16 (16 left, (N/A) remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+2026-04-09 00:25:15,827 [bot] INFO: ⏳ Role finished: Junior Corporate (0.07769012451171875) | Still running:
+- Customer: 6799/525497 (518698 left, ~0:13:05 remaining)
+- Trainee: 6400/779505 (773105 left, ~0:20:38 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:35 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:24 remaining)
+- Head Operator: 300/273635 (273335 left, ~0:18:49 remaining)
+- Senior Corporate: 0/16 (16 left, (N/A) remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+Processing role: Senior Corporate
+Processing role: Senior Corporate
+2026-04-09 00:25:15,832 [bot] INFO: Processing role: Senior Corporate
+Finished processing role: Senior Corporate
+Finished processing role: Senior Corporate
+2026-04-09 00:25:15,888 [bot] INFO: Finished processing role: Senior Corporate
+⏳ Role finished: Senior Corporate (0.05678725242614746) | Still running:
+- Customer: 6899/525497 (518598 left, ~0:12:59 remaining)
+- Trainee: 6500/779505 (773005 left, ~0:20:26 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:38 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:25 remaining)
+- Head Operator: 400/273635 (273235 left, ~0:14:49 remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+⏳ Role finished: Senior Corporate (0.05678725242614746) | Still running:
+- Customer: 6899/525497 (518598 left, ~0:12:59 remaining)
+- Trainee: 6500/779505 (773005 left, ~0:20:26 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:38 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:25 remaining)
+- Head Operator: 400/273635 (273235 left, ~0:14:49 remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+2026-04-09 00:25:15,889 [bot] INFO: ⏳ Role finished: Senior Corporate (0.05678725242614746) | Still running:
+- Customer: 6899/525497 (518598 left, ~0:12:59 remaining)
+- Trainee: 6500/779505 (773005 left, ~0:20:26 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:38 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:25 remaining)
+- Head Operator: 400/273635 (273235 left, ~0:14:49 remaining)
+- Head Corporate: 0/9 (9 left, (N/A) remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+Processing role: Head Corporate
+Processing role: Head Corporate
+2026-04-09 00:25:15,894 [bot] INFO: Processing role: Head Corporate
+Finished processing role: Head Corporate
+Finished processing role: Head Corporate
+2026-04-09 00:25:15,973 [bot] INFO: Finished processing role: Head Corporate
+⏳ Role finished: Head Corporate (0.07883334159851074) | Still running:
+- Customer: 6899/525497 (518598 left, ~0:13:05 remaining)
+- Trainee: 6600/779505 (772905 left, ~0:20:17 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:42 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:26 remaining)
+- Head Operator: 400/273635 (273235 left, ~0:15:47 remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+⏳ Role finished: Head Corporate (0.07883334159851074) | Still running:
+- Customer: 6899/525497 (518598 left, ~0:13:05 remaining)
+- Trainee: 6600/779505 (772905 left, ~0:20:17 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:42 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:26 remaining)
+- Head Operator: 400/273635 (273235 left, ~0:15:47 remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+2026-04-09 00:25:15,974 [bot] INFO: ⏳ Role finished: Head Corporate (0.07883334159851074) | Still running:
+- Customer: 6899/525497 (518598 left, ~0:13:05 remaining)
+- Trainee: 6600/779505 (772905 left, ~0:20:17 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:42 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:26 remaining)
+- Head Operator: 400/273635 (273235 left, ~0:15:47 remaining)
+- Automation: 0/2 (2 left, (N/A) remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+Processing role: Automation
+Processing role: Automation
+2026-04-09 00:25:15,978 [bot] INFO: Processing role: Automation
+Finished processing role: Automation
+Finished processing role: Automation
+2026-04-09 00:25:16,025 [bot] INFO: Finished processing role: Automation
+⏳ Role finished: Automation (0.04751300811767578) | Still running:
+- Customer: 6999/525497 (518498 left, ~0:12:58 remaining)
+- Trainee: 6700/779505 (772805 left, ~0:20:05 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:44 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:27 remaining)
+- Head Operator: 500/273635 (273135 left, ~0:13:06 remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+⏳ Role finished: Automation (0.04751300811767578) | Still running:
+- Customer: 6999/525497 (518498 left, ~0:12:58 remaining)
+- Trainee: 6700/779505 (772805 left, ~0:20:05 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:44 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:27 remaining)
+- Head Operator: 500/273635 (273135 left, ~0:13:06 remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+2026-04-09 00:25:16,027 [bot] INFO: ⏳ Role finished: Automation (0.04751300811767578) | Still running:
+- Customer: 6999/525497 (518498 left, ~0:12:58 remaining)
+- Trainee: 6700/779505 (772805 left, ~0:20:05 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:44 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:27 remaining)
+- Head Operator: 500/273635 (273135 left, ~0:13:06 remaining)
+- Chief Human Resources Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+Processing role: Chief Human Resources Officer
+Processing role: Chief Human Resources Officer
+2026-04-09 00:25:16,031 [bot] INFO: Processing role: Chief Human Resources Officer
+Finished processing role: Chief Human Resources Officer
+Finished processing role: Chief Human Resources Officer
+2026-04-09 00:25:16,081 [bot] INFO: Finished processing role: Chief Human Resources Officer
+⏳ Role finished: Chief Human Resources Officer (0.05027508735656738) | Still running:
+- Customer: 7099/525497 (518398 left, ~0:12:50 remaining)
+- Trainee: 6700/779505 (772805 left, ~0:20:12 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:46 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:28 remaining)
+- Head Operator: 500/273635 (273135 left, ~0:13:36 remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+⏳ Role finished: Chief Human Resources Officer (0.05027508735656738) | Still running:
+- Customer: 7099/525497 (518398 left, ~0:12:50 remaining)
+- Trainee: 6700/779505 (772805 left, ~0:20:12 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:46 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:28 remaining)
+- Head Operator: 500/273635 (273135 left, ~0:13:36 remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+2026-04-09 00:25:16,082 [bot] INFO: ⏳ Role finished: Chief Human Resources Officer (0.05027508735656738) | Still running:
+- Customer: 7099/525497 (518398 left, ~0:12:50 remaining)
+- Trainee: 6700/779505 (772805 left, ~0:20:12 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:46 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:28 remaining)
+- Head Operator: 500/273635 (273135 left, ~0:13:36 remaining)
+- Chief Public Relations Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+Processing role: Chief Public Relations Officer
+Processing role: Chief Public Relations Officer
+2026-04-09 00:25:16,086 [bot] INFO: Processing role: Chief Public Relations Officer
+Finished processing role: Chief Public Relations Officer
+Finished processing role: Chief Public Relations Officer
+2026-04-09 00:25:16,137 [bot] INFO: Finished processing role: Chief Public Relations Officer
+⏳ Role finished: Chief Public Relations Officer (0.051848649978637695) | Still running:
+- Customer: 7099/525497 (518398 left, ~0:12:55 remaining)
+- Trainee: 6800/779505 (772705 left, ~0:20:00 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:49 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:28 remaining)
+- Head Operator: 600/273635 (273035 left, ~0:11:45 remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+⏳ Role finished: Chief Public Relations Officer (0.051848649978637695) | Still running:
+- Customer: 7099/525497 (518398 left, ~0:12:55 remaining)
+- Trainee: 6800/779505 (772705 left, ~0:20:00 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:49 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:28 remaining)
+- Head Operator: 600/273635 (273035 left, ~0:11:45 remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+2026-04-09 00:25:16,138 [bot] INFO: ⏳ Role finished: Chief Public Relations Officer (0.051848649978637695) | Still running:
+- Customer: 7099/525497 (518398 left, ~0:12:55 remaining)
+- Trainee: 6800/779505 (772705 left, ~0:20:00 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:49 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:28 remaining)
+- Head Operator: 600/273635 (273035 left, ~0:11:45 remaining)
+- Chief Operating Officer: 0/2 (2 left, (N/A) remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+Processing role: Chief Operating Officer
+Processing role: Chief Operating Officer
+2026-04-09 00:25:16,143 [bot] INFO: Processing role: Chief Operating Officer
+Finished processing role: Chief Operating Officer
+Finished processing role: Chief Operating Officer
+2026-04-09 00:25:16,198 [bot] INFO: Finished processing role: Chief Operating Officer
+⏳ Role finished: Chief Operating Officer (0.05648684501647949) | Still running:
+- Customer: 7199/525497 (518298 left, ~0:12:48 remaining)
+- Trainee: 6800/779505 (772705 left, ~0:20:07 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:52 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:29 remaining)
+- Head Operator: 600/273635 (273035 left, ~0:12:14 remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+⏳ Role finished: Chief Operating Officer (0.05648684501647949) | Still running:
+- Customer: 7199/525497 (518298 left, ~0:12:48 remaining)
+- Trainee: 6800/779505 (772705 left, ~0:20:07 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:52 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:29 remaining)
+- Head Operator: 600/273635 (273035 left, ~0:12:14 remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+2026-04-09 00:25:16,200 [bot] INFO: ⏳ Role finished: Chief Operating Officer (0.05648684501647949) | Still running:
+- Customer: 7199/525497 (518298 left, ~0:12:48 remaining)
+- Trainee: 6800/779505 (772705 left, ~0:20:07 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:52 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:29 remaining)
+- Head Operator: 600/273635 (273035 left, ~0:12:14 remaining)
+- Chief Administrative Officer: 0/1 (1 left, (N/A) remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+Processing role: Chief Administrative Officer
+Processing role: Chief Administrative Officer
+2026-04-09 00:25:16,204 [bot] INFO: Processing role: Chief Administrative Officer
+Finished processing role: Chief Administrative Officer
+Finished processing role: Chief Administrative Officer
+2026-04-09 00:25:16,254 [bot] INFO: Finished processing role: Chief Administrative Officer
+⏳ Role finished: Chief Administrative Officer (0.04955744743347168) | Still running:
+- Customer: 7199/525497 (518298 left, ~0:12:52 remaining)
+- Trainee: 6800/779505 (772705 left, ~0:20:13 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:54 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:30 remaining)
+- Head Operator: 700/273635 (272935 left, ~0:10:50 remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+⏳ Role finished: Chief Administrative Officer (0.04955744743347168) | Still running:
+- Customer: 7199/525497 (518298 left, ~0:12:52 remaining)
+- Trainee: 6800/779505 (772705 left, ~0:20:13 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:54 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:30 remaining)
+- Head Operator: 700/273635 (272935 left, ~0:10:50 remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+2026-04-09 00:25:16,255 [bot] INFO: ⏳ Role finished: Chief Administrative Officer (0.04955744743347168) | Still running:
+- Customer: 7199/525497 (518298 left, ~0:12:52 remaining)
+- Trainee: 6800/779505 (772705 left, ~0:20:13 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:54 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:30 remaining)
+- Head Operator: 700/273635 (272935 left, ~0:10:50 remaining)
+- Developer: 0/? (? left, (N/A) remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+Processing role: Developer
+Processing role: Developer
+2026-04-09 00:25:16,258 [bot] INFO: Processing role: Developer
+Finished processing role: Developer
+Finished processing role: Developer
+2026-04-09 00:25:16,292 [bot] INFO: Finished processing role: Developer
+⏳ Role finished: Developer (0.03475666046142578) | Still running:
+- Customer: 7299/525497 (518198 left, ~0:12:44 remaining)
+- Trainee: 6900/779505 (772605 left, ~0:20:00 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:56 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:31 remaining)
+- Head Operator: 700/273635 (272935 left, ~0:11:05 remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+⏳ Role finished: Developer (0.03475666046142578) | Still running:
+- Customer: 7299/525497 (518198 left, ~0:12:44 remaining)
+- Trainee: 6900/779505 (772605 left, ~0:20:00 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:56 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:31 remaining)
+- Head Operator: 700/273635 (272935 left, ~0:11:05 remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+2026-04-09 00:25:16,294 [bot] INFO: ⏳ Role finished: Developer (0.03475666046142578) | Still running:
+- Customer: 7299/525497 (518198 left, ~0:12:44 remaining)
+- Trainee: 6900/779505 (772605 left, ~0:20:00 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:56 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:31 remaining)
+- Head Operator: 700/273635 (272935 left, ~0:11:05 remaining)
+- Vice Chairman: 0/1 (1 left, (N/A) remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+Processing role: Vice Chairman
+Processing role: Vice Chairman
+2026-04-09 00:25:16,296 [bot] INFO: Processing role: Vice Chairman
+Finished processing role: Vice Chairman
+Finished processing role: Vice Chairman
+2026-04-09 00:25:16,360 [bot] INFO: Finished processing role: Vice Chairman
+⏳ Role finished: Vice Chairman (0.06386828422546387) | Still running:
+- Customer: 7399/525497 (518098 left, ~0:12:38 remaining)
+- Trainee: 6900/779505 (772605 left, ~0:20:07 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:59 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:32 remaining)
+- Head Operator: 800/273635 (272835 left, ~0:10:05 remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+⏳ Role finished: Vice Chairman (0.06386828422546387) | Still running:
+- Customer: 7399/525497 (518098 left, ~0:12:38 remaining)
+- Trainee: 6900/779505 (772605 left, ~0:20:07 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:59 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:32 remaining)
+- Head Operator: 800/273635 (272835 left, ~0:10:05 remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+2026-04-09 00:25:16,361 [bot] INFO: ⏳ Role finished: Vice Chairman (0.06386828422546387) | Still running:
+- Customer: 7399/525497 (518098 left, ~0:12:38 remaining)
+- Trainee: 6900/779505 (772605 left, ~0:20:07 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:07:59 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:32 remaining)
+- Head Operator: 800/273635 (272835 left, ~0:10:05 remaining)
+- Chairman: 0/1 (1 left, (N/A) remaining)
+Processing role: Chairman
+Processing role: Chairman
+2026-04-09 00:25:16,364 [bot] INFO: Processing role: Chairman
+Finished processing role: Chairman
+Finished processing role: Chairman
+2026-04-09 00:25:16,417 [bot] INFO: Finished processing role: Chairman
+⏳ Role finished: Chairman (0.05387449264526367) | Still running:
+- Customer: 7399/525497 (518098 left, ~0:12:42 remaining)
+- Trainee: 7000/779505 (772505 left, ~0:19:56 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:08:01 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:32 remaining)
+- Head Operator: 800/273635 (272835 left, ~0:10:24 remaining)
+⏳ Role finished: Chairman (0.05387449264526367) | Still running:
+- Customer: 7399/525497 (518098 left, ~0:12:42 remaining)
+- Trainee: 7000/779505 (772505 left, ~0:19:56 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:08:01 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:32 remaining)
+- Head Operator: 800/273635 (272835 left, ~0:10:24 remaining)
+2026-04-09 00:25:16,418 [bot] INFO: ⏳ Role finished: Chairman (0.05387449264526367) | Still running:
+- Customer: 7399/525497 (518098 left, ~0:12:42 remaining)
+- Trainee: 7000/779505 (772505 left, ~0:19:56 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~0:08:01 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:02:32 remaining)
+- Head Operator: 800/273635 (272835 left, ~0:10:24 remaining)
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:39,120 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:39,135 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:39,210 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:39,287 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:39,290 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:39,356 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:39,427 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:39,443 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:39,505 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:39,586 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:39,598 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:39,637 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:39,732 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:39,777 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:39,779 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:39,868 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:39,914 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:39,966 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:40,006 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:40,094 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:40,120 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:40,148 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:40,241 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:40,252 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:40,292 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:40,399 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:40,401 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:40,445 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:40,551 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:40,565 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:40,591 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:40,706 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:40,713 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:40,739 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:40,844 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:40,855 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:40,895 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:40,985 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:41,024 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:41,064 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:41,117 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:41,208 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:41,258 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:41,341 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:41,349 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:41,403 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:41,479 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:41,485 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:41,563 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:41,629 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:41,649 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:41,699 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:41,785 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:41,810 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:41,850 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:41,930 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:41,979 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:41,988 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:42,069 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:42,121 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:42,136 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:42,213 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:42,258 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:42,298 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:42,357 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:42,397 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:42,440 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:42,527 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:42,532 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:42,628 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:42,667 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:42,709 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:42,768 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:42,820 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:42,835 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:42,906 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:42,977 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:42,980 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:43,050 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:43,132 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:43,135 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:43,195 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:43,281 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:43,327 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:43,348 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:43,430 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:43,460 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:43,531 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:43,585 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:43,603 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:43,700 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:43,726 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:43,732 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:43,853 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:43,871 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:43,874 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:44,001 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:44,008 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:25:44,013 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:25:44,022 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:25:44,023 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 504
+Role task failed: RoProxy fallback failed with status 504
+2026-04-09 00:25:44,024 [bot] ERROR: Role task failed: RoProxy fallback failed with status 504
+Role task failed: RoProxy fallback failed with status 504
+Role task failed: RoProxy fallback failed with status 504
+2026-04-09 00:25:44,025 [bot] ERROR: Role task failed: RoProxy fallback failed with status 504
+Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:25:44,026 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:25:44,027 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-04-09 00:25:44,028 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-04-09 00:25:44,029 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-04-09 00:25:44,030 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-04-09 00:25:44,031 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+Processing role: Guest
+Processing role: Guest
+2026-04-09 00:28:44,100 [bot] INFO: Processing role: Guest
+Processing role: Customer
+Processing role: Customer
+2026-04-09 00:28:44,105 [bot] INFO: Processing role: Customer
+Processing role: Contributor
+Processing role: Contributor
+2026-04-09 00:28:44,112 [bot] INFO: Processing role: Contributor
+Processing role: Allied Representative
+Processing role: Allied Representative
+2026-04-09 00:28:44,121 [bot] INFO: Processing role: Allied Representative
+Finished processing role: Guest
+Finished processing role: Guest
+2026-04-09 00:28:44,146 [bot] INFO: Finished processing role: Guest
+⏳ Role finished: Guest (0.04544782638549805) | Still running:
+- Customer: 0/525501 (525501 left, (N/A) remaining)
+- Contributor: 0/7 (7 left, (N/A) remaining)
+- Allied Representative: 0/14 (14 left, (N/A) remaining)
+- Trainee: 33900/779505 (745605 left, ~1:20:07 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~2:42:27 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:51:36 remaining)
+- Head Operator: 26099/273635 (247536 left, ~0:33:07 remaining)
+⏳ Role finished: Guest (0.04544782638549805) | Still running:
+- Customer: 0/525501 (525501 left, (N/A) remaining)
+- Contributor: 0/7 (7 left, (N/A) remaining)
+- Allied Representative: 0/14 (14 left, (N/A) remaining)
+- Trainee: 33900/779505 (745605 left, ~1:20:07 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~2:42:27 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:51:36 remaining)
+- Head Operator: 26099/273635 (247536 left, ~0:33:07 remaining)
+2026-04-09 00:28:44,147 [bot] INFO: ⏳ Role finished: Guest (0.04544782638549805) | Still running:
+- Customer: 0/525501 (525501 left, (N/A) remaining)
+- Contributor: 0/7 (7 left, (N/A) remaining)
+- Allied Representative: 0/14 (14 left, (N/A) remaining)
+- Trainee: 33900/779505 (745605 left, ~1:20:07 remaining)
+- Junior Operator: 6700/305556 (298856 left, ~2:42:27 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:51:36 remaining)
+- Head Operator: 26099/273635 (247536 left, ~0:33:07 remaining)
+Processing role: Trainee
+Processing role: Trainee
+2026-04-09 00:28:44,150 [bot] INFO: Processing role: Trainee
+Finished processing role: Allied Representative
+Finished processing role: Allied Representative
+2026-04-09 00:28:44,192 [bot] INFO: Finished processing role: Allied Representative
+⏳ Role finished: Allied Representative (0.06857681274414062) | Still running:
+- Customer: 0/525501 (525501 left, (N/A) remaining)
+- Contributor: 0/7 (7 left, (N/A) remaining)
+- Trainee: 0/779505 (779505 left, (N/A) remaining)
+- Junior Operator: 6700/305556 (298856 left, ~2:42:29 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:51:37 remaining)
+- Head Operator: 26099/273635 (247536 left, ~0:33:08 remaining)
+⏳ Role finished: Allied Representative (0.06857681274414062) | Still running:
+- Customer: 0/525501 (525501 left, (N/A) remaining)
+- Contributor: 0/7 (7 left, (N/A) remaining)
+- Trainee: 0/779505 (779505 left, (N/A) remaining)
+- Junior Operator: 6700/305556 (298856 left, ~2:42:29 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:51:37 remaining)
+- Head Operator: 26099/273635 (247536 left, ~0:33:08 remaining)
+2026-04-09 00:28:44,193 [bot] INFO: ⏳ Role finished: Allied Representative (0.06857681274414062) | Still running:
+- Customer: 0/525501 (525501 left, (N/A) remaining)
+- Contributor: 0/7 (7 left, (N/A) remaining)
+- Trainee: 0/779505 (779505 left, (N/A) remaining)
+- Junior Operator: 6700/305556 (298856 left, ~2:42:29 remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:51:37 remaining)
+- Head Operator: 26099/273635 (247536 left, ~0:33:08 remaining)
+Processing role: Junior Operator
+Processing role: Junior Operator
+2026-04-09 00:28:44,195 [bot] INFO: Processing role: Junior Operator
+Finished processing role: Contributor
+Finished processing role: Contributor
+2026-04-09 00:28:44,199 [bot] INFO: Finished processing role: Contributor
+⏳ Role finished: Contributor (0.08522176742553711) | Still running:
+- Customer: 0/525501 (525501 left, (N/A) remaining)
+- Trainee: 0/779505 (779505 left, (N/A) remaining)
+- Junior Operator: 0/305556 (305556 left, (N/A) remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:51:37 remaining)
+- Head Operator: 26099/273635 (247536 left, ~0:33:08 remaining)
+⏳ Role finished: Contributor (0.08522176742553711) | Still running:
+- Customer: 0/525501 (525501 left, (N/A) remaining)
+- Trainee: 0/779505 (779505 left, (N/A) remaining)
+- Junior Operator: 0/305556 (305556 left, (N/A) remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:51:37 remaining)
+- Head Operator: 26099/273635 (247536 left, ~0:33:08 remaining)
+2026-04-09 00:28:44,200 [bot] INFO: ⏳ Role finished: Contributor (0.08522176742553711) | Still running:
+- Customer: 0/525501 (525501 left, (N/A) remaining)
+- Trainee: 0/779505 (779505 left, (N/A) remaining)
+- Junior Operator: 0/305556 (305556 left, (N/A) remaining)
+- Senior Operator: 6298/95547 (89249 left, ~0:51:37 remaining)
+- Head Operator: 26099/273635 (247536 left, ~0:33:08 remaining)
+Processing role: Senior Operator
+Processing role: Senior Operator
+2026-04-09 00:28:44,202 [bot] INFO: Processing role: Senior Operator
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:06,619 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:06,626 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:06,668 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:06,670 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:06,758 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:06,775 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:06,798 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:06,825 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:06,879 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:06,919 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:06,923 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:06,965 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,010 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,061 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,064 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,102 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,134 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,197 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,209 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,230 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,257 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,334 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,344 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,358 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,396 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,480 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,482 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,490 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,550 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,604 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,609 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,614 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,727 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,747 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,759 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,762 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,860 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,880 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,886 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,888 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,985 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:07,996 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,019 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,031 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,106 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,131 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,154 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,167 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,230 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,252 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,290 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,305 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,381 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,419 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,442 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,475 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,512 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,595 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,599 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,606 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,646 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,725 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,735 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,754 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,774 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,861 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,898 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,901 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:08,915 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,018 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,021 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,029 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,043 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,143 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,150 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,162 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,180 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,275 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,285 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,295 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,332 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,406 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,424 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,440 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,455 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,551 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,557 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,582 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,583 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,675 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,688 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,701 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,716 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,800 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,821 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,827 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,841 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,922 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,949 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,952 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:09,974 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:10,070 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:10,090 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+Processing role: Head Operator
+Processing role: Head Operator
+2026-04-09 00:29:10,097 [bot] INFO: Processing role: Head Operator
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:10,104 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+Processing role: Junior Director
+Processing role: Junior Director
+2026-04-09 00:29:10,110 [bot] INFO: Processing role: Junior Director
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:10,130 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:10,132 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+Processing role: Senior Director
+Processing role: Senior Director
+2026-04-09 00:29:10,137 [bot] INFO: Processing role: Senior Director
+Processing role: Head Director
+Processing role: Head Director
+2026-04-09 00:29:10,141 [bot] INFO: Processing role: Head Director
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:10,145 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+Processing role: Corporate Intern
+Processing role: Corporate Intern
+2026-04-09 00:29:10,152 [bot] INFO: Processing role: Corporate Intern
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:10,171 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:10,175 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+Processing role: Junior Corporate
+Processing role: Junior Corporate
+2026-04-09 00:29:10,179 [bot] INFO: Processing role: Junior Corporate
+Processing role: Senior Corporate
+Processing role: Senior Corporate
+2026-04-09 00:29:10,182 [bot] INFO: Processing role: Senior Corporate
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:10,234 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+Processing role: Head Corporate
+Processing role: Head Corporate
+2026-04-09 00:29:10,239 [bot] INFO: Processing role: Head Corporate
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:10,259 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+Processing role: Automation
+Processing role: Automation
+2026-04-09 00:29:10,264 [bot] INFO: Processing role: Automation
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:10,272 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+Processing role: Chief Human Resources Officer
+Processing role: Chief Human Resources Officer
+2026-04-09 00:29:10,278 [bot] INFO: Processing role: Chief Human Resources Officer
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:10,296 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:10,300 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+Processing role: Chief Public Relations Officer
+Processing role: Chief Public Relations Officer
+2026-04-09 00:29:10,303 [bot] INFO: Processing role: Chief Public Relations Officer
+Processing role: Chief Operating Officer
+Processing role: Chief Operating Officer
+2026-04-09 00:29:10,306 [bot] INFO: Processing role: Chief Operating Officer
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:10,310 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+Processing role: Chief Administrative Officer
+Processing role: Chief Administrative Officer
+2026-04-09 00:29:10,315 [bot] INFO: Processing role: Chief Administrative Officer
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:10,338 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:10,342 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+Processing role: Developer
+Processing role: Developer
+2026-04-09 00:29:10,344 [bot] INFO: Processing role: Developer
+Processing role: Vice Chairman
+Processing role: Vice Chairman
+2026-04-09 00:29:10,348 [bot] INFO: Processing role: Vice Chairman
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:10,405 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+Processing role: Chairman
+Processing role: Chairman
+2026-04-09 00:29:10,410 [bot] INFO: Processing role: Chairman
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:10,426 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:10,437 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:10,464 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+FUIR: Status 429. Attempting RoProxy fallback.
+2026-04-09 00:29:10,472 [bot] WARNING: FUIR: Status 429. Attempting RoProxy fallback.
+Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:29:10,477 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:29:10,478 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:29:10,479 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:29:10,480 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:29:10,481 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:29:10,482 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:29:10,483 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:29:10,484 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:29:10,485 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:29:10,486 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:29:10,487 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:29:10,488 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:29:10,489 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:29:10,490 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:29:10,491 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:29:10,492 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:29:10,493 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:29:10,494 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:29:10,495 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:29:10,496 [bot] ERROR: Role task failed: RoProxy fallback failed with status 429
+2026-04-09 00:29:10,497 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-04-09 00:29:10,499 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-04-09 00:29:10,500 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-04-09 00:29:10,500 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-04-09 00:29:10,502 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-04-09 00:29:10,503 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-04-09 00:29:10,503 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-04-09 00:29:10,504 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-04-09 00:29:10,505 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-04-09 00:29:10,506 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-04-09 00:29:10,507 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-04-09 00:29:10,508 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-04-09 00:29:10,509 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-04-09 00:29:10,510 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-04-09 00:29:10,511 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-04-09 00:29:10,511 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-04-09 00:29:10,512 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-04-09 00:29:10,513 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-04-09 00:29:10,514 [utils] WARNING: safe_send: channel 1332185599859359774 not found
+2026-04-09 00:29:10,514 [utils] WARNING: safe_send: channel 1332185599859359774 not found
