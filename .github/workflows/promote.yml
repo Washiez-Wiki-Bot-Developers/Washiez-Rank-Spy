@@ -1,0 +1,32 @@
+name: Production Promotion Pipeline
+
+on:
+  push:
+    branches:
+      - main  # Triggered when Staging is merged into Main
+
+jobs:
+  promote-to-prod:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          # Use your GitHub App Token here so it has permission to bypass rules if needed
+          token: ${{ secrets.GH_APP_TOKEN }} 
+
+      - name: Update deploy/PROD
+        run: |
+          git config user.name "Washiez-Wiki-Bot[bot]"
+          git config user.email "washiez-bot@users.noreply.github.com"
+          
+          # Fetch all branches
+          git fetch origin deploy/PROD
+          
+          # Switch to PROD and bring in Main's changes
+          git checkout deploy/PROD
+          git merge origin/main --ff-only
+          
+          # Push the updated PROD branch
+          git push origin deploy/PROD
