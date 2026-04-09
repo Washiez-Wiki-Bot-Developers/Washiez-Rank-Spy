@@ -15607,3 +15607,2718 @@ TimeoutError
 2026-02-02 11:30:00,661 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
 2026-02-02 13:01:27,053 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
 2026-02-02 14:17:50,249 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-09 23:29:10,882 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-09 23:56:47,067 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-02-10 00:52:40,297 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-10 02:16:28,284 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-10 03:22:18,492 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-10 03:58:41,387 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-10 04:45:50,620 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-10 08:43:47,931 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-10 11:43:47,385 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-10 13:43:47,793 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-10 14:18:38,098 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-10 15:00:00,785 [bot] ERROR: ‼️ monitor_role_changes crashed: 
+2026-02-10 16:18:37,073 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-10 17:29:27,124 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-02-10 18:18:36,952 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-10 19:13:00,821 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-10 20:37:37,691 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-10 21:32:25,254 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-10 22:29:42,794 [bot] ERROR: ‼️ monitor_role_changes crashed: 
+2026-02-11 01:23:55,931 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-11 04:16:05,481 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-11 05:02:09,699 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-11 05:16:05,681 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-11 06:45:25,805 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-11 06:49:17,620 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-11 07:57:33,255 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-11 08:50:13,198 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-11 12:07:02,314 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-11 13:21:18,285 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-11 14:37:07,549 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-11 14:37:28,403 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-11 14:37:46,322 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-11 15:12:40,002 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-11 17:16:00,682 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-11 20:38:56,722 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-11 21:03:25,251 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-11 21:18:55,176 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-11 21:45:40,374 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-11 23:08:57,378 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-11 23:10:52,883 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-11 23:35:54,312 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-11 23:42:39,447 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-11 23:42:49,524 [bot] ERROR: Failed to fetch roles: 503
+2026-02-11 23:43:00,113 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-12 00:10:54,332 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-12 01:05:51,296 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-12 01:56:13,877 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-12 02:02:17,526 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-12 04:30:51,618 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-12 04:40:22,843 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-12 05:27:20,312 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-12 05:30:52,208 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-12 06:02:00,703 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-12 08:02:32,421 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-12 09:45:01,722 [bot] ERROR: Failed to fetch roles: 503
+2026-02-12 09:46:00,726 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-12 09:50:12,100 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-12 10:17:01,279 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-12 10:57:33,409 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-12 11:49:57,807 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-12 12:15:36,357 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-12 14:28:55,768 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-12 14:49:13,832 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-12 15:15:38,002 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-12 15:19:01,379 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-12 15:51:37,787 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-12 16:07:00,667 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-12 16:10:11,092 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-12 16:17:50,644 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-12 17:17:50,502 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-12 17:24:40,504 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-12 19:15:04,895 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-12 19:15:38,593 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-12 19:29:10,421 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-12 20:36:46,490 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-12 20:45:54,103 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-12 21:23:27,048 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-12 22:24:37,430 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-12 23:33:39,877 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-13 00:21:09,529 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-13 02:43:49,538 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-13 03:46:08,499 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-13 04:19:59,192 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-13 09:40:05,307 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-13 11:03:00,876 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-13 12:58:00,531 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-13 14:33:19,274 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-13 15:31:28,635 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-13 16:48:15,380 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-13 17:25:05,576 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-13 17:34:55,713 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-13 17:54:35,339 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-13 18:03:05,549 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-13 18:19:39,240 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-13 18:23:35,195 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-13 18:27:07,215 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-13 18:32:15,151 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-13 19:07:36,993 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-13 19:21:25,464 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-13 21:23:00,667 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-13 22:21:26,105 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-14 01:15:47,648 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-14 01:34:57,850 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-14 01:42:13,660 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-14 02:10:55,296 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-14 02:32:51,748 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-14 02:41:55,731 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-14 03:33:11,049 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-14 03:44:16,756 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-14 04:07:24,008 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-14 04:13:36,500 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-14 04:33:11,843 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-14 04:37:45,247 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-14 05:13:43,156 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-14 05:14:55,161 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-14 05:34:34,157 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-14 05:42:10,661 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-14 06:14:53,149 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-14 06:25:32,863 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-14 07:35:20,681 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-14 08:13:59,653 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-14 08:16:42,917 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-14 08:48:01,103 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-14 08:53:59,379 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-14 11:07:01,382 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-14 11:39:58,670 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-14 12:23:24,262 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-14 12:45:18,080 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-14 14:39:58,638 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-14 14:59:37,065 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-14 15:36:29,070 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-14 15:39:58,188 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-14 17:39:58,154 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-14 17:44:31,762 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-14 18:39:58,516 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-14 19:56:40,553 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-14 21:19:22,223 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-14 21:37:00,980 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-14 21:39:57,861 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-14 21:52:44,114 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-14 22:35:22,849 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-15 01:39:59,228 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-15 02:02:12,401 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-15 03:39:58,079 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-15 05:16:56,571 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-15 05:27:49,963 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-15 05:39:57,776 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-15 08:06:38,468 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-15 08:19:39,366 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-15 08:39:57,807 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-15 08:41:17,843 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-15 09:06:44,146 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-15 09:45:10,332 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-15 10:48:52,339 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-15 11:39:59,305 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-15 12:28:42,692 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-15 12:29:10,705 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-15 12:39:57,830 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-15 17:14:03,159 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-15 17:23:26,541 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-15 17:44:56,925 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-15 21:27:38,049 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-15 22:09:37,633 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-15 22:53:41,304 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-16 08:27:56,813 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-16 12:13:51,992 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-16 14:18:50,692 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-16 16:36:45,097 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-16 16:37:19,310 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-16 16:39:58,477 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-16 17:07:00,419 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-16 19:39:58,086 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-16 23:39:58,315 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-16 23:48:48,587 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-16 23:55:59,700 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-17 01:39:58,272 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 01:45:40,846 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 02:31:48,706 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 02:41:31,598 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 02:48:17,535 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-17 03:26:11,791 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 03:35:06,901 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 05:19:02,861 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 05:27:50,038 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 05:32:13,241 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-17 05:48:06,180 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 05:48:27,398 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 05:50:06,511 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 05:53:09,891 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 05:57:20,288 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 06:01:49,991 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 06:07:58,288 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-17 06:11:21,122 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 07:30:41,728 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 08:11:20,650 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 13:28:24,237 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-17 13:44:51,444 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-17 14:11:21,397 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 14:31:22,519 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 14:38:21,071 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-17 15:29:01,128 [bot] ERROR: Failed to fetch roles: 503
+2026-02-17 15:30:01,091 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-17 15:31:00,972 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-17 17:00:35,299 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 17:02:29,854 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-17 17:02:47,226 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-17 17:11:20,632 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 17:12:13,440 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 17:12:24,984 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 17:12:36,374 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 17:12:47,663 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 17:16:05,379 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-02-17 17:18:50,891 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 17:22:20,530 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 17:23:30,128 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-02-17 17:24:50,080 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-02-17 17:25:44,198 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-02-17 17:25:57,221 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-02-17 17:28:54,562 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 17:29:37,877 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-02-17 17:31:55,464 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 17:46:15,526 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 17:46:46,882 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-02-17 17:49:28,401 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-02-17 17:49:46,482 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-02-17 17:53:00,017 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 18:08:52,549 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-17 18:27:00,899 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-17 18:31:01,437 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-17 18:44:56,991 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-17 18:47:44,249 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 18:58:59,818 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 19:11:21,231 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 19:12:36,704 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 19:48:47,224 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 20:08:34,592 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-02-17 20:08:58,479 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-02-17 20:11:47,632 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 20:12:32,754 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-17 20:18:02,462 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-17 20:34:35,857 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 20:36:09,279 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-17 20:36:21,137 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-17 20:39:06,565 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-17 20:41:49,630 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-17 20:43:51,151 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-17 20:44:37,952 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-17 20:45:19,289 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-17 20:46:28,573 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-17 20:47:26,690 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-17 21:13:20,267 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 22:30:37,025 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-17 23:46:04,092 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-17 23:57:09,231 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-02-18 00:24:09,133 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-18 00:46:04,452 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-18 01:04:24,136 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-18 01:53:08,711 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-18 01:55:06,028 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-18 03:10:16,424 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-18 05:25:24,085 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-18 05:27:26,325 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-18 07:04:02,489 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-18 09:11:24,000 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-18 11:49:52,385 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-18 12:11:24,760 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-18 13:02:33,694 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-18 13:11:23,883 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-18 15:47:24,851 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-18 16:48:00,722 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-18 17:11:23,992 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-18 18:11:23,842 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-18 18:55:34,418 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-18 19:04:44,590 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-18 19:06:19,768 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-18 19:11:05,165 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-18 19:11:24,388 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-18 19:58:22,337 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-18 20:20:15,645 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-18 21:01:35,742 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-18 21:03:00,159 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-18 21:08:47,454 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-18 21:12:23,143 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-18 21:39:25,239 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-02-18 21:41:44,714 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-18 22:45:59,450 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-18 23:09:23,602 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-19 00:41:46,790 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-19 00:47:55,842 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-19 01:20:45,299 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-19 01:29:18,252 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-19 02:32:28,464 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-19 02:49:05,933 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-19 03:20:36,905 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-19 04:49:21,727 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-19 07:42:59,681 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-19 08:05:24,763 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-19 08:11:49,995 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-19 09:59:03,420 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-19 12:22:52,825 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-19 14:00:44,539 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-19 14:04:35,811 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-19 16:13:44,523 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-19 17:00:38,428 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-19 17:16:23,799 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-19 17:58:01,000 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-19 18:14:42,096 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-19 18:31:07,573 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-19 19:14:19,440 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-19 20:21:28,619 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-19 21:01:55,121 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-19 21:03:39,903 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-19 22:05:26,711 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-19 22:28:48,671 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-19 22:54:43,245 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-20 00:00:59,894 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 00:34:07,086 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 01:19:36,276 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 02:34:08,568 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 03:13:26,535 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 03:24:44,997 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 03:52:37,383 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 04:01:10,137 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-20 04:03:12,595 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-20 04:03:33,358 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-20 04:07:33,894 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 04:16:31,578 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-20 04:16:52,826 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-20 05:27:42,190 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 05:30:00,157 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-20 07:20:33,482 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 07:22:14,318 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 09:24:52,464 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-20 13:03:59,336 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 13:21:04,630 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 13:29:16,772 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-20 13:30:22,450 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 14:09:47,713 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 14:36:11,350 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 14:37:01,119 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-20 15:21:48,363 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-20 15:28:11,653 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 15:38:58,679 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 15:46:06,002 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 16:35:38,931 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 16:59:10,382 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 18:17:38,667 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 18:50:06,490 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 19:20:59,398 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 19:58:31,657 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-20 20:20:59,343 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 21:29:37,911 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 22:10:51,335 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-20 22:35:28,052 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 22:42:20,349 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 22:44:33,544 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-20 23:02:46,739 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-21 00:08:04,620 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-21 00:08:56,626 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-21 00:46:58,704 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-21 01:46:24,066 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-21 02:02:58,252 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-21 02:04:02,585 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-21 02:11:06,363 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-21 02:20:29,413 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-21 02:48:16,885 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-21 03:10:26,895 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-21 05:27:36,864 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-21 05:27:52,656 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-21 06:18:26,710 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-21 06:20:41,477 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-21 08:20:41,954 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-21 09:41:59,403 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-21 10:10:09,108 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-21 10:20:41,539 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-21 11:04:25,230 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-21 11:15:20,407 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-21 12:11:33,838 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-21 12:20:41,863 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-21 13:10:01,115 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-21 13:17:51,269 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-21 15:43:23,106 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-21 15:44:12,578 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-21 16:16:13,709 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-21 17:08:53,699 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-21 17:20:42,023 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-21 17:24:50,851 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-21 17:25:05,186 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-21 17:46:54,632 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-21 19:20:42,128 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-21 21:20:42,571 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-21 23:16:12,955 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-22 01:20:42,110 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-22 11:58:28,398 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-22 18:20:41,931 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-23 01:12:58,038 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-23 05:20:42,348 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-23 05:27:46,978 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-23 08:20:41,506 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-23 09:31:24,555 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-23 10:31:45,084 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-23 11:10:41,430 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-23 17:54:37,020 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-23 17:55:39,533 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-23 17:55:57,284 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-23 18:43:27,396 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-23 18:45:09,112 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-23 19:43:45,719 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-23 20:02:14,058 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-23 20:26:45,347 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-23 22:21:23,656 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-23 23:09:19,015 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-23 23:59:23,564 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-24 03:43:46,845 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-24 03:48:28,322 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-24 04:14:52,301 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-24 05:27:40,927 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-24 06:04:23,343 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-24 06:12:14,922 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-24 07:49:48,813 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-24 08:10:32,305 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-24 08:17:29,766 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-24 08:41:10,699 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-24 10:04:47,533 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-24 10:18:12,255 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-24 10:27:57,652 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-24 10:44:41,344 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-24 14:46:45,952 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-24 16:32:13,376 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-24 17:29:13,462 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-02-24 17:52:06,681 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-24 18:52:35,211 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-24 19:35:53,990 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-24 20:45:30,943 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-02-24 20:51:45,433 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-02-24 20:52:48,067 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-24 20:55:46,702 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-02-24 21:14:15,565 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-02-24 21:40:04,904 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-02-24 21:55:54,809 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-24 22:15:06,394 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-24 22:27:21,539 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-24 22:33:00,894 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-24 22:52:51,491 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-24 23:52:51,901 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-25 00:24:00,445 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-25 00:32:37,909 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-25 01:21:43,249 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-25 01:26:54,502 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-25 02:17:04,097 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-25 04:12:17,790 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-25 05:48:59,762 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-25 07:17:15,484 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-25 08:58:46,901 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-25 09:46:58,816 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-25 11:52:39,670 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-25 13:16:11,051 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-25 17:15:02,888 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-25 18:27:59,292 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-25 19:22:49,464 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-25 19:52:55,365 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-25 20:49:20,900 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-25 21:56:35,212 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-26 00:09:26,035 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-02-26 00:13:34,349 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-02-26 00:22:15,703 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-26 00:30:13,883 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-02-26 00:32:21,297 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-02-26 01:45:19,989 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-26 02:36:11,635 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-26 04:25:05,139 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-26 04:45:19,867 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-26 05:45:19,693 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-26 07:45:20,566 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-26 09:13:35,520 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-26 11:29:40,648 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-26 14:54:25,308 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-26 15:54:25,472 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-26 16:25:10,780 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-26 17:06:33,835 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-26 17:47:39,608 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-26 18:14:38,042 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-26 18:31:02,861 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-26 19:23:03,836 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-26 19:28:05,504 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-26 22:26:19,087 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-26 22:48:46,696 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-26 22:51:46,752 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-26 23:11:52,813 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-26 23:48:26,217 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-26 23:52:17,065 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-27 00:38:57,538 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-27 01:03:54,821 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-27 01:21:36,982 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-27 01:30:48,627 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-27 02:43:02,366 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-27 02:52:19,465 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-27 05:27:43,558 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-27 05:27:55,005 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-27 05:34:26,903 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-27 08:20:07,360 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-27 12:57:20,966 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-27 13:02:05,558 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-27 13:18:39,221 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-27 13:43:03,367 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-27 14:43:43,220 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-27 16:18:23,669 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-27 19:43:03,335 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-27 20:30:04,304 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-27 21:51:03,519 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-27 22:39:39,488 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-27 22:42:00,886 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-27 23:02:11,278 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-27 23:03:43,313 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-27 23:28:57,144 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-27 23:31:48,448 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-28 00:16:53,894 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-28 00:40:51,927 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-28 01:16:51,743 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-28 01:21:12,851 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-28 01:45:44,995 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-28 03:42:39,403 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-28 03:53:44,715 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-02-28 06:35:39,113 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-28 07:23:17,486 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-28 08:01:10,034 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-28 08:42:38,587 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-28 09:55:31,610 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-28 10:42:38,584 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-28 11:08:21,540 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-28 11:42:38,741 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-28 12:42:38,554 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-28 13:21:36,710 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-28 14:18:52,768 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-28 14:36:21,170 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-28 14:42:38,987 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-28 15:42:38,651 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-28 18:42:38,639 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-28 19:27:37,686 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-28 20:03:11,966 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-02-28 20:18:01,604 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-28 21:42:38,577 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-02-28 23:42:39,355 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-01 00:11:15,643 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-01 00:23:04,741 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-01 00:42:39,208 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-01 01:42:38,602 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-01 02:42:38,760 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-01 04:42:38,641 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-01 07:23:18,413 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-01 08:36:21,066 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-01 09:42:39,405 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-01 10:13:55,372 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-01 11:42:39,808 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-01 12:03:45,067 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-01 12:42:38,895 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-01 23:42:38,777 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-02 01:42:39,285 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-02 01:53:42,718 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-02 04:25:55,852 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-02 05:42:38,630 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-02 07:40:00,422 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-02 09:18:54,571 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-02 10:26:28,785 [bot] ERROR: ‼️ monitor_role_changes crashed: 
+2026-03-02 10:47:30,587 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-02 13:04:26,145 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-02 15:18:51,454 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-02 16:42:38,895 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-02 17:30:29,761 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-03-02 17:38:50,537 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-02 18:10:46,786 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-02 19:16:41,261 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-02 20:18:23,307 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-02 20:22:57,358 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-02 20:55:56,174 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-02 21:38:10,847 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-02 22:23:05,796 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-02 22:38:11,188 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-02 22:43:04,976 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-03-02 22:43:39,407 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-03-02 22:47:41,522 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-02 23:51:07,230 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-02 23:55:41,719 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-03 00:08:19,033 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-03 00:39:14,056 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-03 00:43:53,279 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-03 00:55:41,718 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-03 01:37:01,077 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-03 01:43:23,871 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-03 01:43:36,329 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-03 02:11:19,058 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-03 02:16:13,108 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-03 02:33:22,760 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-03 04:16:01,109 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-03-03 04:30:58,897 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-03-03 07:50:44,855 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-03 07:58:06,459 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-03 10:10:14,995 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-03 12:21:37,715 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-03-03 14:09:05,080 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-03 15:12:27,694 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-03 16:30:00,872 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-03 16:40:25,940 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-03 18:02:58,045 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-03 18:03:09,123 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-03 18:03:26,517 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-03 18:30:01,970 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-03 18:48:51,416 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-03 18:55:16,678 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-03 19:01:48,067 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-03 19:04:55,378 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-03 19:08:11,126 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-03 19:09:08,031 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-03 19:21:08,889 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-03 19:23:44,856 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-03 19:30:00,536 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-03 19:41:46,509 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-03 20:30:01,082 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-03 21:01:59,126 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-03-03 21:07:21,594 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-03 21:30:01,158 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-03 23:57:45,872 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-04 00:52:43,230 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-04 01:41:14,875 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-04 03:32:38,773 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-04 04:46:15,512 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-04 06:17:03,198 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-04 08:05:55,092 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-04 08:22:37,403 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-04 09:27:42,991 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-04 09:45:42,380 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-04 09:51:38,407 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-04 10:01:49,489 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-04 11:30:26,079 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-04 11:53:37,808 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-04 13:12:54,963 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-04 13:21:57,023 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-04 14:16:46,536 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-04 14:37:50,974 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-04 14:39:10,629 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-04 20:49:16,814 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-04 21:00:43,907 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-04 21:02:51,555 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-04 23:23:04,862 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-04 23:26:30,636 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-05 01:19:53,715 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-05 04:12:38,127 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-05 05:08:47,736 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-05 05:27:37,352 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-05 06:06:07,778 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-05 06:34:34,823 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-05 07:02:59,974 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-05 07:34:34,396 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-05 08:51:23,868 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-05 09:23:13,412 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-05 09:35:17,439 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-05 09:37:24,346 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-05 10:09:12,428 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-05 10:21:25,990 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-05 10:54:17,279 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-05 11:03:29,038 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-05 12:17:04,321 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-05 12:45:41,235 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-05 12:52:34,930 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-05 12:54:31,740 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-05 12:54:51,655 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-05 12:57:25,385 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-05 13:45:40,629 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-05 14:17:53,271 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-05 14:42:35,727 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-05 15:13:15,005 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-05 15:17:53,348 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-05 15:35:36,541 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-05 16:05:33,552 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-05 16:33:48,719 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-05 16:56:17,358 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-05 18:06:42,249 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-05 18:33:39,174 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-05 19:19:27,395 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-05 20:23:12,959 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-05 20:48:24,109 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-05 21:25:06,188 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-05 21:27:19,693 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-05 21:45:12,688 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-05 21:59:14,705 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-05 22:01:53,449 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-05 23:25:28,627 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-06 01:43:27,295 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-06 03:20:40,881 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-06 03:54:02,240 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-06 04:27:19,881 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-06 05:27:20,846 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-06 05:27:41,536 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-06 06:27:18,457 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-06 09:56:39,571 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-06 10:55:26,876 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-06 11:27:18,405 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-06 11:39:38,266 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-06 11:45:36,760 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-06 13:34:45,295 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-06 14:45:36,263 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-06 17:27:52,678 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-06 18:44:39,479 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-06 19:11:29,677 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-06 19:56:57,390 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-06 20:04:06,324 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-06 20:28:52,327 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-06 20:53:47,363 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-06 21:53:47,252 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-06 21:57:36,242 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-06 22:15:34,335 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-06 22:50:25,089 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-06 23:34:48,972 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-06 23:35:50,753 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-06 23:55:57,807 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-06 23:56:09,239 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-07 00:41:35,572 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-07 00:52:45,990 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-07 01:15:23,161 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-07 01:43:53,969 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-07 02:13:04,677 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-07 02:24:51,145 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-07 02:43:53,867 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-07 03:17:48,740 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-07 04:15:01,894 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-07 04:17:24,297 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-07 04:30:46,572 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-07 05:27:35,877 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-07 05:27:53,094 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-07 05:30:46,905 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-07 08:30:46,556 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-07 09:02:44,319 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-07 12:30:46,081 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-07 13:30:47,035 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-07 14:05:21,173 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-07 14:13:34,544 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-07 14:25:31,705 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-07 16:30:46,375 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-07 16:48:57,702 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-07 18:18:18,877 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-07 19:30:46,913 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-07 20:06:23,037 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-07 20:22:30,019 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-07 20:30:46,678 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-07 21:30:46,347 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-07 22:30:47,320 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-07 22:35:56,478 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-07 23:21:59,509 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-07 23:23:16,919 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-07 23:30:46,846 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-08 00:09:56,447 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-08 01:20:02,443 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-08 01:32:38,506 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-08 03:51:14,529 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-08 03:57:09,956 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-08 04:59:53,664 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-08 05:27:53,411 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-08 07:59:53,371 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-08 08:12:19,778 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-08 08:12:46,219 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-08 08:38:15,856 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-08 09:59:53,627 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-08 10:59:54,196 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-08 11:55:02,676 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-08 11:59:53,432 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-08 12:22:45,945 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-08 12:59:53,735 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-08 13:07:00,695 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-08 14:03:44,904 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-08 14:59:53,881 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-08 15:59:53,806 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-08 16:08:52,804 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-08 16:44:08,792 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-08 16:59:53,998 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-08 17:08:21,554 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-08 17:21:06,744 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-08 17:38:38,739 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-08 17:59:54,062 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-08 22:59:53,746 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-08 23:59:53,928 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 00:07:28,836 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-09 01:21:29,510 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 06:12:30,654 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-09 08:16:02,454 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-09 08:59:53,234 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 09:23:51,268 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-09 10:29:21,223 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 10:59:54,273 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 11:36:13,041 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 11:51:55,687 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-09 12:06:56,561 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 14:01:07,591 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 14:20:24,619 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-09 14:29:25,333 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-09 15:49:50,006 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-09 16:03:39,686 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-09 16:03:53,160 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-09 17:12:55,339 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 17:13:06,384 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 17:13:17,344 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 17:13:28,348 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 17:13:39,335 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 17:13:50,325 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 17:14:01,345 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 17:14:11,410 [bot] ERROR: Failed to fetch roles: 503
+2026-03-09 17:14:22,351 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 17:14:32,827 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-03-09 17:14:43,925 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 17:14:54,923 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 17:15:05,000 [bot] ERROR: Failed to fetch roles: 503
+2026-03-09 17:15:15,990 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 17:15:26,450 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-03-09 17:15:36,532 [bot] ERROR: Failed to fetch roles: 503
+2026-03-09 17:15:47,579 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 17:15:58,647 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 17:16:09,695 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 17:16:20,704 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 17:16:31,714 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 17:16:42,729 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 17:16:53,721 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 17:17:03,793 [bot] ERROR: Failed to fetch roles: 503
+2026-03-09 17:17:13,832 [bot] ERROR: Failed to fetch roles: 503
+2026-03-09 17:17:23,863 [bot] ERROR: Failed to fetch roles: 503
+2026-03-09 17:17:34,807 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 17:17:45,246 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-03-09 17:17:58,547 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 17:18:08,619 [bot] ERROR: Failed to fetch roles: 503
+2026-03-09 17:18:20,285 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-03-09 17:38:59,977 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 18:25:02,403 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 19:07:34,432 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 21:08:17,392 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 23:13:03,994 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 23:31:57,342 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-09 23:52:37,657 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-10 01:25:54,333 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-10 01:35:24,092 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-10 01:36:15,230 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-10 02:54:15,149 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-10 02:55:02,407 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-10 03:41:30,042 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-10 03:49:04,616 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-10 05:24:36,074 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-10 05:27:45,411 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-10 05:34:43,829 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-10 06:15:05,742 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-10 07:24:19,800 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-10 09:19:36,609 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-10 09:56:07,572 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-10 13:10:31,257 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-10 13:56:08,133 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-10 14:47:32,409 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-10 19:56:07,348 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-10 20:31:03,237 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-10 20:45:59,679 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-10 20:57:50,879 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-10 21:34:47,628 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-10 22:05:42,006 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-10 22:56:07,428 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-10 23:11:56,342 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-10 23:15:43,293 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-10 23:41:22,204 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-11 00:34:59,318 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-11 01:19:45,577 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-11 02:16:36,793 [bot] ERROR: ‼️ monitor_role_changes crashed: 
+2026-03-11 02:19:45,213 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-11 03:19:46,136 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-11 03:20:03,637 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-11 05:27:38,916 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-11 08:07:01,399 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-11 09:11:51,269 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-11 09:53:20,237 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-11 14:30:01,880 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-11 14:56:49,785 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-11 16:14:09,221 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-11 18:20:15,012 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-11 19:07:19,353 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-11 20:16:41,000 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-03-11 23:03:55,170 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-11 23:56:12,876 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-12 00:03:55,486 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-12 00:09:05,514 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-12 00:40:57,560 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-12 04:00:43,824 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-12 04:19:31,385 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-12 05:27:43,438 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-12 06:19:30,871 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-12 07:14:38,109 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-12 07:47:35,382 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-12 09:40:19,986 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-12 10:06:58,007 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-12 10:08:01,948 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-12 10:56:48,917 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-12 20:03:43,303 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-12 21:16:47,784 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-12 21:26:54,590 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-03-13 02:09:58,590 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-13 02:59:25,600 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-13 03:25:45,484 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-13 04:59:09,544 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-13 05:27:43,949 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-13 05:58:02,022 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-13 07:34:28,599 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-13 10:57:04,473 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-13 11:57:04,777 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-13 14:37:27,714 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-13 14:50:34,343 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-13 15:31:52,426 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-13 16:27:19,737 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-13 17:33:37,601 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-13 17:45:38,657 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-13 18:06:25,417 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-13 18:07:07,978 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-13 20:43:59,635 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-13 21:20:51,695 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-13 22:19:00,476 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-03-13 22:59:32,912 [discord.client] ERROR: Attempting a reconnect in 1.37s
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/discord/client.py", line 617, in connect
+    await self.ws.poll_event()
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/discord/gateway.py", line 605, in poll_event
+    await self.received_message(msg.data)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/discord/gateway.py", line 498, in received_message
+    await self.send_as_json(beat)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/discord/gateway.py", line 645, in send_as_json
+    await self.send(utils._to_json(data))
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/discord/gateway.py", line 641, in send
+    await self.socket.send_str(data)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/aiohttp/client_ws.py", line 245, in send_str
+    await self._writer.send_frame(
+        data.encode("utf-8"), WSMsgType.TEXT, compress=compress
+    )
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/aiohttp/_websocket/writer.py", line 83, in send_frame
+    self._write_websocket_frame(message, opcode, 0)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/aiohttp/_websocket/writer.py", line 151, in _write_websocket_frame
+    raise ClientConnectionResetError("Cannot write to closing transport")
+aiohttp.client_exceptions.ClientConnectionResetError: Cannot write to closing transport
+2026-03-13 22:59:32,931 [bot] ERROR: ‼️ monitor_role_changes crashed: 
+2026-03-13 23:15:48,959 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-14 00:54:48,078 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-14 01:20:50,896 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-14 02:11:39,969 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-14 02:20:51,096 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-14 04:19:19,152 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-14 05:20:50,860 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-14 06:51:05,432 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-14 07:42:11,525 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-14 10:20:50,725 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-14 10:31:38,422 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-14 11:20:51,612 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-14 11:43:15,489 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-14 14:23:17,571 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-14 15:13:25,913 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-14 17:38:50,039 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-03-14 17:52:10,483 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-14 20:22:39,489 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-14 20:33:39,627 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-14 20:37:43,031 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-14 21:14:59,902 [bot] ERROR: Error running bot: Cannot close a running event loop
+2026-03-14 21:14:59,903 [bot] ERROR: role_checking failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 261, in trello_check
+    embeds.append(build_board_embed(username, name, matches, color, icon=icon))
+                  ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/utils.py", line 246, in build_board_embed
+    from app import ET_RANKS, MID_RANKS, HIGH_RANKS
+ImportError: cannot import name 'ET_RANKS' from 'app' (/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py). Did you mean: 'LOW_RANKS'?
+2026-03-14 21:20:01,321 [bot] ERROR: Error running bot: Cannot close a running event loop
+2026-03-14 21:20:01,322 [bot] ERROR: role_checking failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 261, in trello_check
+    embeds.append(build_board_embed(username, name, matches, color, icon=icon))
+                  ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/utils.py", line 246, in build_board_embed
+    from app import ET_RANKS, MID_RANKS, HIGH_RANKS
+ImportError: cannot import name 'ET_RANKS' from 'app' (/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py). Did you mean: 'LOW_RANKS'?
+2026-03-14 21:20:31,534 [bot] ERROR: Error running bot: Cannot close a running event loop
+2026-03-14 21:20:31,535 [bot] ERROR: role_checking failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 261, in trello_check
+    embeds.append(build_board_embed(username, name, matches, color, icon=icon))
+                  ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/utils.py", line 246, in build_board_embed
+    from app import ET_RANKS, MID_RANKS, HIGH_RANKS
+ImportError: cannot import name 'ET_RANKS' from 'app' (/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py). Did you mean: 'LOW_RANKS'?
+2026-03-14 21:21:37,461 [bot] ERROR: Error running bot: Cannot close a running event loop
+2026-03-14 21:22:05,680 [bot] ERROR: Error running bot: Cannot close a running event loop
+2026-03-14 21:37:31,343 [bot] ERROR: Error running bot: Cannot close a running event loop
+2026-03-14 21:37:58,026 [bot] ERROR: Error running bot: Cannot close a running event loop
+2026-03-14 21:44:27,601 [bot] ERROR: Error running bot: Cannot close a running event loop
+2026-03-14 21:44:56,518 [bot] ERROR: Error running bot: Cannot close a running event loop
+2026-03-14 21:51:07,184 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-14 22:00:22,257 [bot] ERROR: Error running bot: Cannot close a running event loop
+2026-03-14 22:00:55,915 [bot] ERROR: Error running bot: Cannot close a running event loop
+2026-03-14 22:08:57,772 [bot] ERROR: Error running bot: Cannot close a running event loop
+2026-03-14 22:10:00,253 [bot] ERROR: Error running bot: Cannot close a running event loop
+2026-03-15 07:46:46,165 [bot] ERROR: Error running bot: Cannot close a running event loop
+2026-03-18 19:14:55,613 [bot] ERROR: role_checking failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 294, in role_checking
+    print(bot.ROLE_PROGRESS_LOCK)
+          ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Bot' object has no attribute 'ROLE_PROGRESS_LOCK'
+2026-03-18 19:58:45,345 [bot] ERROR: role_checking failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 271, in trello_check
+    await interaction.followup.send(embeds=embeds)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/discord/webhook/async_.py", line 1794, in send
+    data = await adapter.execute_webhook(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/discord/webhook/async_.py", line 224, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In embeds.1.fields.3.value: Must be 1024 or fewer in length.
+2026-03-18 20:01:36,451 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-18 20:01:54,640 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-19 10:11:36,470 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-19 11:30:38,856 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-19 12:04:00,923 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-19 12:19:00,348 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-19 13:07:46,841 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-19 13:20:32,014 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-19 13:23:31,138 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-19 15:06:15,691 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-19 16:11:00,119 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-19 16:11:49,097 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-19 16:40:35,124 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-19 17:04:29,201 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-19 17:14:11,463 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-19 17:34:24,315 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-19 18:14:10,832 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-19 18:18:52,073 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-19 18:56:36,385 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-19 19:22:15,227 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-19 19:23:54,106 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-19 20:55:09,366 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-19 22:40:12,164 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-19 23:16:22,372 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-03-19 23:32:57,448 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-19 23:45:57,827 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-20 00:57:47,437 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-20 01:44:58,614 [bot] ERROR: ‼️ monitor_role_changes crashed: 403 Forbidden (error code: 50013): Missing Permissions
+2026-03-20 01:55:10,073 [bot] ERROR: ‼️ monitor_role_changes crashed: 403 Forbidden (error code: 50013): Missing Permissions
+2026-03-20 02:03:34,480 [bot] ERROR: ‼️ monitor_role_changes crashed: 403 Forbidden (error code: 50013): Missing Permissions
+2026-03-20 02:11:50,988 [bot] ERROR: ‼️ monitor_role_changes crashed: 403 Forbidden (error code: 50013): Missing Permissions
+2026-03-20 02:20:04,661 [bot] ERROR: ‼️ monitor_role_changes crashed: 403 Forbidden (error code: 50013): Missing Permissions
+2026-03-20 02:28:47,050 [bot] ERROR: ‼️ monitor_role_changes crashed: 403 Forbidden (error code: 50013): Missing Permissions
+2026-03-20 02:37:10,572 [bot] ERROR: ‼️ monitor_role_changes crashed: 403 Forbidden (error code: 50013): Missing Permissions
+2026-03-20 02:45:33,124 [bot] ERROR: ‼️ monitor_role_changes crashed: 403 Forbidden (error code: 50013): Missing Permissions
+2026-03-20 02:53:43,143 [bot] ERROR: ‼️ monitor_role_changes crashed: 403 Forbidden (error code: 50013): Missing Permissions
+2026-03-20 03:02:08,272 [bot] ERROR: ‼️ monitor_role_changes crashed: 403 Forbidden (error code: 50013): Missing Permissions
+2026-03-20 03:10:37,078 [bot] ERROR: ‼️ monitor_role_changes crashed: 403 Forbidden (error code: 50013): Missing Permissions
+2026-03-20 03:24:28,735 [bot] ERROR: ‼️ monitor_role_changes crashed: 403 Forbidden (error code: 50013): Missing Permissions
+2026-03-20 03:38:17,404 [bot] ERROR: ‼️ monitor_role_changes crashed: 403 Forbidden (error code: 50013): Missing Permissions
+2026-03-20 03:46:35,805 [bot] ERROR: ‼️ monitor_role_changes crashed: 403 Forbidden (error code: 50013): Missing Permissions
+2026-03-20 03:54:55,281 [bot] ERROR: ‼️ monitor_role_changes crashed: 403 Forbidden (error code: 50013): Missing Permissions
+2026-03-20 04:02:51,414 [bot] ERROR: ‼️ monitor_role_changes crashed: 403 Forbidden (error code: 50013): Missing Permissions
+2026-03-20 04:11:12,231 [bot] ERROR: ‼️ monitor_role_changes crashed: 403 Forbidden (error code: 50013): Missing Permissions
+2026-03-20 04:19:15,436 [bot] ERROR: ‼️ monitor_role_changes crashed: 403 Forbidden (error code: 50013): Missing Permissions
+2026-03-20 04:21:01,220 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-20 04:35:09,591 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-20 05:24:51,741 [bot] ERROR: ‼️ monitor_role_changes crashed: 403 Forbidden (error code: 50013): Missing Permissions
+2026-03-20 05:27:44,409 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-20 05:28:01,085 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-20 06:12:17,446 [bot] ERROR: ‼️ monitor_role_changes crashed: 403 Forbidden (error code: 50013): Missing Permissions
+2026-03-20 06:55:41,462 [bot] ERROR: ‼️ monitor_role_changes crashed: 403 Forbidden (error code: 50013): Missing Permissions
+2026-03-20 07:16:25,131 [bot] ERROR: Error in heaven_or_hell_add command: must have exactly one of create/read/write/append mode
+2026-03-20 07:21:01,497 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-20 10:50:51,190 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-20 11:11:21,574 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-20 11:21:01,202 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-20 12:00:55,569 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-20 12:20:54,913 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-20 12:45:47,002 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-20 13:39:58,604 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-20 15:28:42,177 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-20 15:36:25,010 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-20 16:30:23,749 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-20 17:00:11,908 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-20 17:02:07,057 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-20 17:04:55,473 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-20 17:08:16,622 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-20 17:16:15,231 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-20 17:17:00,661 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 403
+2026-03-20 17:23:15,946 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 403
+2026-03-23 13:25:11,736 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-23 18:03:40,199 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-23 18:38:59,566 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-23 19:32:11,825 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-23 21:18:22,668 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-24 01:31:27,928 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-24 04:11:21,993 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-24 08:45:03,551 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-24 11:51:13,283 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-24 13:45:03,518 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-24 16:18:42,394 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-24 18:43:13,226 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-24 18:44:08,230 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-24 21:07:18,297 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-24 21:34:59,858 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-24 22:59:15,366 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-24 23:33:13,319 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-25 00:03:35,596 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-25 01:52:09,469 [bot] ERROR: role_checking failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 271, in trello_check
+    await interaction.followup.send(embeds=embeds)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/discord/webhook/async_.py", line 1794, in send
+    data = await adapter.execute_webhook(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/discord/webhook/async_.py", line 224, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In embeds.1.fields.3.value: Must be 1024 or fewer in length.
+2026-03-25 02:06:46,027 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-25 06:12:10,398 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-25 14:12:10,213 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-25 17:32:04,641 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-25 17:49:14,675 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-25 18:08:29,567 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-25 18:12:04,761 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-25 18:12:32,397 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-25 18:16:26,585 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-25 18:31:24,725 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-25 18:52:14,915 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-25 19:23:14,724 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-25 19:32:29,540 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-25 19:35:34,649 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-25 21:50:10,775 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-26 01:30:32,128 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-26 02:12:11,396 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-26 02:40:52,333 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-26 04:05:07,320 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-26 04:25:44,261 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-26 05:00:05,620 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-26 05:15:40,703 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-26 06:48:38,103 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-26 07:24:31,592 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-26 07:37:03,820 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-26 09:22:27,049 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-26 09:28:27,638 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-26 09:31:43,473 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-26 14:30:49,710 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-26 15:03:00,414 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-26 17:49:06,595 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-26 18:01:57,604 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-26 18:03:01,237 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-26 20:01:46,000 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-26 20:03:31,253 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-26 20:04:15,077 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-26 20:05:28,740 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-26 20:06:10,700 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-26 20:06:32,106 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-26 20:07:41,056 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-26 20:09:16,806 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-26 20:09:37,924 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-26 20:09:58,104 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-26 20:11:32,838 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-26 20:11:51,174 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-26 20:13:06,885 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-26 20:16:09,500 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-26 20:16:43,739 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-26 20:26:30,627 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-26 23:51:42,122 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-03-26 23:52:02,772 [bot] ERROR: Error fetching roles: 
+2026-03-27 00:20:16,277 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-27 01:05:13,525 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-27 01:45:49,229 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-27 05:03:00,890 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-27 05:27:47,368 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-27 06:03:01,056 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-27 06:08:18,444 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-27 07:39:25,503 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-27 13:01:43,968 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-27 13:37:05,648 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-03-27 15:33:05,961 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-27 17:03:01,579 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-27 17:15:30,600 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-27 18:48:44,961 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-28 00:19:34,171 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+2026-03-28 04:38:01,508 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-28 05:55:31,339 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-28 10:09:12,641 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-28 12:39:17,890 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-03-28 19:09:12,280 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-28 20:00:21,515 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-28 23:18:46,445 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-29 01:09:12,327 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-29 02:09:12,835 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-29 05:27:44,299 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-29 07:36:20,409 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-29 08:09:12,231 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-29 11:16:24,730 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+2026-03-30 02:09:12,253 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-30 05:38:06,085 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-30 09:19:32,257 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-30 09:38:05,962 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-30 10:38:06,092 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-30 11:31:12,060 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-30 14:22:00,133 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-30 15:35:20,759 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-30 15:56:11,383 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-30 16:38:05,630 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-30 16:45:46,699 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-30 17:07:10,214 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-30 17:07:47,513 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-30 22:33:16,354 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-30 23:21:38,240 [bot] ERROR: role_checking failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 280, in trello_check
+    await interaction.followup.send(embeds=embeds, view=view)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/discord/webhook/async_.py", line 1794, in send
+    data = await adapter.execute_webhook(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/discord/webhook/async_.py", line 224, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In embeds.1.fields.12.value: Must be 1024 or fewer in length.
+2026-03-30 23:22:00,766 [bot] ERROR: role_checking failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 280, in trello_check
+    await interaction.followup.send(embeds=embeds, view=view)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/discord/webhook/async_.py", line 1794, in send
+    data = await adapter.execute_webhook(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/discord/webhook/async_.py", line 224, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In embeds.1.fields.12.value: Must be 1024 or fewer in length.
+2026-03-30 23:48:52,266 [bot] ERROR: role_checking failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 280, in trello_check
+    await interaction.followup.send(embeds=embeds, view=view)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/discord/webhook/async_.py", line 1794, in send
+    data = await adapter.execute_webhook(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/discord/webhook/async_.py", line 224, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In embeds.1.fields.12.value: Must be 1024 or fewer in length.
+2026-03-31 02:58:45,075 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-31 04:19:06,011 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-31 04:55:11,015 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-31 05:12:25,935 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-31 05:27:56,826 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-31 17:12:52,909 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-31 19:44:52,754 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-31 19:45:06,790 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-31 19:45:21,525 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-31 19:45:40,469 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-31 19:45:54,246 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-31 19:46:09,107 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-31 19:46:19,587 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-31 19:46:39,762 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-31 19:46:57,253 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-31 19:47:16,196 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-31 19:49:00,512 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-31 19:49:27,923 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-31 19:49:38,490 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-31 19:49:57,354 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-31 19:50:07,994 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-31 19:50:35,336 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-31 19:50:53,949 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-31 19:51:12,347 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-31 19:51:30,144 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-31 19:51:58,954 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-03-31 20:24:21,316 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-31 20:28:47,534 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-31 21:28:47,723 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-31 22:03:20,919 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-31 22:08:19,631 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-31 23:16:26,039 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-03-31 23:49:37,669 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+2026-04-01 00:17:23,949 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-04-01 00:17:40,718 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+2026-04-01 01:26:08,378 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-01 02:36:27,569 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-01 02:46:21,313 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-01 03:44:43,026 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-01 04:09:37,276 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-01 06:11:24,520 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-01 09:41:21,338 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-01 10:51:44,647 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-01 13:11:24,640 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-01 13:41:21,059 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-01 17:41:21,421 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-02 00:16:08,569 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 504
+2026-04-02 00:44:06,437 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-02 02:12:54,421 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-02 05:27:57,227 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-02 05:28:33,934 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-02 12:28:57,643 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-02 12:38:57,571 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-02 16:49:58,366 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await asyncio.sleep(180)  # Check every 3 minutes
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    
+    roles_processed = 0
+    users_checked = 0
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    ) as response:
+        ^^^^^^^^^^
+RuntimeError: HTTP 500
+2026-04-02 17:05:49,901 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await asyncio.sleep(180)  # Check every 3 minutes
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    
+    roles_processed = 0
+    users_checked = 0
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    ) as response:
+        ^^^^^^^^^^
+RuntimeError: HTTP 500
+2026-04-02 17:56:31,934 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await asyncio.sleep(180)  # Check every 3 minutes
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    
+    roles_processed = 0
+    users_checked = 0
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    ) as response:
+        ^^^^^^^^^^
+RuntimeError: HTTP 503
+2026-04-02 18:31:18,358 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await asyncio.sleep(180)  # Check every 3 minutes
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    
+    roles_processed = 0
+    users_checked = 0
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    ) as response:
+        ^^^^^^^^^^
+RuntimeError: HTTP 500
+2026-04-02 19:31:18,538 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await asyncio.sleep(180)  # Check every 3 minutes
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    
+    roles_processed = 0
+    users_checked = 0
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    ) as response:
+        ^^^^^^^^^^
+RuntimeError: HTTP 500
+2026-04-02 21:48:13,232 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await asyncio.sleep(180)  # Check every 3 minutes
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    
+    roles_processed = 0
+    users_checked = 0
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    ) as response:
+        ^^^^^^^^^^
+RuntimeError: HTTP 500
+2026-04-03 00:04:01,771 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await asyncio.sleep(180)  # Check every 3 minutes
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    
+    roles_processed = 0
+    users_checked = 0
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    ) as response:
+        ^^^^^^^^^^
+RuntimeError: HTTP 500
+2026-04-03 01:28:31,292 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await asyncio.sleep(180)  # Check every 3 minutes
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    
+    roles_processed = 0
+    users_checked = 0
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    ) as response:
+        ^^^^^^^^^^
+RuntimeError: HTTP 500
+2026-04-03 02:24:04,497 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await asyncio.sleep(180)  # Check every 3 minutes
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    
+    roles_processed = 0
+    users_checked = 0
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    ) as response:
+        ^^^^^^^^^^
+RuntimeError: HTTP 500
+2026-04-03 03:19:44,194 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await asyncio.sleep(180)  # Check every 3 minutes
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    
+    roles_processed = 0
+    users_checked = 0
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    ) as response:
+        ^^^^^^^^^^
+RuntimeError: HTTP 500
+2026-04-03 05:41:43,467 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 342, in safe_monitor_wrapper
+    await asyncio.sleep(180)  # Check every 3 minutes
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 259, in monitor_role_changes
+    
+    roles_processed = 0
+    users_checked = 0
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 222, in fetch_users_in_role
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 181, in fetch_page
+    ) as response:
+        ^^^^^^^^^^
+RuntimeError: HTTP 500
+2026-04-07 02:14:09,297 [bot] ERROR: role_checking failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 303, in role_checking
+    print(bot.ROLE_PROGRESS_LOCK)
+          ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Bot' object has no attribute 'ROLE_PROGRESS_LOCK'
+2026-04-07 08:21:34,873 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-07 11:32:57,724 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-07 12:17:46,686 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-07 13:16:24,747 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-07 14:45:11,886 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-07 16:45:12,098 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-07 19:01:04,647 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-07 20:01:35,241 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 504
+2026-04-07 20:01:47,508 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 504
+2026-04-07 20:02:11,304 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 504
+2026-04-07 20:11:29,055 [bot] ERROR: role_checking failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 303, in role_checking
+    print(bot.ROLE_PROGRESS_LOCK)
+          ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Bot' object has no attribute 'ROLE_PROGRESS_LOCK'
+2026-04-07 20:47:26,049 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-07 20:55:33,435 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-07 21:06:50,355 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 504
+2026-04-07 22:13:54,093 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 503
+2026-04-07 22:15:31,857 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-07 22:40:56,379 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-07 23:36:34,572 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-08 03:30:35,020 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-08 03:33:29,957 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-08 07:40:56,203 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-08 08:30:42,981 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-08 12:22:09,737 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-08 14:07:11,049 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-08 15:21:58,778 [bot] ERROR: ‼️ monitor_role_changes crashed: 
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/aiohttp/client_reqrep.py", line 539, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/aiohttp/streams.py", line 680, in read
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 179, in fetch_page
+    async with session.get(
+               ~~~~~~~~~~~^
+        url, timeout=aiohttp.ClientTimeout(total=10)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as response:
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/aiohttp/client.py", line 1510, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/aiohttp/client.py", line 779, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/aiohttp/client.py", line 757, in _connect_and_send_request
+    await resp.start(conn)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/aiohttp/client_reqrep.py", line 534, in start
+    with self._timer:
+         ^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/aiohttp/helpers.py", line 713, in __exit__
+    raise asyncio.TimeoutError from exc_val
+TimeoutError
+2026-04-08 15:49:07,361 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-08 16:31:58,328 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 502
+2026-04-08 16:32:34,523 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 502
+2026-04-08 16:33:35,951 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 502
+2026-04-08 16:34:05,627 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 502
+2026-04-08 16:34:28,847 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 502
+2026-04-08 16:34:40,093 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 502
+2026-04-08 16:35:04,464 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 502
+2026-04-08 16:35:17,402 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 502
+2026-04-08 16:35:36,410 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 502
+2026-04-08 16:35:58,436 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 502
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 502
+2026-04-08 18:07:17,449 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 504
+2026-04-08 18:07:57,526 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 504
+2026-04-08 18:40:22,594 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 504
+2026-04-08 19:27:32,647 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 504
+2026-04-08 19:45:47,675 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-08 19:48:56,682 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-08 20:16:02,555 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 504
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 504
+2026-04-08 23:23:45,968 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-08 23:36:38,755 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 199, in fetch_page
+    raise RuntimeError("RoProxy failed")
+RuntimeError: RoProxy failed
+2026-04-08 23:36:49,321 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 205, in fetch_users_in_role
+    data = await fetch_page(cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 199, in fetch_page
+    raise RuntimeError("RoProxy failed")
+RuntimeError: RoProxy failed
+2026-04-08 23:39:45,204 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 183, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-04-08 23:40:30,149 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 199, in fetch_page
+    raise RuntimeError("RoProxy failed")
+RuntimeError: RoProxy failed
+2026-04-08 23:40:40,610 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 205, in fetch_users_in_role
+    data = await fetch_page(cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 199, in fetch_page
+    raise RuntimeError("RoProxy failed")
+RuntimeError: RoProxy failed
+2026-04-08 23:40:51,084 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 205, in fetch_users_in_role
+    data = await fetch_page(cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 199, in fetch_page
+    raise RuntimeError("RoProxy failed")
+RuntimeError: RoProxy failed
+2026-04-08 23:43:49,394 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 199, in fetch_page
+    raise RuntimeError("RoProxy failed")
+RuntimeError: RoProxy failed
+2026-04-08 23:43:59,875 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 205, in fetch_users_in_role
+    data = await fetch_page(cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 199, in fetch_page
+    raise RuntimeError("RoProxy failed")
+RuntimeError: RoProxy failed
+2026-04-08 23:47:06,611 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 199, in fetch_page
+    raise RuntimeError("RoProxy failed")
+RuntimeError: RoProxy failed
+2026-04-08 23:50:51,500 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 228, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 199, in fetch_page
+    raise RuntimeError("RoProxy failed")
+RuntimeError: RoProxy failed
+2026-04-08 23:51:01,902 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 205, in fetch_users_in_role
+    data = await fetch_page(cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 199, in fetch_page
+    raise RuntimeError("RoProxy failed")
+RuntimeError: RoProxy failed
+2026-04-08 23:51:12,498 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 265, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 205, in fetch_users_in_role
+    data = await fetch_page(cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 199, in fetch_page
+    raise RuntimeError("RoProxy failed")
+RuntimeError: RoProxy failed
