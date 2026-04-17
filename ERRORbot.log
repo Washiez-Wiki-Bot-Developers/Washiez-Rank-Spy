@@ -19993,3 +19993,17 @@ Traceback (most recent call last):
   File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 185, in fetch_page
     raise RuntimeError(f"HTTP {response.status}")
 RuntimeError: HTTP 500
+2026-04-17 15:43:16,884 [bot.commands] ERROR: role_checking failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 292, in trello_check
+    await interaction.followup.send(embeds=embeds, view=view)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/discord/webhook/async_.py", line 1794, in send
+    data = await adapter.execute_webhook(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/discord/webhook/async_.py", line 224, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In embeds.1.fields.6.value: Must be 1024 or fewer in length.
