@@ -42,10 +42,10 @@
     },
     "4445788033": {
         "restricted": true,
-        "reason": "repeat",
+        "reason": "No reason provided.",
         "restriction": {
-            "rank_from": "General Manager",
-            "rank_to": "Head Operator"
+            "rank_from": "Head Operator",
+            "rank_to": "General Manager"
         }
     }
 }
