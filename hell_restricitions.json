@@ -39,5 +39,13 @@
             "rank_from": "Customer",
             "rank_to": "Senior Corporate"
         }
+    },
+    "4445788033": {
+        "restricted": true,
+        "reason": "repeat",
+        "restriction": {
+            "rank_from": "General Manager",
+            "rank_to": "Head Operator"
+        }
     }
 }
