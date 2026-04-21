@@ -500,6 +500,7 @@ async def on_ready():
         logger.info("Starting monitor_role_changes task restricted to HO+...")
         all_lower_HO = []
         all_lower_HO.extend(LOW_RANKS)
+        #all_lower_HO.extend(MID_RANKS)
         all_lower_HO.remove("Head Operator")
         all_lower_HO.remove("Customer")  # Incase of demotions
         all_lower_HO.append("Member")
