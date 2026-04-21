@@ -12,3 +12,4 @@ bot.log
 *.swp
 .env
 .env
+info.json
