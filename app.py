@@ -66,8 +66,8 @@ LOW_RANKS = [
     "Head Operator",
 ]
 MID_RANKS = ["Shift Leader", "Supervisor", "Assistant Manager", "General Manager"]
-MGMT_RANKS = ["Junior Director", "Senior Director", "Head Director"]
-CORP_RANKS = ["Corporate Intern", "Junior Corporate", "Senior Corporate"]
+MGMT_RANKS = ["Assistant Director", "Junior Director", "Senior Director", "Head Director"]
+CORP_RANKS = ["Corporate Intern", "Junior Corporate", "Senior Corporate", "Head Corporate"]
 LS_RANKS = [
     "Chief Human Resources Officer",
     "Chief Public Relations Officer",
