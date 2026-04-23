@@ -1,6 +1,126 @@
 {
   "Mid": [
     {
+      "user": "GreenFoxGamerSon",
+      "userId": 4531135852,
+      "action": "promoted",
+      "from": "Head Operator",
+      "to": "Shift Leader",
+      "mention": "<@&1328338484104134688>",
+      "message_id": null,
+      "channel_id": 1413577873159229481,
+      "timestamp_discovered_change": 1763401652.2457635,
+      "staff_team": "Mid"
+    },
+    {
+      "user": "brianzcxi",
+      "userId": 8119903263,
+      "action": "promoted",
+      "from": "Head Operator",
+      "to": "Shift Leader",
+      "mention": "<@&1328338484104134688>",
+      "message_id": null,
+      "channel_id": 1413577873159229481,
+      "timestamp_discovered_change": 1763401652.656103,
+      "staff_team": "Mid"
+    },
+    {
+      "user": "allypally2012",
+      "userId": 604600554,
+      "action": "promoted",
+      "from": "Head Operator",
+      "to": "Shift Leader",
+      "mention": "<@&1328338484104134688>",
+      "message_id": null,
+      "channel_id": 1413577873159229481,
+      "timestamp_discovered_change": 1763401653.036102,
+      "staff_team": "Mid"
+    },
+    {
+      "user": "AbiPinkUnicorn",
+      "userId": 1567438196,
+      "action": "promoted",
+      "from": "Head Operator",
+      "to": "Shift Leader",
+      "mention": "<@&1328338484104134688>",
+      "message_id": null,
+      "channel_id": 1413577873159229481,
+      "timestamp_discovered_change": 1763401653.3839638,
+      "staff_team": "Mid"
+    },
+    {
+      "user": "1mEnergetic",
+      "userId": 2455929936,
+      "action": "promoted",
+      "from": "Head Operator",
+      "to": "Shift Leader",
+      "mention": "<@&1328338484104134688>",
+      "message_id": null,
+      "channel_id": 1413577873159229481,
+      "timestamp_discovered_change": 1763401653.7649252,
+      "staff_team": "Mid"
+    },
+    {
+      "user": "zezoelhuseiny",
+      "userId": 1661895443,
+      "action": "promoted",
+      "from": "Head Operator",
+      "to": "Shift Leader",
+      "mention": "<@&1328338484104134688>",
+      "message_id": null,
+      "channel_id": 1413577873159229481,
+      "timestamp_discovered_change": 1763401654.1616366,
+      "staff_team": "Mid"
+    },
+    {
+      "user": "icecreamlolly124",
+      "userId": 3695659038,
+      "action": "promoted",
+      "from": "Head Operator",
+      "to": "Shift Leader",
+      "mention": "<@&1328338484104134688>",
+      "message_id": null,
+      "channel_id": 1413577873159229481,
+      "timestamp_discovered_change": 1763401654.5426466,
+      "staff_team": "Mid"
+    },
+    {
+      "user": "Cutieand_lovesart",
+      "userId": 4960561155,
+      "action": "promoted",
+      "from": "Head Operator",
+      "to": "Shift Leader",
+      "mention": "<@&1328338484104134688>",
+      "message_id": null,
+      "channel_id": 1413577873159229481,
+      "timestamp_discovered_change": 1763401654.9147968,
+      "staff_team": "Mid"
+    },
+    {
+      "user": "GotBan5",
+      "userId": 3182625005,
+      "action": "promoted",
+      "from": "Head Operator",
+      "to": "Shift Leader",
+      "mention": "<@&1328338484104134688>",
+      "message_id": null,
+      "channel_id": 1413577873159229481,
+      "timestamp_discovered_change": 1763401655.3097177,
+      "staff_team": "Mid"
+    },
+    {
+      "user": "eya_31311",
+      "userId": 9441640347,
+      "action": "promoted",
+      "from": "Head Operator",
+      "to": "Shift Leader",
+      "mention": "<@&1328338484104134688>",
+      "message_id": null,
+      "channel_id": 1413577873159229481,
+      "timestamp_discovered_change": 1763401655.6946602,
+      "staff_team": "Mid"
+    },
+    {
       "user": "heavenaaaa",
       "userId": 921531891,
       "action": "promoted",
@@ -8,8 +128,20 @@
       "to": "Supervisor",
       "mention": "<@&1328338484104134688>",
       "message_id": null,
-      "channel_id": 1414253842677104661,
-      "timestamp_discovered_change": 1763068114.3849235,
+      "channel_id": 1413577873159229481,
+      "timestamp_discovered_change": 1763403197.9043288,
+      "staff_team": "Mid"
+    },
+    {
+      "user": "envergyy",
+      "userId": 656409001,
+      "action": "promoted",
+      "from": "Head Operator",
+      "to": "Assistant Manager",
+      "mention": "<@&1328338484104134688>",
+      "message_id": null,
+      "channel_id": 1413577873159229481,
+      "timestamp_discovered_change": 1763404282.3922513,
       "staff_team": "Mid"
     }
   ]

@@ -1,10 +1,4 @@
-py-cord
+discord.py
 requests
 dotenv
 pytz
-aiohttp
-colorama
-rich
-aiofiles
-orjson
-types-orjson
