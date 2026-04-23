@@ -3,10 +3,13 @@
 __pycache__
 .env
 *.py
-!main.py
+!app.py
+!app_rpite_via_SOCKS.py
+!get_latest_git_commit.py
+!coloured_log_handler.py
 .env
 bot.log
 .env
 .env
-.env
-*.swp
+*.log
+test/test.py

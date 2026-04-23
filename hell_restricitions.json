@@ -23,14 +23,5 @@
             "rank_to": "Shift Leader",
             "until": "indefinite"
         }
-    },
-    "7658644731": {
-        "restricted": true,
-        "reason":"not sure.",
-        "restriction":{
-            "rank_from": "Junior Director",
-            "rank_to": "Customer"
-        }
     }
 }
-
