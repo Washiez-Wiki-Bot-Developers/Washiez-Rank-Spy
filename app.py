@@ -66,8 +66,8 @@ LOW_RANKS = [
     "Head Operator",
 ]
 MID_RANKS = ["Shift Leader", "Supervisor", "Assistant Manager", "General Manager"]
-MGMT_RANKS = ["Junior Director", "Senior Director", "Head Director"]
-CORP_RANKS = ["Corporate Intern", "Junior Corporate", "Senior Corporate"]
+MGMT_RANKS = ["Assistant Director", "Junior Director", "Senior Director", "Head Director"]
+CORP_RANKS = ["Corporate Intern", "Junior Corporate", "Senior Corporate", "Head Corporate"]
 LS_RANKS = [
     "Chief Human Resources Officer",
     "Chief Public Relations Officer",
@@ -80,6 +80,8 @@ LS_RANKS = [
 ET_RANKS = LOW_RANKS
 ST_RANKS = MID_RANKS
 HIGH_RANKS = MGMT_RANKS + CORP_RANKS + LS_RANKS
+ALL_RANKS = ET_RANKS + ST_RANKS + HIGH_RANKS
+ALL_M_RANKS_LIST = [ET_RANKS,ST_RANKS,MGMT_RANKS,CORP_RANKS,LS_RANKS]
 
 ENABLE_ROPROXY_USAGE_FIRST_PRIORITY = False
 
@@ -498,6 +500,7 @@ async def on_ready():
         logger.info("Starting monitor_role_changes task restricted to HO+...")
         all_lower_HO = []
         all_lower_HO.extend(LOW_RANKS)
+        #all_lower_HO.extend(MID_RANKS)
         all_lower_HO.remove("Head Operator")
         all_lower_HO.remove("Customer")  # Incase of demotions
         all_lower_HO.append("Member")

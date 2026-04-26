@@ -10,3 +10,7 @@ bot.log
 .env
 .env
 *.swp
+.env
+.env
+info.json
+data.json
