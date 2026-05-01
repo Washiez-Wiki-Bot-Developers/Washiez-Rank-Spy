@@ -23903,3 +23903,42 @@ Traceback (most recent call last):
   File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 190, in _fetch_user_id_from_username
     raise ValueError(f"Username '{username}' not found.")
 ValueError: Username 'nterwined' not found.
+2026-05-01 08:31:29,226 [bot] ERROR: ‼️ monitor_role_changes crashed: Response payload is not completed: <TransferEncodingError: 400, message='Not enough data to satisfy transfer length header.'>
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/aiohttp/client_proto.py", line 144, in connection_lost
+    uncompleted = self._parser.feed_eof()
+  File "aiohttp/_http_parser.pyx", line 506, in aiohttp._http_parser.HttpParser.feed_eof
+aiohttp.http_exceptions.TransferEncodingError: 400, message:
+  Not enough data to satisfy transfer length header.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 350, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 267, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 230, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 187, in fetch_page
+    data = await response.json()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/aiohttp/client_reqrep.py", line 751, in json
+    await self.read()
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/aiohttp/client_reqrep.py", line 693, in read
+    self._body = await self.content.read()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/aiohttp/streams.py", line 426, in read
+    block = await self.readany()
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/aiohttp/streams.py", line 448, in readany
+    await self._wait("readany")
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/aiohttp/streams.py", line 355, in _wait
+    await waiter
+aiohttp.client_exceptions.ClientPayloadError: Response payload is not completed: <TransferEncodingError: 400, message='Not enough data to satisfy transfer length header.'>
