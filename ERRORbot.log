@@ -26087,3 +26087,6 @@ Traceback (most recent call last):
   File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 185, in fetch_page
     raise RuntimeError(f"HTTP {response.status}")
 RuntimeError: HTTP 500
+2026-05-09 01:50:21,389 [utils] ERROR: safe_send: forbidden in channel 1413578146120204298
+2026-05-09 01:50:31,932 [utils] ERROR: safe_send: forbidden in channel 1413578146120204298
+2026-05-09 01:50:33,178 [utils] ERROR: safe_send: forbidden in channel 1413620449912295645
