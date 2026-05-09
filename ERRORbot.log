@@ -26355,3 +26355,8 @@ RuntimeError: HTTP 500
 2026-05-09 11:44:12,475 [utils] ERROR: safe_send: forbidden in channel 1413578146120204298
 2026-05-09 11:44:31,293 [utils] ERROR: safe_send: forbidden in channel 1413578146120204298
 2026-05-09 11:44:33,708 [utils] ERROR: safe_send: forbidden in channel 1413620449912295645
+2026-05-09 12:07:17,224 [utils] ERROR: safe_send: forbidden in channel 1413578146120204298
+2026-05-09 12:07:17,315 [utils] ERROR: safe_send: forbidden in channel 1413577873159229481
+2026-05-09 12:07:28,850 [utils] ERROR: safe_send: forbidden in channel 1413577873159229481
+2026-05-09 12:07:33,608 [utils] ERROR: safe_send: forbidden in channel 1413578146120204298
+2026-05-09 12:07:35,662 [utils] ERROR: safe_send: forbidden in channel 1413620449912295645
