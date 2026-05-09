@@ -47,5 +47,13 @@
             "rank_from": "Head Operator",
             "rank_to": "General Manager"
         }
+    },
+    "4049698442": {
+        "restricted": true,
+        "reason": "Spamming (User: Jqxvck)",
+        "restriction": {
+            "rank_from": "Assistant Director",
+            "rank_to": "Shift Leader"
+        }
     }
 }
