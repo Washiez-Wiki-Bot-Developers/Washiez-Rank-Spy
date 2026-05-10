@@ -84,16 +84,48 @@ ALL_RANKS = ET_RANKS + ST_RANKS + HIGH_RANKS
 ALL_M_RANKS_LIST = [ET_RANKS,ST_RANKS,MGMT_RANKS,CORP_RANKS,LS_RANKS]
 
 ENABLE_ROPROXY_USAGE_FIRST_PRIORITY = False
+# Enable multi-role storage and multi-role notification mode
+ENABLE_MULTI_ROLE_MODE = True
+
+# Suppression window (7 weeks)
+SEVEN_WEEKS_SECONDS = 7 * 7 * 24 * 3600
 
 
 async def load_data():
     async with file_lock:
         try:
             with open(DATA_FILE, "r") as f:
-                return json.load(f)
+                data = json.load(f)
+
+            # Ensure baseline structure
+            if "user_roles" not in data or not isinstance(data["user_roles"], dict):
+                data["user_roles"] = {}
+
+            # Normalize existing single-value entries to lists
+            for uid, roles in list(data["user_roles"].items()):
+                if roles is None:
+                    data["user_roles"][uid] = []
+                elif isinstance(roles, list):
+                    # unique, sorted
+                    try:
+                        data["user_roles"][uid] = sorted(list({int(r) for r in roles}))
+                    except Exception:
+                        data["user_roles"][uid] = roles
+                else:
+                    # single role id (int or str) -> list
+                    try:
+                        data["user_roles"][uid] = [int(roles)]
+                    except Exception:
+                        data["user_roles"][uid] = [roles]
+
+            # Ensure per-user metadata exists
+            if "user_meta" not in data or not isinstance(data["user_meta"], dict):
+                data["user_meta"] = {}
+
+            return data
         except (FileNotFoundError, json.JSONDecodeError):
             logger.info("Data file missing or corrupt. Creating fresh.")
-            return {"user_roles": {}}
+            return {"user_roles": {}, "user_meta": {}}
 
 
 async def save_data(data):
