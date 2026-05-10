@@ -26439,3 +26439,19 @@ RuntimeError: HTTP 500
 2026-05-09 19:28:24,678 [utils] ERROR: safe_send: forbidden in channel 1413577828498276474
 2026-05-09 19:29:03,632 [utils] ERROR: safe_send: forbidden in channel 1413620449912295645
 2026-05-09 19:46:56,883 [utils] ERROR: safe_send: forbidden in channel 1413620449912295645
+2026-05-10 19:13:30,800 [bot] ERROR: ‼️ monitor_role_changes crashed: name 'rank_name' is not defined
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 526, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 320, in monitor_role_changes
+    if not rank_name in HIGH_RANKS:
+           ^^^^^^^^^
+NameError: name 'rank_name' is not defined. Did you mean: 'role_name'?
+2026-05-10 19:14:55,594 [bot] ERROR: ‼️ monitor_role_changes crashed: name 'rank_name' is not defined
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 528, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 320, in monitor_role_changes
+    if not rank_name in HIGH_RANKS:
+           ^^^^^^^^^
+NameError: name 'rank_name' is not defined. Did you mean: 'role_name'?
