@@ -289,10 +289,12 @@ async def monitor_role_changes(disallowed_rank_names=None):
                                 current_rank
                             )
 
-                            if not special_patches.check_user(
-                                user, current_rank, prev_role_name, action
-                            ):
+                            if not special_patches.check_user( # function returns True if the user shouldn't be
+                                user, current_rank, prev_role_name, action #  ignored for this change, False if 
+                            ): #                it should be processed as ignoredThat's why for not instruction
                                 continue
+                            
+                            
 
                             if (prev_role_name in HIGH_RANKS) and action == "demoted":
                                 logger.info(
