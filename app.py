@@ -14,6 +14,8 @@ from discord_report_error_logs import DiscordErrorHandler
 from utils import safe_send, safe_send_and_pub, safe_reaction, safe_publish
 import special_patches
 
+import requests
+
 asyncio.set_event_loop(asyncio.new_event_loop())
 
 intents = discord.Intents.default()
@@ -248,6 +250,17 @@ async def fetch_users_in_role(
     return users
 
 
+def get_group_rank_name(user_id, group_id):
+    url = f"https://groups.roblox.com/v2/users/{user_id}/groups/roles"
+    response = requests.get(url)
+    response.raise_for_status()
+
+    for group in response.json()["data"]:
+        if group["group"]["id"] == group_id:
+            return group["role"]["name"]
+    return None
+
+
 async def monitor_role_changes(disallowed_rank_names=None):
     async with aiohttp.ClientSession() as session:
         while True:
@@ -314,8 +327,10 @@ async def monitor_role_changes(disallowed_rank_names=None):
                             ):  #                it should be processed as ignoredThat's why for not instruction
                                 continue
 
-                            roblox_user = RobloxUser(user["userId"]).create(user["userId"])
-                            if await roblox_user.get_rank(GROUP_ID) == current_rank:
+                            if (
+                                get_group_rank_name(user["userId"], GROUP_ID)
+                                == current_rank
+                            ):
                                 logger.info(
                                     f"✅ Verified {user['username']} is actually {action} to {current_rank}."
                                 )
@@ -328,7 +343,7 @@ async def monitor_role_changes(disallowed_rank_names=None):
                                 )
                                 if notification_channel:
                                     await safe_send(  # Sent when user likely has more than one role
-                                        message=f"⚠️ User {user['username']} likely has more than one role. Roblox API returns {await roblox_user.get_rank(GROUP_ID)} when asked directly about user, found in {current_rank}. <@1114892999474815126>",
+                                        message=f"⚠️ User {user['username']} likely has more than one role. Roblox API returns {get_group_rank_name(user['userId'], GROUP_ID)} when asked directly about user, found in {current_rank}. <@1114892999474815126>",
                                         channel_id=TIME_TRACKING_CHANNEL_ID,
                                         bot=bot,
                                     )

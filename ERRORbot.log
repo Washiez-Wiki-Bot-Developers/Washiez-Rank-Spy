@@ -26519,3 +26519,20 @@ Traceback (most recent call last):
     if await roblox_user.get_rank(GROUP_ID) == current_rank:
              ^^^^^^^^^^^^^^^^^^^^
 AttributeError: 'coroutine' object has no attribute 'get_rank'
+2026-05-10 20:00:27,428 [bot] ERROR: ‼️ monitor_role_changes crashed: 'coroutine' object has no attribute '_washiez_highest'
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 390, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 318, in monitor_role_changes
+    if await roblox_user._washiez_highest == current_rank:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'coroutine' object has no attribute '_washiez_highest'
+2026-05-10 20:00:41,047 [bot] ERROR: ‼️ monitor_role_changes crashed: 'coroutine' object has no attribute '_washiez_highest'
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 390, in safe_monitor_wrapper
+    try:
+    
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 318, in monitor_role_changes
+    print(roblox_user)
+             ^^^^^^^^^
+AttributeError: 'coroutine' object has no attribute '_washiez_highest'
