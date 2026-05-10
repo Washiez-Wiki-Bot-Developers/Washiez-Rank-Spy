@@ -23,6 +23,8 @@ bot = commands.Bot(command_prefix="! ", intents=intents, reconnect=True)
 # Set up logging
 import logging_setup
 
+from roblox import RobloxUser
+
 logger: logging.Logger = logging_setup.setup_logging(
     rankspy_default_level=True,
     bot=bot,
@@ -294,7 +296,23 @@ async def monitor_role_changes(disallowed_rank_names=None):
                             ): #                it should be processed as ignoredThat's why for not instruction
                                 continue
                             
-                            
+                            roblox_user = RobloxUser(user["userId"])
+                            if roblox_user.get_group_roles(GROUP_ID) == current_rank:
+                                logger.info(
+                                    f"✅ Verified {user['username']} is actually {action} to {current_rank}."
+                                )
+                            else:
+                                logger.warning(
+                                    f"⚠️ Verification failed: {user['username']} is not actually {action} to {current_rank} according to Roblox. Skipping notification."
+                                )
+                                notification_channel = bot.get_channel(TIME_TRACKING_CHANNEL_ID)
+                                if notification_channel:
+                                    await safe_send( # Sent when user likely has more than one role
+                                        message=f"⚠️ Verification failed for {user['username']} ({user['userId']}): expected {action} to {current_rank} but Roblox data does not reflect this change.",
+                                        channel_id=TIME_TRACKING_CHANNEL_ID,
+                                        bot=bot,
+                                    )
+                                continue
 
                             if (prev_role_name in HIGH_RANKS) and action == "demoted":
                                 logger.info(
