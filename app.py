@@ -66,8 +66,18 @@ LOW_RANKS = [
     "Head Operator",
 ]
 MID_RANKS = ["Shift Leader", "Supervisor", "Assistant Manager", "General Manager"]
-MGMT_RANKS = ["Assistant Director", "Junior Director", "Senior Director", "Head Director"]
-CORP_RANKS = ["Corporate Intern", "Junior Corporate", "Senior Corporate", "Head Corporate"]
+MGMT_RANKS = [
+    "Assistant Director",
+    "Junior Director",
+    "Senior Director",
+    "Head Director",
+]
+CORP_RANKS = [
+    "Corporate Intern",
+    "Junior Corporate",
+    "Senior Corporate",
+    "Head Corporate",
+]
 LS_RANKS = [
     "Chief Human Resources Officer",
     "Chief Public Relations Officer",
@@ -81,7 +91,7 @@ ET_RANKS = LOW_RANKS
 ST_RANKS = MID_RANKS
 HIGH_RANKS = MGMT_RANKS + CORP_RANKS + LS_RANKS
 ALL_RANKS = ET_RANKS + ST_RANKS + HIGH_RANKS
-ALL_M_RANKS_LIST = [ET_RANKS,ST_RANKS,MGMT_RANKS,CORP_RANKS,LS_RANKS]
+ALL_M_RANKS_LIST = [ET_RANKS, ST_RANKS, MGMT_RANKS, CORP_RANKS, LS_RANKS]
 
 ENABLE_ROPROXY_USAGE_FIRST_PRIORITY = False
 # Enable multi-role storage and multi-role notification mode
@@ -163,6 +173,25 @@ async def retrieve_roproxy_url(url):
     return url
 
 
+def compute_deltas(prev_list, curr_set):
+    """Return (added_set, removed_set) given prev stored list and current set."""
+    try:
+        prev_set = set(int(x) for x in prev_list) if prev_list else set()
+    except Exception:
+        prev_set = set()
+    added = set(curr_set) - prev_set
+    removed = prev_set - set(curr_set)
+    return added, removed
+
+
+def should_notify(user_meta: dict | None, now_ts: int) -> bool:
+    """Return True if notifications are allowed for this user now."""
+    if not user_meta:
+        return True
+    suppressed_until = int(user_meta.get("suppressed_until", 0))
+    return now_ts >= suppressed_until
+
+
 async def fetch_roles(session, group_id):
     base_url = f"https://groups.roblox.com/v1/groups/{group_id}/roles"
     try:
@@ -213,7 +242,9 @@ async def fetch_users_in_role(
             async with session.get(
                 url, timeout=aiohttp.ClientTimeout(total=10)
             ) as response:
-                if response.status not in (200, 429) or str(response.status).startswith("5"):
+                if response.status not in (200, 429) or str(response.status).startswith(
+                    "5"
+                ):
                     raise RuntimeError(f"HTTP {response.status}")
 
                 data = await response.json()
@@ -279,9 +310,7 @@ async def monitor_role_changes(disallowed_rank_names=None):
                 logger.debug(
                     "Removing roles from fetched list so only goes through the restricted role."
                 )
-                # iterate over role names directly
                 for role_name in disallowed_rank_names:
-                    # find the role object in roles that matches this name
                     roles = [r for r in roles if r["name"] != role_name]
 
                 logger.debug(
@@ -291,73 +320,186 @@ async def monitor_role_changes(disallowed_rank_names=None):
             roles_dict = {role["id"]: role["name"] for role in roles}
             data = await load_data()
 
+            # Aggregate current user roles across all roles
+            current_user_roles: dict[str, set[int]] = {}
             roles_processed = 0
             users_checked = 0
 
             for role in roles:
                 logger.info(f"Processing role: {role['name']} (ID: {role['id']})")
                 users = await fetch_users_in_role(
-                    session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+                    session,
+                    GROUP_ID,
+                    role["id"],
+                    role_member_count=role.get("memberCount"),
                 )
                 for user in users:
-                    user_id = str(user["userId"])
-                    current_rank = role["name"]
-                    current_index = get_rank_index(current_rank)
-
-                    if user_id in data["user_roles"]:
-                        prev_role_id = data["user_roles"][user_id]
-                        prev_role_name = roles_dict.get(prev_role_id, "Unknown")
-                        prev_index = get_rank_index(prev_role_name)
-
-                        if (
-                            current_index != -1
-                            and prev_index != -1
-                            and current_index != prev_index
-                        ):
-                            action = (
-                                "promoted" if current_index > prev_index else "demoted"
-                            )
-                            channel_id, mention = get_rank_category_and_mention(
-                                current_rank
-                            )
-
-                            if not special_patches.check_user(
-                                user, current_rank, prev_role_name, action
-                            ):
-                                continue
-
-                            if (prev_role_name in HIGH_RANKS) and action == "demoted":
-                                logger.info(
-                                    f"!! Demoted HIGH_RANK: {user['username']} to {current_rank}"
-                                )
-                                channel_id, mention = get_rank_category_and_mention(
-                                    prev_role_name
-                                )
-
-                            if channel_id:
-                                channel = bot.get_channel(channel_id)
-                                if channel:
-                                    profile_link = f"[{user['username']}](<https://www.roblox.com/users/{user['userId']}/profile>)"  # ({user['userId']})"
-                                    message = f"{profile_link} has been {action} from {prev_role_name} to {current_rank} {mention}"
-                                    # message_obj = await channel.send(message)
-                                    message_obj = await safe_send_and_pub(
-                                        message=message, channel_id=channel_id, bot=bot
-                                    )
-
-                                    data["user_roles"][user_id] = role["id"]
-
-                                    # try:
-                                    #     await message_obj.publish()
-                                    # except discord.Forbidden as e:
-                                    #     print(f"Failed to publish: {e}")
-                                    # except discord.HTTPException as e:
-                                    #     print(f"HTTP error during publish: {e}")
-                                    logger.info(f"📢 {message}")
-                    data["user_roles"][user_id] = role["id"]
+                    uid = str(user["userId"])
+                    current_user_roles.setdefault(uid, set()).add(int(role["id"]))
                     users_checked += 1
                 roles_processed += 1
 
+            # Compute deltas and notify according to suppression policy
+            now_ts = int(time.time())
+            notified_users: set[str] = set()
+
+            # Helper to get highest-priority role id from a set (or None)
+            def highest_role(role_id_set: set[int] | None):
+                if not role_id_set:
+                    return None
+                best = None
+                best_index = -999
+                for rid in role_id_set:
+                    name = roles_dict.get(rid)
+                    if not name:
+                        continue
+                    idx = get_rank_index(name)
+                    if idx > best_index:
+                        best_index = idx
+                        best = rid
+                return best
+
+            # Iterate union of seen users
+            all_user_ids = set(list(data.get("user_roles", {}).keys())) | set(
+                current_user_roles.keys()
+            )
+
+            for uid in all_user_ids:
+                prev_list = (
+                    data.get("user_roles", {}).get(uid, [])
+                    if ENABLE_MULTI_ROLE_MODE
+                    else []
+                )
+                try:
+                    prev_set = set(int(x) for x in prev_list) if prev_list else set()
+                except Exception:
+                    prev_set = set()
+
+                curr_set = current_user_roles.get(uid, set())
+
+                added = curr_set - prev_set
+                removed = prev_set - curr_set
+
+                if not added and not removed:
+                    # still update stored roles to normalized form
+                    data.setdefault("user_roles", {})[uid] = sorted(list(curr_set))
+                    continue
+
+                user_meta = data.setdefault("user_meta", {}).get(uid, {})
+                suppressed_until = int(user_meta.get("suppressed_until", 0))
+
+                if now_ts < suppressed_until:
+                    # suppression active — skip notification
+                    data.setdefault("user_roles", {})[uid] = sorted(list(curr_set))
+                    continue
+
+                # Select notification target
+                top_curr = highest_role(curr_set)
+                top_prev = highest_role(prev_set)
+
+                # Determine channel and mention based on highest current role, fallback to prev
+                chosen_role_for_channel = top_curr or top_prev
+                chosen_role_name = (
+                    roles_dict.get(chosen_role_for_channel, None)
+                    if chosen_role_for_channel
+                    else None
+                )
+                channel_id, mention = (None, None)
+                if chosen_role_name:
+                    channel_id, mention = get_rank_category_and_mention(
+                        chosen_role_name
+                    )
+
+                # Compose a concise message
+                profile_link = f"[User](<https://www.roblox.com/users/{uid}/profile>)"
+                prev_names = [
+                    roles_dict.get(rid, str(rid))
+                    for rid in sorted(
+                        prev_set,
+                        key=lambda r: (
+                            get_rank_index(roles_dict.get(r, ""))
+                            if roles_dict.get(r)
+                            else -1
+                        ),
+                    )
+                ]
+                curr_names = [
+                    roles_dict.get(rid, str(rid))
+                    for rid in sorted(
+                        curr_set,
+                        key=lambda r: (
+                            get_rank_index(roles_dict.get(r, ""))
+                            if roles_dict.get(r)
+                            else -1
+                        ),
+                    )
+                ]
+
+                if added and not removed:
+                    # promoted / added roles
+                    top_added = highest_role(added)
+                    top_added_name = roles_dict.get(top_added, None)
+                    action = "promoted to" if top_added_name else "updated to"
+                    message = f"{profile_link} has been {action} {top_added_name} {mention if mention else ''}"
+                elif removed and not added:
+                    top_removed = highest_role(removed)
+                    top_removed_name = roles_dict.get(top_removed, None)
+                    action = "demoted from" if top_removed_name else "updated from"
+                    message = f"{profile_link} has been {action} {top_removed_name} {mention if mention else ''}"
+                else:
+                    # Both added and removed — summarize
+                    prev_str = ", ".join(prev_names) if prev_names else "no roles"
+                    curr_str = ", ".join(curr_names) if curr_names else "no roles"
+                    message = f"{profile_link} roles changed: {prev_str} → {curr_str} {mention if mention else ''}"
+
+                # Apply special patch check using top names
+                top_curr_name = roles_dict.get(top_curr, None) if top_curr else None
+                top_prev_name = roles_dict.get(top_prev, None) if top_prev else None
+                action_simple = "changed"
+                if added and not removed:
+                    action_simple = "promoted"
+                elif removed and not added:
+                    action_simple = "demoted"
+
+                # Run through special_patches.filter; if it returns False, skip notifying
+                fake_user_obj = {
+                    "userId": int(uid),
+                    "username": top_curr_name or top_prev_name or uid,
+                }
+                if not special_patches.check_user(
+                    fake_user_obj,
+                    top_curr_name or "",
+                    top_prev_name or "",
+                    action_simple,
+                ):
+                    data.setdefault("user_roles", {})[uid] = sorted(list(curr_set))
+                    # store meta suppression anyway to avoid immediate re-notify
+                    data.setdefault("user_meta", {}).setdefault(uid, {})
+                    continue
+
+                if channel_id:
+                    channel = bot.get_channel(channel_id)
+                    if channel:
+                        message_obj = await safe_send_and_pub(
+                            message=message, channel_id=channel_id, bot=bot
+                        )
+                        logger.info(f"📢 {message}")
+
+                # Record metadata and update stored roles
+                meta = data.setdefault("user_meta", {}).setdefault(uid, {})
+                meta["last_notified_ts"] = now_ts
+                meta["suppressed_until"] = now_ts + SEVEN_WEEKS_SECONDS
+                meta["last_notified_change"] = {
+                    "added": sorted(list(added)),
+                    "removed": sorted(list(removed)),
+                }
+
+                data.setdefault("user_roles", {})[uid] = sorted(list(curr_set))
+                notified_users.add(uid)
+
+            # Persist data after processing all users
             await save_data(data)
+
             end_time = time.time()
             duration = end_time - start_time
 
@@ -370,7 +512,6 @@ async def monitor_role_changes(disallowed_rank_names=None):
             )
             time_channel = bot.get_channel(TIME_TRACKING_CHANNEL_ID)
             if time_channel:
-                # await time_channel.send(summary)
                 await safe_send(summary, channel_id=TIME_TRACKING_CHANNEL_ID, bot=bot)
             logger.info("✅ Cycle complete.")
             await asyncio.sleep(180)  # Check every 3 minutes
@@ -532,7 +673,7 @@ async def on_ready():
         logger.info("Starting monitor_role_changes task restricted to HO+...")
         all_lower_HO = []
         all_lower_HO.extend(LOW_RANKS)
-        #all_lower_HO.extend(MID_RANKS)
+        # all_lower_HO.extend(MID_RANKS)
         all_lower_HO.remove("Head Operator")
         all_lower_HO.remove("Customer")  # Incase of demotions
         all_lower_HO.append("Member")
