@@ -55,7 +55,9 @@ TIME_TRACKING_CHANNEL_ID = 1413620449912295645
 # Role mention IDs
 LOW_RANK_ROLE_MENTION = "<@&1328338426713342023>"
 MID_RANK_ROLE_MENTION = "<@&1328338484104134688>"
-HIGH_RANK_ROLE_MENTION = "<@&1328338542132330506>"
+HIGH_RANK_ROLE_MENTION = (
+    "~~<@ &1328338542132330506>~~ Temp block <@1114892999474815126>"
+)
 
 DATA_FILE = "info.json"
 file_lock = asyncio.Lock()
@@ -68,8 +70,18 @@ LOW_RANKS = [
     "Head Operator",
 ]
 MID_RANKS = ["Shift Leader", "Supervisor", "Assistant Manager", "General Manager"]
-MGMT_RANKS = ["Assistant Director", "Junior Director", "Senior Director", "Head Director"]
-CORP_RANKS = ["Corporate Intern", "Junior Corporate", "Senior Corporate", "Head Corporate"]
+MGMT_RANKS = [
+    "Assistant Director",
+    "Junior Director",
+    "Senior Director",
+    "Head Director",
+]
+CORP_RANKS = [
+    "Corporate Intern",
+    "Junior Corporate",
+    "Senior Corporate",
+    "Head Corporate",
+]
 LS_RANKS = [
     "Chief Human Resources Officer",
     "Chief Public Relations Officer",
@@ -83,7 +95,7 @@ ET_RANKS = LOW_RANKS
 ST_RANKS = MID_RANKS
 HIGH_RANKS = MGMT_RANKS + CORP_RANKS + LS_RANKS
 ALL_RANKS = ET_RANKS + ST_RANKS + HIGH_RANKS
-ALL_M_RANKS_LIST = [ET_RANKS,ST_RANKS,MGMT_RANKS,CORP_RANKS,LS_RANKS]
+ALL_M_RANKS_LIST = [ET_RANKS, ST_RANKS, MGMT_RANKS, CORP_RANKS, LS_RANKS]
 
 ENABLE_ROPROXY_USAGE_FIRST_PRIORITY = False
 
@@ -183,7 +195,9 @@ async def fetch_users_in_role(
             async with session.get(
                 url, timeout=aiohttp.ClientTimeout(total=10)
             ) as response:
-                if response.status not in (200, 429) or str(response.status).startswith("5"):
+                if response.status not in (200, 429) or str(response.status).startswith(
+                    "5"
+                ):
                     raise RuntimeError(f"HTTP {response.status}")
 
                 data = await response.json()
@@ -269,6 +283,7 @@ async def monitor_role_changes(disallowed_rank_names=None):
                 users = await fetch_users_in_role(
                     session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
                 )
+
                 for user in users:
                     user_id = str(user["userId"])
                     current_rank = role["name"]
@@ -291,11 +306,14 @@ async def monitor_role_changes(disallowed_rank_names=None):
                                 current_rank
                             )
 
-                            if not special_patches.check_user( # function returns True if the user shouldn't be
-                                user, current_rank, prev_role_name, action #  ignored for this change, False if 
-                            ): #                it should be processed as ignoredThat's why for not instruction
+                            if not special_patches.check_user(  # function returns True if the user shouldn't be
+                                user,
+                                current_rank,
+                                prev_role_name,
+                                action,  #  ignored for this change, False if
+                            ):  #                it should be processed as ignoredThat's why for not instruction
                                 continue
-                            
+
                             roblox_user = RobloxUser(user["userId"])
                             if roblox_user.get_group_roles(GROUP_ID) == current_rank:
                                 logger.info(
@@ -305,10 +323,12 @@ async def monitor_role_changes(disallowed_rank_names=None):
                                 logger.warning(
                                     f"⚠️ Verification failed: {user['username']} is not actually {action} to {current_rank} according to Roblox. Skipping notification."
                                 )
-                                notification_channel = bot.get_channel(TIME_TRACKING_CHANNEL_ID)
+                                notification_channel = bot.get_channel(
+                                    TIME_TRACKING_CHANNEL_ID
+                                )
                                 if notification_channel:
-                                    await safe_send( # Sent when user likely has more than one role
-                                        message=f"⚠️ Verification failed for {user['username']} ({user['userId']}): expected {action} to {current_rank} but Roblox data does not reflect this change.",
+                                    await safe_send(  # Sent when user likely has more than one role
+                                        message=f"⚠️ Verification failed for {user['username']} ({user['userId']}): expected {action} to {current_rank} but Roblox data does not reflect this change. <@1114892999474815126>",
                                         channel_id=TIME_TRACKING_CHANNEL_ID,
                                         bot=bot,
                                     )
@@ -520,9 +540,9 @@ async def on_ready():
         logger.info("Starting monitor_role_changes task restricted to HO+...")
         all_lower_HO = []
         all_lower_HO.extend(LOW_RANKS)
-        #all_lower_HO.extend(MID_RANKS)
-        all_lower_HO.remove("Head Operator")
-        all_lower_HO.remove("Customer")  # Incase of demotions
+        all_lower_HO.extend(MID_RANKS)
+        # all_lower_HO.remove("Head Operator")
+        # all_lower_HO.remove("Customer")  # Incase of demotions
         all_lower_HO.append("Member")
         role_monitor_task = bot.loop.create_task(safe_monitor_wrapper(all_lower_HO))
     else:
