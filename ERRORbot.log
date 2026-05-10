@@ -26455,3 +26455,19 @@ Traceback (most recent call last):
     if not rank_name in HIGH_RANKS:
            ^^^^^^^^^
 NameError: name 'rank_name' is not defined. Did you mean: 'role_name'?
+2026-05-10 19:15:05,797 [bot] ERROR: ‼️ monitor_role_changes crashed: name 'rank_name' is not defined
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 528, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 320, in monitor_role_changes
+    if not rank_name in HIGH_RANKS:
+           ^^^^^^^^^
+NameError: name 'rank_name' is not defined. Did you mean: 'role_name'?
+2026-05-10 19:15:38,255 [bot] ERROR: ‼️ monitor_role_changes crashed: name 'rank_name' is not defined
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 528, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 320, in monitor_role_changes
+    if not rank_name in HIGH_RANKS:
+           ^^^^^^^^^
+NameError: name 'rank_name' is not defined. Did you mean: 'role_name'?

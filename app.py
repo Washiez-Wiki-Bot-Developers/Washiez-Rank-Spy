@@ -317,9 +317,6 @@ async def monitor_role_changes(disallowed_rank_names=None):
                     f"Removed roles to restricted set of roles. \nRestricted for:{disallowed_rank_names}\nWe have {roles}"
                 )
 
-            if not rank_name in HIGH_RANKS:
-                continue
-
             roles_dict = {role["id"]: role["name"] for role in roles}
             data = await load_data()
 
@@ -331,6 +328,7 @@ async def monitor_role_changes(disallowed_rank_names=None):
             for role in roles:
                 logger.info(f"Processing role: {role['name']} (ID: {role['id']})")
                 if not role['name'] in HIGH_RANKS:
+                    logger.warn("Skipping role.")
                     continue
                 users = await fetch_users_in_role(
                     session,
