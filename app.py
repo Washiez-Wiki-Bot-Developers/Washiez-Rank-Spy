@@ -314,8 +314,8 @@ async def monitor_role_changes(disallowed_rank_names=None):
                             ):  #                it should be processed as ignoredThat's why for not instruction
                                 continue
 
-                            roblox_user = RobloxUser(user["userId"])
-                            if roblox_user.get_group_roles(GROUP_ID) == current_rank:
+                            roblox_user = RobloxUser(user["userId"]).create(user["userId"])
+                            if await roblox_user.get_rank(GROUP_ID) == current_rank:
                                 logger.info(
                                     f"✅ Verified {user['username']} is actually {action} to {current_rank}."
                                 )
@@ -328,7 +328,7 @@ async def monitor_role_changes(disallowed_rank_names=None):
                                 )
                                 if notification_channel:
                                     await safe_send(  # Sent when user likely has more than one role
-                                        message=f"⚠️ Verification failed for {user['username']} ({user['userId']}): expected {action} to {current_rank} but Roblox data does not reflect this change. <@1114892999474815126>",
+                                        message=f"⚠️ User {user['username']} likely has more than one role. Roblox API returns {await roblox_user.get_rank(GROUP_ID)} when asked directly about user, found in {current_rank}. <@1114892999474815126>",
                                         channel_id=TIME_TRACKING_CHANNEL_ID,
                                         bot=bot,
                                     )

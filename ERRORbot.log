@@ -26471,3 +26471,51 @@ Traceback (most recent call last):
     if not rank_name in HIGH_RANKS:
            ^^^^^^^^^
 NameError: name 'rank_name' is not defined. Did you mean: 'role_name'?
+2026-05-10 19:57:25,744 [bot] ERROR: ‼️ monitor_role_changes crashed: User not initialized.
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 390, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 318, in monitor_role_changes
+    if await roblox_user.get_group_roles(GROUP_ID) == current_rank:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 209, in get_group_roles
+    groups = await self.resolve_groups()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 224, in resolve_groups
+    url = f"{self.GROUPS_API}/v2/users/{self.id}/groups/roles"
+                                        ^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 100, in id
+    raise RuntimeError("User not initialized.")
+RuntimeError: User not initialized.
+2026-05-10 19:57:36,827 [bot] ERROR: ‼️ monitor_role_changes crashed: User not initialized.
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 390, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 318, in monitor_role_changes
+    if await roblox_user.get_group_roles(GROUP_ID) == current_rank:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 209, in get_group_roles
+    groups = await self.resolve_groups()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 224, in resolve_groups
+    url = f"{self.GROUPS_API}/v2/users/{self.id}/groups/roles"
+                                        ^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 100, in id
+    raise RuntimeError("User not initialized.")
+RuntimeError: User not initialized.
+2026-05-10 19:58:32,556 [bot] ERROR: ‼️ monitor_role_changes crashed: 'coroutine' object has no attribute 'get_group_roles'
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 390, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 318, in monitor_role_changes
+    if await roblox_user.get_group_roles(GROUP_ID) == current_rank:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'coroutine' object has no attribute 'get_group_roles'
+2026-05-10 19:59:27,140 [bot] ERROR: ‼️ monitor_role_changes crashed: 'coroutine' object has no attribute 'get_rank'
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 390, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 318, in monitor_role_changes
+    if await roblox_user.get_rank(GROUP_ID) == current_rank:
+             ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'coroutine' object has no attribute 'get_rank'
