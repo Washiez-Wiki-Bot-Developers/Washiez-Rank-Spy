@@ -26536,3 +26536,25 @@ Traceback (most recent call last):
     print(roblox_user)
              ^^^^^^^^^
 AttributeError: 'coroutine' object has no attribute '_washiez_highest'
+2026-05-10 22:09:44,134 [bot.commands] ERROR: role_checking failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 219, in trello_check
+    user = await RobloxUser.create(username)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 373, in create
+    self._user_id = await self._fetch_user_id_from_username(self._username)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 190, in _fetch_user_id_from_username
+    raise ValueError(f"Username '{username}' not found.")
+ValueError: Username '5265863259' not found.
+2026-05-10 22:09:54,350 [bot.commands] ERROR: role_checking failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 219, in trello_check
+    user = await RobloxUser.create(username)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 373, in create
+    self._user_id = await self._fetch_user_id_from_username(self._username)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 190, in _fetch_user_id_from_username
+    raise ValueError(f"Username '{username}' not found.")
+ValueError: Username '@yourlcoalsomethuing' not found.
