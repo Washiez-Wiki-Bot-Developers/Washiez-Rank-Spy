@@ -262,10 +262,15 @@ def get_group_rank_name(user_id, group_id):
 
 
 async def monitor_role_changes(disallowed_rank_names=None):
+    message = "Bot started! Monitoring role changes..."
+    await safe_send(message, channel_id=TIME_TRACKING_CHANNEL_ID, bot=bot)  
+    
     async with aiohttp.ClientSession() as session:
         while True:
             start_time = time.time()
             logger.info("🔎 Checking for role changes...")
+            message = "Starting role check..."
+            await safe_send(message, channel_id=TIME_TRACKING_CHANNEL_ID, bot=bot)
 
             roles = await fetch_roles(session, GROUP_ID)
             if not roles:
@@ -390,7 +395,7 @@ async def monitor_role_changes(disallowed_rank_names=None):
                 f"* 👥 Checked **{users_checked}** user entries.\n"
                 f"* ⏱ Time taken: **{duration:.2f} seconds**.\n"
                 f"* 🕐 Started at <t:{int(start_time)}:T>, ended at <t:{int(end_time)}:T>.\n\n"
-                f"* 🔍 Next check in approximately <t:{int(time.time() + 180)}:T>."
+                f"* 🔍 Next check in approximately <t:{str(int(time.time() + 180))}:T>."
             )
             time_channel = bot.get_channel(TIME_TRACKING_CHANNEL_ID)
             if time_channel:
