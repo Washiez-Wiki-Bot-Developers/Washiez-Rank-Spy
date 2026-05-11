@@ -389,7 +389,8 @@ async def monitor_role_changes(disallowed_rank_names=None):
                 f"* ✅ Processed {roles_processed}/{len(roles)} roles.\n"
                 f"* 👥 Checked **{users_checked}** user entries.\n"
                 f"* ⏱ Time taken: **{duration:.2f} seconds**.\n"
-                f"* 🕐 Started at <t:{int(start_time)}:T>, ended at <t:{int(end_time)}:T>."
+                f"* 🕐 Started at <t:{int(start_time)}:T>, ended at <t:{int(end_time)}:T>.\n\n"
+                f"* 🔍 Next check in approximately <t:{int(time.time() + 180)}:T>."
             )
             time_channel = bot.get_channel(TIME_TRACKING_CHANNEL_ID)
             if time_channel:
@@ -555,9 +556,9 @@ async def on_ready():
         logger.info("Starting monitor_role_changes task restricted to HO+...")
         all_lower_HO = []
         all_lower_HO.extend(LOW_RANKS)
-        all_lower_HO.extend(MID_RANKS)
-        # all_lower_HO.remove("Head Operator")
-        # all_lower_HO.remove("Customer")  # Incase of demotions
+        # all_lower_HO.extend(MID_RANKS)
+        all_lower_HO.remove("Head Operator")
+        all_lower_HO.remove("Customer")  # Incase of demotions
         all_lower_HO.append("Member")
         role_monitor_task = bot.loop.create_task(safe_monitor_wrapper(all_lower_HO))
     else:
