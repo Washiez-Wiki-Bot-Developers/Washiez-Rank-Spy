@@ -29153,3 +29153,47 @@ RuntimeError: HTTP 503
 2026-05-19 11:49:41,084 [bot] ERROR: Failed to fetch roles: 503
 2026-05-19 11:49:51,490 [bot] ERROR: Failed to fetch roles: 503
 2026-05-19 11:50:01,694 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:50:11,997 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:50:22,287 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:50:32,571 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:50:42,991 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:50:53,323 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:51:03,883 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:51:14,369 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:51:24,582 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:51:35,928 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:51:46,250 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:51:56,513 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:52:06,910 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:52:18,924 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:52:29,527 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 409, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 299, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 223, in fetch_users_in_role
+    data = await fetch_page(cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 201, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 503
+2026-05-19 11:52:40,306 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:52:50,645 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:53:00,948 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:53:11,539 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:53:21,743 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:53:32,233 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:53:42,582 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:53:52,864 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:54:03,092 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:54:13,343 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:54:23,667 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:54:34,091 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:54:44,628 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:54:54,928 [bot] ERROR: Failed to fetch roles: 503
