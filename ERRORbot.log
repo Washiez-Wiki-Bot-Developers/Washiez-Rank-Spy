@@ -29107,3 +29107,49 @@ RuntimeError: HTTP 503
 2026-05-19 11:44:30,546 [bot] ERROR: Failed to fetch roles: 503
 2026-05-19 11:44:40,817 [bot] ERROR: Failed to fetch roles: 503
 2026-05-19 11:44:51,085 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:45:01,687 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:45:12,160 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:45:22,398 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:45:33,107 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:45:43,476 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:45:53,885 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:46:04,118 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:46:14,644 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:46:24,939 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:46:35,180 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:46:45,528 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:46:55,873 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:47:06,144 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:47:16,418 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:47:26,644 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:47:36,874 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:47:47,125 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:47:57,487 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:48:07,679 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:48:18,355 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 409, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 299, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 223, in fetch_users_in_role
+    data = await fetch_page(cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 201, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 503
+2026-05-19 11:48:29,042 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:48:39,325 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:48:49,567 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:48:59,766 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:49:10,105 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:49:20,408 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:49:30,840 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:49:41,084 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:49:51,490 [bot] ERROR: Failed to fetch roles: 503
+2026-05-19 11:50:01,694 [bot] ERROR: Failed to fetch roles: 503
