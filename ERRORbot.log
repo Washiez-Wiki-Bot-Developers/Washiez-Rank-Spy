@@ -30913,3 +30913,22 @@ Traceback (most recent call last):
   File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 201, in fetch_page
     raise RuntimeError(f"HTTP {response.status}")
 RuntimeError: HTTP 500
+2026-05-24 03:53:43,043 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 409, in safe_monitor_wrapper
+    try:
+    
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 299, in monitor_role_changes
+    logger.info(f"Processing role: {role['name']} (ID: {role['id']})")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    users = await fetch_users_in_role(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+    
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 246, in fetch_users_in_role
+    else:
+    
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 201, in fetch_page
+    ):
+    
+RuntimeError: HTTP 500
