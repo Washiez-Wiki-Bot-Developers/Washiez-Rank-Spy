@@ -2,7 +2,7 @@
     "921531891": {
         "restricted": true,
         "reason": "Roblox API replies with old cache data causing issues.",
-        "restriction": {
+        "restriction":{
             "rank_from": "Supervisor",
             "rank_to": "Shift Leader",
             "until": "indefinite"
@@ -10,15 +10,15 @@
     },
     "2048509558": {
         "restricted": true,
-        "restriction": {
+        "restriction":{
             "rank_from": "Supervisor",
-            "rank_to": "Shift Leader"
+            "rank_to":"Shift Leader"
         }
     },
     "2594350248": {
         "restricted": true,
-        "reason": "RoAPI OldCache Data",
-        "restriction": {
+        "reason":"RoAPI OldCache Data",
+        "restriction":{
             "rank_from": "Supervisor",
             "rank_to": "Shift Leader",
             "until": "indefinite"
@@ -26,26 +26,11 @@
     },
     "7658644731": {
         "restricted": true,
-        "reason": "not sure.",
-        "restriction": {
+        "reason":"not sure.",
+        "restriction":{
             "rank_from": "Junior Director",
             "rank_to": "Customer"
         }
-    },
-    "1576894907": {
-        "restricted": true,
-        "reason": "No reason provided.",
-        "restriction": {
-            "rank_from": "Customer",
-            "rank_to": "Senior Corporate"
-        }
-    },
-    "4445788033": {
-        "restricted": true,
-        "reason": "No reason provided.",
-        "restriction": {
-            "rank_from": "Head Operator",
-            "rank_to": "General Manager"
-        }
     }
 }
+

@@ -1,0 +1,113 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rankspy-washiez-variant"
+version = "0.1.0"
+description = "Discord bot to monitor Roblox group role changes (Rankspy, Washiez variant)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Washiez Wiki Bot Developers" },
+    { name = "MartinAstrea", email = "" },
+    { name = "MrT", email = "" },
+]
+keywords = ["discord", "roblox", "monitoring", "asyncio", "bot"]
+
+dependencies = [
+    "aiohttp>=3.9",
+    "orjson>=3.9",
+    "discord.py>=2.3",
+    "colorama>=0.4",
+    "python-dotenv>=1.0",
+    "rich>=13.0",
+    "aiofiles>=23.0",
+]
+
+[project.urls]
+Homepage = "https://example.com"
+Repository = "https://example.com/repo"
+Issues = "https://example.com/issues"
+
+# Optional command-line script (adjust if you want a console entry)
+[project.scripts]
+rankspy = "app:main"
+
+# If you have no main() in app.py, remove the script above and run via `python app.py`.
+
+[tool.setuptools]
+# Include all packages found under the current directory
+package-dir = { "" = "." }
+# If it's a single-file app without packages, you can omit package discovery
+
+[tool.setuptools.package-data]
+# Include non-code files
+"*" = ["*.json", "*.txt", ".env"]
+
+[tool.setuptools.exclude-package-data]
+"*" = ["*.md"]
+
+[tool.setuptools.dynamic]
+# If you later want dynamic versioning, configure here
+
+# ---- Developer tooling ----
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+src_paths = ["."]
+multi_line_output = 3
+include_trailing_comma = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]                            # Long lines handled by black
+exclude = ["venv", ".venv", "build", "dist"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.mypy]
+python_version = "3.10"
+check_untyped_defs = true
+disallow_untyped_defs = false
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unused_configs = true
+ignore_missing_imports = true
+strict_Optional = false
+
+[tool.coverage.run]
+branch = true
+source = ["."]
+omit = ["venv/*", ".venv/*", "tests/*"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+
+[project.Optional-dependencies]
+dev = [
+    "black>=24.0",
+    "isort>=5.12",
+    "ruff>=0.5",
+    "mypy>=1.7",
+    "pytest>=7.4",
+    "pytest-asyncio>=0.23",
+    "coverage>=7.4",
+    "types-aiofiles>=23.1.0.0",
+    "types-colorama>=0.4.15.20240311",
+    "types-python-dateutil>=2.9.0.20240316",
+    "types-orjson",
+]
+
+[tool.pylint.'MASTER']
+init-hook = 'import sys; sys.path.append("typings")'

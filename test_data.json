@@ -1,0 +1,12 @@
+{
+  "role_map": {
+    "A": 1,
+    "B": 2
+  },
+  "simplification_type": "user_roles",
+  "user_roles": {
+    "12345": "A",
+    "67890": "B"
+  },
+  "epoch_last_edited": 1769342622.5749526
+}
