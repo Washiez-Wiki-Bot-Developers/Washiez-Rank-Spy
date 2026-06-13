@@ -38171,3 +38171,445 @@ Traceback (most recent call last):
   File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
     raise RuntimeError(f"HTTP {response.status}")
 RuntimeError: HTTP 500
+2026-06-13 05:10:03,014 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 247, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-06-13 05:10:15,848 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 247, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-06-13 05:10:28,189 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 247, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-06-13 05:10:39,510 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 247, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-06-13 05:10:50,943 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 247, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-06-13 05:11:03,257 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 247, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-06-13 05:11:14,369 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 224, in fetch_users_in_role
+    data = await fetch_page(cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-06-13 05:11:25,449 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 224, in fetch_users_in_role
+    data = await fetch_page(cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-06-13 05:11:36,786 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 224, in fetch_users_in_role
+    data = await fetch_page(cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-06-13 05:11:49,033 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 247, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-06-13 05:12:00,190 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 224, in fetch_users_in_role
+    data = await fetch_page(cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-06-13 05:12:12,847 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 224, in fetch_users_in_role
+    data = await fetch_page(cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-06-13 05:12:24,091 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 247, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-06-13 05:12:35,162 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 247, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-06-13 05:12:46,927 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 247, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-06-13 05:12:57,909 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 224, in fetch_users_in_role
+    data = await fetch_page(cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-06-13 05:13:10,346 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 247, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-06-13 05:13:21,917 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 247, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-06-13 05:13:33,574 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 224, in fetch_users_in_role
+    data = await fetch_page(cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-06-13 05:13:44,745 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 224, in fetch_users_in_role
+    data = await fetch_page(cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-06-13 05:13:55,730 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 224, in fetch_users_in_role
+    data = await fetch_page(cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-06-13 05:14:07,776 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 247, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-06-13 05:14:19,493 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 247, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-06-13 05:14:31,402 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 247, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-06-13 05:14:42,618 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 224, in fetch_users_in_role
+    data = await fetch_page(cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-06-13 05:14:53,604 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 224, in fetch_users_in_role
+    data = await fetch_page(cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
