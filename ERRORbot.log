@@ -60040,3 +60040,21 @@ Traceback (most recent call last):
     current_role_id = next((rid for rid, rname in roles_dict.items() if rname == current_rank), None)
                                                   ^^^^^^^^^^
 NameError: name 'roles_dict' is not defined
+2026-07-20 20:23:23,249 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 503
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 410, in safe_monitor_wrapper
+    while True:
+            ^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 300, in monitor_role_changes
+    for role in roles:
+                ^^^^^^
+        logger.info(f"Processing role: {role['name']} (ID: {role['id']})")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        users = await fetch_users_in_role(
+        ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 247, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 503
