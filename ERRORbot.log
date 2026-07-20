@@ -60028,3 +60028,15 @@ Traceback (most recent call last):
     user_id = str(rblx_usr._userId)
                   ^^^^^^^^^^^^^^^^
 AttributeError: 'RobloxUser' object has no attribute '_userId'. Did you mean: '_user_id'?
+2026-07-20 20:15:42,848 [bot.commands] ERROR: check_user_roles failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 434, in check_user_roles
+    current_index = get_rank_index(current_rank)
+                    ^^^^^^^^^^^^^^
+NameError: name 'get_rank_index' is not defined
+2026-07-20 20:19:08,470 [bot.commands] ERROR: check_user_roles failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 437, in check_user_roles
+    current_role_id = next((rid for rid, rname in roles_dict.items() if rname == current_rank), None)
+                                                  ^^^^^^^^^^
+NameError: name 'roles_dict' is not defined
