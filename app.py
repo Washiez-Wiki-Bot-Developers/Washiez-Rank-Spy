@@ -289,10 +289,10 @@ async def monitor_role_changes(disallowed_rank_names=None):
                     f"Removed roles to restricted set of roles. \nRestricted for:{disallowed_rank_names}\nWe have {roles}"
                 )
 
-            roles_dict = {role["id"]: role["name"] for role in roles}
-            data = await load_data()
-            bot.my_data = data
-            bot.roles_dict = roles_dict
+            bot.roles_dict = {role["id"]: role["name"] for role in roles}
+            bot.data = await load_data()
+            my_data = bot.data
+            roles_dict = bot.roles_dict
 
             roles_processed = 0
             users_checked = 0
