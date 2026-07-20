@@ -60099,3 +60099,15 @@ Traceback (most recent call last):
     current_role_id = next((rid for rid, rname in roles_dict.items() if rname == current_rank), None)
                                                   ^^^^^^^^^^
 UnboundLocalError: cannot access local variable 'roles_dict' where it is not associated with a value
+2026-07-20 20:53:53,785 [bot.commands] ERROR: check_user_roles failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 432, in check_user_roles
+    curr_rank = await user.get_rank(group_id)
+                      ^^^^
+NameError: name 'user' is not defined. Did you mean: 'super'?
+2026-07-20 20:54:48,662 [bot.commands] ERROR: check_user_roles failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 432, in check_user_roles
+    curr_rank = await rblx_usr.get_rank(group_id)
+                                        ^^^^^^^^
+NameError: name 'group_id' is not defined
