@@ -292,6 +292,7 @@ async def monitor_role_changes(disallowed_rank_names=None):
             bot.roles_dict = {role["id"]: role["name"] for role in roles}
             bot.data = await load_data()
             my_data = bot.data
+            data = bot.data
             roles_dict = bot.roles_dict
 
             roles_processed = 0
