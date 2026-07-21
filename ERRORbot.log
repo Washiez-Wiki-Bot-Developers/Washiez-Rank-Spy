@@ -61080,3 +61080,11 @@ Traceback (most recent call last):
     if user_id in data["user_roles"]:
                   ^^^^
 NameError: name 'data' is not defined
+2026-07-21 16:50:16,584 [bot] ERROR: ‼️ monitor_role_changes crashed: name 'data' is not defined
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 412, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 311, in monitor_role_changes
+    if user_id in data["user_roles"]:
+                  ^^^^
+NameError: name 'data' is not defined
