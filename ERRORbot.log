@@ -61818,3 +61818,9 @@ Traceback (most recent call last):
     user_id = user.get("userId")
               ^^^^^^^^
 AttributeError: 'RobloxUser' object has no attribute 'get'
+2026-07-22 21:35:14,862 [bot.commands] ERROR: check_user_roles failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 460, in check_user_roles
+    if get_group_rank_name(rblx_usr._user_id, GROUP_ID) == current_rank:
+       ^^^^^^^^^^^^^^^^^^^
+NameError: name 'get_group_rank_name' is not defined
