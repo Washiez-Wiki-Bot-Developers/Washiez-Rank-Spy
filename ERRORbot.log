@@ -61783,3 +61783,38 @@ Traceback (most recent call last):
   File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
     raise RuntimeError(f"HTTP {response.status}")
 RuntimeError: HTTP 504
+2026-07-22 21:32:00,025 [bot.commands] ERROR: check_user_roles failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 456, in check_user_roles
+    if not special_patches.check_user(rblx_usr._username, current_rank, prev_role_name, action):
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/special_patches.py", line 34, in check_user
+    user_id = user.get("userId")
+              ^^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+2026-07-22 21:32:27,642 [bot] ERROR: ‼️ monitor_role_changes crashed: HTTP 500
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 413, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 303, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 247, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
+    raise RuntimeError(f"HTTP {response.status}")
+RuntimeError: HTTP 500
+2026-07-22 21:33:39,911 [bot.commands] ERROR: check_user_roles failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 456, in check_user_roles
+    if not special_patches.check_user(rblx_usr, current_rank, prev_role_name, action):
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/special_patches.py", line 34, in check_user
+    user_id = user.get("userId")
+              ^^^^^^^^
+AttributeError: 'RobloxUser' object has no attribute 'get'
