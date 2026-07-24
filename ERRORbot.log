@@ -62271,3 +62271,22 @@ Traceback (most recent call last):
     raise RuntimeError(f"HTTP {response.status}")
 RuntimeError: HTTP 500
 2026-07-24 10:14:34,949 [bot] ERROR: Failed to load commands extension: Extension 'commands' raised an error: NameError: name 'aiohttp' is not defined
+2026-07-24 10:17:10,809 [bot.commands] ERROR: check_role_users failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 556, in check_role_users
+    rblx_usr = await RobloxUser.create_by_id(int(user_id))
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'RobloxUser' has no attribute 'create_by_id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 558, in check_role_users
+    rblx_usr = await RobloxUser.create(user_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 373, in create
+    self._user_id = await self._fetch_user_id_from_username(self._username)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 190, in _fetch_user_id_from_username
+    raise ValueError(f"Username '{username}' not found.")
+ValueError: Username '4892598048' not found.
