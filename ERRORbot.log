@@ -62246,3 +62246,8 @@ RuntimeError: HTTP 500
 2026-07-24 09:24:51,090 [bot] ERROR: Error fetching roles: Timeout value connect was ClientTimeout(total=10, connect=None, sock_read=None, sock_connect=None, ceil_threshold=5), but it must be an int, float or None.
 2026-07-24 09:32:01,513 [bot] ERROR: Error fetching roles: Timeout value connect was ClientTimeout(total=10, connect=None, sock_read=None, sock_connect=None, ceil_threshold=5), but it must be an int, float or None.
 2026-07-24 09:34:06,739 [bot] ERROR: Failed to load commands extension: Extension 'commands' raised an error: UnboundLocalError: cannot access local variable 'requests' where it is not associated with a value
+2026-07-24 09:35:08,361 [bot] ERROR: Failed to load commands extension: Extension 'commands' raised an error: UnboundLocalError: cannot access local variable 'requests' where it is not associated with a value
+2026-07-24 09:35:35,324 [bot] ERROR: Error fetching roles: Timeout value connect was ClientTimeout(total=10, connect=None, sock_read=None, sock_connect=None, ceil_threshold=5), but it must be an int, float or None.
+2026-07-24 09:35:35,326 [bot] ERROR: Failed to load commands extension: Extension 'commands' raised an error: UnboundLocalError: cannot access local variable 'roles' where it is not associated with a value
+2026-07-24 09:35:57,011 [bot] ERROR: Error fetching roles: Timeout value connect was ClientTimeout(total=10, connect=None, sock_read=None, sock_connect=None, ceil_threshold=5), but it must be an int, float or None.
+2026-07-24 09:35:57,014 [bot] ERROR: Failed to load commands extension: Extension 'commands' raised an error: UnboundLocalError: cannot access local variable 'roles' where it is not associated with a value
