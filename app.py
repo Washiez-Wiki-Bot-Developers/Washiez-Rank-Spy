@@ -176,7 +176,7 @@ async def fetch_roles(session, group_id):
 with requests.Session() as session:
     roles = await fetch_roles(session, GROUP_ID)
     bot.roles_dict = {role["id"]: role["name"] for role in roles}
-    del roles
+del roles, session
 
 async def fetch_users_in_role(
     session: aiohttp.ClientSession,
