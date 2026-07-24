@@ -62290,3 +62290,17 @@ Traceback (most recent call last):
   File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 190, in _fetch_user_id_from_username
     raise ValueError(f"Username '{username}' not found.")
 ValueError: Username '4892598048' not found.
+2026-07-24 10:25:32,728 [bot.commands] ERROR: check_role_users failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 555, in check_role_users
+    rblx_usr = await RobloxUser.create(user_id=int(user_id))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 377, in create
+    self._username = await self._fetch_username_from_user_id(self._user_id)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 202, in _fetch_username_from_user_id
+    data = await self._request("GET", url)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 158, in _request
+    raise RuntimeError("Rate limited by Roblox API (429).")
+RuntimeError: Rate limited by Roblox API (429).
