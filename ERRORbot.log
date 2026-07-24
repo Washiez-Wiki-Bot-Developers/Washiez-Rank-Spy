@@ -62241,3 +62241,6 @@ RuntimeError: HTTP 500
 2026-07-24 09:12:05,368 [bot] ERROR: Failed to load commands extension: Extension 'commands' raised an error: NameError: name 'requests' is not defined
 2026-07-24 09:12:28,145 [bot] ERROR: Failed to load commands extension: Extension 'commands' raised an error: NameError: name 'fetch_roles' is not defined
 2026-07-24 09:16:18,618 [bot] ERROR: Failed to load commands extension: Extension 'commands' raised an error: TypeError: '_asyncio.Future' object is not subscriptable
+2026-07-24 09:22:54,300 [bot] ERROR: Failed to load commands extension: Extension 'commands' raised an error: TypeError: '_asyncio.Future' object is not subscriptable
+2026-07-24 09:23:02,224 [bot] ERROR: Failed to load commands extension: Extension 'commands' raised an error: TypeError: '_asyncio.Future' object is not subscriptable
+2026-07-24 09:24:51,090 [bot] ERROR: Error fetching roles: Timeout value connect was ClientTimeout(total=10, connect=None, sock_read=None, sock_connect=None, ceil_threshold=5), but it must be an int, float or None.
