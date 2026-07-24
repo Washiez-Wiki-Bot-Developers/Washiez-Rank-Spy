@@ -62237,3 +62237,4 @@ Traceback (most recent call last):
   File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 202, in fetch_page
     raise RuntimeError(f"HTTP {response.status}")
 RuntimeError: HTTP 500
+2026-07-24 08:35:57,840 [bot] ERROR: Failed to load commands extension: Extension 'commands' raised an error: AttributeError: 'Bot' object has no attribute 'roles_dict'
