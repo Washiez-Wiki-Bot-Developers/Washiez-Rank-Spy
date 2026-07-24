@@ -62238,3 +62238,5 @@ Traceback (most recent call last):
     raise RuntimeError(f"HTTP {response.status}")
 RuntimeError: HTTP 500
 2026-07-24 08:35:57,840 [bot] ERROR: Failed to load commands extension: Extension 'commands' raised an error: AttributeError: 'Bot' object has no attribute 'roles_dict'
+2026-07-24 09:12:05,368 [bot] ERROR: Failed to load commands extension: Extension 'commands' raised an error: NameError: name 'requests' is not defined
+2026-07-24 09:12:28,145 [bot] ERROR: Failed to load commands extension: Extension 'commands' raised an error: NameError: name 'fetch_roles' is not defined
