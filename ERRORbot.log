@@ -62270,3 +62270,4 @@ Traceback (most recent call last):
   File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 201, in fetch_page
     raise RuntimeError(f"HTTP {response.status}")
 RuntimeError: HTTP 500
+2026-07-24 10:14:34,949 [bot] ERROR: Failed to load commands extension: Extension 'commands' raised an error: NameError: name 'aiohttp' is not defined
