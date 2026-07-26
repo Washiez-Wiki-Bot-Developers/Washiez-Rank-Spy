@@ -63051,3 +63051,25 @@ Traceback (most recent call last):
   File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 201, in fetch_page
     raise RuntimeError(f"HTTP {response.status}")
 RuntimeError: HTTP 500
+2026-07-26 15:56:10,123 [discord.client] ERROR: Attempting a reconnect in 0.57s
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/discord/client.py", line 617, in connect
+    await self.ws.poll_event()
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/discord/gateway.py", line 605, in poll_event
+    await self.received_message(msg.data)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/discord/gateway.py", line 498, in received_message
+    await self.send_as_json(beat)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/discord/gateway.py", line 645, in send_as_json
+    await self.send(utils._to_json(data))
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/discord/gateway.py", line 641, in send
+    await self.socket.send_str(data)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/aiohttp/client_ws.py", line 245, in send_str
+    await self._writer.send_frame(
+        data.encode("utf-8"), WSMsgType.TEXT, compress=compress
+    )
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/aiohttp/_websocket/writer.py", line 83, in send_frame
+    self._write_websocket_frame(message, opcode, 0)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/aiohttp/_websocket/writer.py", line 151, in _write_websocket_frame
+    raise ClientConnectionResetError("Cannot write to closing transport")
+aiohttp.client_exceptions.ClientConnectionResetError: Cannot write to closing transport
