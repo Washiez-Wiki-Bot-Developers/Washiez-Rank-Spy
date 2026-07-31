@@ -64381,3 +64381,26 @@ Traceback (most recent call last):
   File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 190, in _fetch_user_id_from_username
     raise ValueError(f"Username '{username}' not found.")
 ValueError: Username 'general manager' not found.
+2026-07-31 17:20:10,142 [bot.commands] ERROR: check_user_roles failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 430, in check_user_roles
+    rblx_usr = await RobloxUser.create(roblox_username)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 373, in create
+    self._user_id = await self._fetch_user_id_from_username(self._username)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 190, in _fetch_user_id_from_username
+    raise ValueError(f"Username '{username}' not found.")
+ValueError: Username 'Senior Corporate' not found.
+2026-07-31 17:20:25,643 [bot.commands] ERROR: role_checking failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 662, in role_checking
+    print(bot.ROLE_PROGRESS_LOCK)
+          ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Bot' object has no attribute 'ROLE_PROGRESS_LOCK'
+2026-07-31 17:20:40,538 [bot.commands] ERROR: role_checking failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 662, in role_checking
+    print(bot.ROLE_PROGRESS_LOCK)
+          ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Bot' object has no attribute 'ROLE_PROGRESS_LOCK'
