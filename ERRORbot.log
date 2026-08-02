@@ -65384,3 +65384,15 @@ Traceback (most recent call last):
   File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 201, in fetch_page
     raise RuntimeError(f"HTTP {response.status}")
 RuntimeError: HTTP 500
+2026-08-02 21:25:50,802 [bot.commands] ERROR: check_user_roles failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 455, in check_user_roles
+    if (prev_role_name in HIGH_RANKS) and action == "demoted":
+                          ^^^^^^^^^^
+NameError: name 'HIGH_RANKS' is not defined
+2026-08-02 21:26:14,818 [bot.commands] ERROR: check_user_roles failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 457, in check_user_roles
+    f"!! Demoted HIGH_RANK: {user['username']} to {current_rank}"
+                             ^^^^
+NameError: name 'user' is not defined. Did you mean: 'super'?
