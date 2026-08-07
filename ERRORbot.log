@@ -67753,3 +67753,12 @@ Traceback (most recent call last):
   File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 201, in fetch_page
     raise RuntimeError(f"HTTP {response.status}")
 RuntimeError: HTTP 500
+2026-08-07 16:11:10,228 [discord.client] ERROR: Attempting a reconnect in 1.76s
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/discord/client.py", line 617, in connect
+    await self.ws.poll_event()
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.13/site-packages/discord/gateway.py", line 630, in poll_event
+    raise ConnectionClosed(
+        self.socket, shard_id=self.shard_id, code=code
+    ) from None
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 1000
