@@ -68895,3 +68895,28 @@ Traceback (most recent call last):
   File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 201, in fetch_page
     raise RuntimeError(f"HTTP {response.status}")
 RuntimeError: HTTP 500
+2026-08-10 10:37:08,745 [bot] ERROR: ‼️ monitor_role_changes crashed: name 'aiofiles' is not defined
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 428, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 416, in monitor_role_changes
+    async with aiofiles.open("AD_plus_user_ids.csv", "w") as f:
+               ^^^^^^^^
+NameError: name 'aiofiles' is not defined
+2026-08-10 10:37:22,881 [bot] ERROR: ‼️ monitor_role_changes crashed: name 'aiofiles' is not defined
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 428, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 416, in monitor_role_changes
+    async with aiofiles.open("AD_plus_user_ids.csv", "w") as f:
+               ^^^^^^^^
+NameError: name 'aiofiles' is not defined
+2026-08-10 10:37:36,144 [bot] ERROR: ‼️ monitor_role_changes crashed: name 'aiofiles' is not defined
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 428, in safe_monitor_wrapper
+    while True:
+            ^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 416, in monitor_role_changes
+    logger.info("✅ Cycle complete.")
+               ^^^^^^^
+NameError: name 'aiofiles' is not defined

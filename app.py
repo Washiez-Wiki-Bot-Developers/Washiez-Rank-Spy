@@ -14,6 +14,8 @@ from discord_report_error_logs import DiscordErrorHandler
 from utils import safe_send, safe_send_and_pub, safe_reaction, safe_publish
 import special_patches
 
+from aiofiles import open as aiofiles_open
+
 import requests
 
 asyncio.set_event_loop(asyncio.new_event_loop())
@@ -386,7 +388,7 @@ async def monitor_role_changes(disallowed_rank_names=None):
                                     logger.info(f"📢 {message}")
                     data["user_roles"][user_id] = role["id"]
                     
-                    if current_rank in HIGH_RANKS and (not in AD_plus_user_ids):
+                    if current_rank in HIGH_RANKS and (not user_id in AD_plus_user_ids):
                         AD_plus_user_ids.append(user_id)
                         logger.info(
                             f"AD+ user detected: {user['username']} ({user_id})"
@@ -413,7 +415,7 @@ async def monitor_role_changes(disallowed_rank_names=None):
                 await safe_send(summary, channel_id=TIME_TRACKING_CHANNEL_ID, bot=bot)
             logger.info("✅ Cycle complete.")
             
-            async with aiofiles.open("AD_plus_user_ids.csv", "w") as f:
+            async with aiofiles_open("AD_plus_user_ids.csv", "w") as f:
                 # Convert to CSV first
                 csv_data = ",".join(str(user_id) for user_id in AD_plus_user_ids)
                 await f.write(csv_data)
