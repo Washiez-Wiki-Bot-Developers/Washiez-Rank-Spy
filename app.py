@@ -263,6 +263,8 @@ async def monitor_role_changes(disallowed_rank_names=None):
     message = "Bot started! Monitoring role changes..."
     await safe_send(message, channel_id=TIME_TRACKING_CHANNEL_ID, bot=bot)  
     
+    AD_plus_user_ids: dict[int] = []
+    
     async with aiohttp.ClientSession() as session:
         while True:
             start_time = time.time()
@@ -383,6 +385,13 @@ async def monitor_role_changes(disallowed_rank_names=None):
                                     #     print(f"HTTP error during publish: {e}")
                                     logger.info(f"📢 {message}")
                     data["user_roles"][user_id] = role["id"]
+                    
+                    if current_rank in HIGH_RANKS and (not in AD_plus_user_ids):
+                        AD_plus_user_ids.append(user_id)
+                        logger.info(
+                            f"AD+ user detected: {user['username']} ({user_id})"
+                        )
+                    
                     users_checked += 1
                 roles_processed += 1
 
@@ -403,6 +412,13 @@ async def monitor_role_changes(disallowed_rank_names=None):
                 # await time_channel.send(summary)
                 await safe_send(summary, channel_id=TIME_TRACKING_CHANNEL_ID, bot=bot)
             logger.info("✅ Cycle complete.")
+            
+            async with aiofiles.open("AD_plus_user_ids.csv", "w") as f:
+                # Convert to CSV first
+                csv_data = ",".join(str(user_id) for user_id in AD_plus_user_ids)
+                await f.write(csv_data)
+                logger.info("AD+ user IDs saved to AD_plus_user_ids.csv")
+            
             await asyncio.sleep(180)  # Check every 3 minutes
 
 
