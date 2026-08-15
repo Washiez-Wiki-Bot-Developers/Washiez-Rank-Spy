@@ -70519,3 +70519,9 @@ Traceback (most recent call last):
   File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 203, in fetch_page
     raise RuntimeError(f"HTTP {response.status}")
 RuntimeError: HTTP 500
+2026-08-15 18:34:21,892 [bot.commands] ERROR: role_checking failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 687, in role_checking
+    print(bot.ROLE_PROGRESS_LOCK)
+          ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Bot' object has no attribute 'ROLE_PROGRESS_LOCK'
