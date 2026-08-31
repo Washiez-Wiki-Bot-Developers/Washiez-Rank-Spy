@@ -102,10 +102,6 @@ ALL_M_RANKS_LIST = [ET_RANKS, ST_RANKS, MGMT_RANKS, CORP_RANKS, LS_RANKS]
 
 ENABLE_ROPROXY_USAGE_FIRST_PRIORITY = False
 
-# Transient 5xx handling for the Roblox groups API (see fetch_users_in_role).
-MAX_5XX_RETRIES = 4
-RETRY_BASE_DELAY = 1.0  # seconds; doubled each attempt (1, 2, 4, 8)
-
 
 async def load_data():
     async with file_lock:
@@ -198,47 +194,32 @@ async def fetch_users_in_role(
 
         tries = 0
         while True:
-            # Set when the page must be retried; the sleep happens after the
-            # response context exits so the connection is released first.
-            retry_delay: float | None = None
-
             async with session.get(
                 url, timeout=aiohttp.ClientTimeout(total=10)
             ) as response:
-                status = response.status
+                if response.status not in (200, 429) or str(response.status).startswith(
+                    "5"
+                ):
+                    raise RuntimeError(f"HTTP {response.status}")
 
-                if 500 <= status < 600:
-                    # Transient upstream failure — retry this same page.
-                    tries += 1
-                    if tries > MAX_5XX_RETRIES:
-                        raise RuntimeError(
-                            f"Too many 5xx errors (last HTTP {status}), aborting."
+                data = await response.json()
+
+                if response.status == 429 or str(response.status).startswith("5"):
+                    if str(response.status).startswith("5"):
+                        logger.warning(
+                            "FUIR: 5xx error. This might be a sign of servers failing or block."
                         )
-                    retry_delay = RETRY_BASE_DELAY * (2 ** (tries - 1))
-                    logger.warning(
-                        f"FUIR: HTTP {status} from Roblox. "
-                        f"Retry {tries}/{MAX_5XX_RETRIES} in {retry_delay}s."
-                    )
-                elif status == 429:
-                    # Rate limited — fall back to RoProxy for this page.
+                        tries += 1
+                        if tries > 3:
+                            raise RuntimeError("Too many 5xx errors, aborting.")
+                        continue
                     roproxy_url = await retrieve_roproxy_url(url)
-                    logger.warning(
-                        f"Rate limited. Retrying with RoProxy: {roproxy_url}"
-                    )
-                    async with session.get(
-                        roproxy_url, timeout=aiohttp.ClientTimeout(total=10)
-                    ) as proxy_response:
+                    async with session.get(roproxy_url) as proxy_response:
                         if proxy_response.status != 200:
-                            raise RuntimeError(
-                                f"RoProxy failed: HTTP {proxy_response.status}"
-                            )
-                        return await proxy_response.json()
-                elif status != 200:
-                    raise RuntimeError(f"HTTP {status}")
-                else:
-                    return await response.json()
+                            raise RuntimeError("RoProxy failed")
+                        data = await proxy_response.json()
 
-            await asyncio.sleep(retry_delay)
+                return data
 
     # Initial fetch (blocking)
     data = await fetch_page(cursor)
