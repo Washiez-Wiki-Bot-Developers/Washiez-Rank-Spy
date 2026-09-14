@@ -84552,3 +84552,9 @@ Traceback (most recent call last):
     print(bot.ROLE_PROGRESS_LOCK)
           ^^^^^^^^^^^^^^^^^^^^^^
 AttributeError: 'Bot' object has no attribute 'ROLE_PROGRESS_LOCK'
+2026-09-14 13:39:15,337 [bot.commands] ERROR: role_checking failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 687, in role_checking
+    print(bot.ROLE_PROGRESS_LOCK)
+          ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Bot' object has no attribute 'ROLE_PROGRESS_LOCK'
