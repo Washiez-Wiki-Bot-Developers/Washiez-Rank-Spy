@@ -84996,3 +84996,4 @@ Traceback (most recent call last):
   File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.14/site-packages/aiohttp/_websocket/writer.py", line 150, in _write_websocket_frame
     raise ClientConnectionResetError("Cannot write to closing transport")
 aiohttp.client_exceptions.ClientConnectionResetError: Cannot write to closing transport
+2026-09-21 23:02:20,682 [bot] ERROR: Error running bot: Session is closed
