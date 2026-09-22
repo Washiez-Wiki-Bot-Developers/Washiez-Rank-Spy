@@ -84997,3 +84997,4 @@ Traceback (most recent call last):
     raise ClientConnectionResetError("Cannot write to closing transport")
 aiohttp.client_exceptions.ClientConnectionResetError: Cannot write to closing transport
 2026-09-21 23:02:20,682 [bot] ERROR: Error running bot: Session is closed
+2026-09-22 07:31:44,170 [bot] ERROR: Error running bot: Session is closed
