@@ -609,7 +609,7 @@ async def on_ready():
 
 
 if __name__ == "__main__":
-    try:
+    try:a
         bot.load_extension("commands")  # This loads the commands from commands.py
         # bot.load_extension("special_patches")  # This loads the commands from special_patches.py
     except Exception as e:
