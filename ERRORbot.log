@@ -84998,3 +84998,9 @@ Traceback (most recent call last):
 aiohttp.client_exceptions.ClientConnectionResetError: Cannot write to closing transport
 2026-09-21 23:02:20,682 [bot] ERROR: Error running bot: Session is closed
 2026-09-22 07:31:44,170 [bot] ERROR: Error running bot: Session is closed
+2026-09-27 10:34:32,889 [bot.commands] ERROR: role_checking failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 365, in chain_check
+    Embed(description="No matching cards found.", color=color)
+                                                        ^^^^^
+NameError: name 'color' is not defined. Did you mean: 'Color'?
