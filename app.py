@@ -1,8 +1,26 @@
-import asyncio
+"""
+# App.py
+Copyright (c) 2026 Rankspy (Washiez Variant) by Washiez Wiki: Bot Developers, 
+based on original work from MartinAstrea. Made with 🧼🫧 by WW:BD, Martin and MrT!
+
+Licensed under GNU LGPL 3.0 License until further revision.
+
+Washiez-Wiki-Bot-Developers/Washiez-Rank-Spy
+
+:copyright: 2026 Washiez Wiki: Bot Developers (WW:BD)
+:license: GNU LGPL 3.0
+:original_author: MartinAstrea
+:contributors: WW:BD, Martin, MrT
+:repository: https://github.com/Washiez-Wiki-Bot-Developers/Washiez-Rank-Spy
+
+### Descriptions
+Main entry point for the Washiez Rank Spy bot. Initializes the bot, sets up configurations, 
+and starts the main event loop. Handles command-line arguments and environment-specific settings.
+"""# pylint: disable-next=C0410
+import asyncio, os
 import json
 import logging
 import time
-import os
 from typing import cast
 import aiohttp
 
