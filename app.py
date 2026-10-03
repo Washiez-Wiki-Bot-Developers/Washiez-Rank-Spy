@@ -26,13 +26,18 @@ from typing import AsyncGenerator, Any
 import aiohttp, discord
 from discord.ext import commands
 
-from envsbeh import ENV_TYPE, ENV_OS_CN, IS_RICH_ENV
+# pylint: disable-next=W0401
 from libraries import *  # centralized common imports
 from logging_setup import setup_logging
+from utils import safe_send, safe_send_and_pub, safe_send_pub_react
+
+# pylint: disable-next=W0401
+from rank_groups import *
 
 
 if IS_RICH_ENV:
     from rich.progress import Progress, TextColumn, BarColumn, TimeElapsedColumn
+
 
 
 class TypedBot(commands.Bot):
@@ -70,7 +75,9 @@ ROLE_PROGRESS = bot.ROLE_PROGRESS
 ROBLOX_RPS = 6
 ROBLOX_BURST = 8
 ROBLOX_429_STREAK = 0
+
 MAX_CHARS_DISCORD = 1900
+
 TIME_TRACKING_CHANNEL_ID = 0
 JUNIOR_DIRECTOR_CHAIRMAN_CHANNEL = 0
 HIGH_RANKS: set[str] = set()
@@ -143,9 +150,12 @@ async def fetch_users_in_role(
     cursor, total = None, role_member_count or 0
     url_base = f"https://groups.roblox.com/v1/groups/{group_id}/roles/{role_id}/users?limit=100"
     
-    ctx = Progress(TextColumn("Fetched {task.completed}/{task.total}"), BarColumn(), TimeElapsedColumn(), transient=True) if is_rich_env else None
-    with (ctx if ctx else nullcontext()) as p:
-        task = p.add_task(f"Role {role_id}", total=total) if p and hasattr(p, "add_task") else None
+    if not is_rich_env:
+        logger.info(f"Fetching users in role {role_id} (total: {total}) without rich progress...")
+    else:
+        progress_context = Progress(TextColumn("Fetched {task.completed}/{task.total}"), BarColumn(), TimeElapsedColumn(), transient=True) 
+    
+    async def main(progress_p=None, task=None):
         while True:
             url = f"{url_base}&cursor={cursor}" if cursor else url_base
             data = await roblox_get_json(session, url)
@@ -154,12 +164,76 @@ async def fetch_users_in_role(
             
             for user in data.get("data", []):
                 yield user
-                if task and p:
-                    p.advance(task, 1)
+                if task and progress_p:
+                    progress_p.advance(task, 1)
             
             cursor = data.get("nextPageCursor")
             if not cursor:
                 break
+    
+    if is_rich_env:
+        with (progress_context if progress_context else nullcontext()) as progress_p:
+            task = progress_p.add_task(f"Role {role_id}", total=total) if progress_p and hasattr(progress_p, "add_task") else None
+            async for user in main(progress_p, task):
+                yield user
+    else:
+        async for user in main():
+            yield user
+
+import asyncio
+import aiohttp
+
+GROUP_ID: int = 123456  # Set group ID
+RANK_ORDER: list[str] = []
+
+
+def can_use_asyncio_run() -> bool:
+    """
+    Check if asyncio.run() can execute safely.
+
+    :returns: True if no event loop runs in current thread.
+    """
+    try:
+        asyncio.get_running_loop()
+        return False
+    except RuntimeError:
+        return True
+
+
+async def get_all_ranks() -> list[dict]:
+    """
+    Fetch group roles from API.
+
+    :returns: List of rank dictionaries.
+    """
+    async with aiohttp.ClientSession() as session:
+        return await fetch_roles(session, GROUP_ID)
+
+
+all_the_ranks: list[dict] = []
+if can_use_asyncio_run():
+    all_the_ranks = asyncio.run(get_all_ranks())
+
+if all_the_ranks:
+    # Sort by numerical rank before extracting names
+    sorted_ranks = sorted(all_the_ranks, key=lambda r: r.get("rank", 0))
+    RANK_ORDER = [rank["name"] for rank in sorted_ranks]
+
+
+def get_rank_index(rank: str) -> int:
+    """
+    Get rank index from list.
+
+    :param rank: Name of rank to look up.
+    :returns: List index or -1 if not found.
+    """
+    try:
+        return RANK_ORDER.index(rank)
+    except ValueError:
+        return -1
+
+
+GET_RANK_INDEX = get_rank_index
 
 
 async def update_discord_presence(force: bool = False) -> None:
@@ -212,7 +286,7 @@ async def flush_role_change_queue(
 
 
 def _process_single_user_delta(
-    uid: str,
+    user_id: str,
     curr: set[int],
     prev: set[int],
     roles_dict: dict[int, str],
@@ -224,11 +298,11 @@ def _process_single_user_delta(
 ) -> dict[str, Any] | None:
     """Compute rank/role changes for a single user and queue announcement message.
 
-    :param uid: Target Roblox user ID string.
+    :param user_id: Target Roblox user ID string.
     :param curr: Current set of assigned role IDs.
     :param prev: Historical set of assigned role IDs.
     :param roles_dict: Translation map converting role ID to role name.
-    :param user_names: Cache mapping UID to display name.
+    :param user_names: Cache mapping User ID to display name.
     :param user_meta: Metadata map storing cooldown timestamps.
     :param channel_queues: Target state mapping channel ID to pending queues.
     :param now: Epoch timestamp of current execution run.
@@ -236,7 +310,7 @@ def _process_single_user_delta(
     :returns: Evaluated change payload or None if ignored/suppressed.
     """
     added, removed = curr - prev, prev - curr
-    suppressed_until = user_meta.get(uid, {}).get("suppressed_until", 0)
+    suppressed_until = user_meta.get(user_id, {}).get("suppressed_until", 0)
 
     if (not added and not removed) or now < suppressed_until:
         return None
@@ -261,11 +335,11 @@ def _process_single_user_delta(
         action_text = f"role changes: {added_str}{joiner}{removed_str}"
 
     punc = "!" if action_type == "promoted" else "."
-    username = user_names.get(uid, uid)
-    link = f"[{username}](<https://www.roblox.com/users/{uid}/profile>)"
+    username = user_names.get(user_id, user_id)
+    link = f"[{username}](<https://www.roblox.com/users/{user_id}/profile>)"
 
     select_name = curr_name or prev_name
-    channel_id, mention = get_rank_channel(select_name) if select_name else (TIME_TRACKING_CHANNEL_ID, "")  # pyright: ignore[reportUndefinedVariable]
+    channel_id, mention = get_rank_category_and_mention(select_name) if select_name else (TIME_TRACKING_CHANNEL_ID, "")  # pyright: ignore[reportUndefinedVariable]
     target_cid = channel_id or TIME_TRACKING_CHANNEL_ID
 
     message = f"{link} {action_text}{punc} {mention}".strip()
@@ -289,12 +363,12 @@ def _process_single_user_delta(
         quids.clear()
 
     q.append(f"{message}\n")
-    quids.append(int(uid))
+    quids.append(int(user_id))
 
-    user_meta.setdefault(uid, {})["suppressed_until"] = now + suppression_window
+    user_meta.setdefault(user_id, {})["suppressed_until"] = now + suppression_window
 
     return {
-        "user_id": int(uid),
+        "user_id": int(user_id),
         "to_rank": next(iter(added), next(iter(curr), 0)),
         "from_rank": next(iter(removed), next(iter(prev), 0)),
         "timestamp": int(now),
@@ -324,20 +398,13 @@ async def _collect_members_in_role(
             "done": False,
             "start": time.time(),
         }
-
+    
     users_checked, local_csv, role_users = 0, "", []
-    p_format = [
-        TextColumn("[bold]Role:[/bold] {task.description}"),
-        BarColumn(),
-        TextColumn("{task.completed}/{task.total}"),
-        TimeElapsedColumn(),
-    ]
-
-    ctx = Progress(*p_format, refresh_per_second=4, transient=True) if IS_RICH_ENV else None
-    with (ctx if ctx else nullcontext()) as progress:
-        task = progress.add_task(role_name, total=role_member_count) if progress else None
+    
+    async def main(progress: Progress | None = None, task: Any = None):        
         async for user in fetch_users_in_role(session, GROUP_ID, role_id, role_member_count):
             users_checked += 1
+            
             if progress and task is not None:
                 progress.update(task, advance=1)
 
@@ -347,36 +414,55 @@ async def _collect_members_in_role(
             if role_name in HIGH_RANKS:
                 local_csv += ("," if local_csv else "") + str(user["userId"])
             role_users.append(user)
+    
+        async with bot.ROLE_PROGRESS_LOCK:
+            ROLE_PROGRESS[role_name]["done"] = True
+    
+        still_running = {n: info for n, info in ROLE_PROGRESS.items() if not info["done"]}
+        lines = []
+        for name, info in still_running.items():
+            checked, total = info["checked"], info["total"]
+            rem = total - checked if total else None
+            elapsed = time.time() - info["start"]
+            ups = checked / elapsed if elapsed > 0 else 0.0
+            eta = (
+                f"~{datetime.timedelta(seconds=int(rem / ups))}" if checked and rem and ups > 0 else "?"
+            )
+            lines.append(
+                f"- {name}: {checked}/{total if total else '?'} ({rem if rem else '?'} left, {eta} remaining)"
+            )
+    
+        elapsed_total = time.time() - ROLE_PROGRESS[role_name]["start"]
+        if still_running:
+            logger.info(
+                "⏳ Role finished: %s (%ss) | Still running:\n%s",
+                role_name,
+                elapsed_total,
+                "\n".join(lines),
+            )
+        else:
+            logger.info(f"✅ Role finished: {role_name} | No roles remaining")
+    
+        return role_name, role_users, users_checked, local_csv
+    
+    progress_format: list[TextColumn | BarColumn | TextColumn | TimeElapsedColumn] | None = (
+        [
+            TextColumn("[bold]Role:[/bold] {task.description}"),
+            BarColumn(),
+            TextColumn("{task.completed}/{task.total}"),
+            TimeElapsedColumn(),
+        ]
+        if IS_RICH_ENV
+        else None
+    )
+    
+    if not IS_RICH_ENV:
+        return await main(progress=None, task=None)
 
-    async with bot.ROLE_PROGRESS_LOCK:
-        ROLE_PROGRESS[role_name]["done"] = True
-
-    still_running = {n: info for n, info in ROLE_PROGRESS.items() if not info["done"]}
-    lines = []
-    for name, info in still_running.items():
-        checked, total = info["checked"], info["total"]
-        rem = total - checked if total else None
-        elapsed = time.time() - info["start"]
-        ups = checked / elapsed if elapsed > 0 else 0.0
-        eta = (
-            f"~{datetime.timedelta(seconds=int(rem / ups))}" if checked and rem and ups > 0 else "?"
-        )
-        lines.append(
-            f"- {name}: {checked}/{total if total else '?'} ({rem if rem else '?'} left, {eta} remaining)"
-        )
-
-    elapsed_total = time.time() - ROLE_PROGRESS[role_name]["start"]
-    if still_running:
-        logger.info(
-            "⏳ Role finished: %s (%ss) | Still running:\n%s",
-            role_name,
-            elapsed_total,
-            "\n".join(lines),
-        )
-    else:
-        logger.info(f"✅ Role finished: {role_name} | No roles remaining")
-
-    return role_name, role_users, users_checked, local_csv
+    progress_context = Progress(*progress_format, refresh_per_second=4, transient=True) if IS_RICH_ENV else None
+    with (progress_context if progress_context else nullcontext()) as progress:
+        task = progress.add_task(role_name, total=role_member_count) if progress else None
+        return await main(progress, task=None)
 
 
 async def process_role_deltas(
@@ -451,13 +537,31 @@ async def on_ready() -> None:
 
 async def main() -> None:
     """Initialize bot runtime dependencies, background tasks, and start client."""
+    if not TOKEN:
+        logger.error("DISCORD_BOT_TOKEN missing.")
+        sys.exit(1)
+    
     async with bot:
-        bot.loop.create_task(detect_changes_main())
-        await bot.start("YOUR_DISCORD_BOT_TOKEN_HERE")
+        try:
+            bot.load_extension("commands")  # This loads the commands from commands.py
+        except Exception as e:
+            logger.error(f"Failed to load commands extension: {e}")
+            # sys.exit(1)
+
+        try:
+            bot.run(TOKEN)
+            bot.loop.create_task(detect_changes_main())
+        except Exception as e:
+            logger.error(f"Bot crashed: {e}")
+        # await bot.start()
+    
 
 
 if __name__ == "__main__":
+    TOKEN = os.getenv("DISCORD_BOT_TOKEN")
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
         logger.info("Bot execution terminated by user.")
+    except Exception as e:
+        logger.error(f"Unexpected error: {e}")
