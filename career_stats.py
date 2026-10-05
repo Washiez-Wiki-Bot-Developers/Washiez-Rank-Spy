@@ -18,21 +18,37 @@ The career_stats.py module provides functionality to fetch and display career st
 
 ### Modifications by WW:BD
 We modified the code to use internal libraries such as roblox.py and our needs.
-Rank history is now read from Trello cards (via trello.py parsers) instead of local stored data.
+Rank history is now read from Trello cards across multiple boards (via trello.py parsers) with local stored data.
 """
 import asyncio
 import os
 import time
 from collections import OrderedDict
 from datetime import timezone
+from typing import Any, Dict, List, Optional, Tuple
 
 import aiohttp
 import discord
 
 import roblox
-from trello import parse_card, parse_us_numeric_date
+from trello import BOARD_NAME_MAP, fetch_cards, parse_card, parse_us_numeric_date
 
-async def fetch_roblox_user(identifier):
+TEAM_SECTIONS = ('Entry Team', 'Supervision Team', 'Management Team', 'Corporate Team')
+
+# Optional, lowest -> highest, e.g. {'Trainee': 0, 'Staff': 1}. Empty = no demotions detected.
+RANK_ORDER: Dict[str, int] = {}
+
+_record_cache: OrderedDict[Tuple[Tuple[str, ...], str], Tuple[float, Dict[str, Any]]] = OrderedDict()
+_CACHE_MAX, _CACHE_TTL = 128, 300
+
+
+async def fetch_roblox_user(identifier: str) -> Optional[Dict[str, Any]]:
+    """
+    Fetch Roblox user details by username or numeric User ID.
+
+    :param identifier: Roblox username or string representation of User ID.
+    :returns: Dictionary containing Roblox user info, or None if not found/error.
+    """
     async with aiohttp.ClientSession() as session:
         if identifier.isdigit():
             url = f'https://users.roblox.com/v1/users/{identifier}'
@@ -49,9 +65,17 @@ async def fetch_roblox_user(identifier):
             if response.status != 200:
                 return None
             result = await response.json()
-            return result.get('data', [None])[0]
+            data = result.get('data', [])
+            return data[0] if data else None
 
-async def fetch_roblox_avatar(user_id):
+
+async def fetch_roblox_avatar(user_id: str) -> Optional[str]:
+    """
+    Fetch headshot thumbnail URL for a Roblox user ID.
+
+    :param user_id: The numeric Roblox user ID.
+    :returns: Direct image URL for the avatar, or None if fetch fails.
+    """
     url = 'https://thumbnails.roblox.com/v1/users/avatar-headshot'
     try:
         async with aiohttp.ClientSession() as session:
@@ -67,39 +91,19 @@ async def fetch_roblox_avatar(user_id):
                 if response.status != 200:
                     return None
                 result = await response.json()
-                return result.get('data', [{}])[0].get('imageUrl')
+                data = result.get('data', [{}])
+                return data[0].get('imageUrl')
     except (aiohttp.ClientError, asyncio.TimeoutError):
         return None
 
 
-# -----------------------------
-# Trello data source
-# -----------------------------
-TRELLO_API = 'https://api.trello.com/1'
-TRELLO_BOARD_ID = 'hcDUWrFo'  # WPL
-TEAM_SECTIONS = ('Entry Team', 'Supervision Team', 'Management Team', 'Corporate Team')
+def _rank_events(parsed: Dict[str, Any]):
+    """
+    Generator extracting rank names and dates from a parsed card structure.
 
-# Optional, lowest -> highest, e.g. {'Trainee': 0, 'Staff': 1}. Empty = no demotions detected.
-RANK_ORDER = {}
-
-_record_cache = OrderedDict()
-_CACHE_MAX, _CACHE_TTL = 128, 300
-
-
-def _trello_auth():
-    key, token = os.getenv('TRELLO_KEY'), os.getenv('TRELLO_TOKEN')
-    return {'key': key, 'token': token} if key and token else {}
-
-
-async def _trello_get(session, path, **params):
-    async with session.get(
-        f'{TRELLO_API}{path}', params={**params, **_trello_auth()}
-    ) as response:
-        response.raise_for_status()
-        return await response.json()
-
-
-def _rank_events(parsed):
+    :param parsed: Parsed Trello card structure.
+    :returns: Yields tuples of (rank_name, datetime_object).
+    """
     for team in TEAM_SECTIONS:
         section = parsed.get(team)
         if not isinstance(section, dict):
@@ -109,15 +113,28 @@ def _rank_events(parsed):
                 yield rank, parse_us_numeric_date(details.get('date'))
 
 
-def _epoch(dt):
+def _epoch(dt) -> Optional[int]:
+    """
+    Convert datetime object to integer UTC epoch timestamp.
+
+    :param dt: Datetime object to convert.
+    :returns: Integer UTC timestamp, or None if input was None.
+    """
     return int(dt.replace(tzinfo=timezone.utc).timestamp()) if dt else None
 
 
-def build_record(card):
-    """Trello card -> {'history': [...], 'promotions': n} for build_career_embeds."""
+def build_record(card: Dict[str, Any], board_id: str) -> Dict[str, Any]:
+    """
+    Transform raw Trello card data into structured career history and promo stats.
+
+    :param card: Raw Trello card dictionary.
+    :param board_id: The Trello board ID where the card was retrieved.
+    :returns: Dictionary containing parsed history entries, total promotion count, and board source info.
+    """
+    parsed = parse_card(card)
     events = sorted(
-        _rank_events(parse_card(card)),
-        key=lambda e: (e[1] is not None, e[1].timestamp() if e[1] else 0),  # undated first
+        _rank_events(parsed),
+        key=lambda e: (e[1] is not None, e[1].timestamp() if e[1] else 0),
     )
     history, promotions = [], 0
     for rank, dt in events:
@@ -130,38 +147,69 @@ def build_record(card):
             entry['change'] = 'promotion' if up else 'demotion'
             promotions += up
         history.append(entry)
-    return {'history': history, 'promotions': promotions}
+
+    board_name = BOARD_NAME_MAP.get(board_id, 'Unknown Board')
+    return {
+        'history': history,
+        'promotions': promotions,
+        'board_id': board_id,
+        'board_name': board_name
+    }
 
 
-async def get_trello_record(username, board_id=TRELLO_BOARD_ID):
-    key = (board_id, username.lower())
-    hit = _record_cache.get(key)
+async def get_trello_record(
+    username: str,
+    board_ids: Optional[List[str]] = None
+) -> Optional[Dict[str, Any]]:
+    """
+    Retrieve user career record across Trello boards mapped in BOARD_NAME_MAP with local caching.
+
+    :param username: Roblox username to look up.
+    :param board_ids: Optional list of board IDs to check (defaults to all boards in BOARD_NAME_MAP).
+    :returns: Prepared record dict with history and promotion stats, or None if not found on any board.
+    """
+    if not board_ids:
+        board_ids = list(BOARD_NAME_MAP.keys())
+
+    cache_key = (tuple(board_ids), username.lower())
+    hit = _record_cache.get(cache_key)
     if hit and hit[0] > time.time():
-        _record_cache.move_to_end(key)
+        _record_cache.move_to_end(cache_key)
         return hit[1]
 
-    async with aiohttp.ClientSession() as session:
-        # Titles only (no descriptions), so the board request stays small.
-        cards = await _trello_get(session, f'/boards/{board_id}/cards', fields='name')
-        target = username.lower()
-        card_id = next(
-            (c['id'] for c in cards
-             if c['name'].split('|', 1)[0].strip().lower() == target),
-            None,
+    api_key = os.getenv('TRELLO_KEY')
+    token = os.getenv('TRELLO_TOKEN')
+    target = username.lower()
+
+    for board_id in board_ids:
+        try:
+            # Synchronous requests call wrapped in asyncio executor
+            cards = await asyncio.to_thread(fetch_cards, board_id, api_key, token)
+        except Exception:
+            continue
+
+        card = next(
+            (c for c in cards if c['name'].split('|', 1)[0].strip().lower() == target),
+            None
         )
-        del cards
-        if not card_id:
-            return None
-        card = await _trello_get(session, f'/cards/{card_id}', fields='name,desc')
 
-    record = build_record(card)
-    _record_cache[key] = (time.time() + _CACHE_TTL, record)
-    if len(_record_cache) > _CACHE_MAX:
-        _record_cache.popitem(last=False)
-    return record
+        if card:
+            record = build_record(card, board_id)
+            _record_cache[cache_key] = (time.time() + _CACHE_TTL, record)
+            if len(_record_cache) > _CACHE_MAX:
+                _record_cache.popitem(last=False)
+            return record
+
+    return None
 
 
-def format_duration(seconds):
+def format_duration(seconds: float) -> str:
+    """
+    Format time duration in seconds into human readable short format (e.g. 1y 20d 4h 5m).
+
+    :param seconds: Time duration in seconds.
+    :returns: Formatted string representing elapsed time.
+    """
     total_minutes = max(0, int(seconds // 60))
     total_days, remaining_minutes = divmod(total_minutes, 1440)
     years, days = divmod(total_days, 365)
@@ -178,8 +226,23 @@ def format_duration(seconds):
     return ' '.join(parts)
 
 
-def build_career_embeds(display_name, user_id, record, avatar_url=None):
+def build_career_embeds(
+    display_name: str,
+    user_id: str,
+    record: Dict[str, Any],
+    avatar_url: Optional[str] = None
+) -> List[discord.Embed]:
+    """
+    Construct Discord embeds containing career summary, statistics, and rank timeline pages.
+
+    :param display_name: Member display name.
+    :param user_id: Roblox numeric User ID string.
+    :param record: Prepared Trello record dictionary.
+    :param avatar_url: Optional Roblox avatar headshot URL.
+    :returns: List of discord.Embed objects ready for pagination view.
+    """
     history = record['history']
+    board_name = record.get('board_name', 'WASHIEZ')
     now = int(time.time())
     
     current_entry = history[-1]
@@ -195,7 +258,7 @@ def build_career_embeds(display_name, user_id, record, avatar_url=None):
     longest_entry, longest_duration = max(durations, key=lambda item: item[1]) if durations else (None, 0)
     first_tracked = min((entry['start'] for entry in known_entries), default=None)
     unique_ranks = list(dict.fromkeys(entry['rank'] for entry in history))
-    rank_durations = {}
+    rank_durations: Dict[str, float] = {}
     
     for entry, duration in durations:
         rank_durations[entry['rank']] = rank_durations.get(entry['rank'], 0) + duration
@@ -218,7 +281,7 @@ def build_career_embeds(display_name, user_id, record, avatar_url=None):
         color=discord.Color.from_rgb(37, 130, 91)
     )
     summary.set_author(
-        name=f'{display_name}  |  WASHIEZ',
+        name=f'{display_name}  |  {board_name}',
         url=f'https://www.roblox.com/users/{user_id}/profile',
         icon_url=avatar_url
     )
@@ -246,7 +309,7 @@ def build_career_embeds(display_name, user_id, record, avatar_url=None):
         tenure_lines = []
         for rank, duration in sorted(rank_durations.items(), key=lambda item: item[1], reverse=True)[:6]:
             filled = max(1, round(duration / max_rank_duration * 10))
-            p_bar = '\u2588' * filled + '\u2591' * (10 - filled)
+            p_bar = '█' * filled + '░' * (10 - filled)
             percentage = round(duration / total_tracked * 100)
             tenure_lines.append(
                 f'`{p_bar}` **{percentage}%**  {rank}  |  {format_duration(duration)}'
@@ -276,7 +339,7 @@ def build_career_embeds(display_name, user_id, record, avatar_url=None):
         inline=False
     )
     summary.set_footer(
-        text=f'WASHIEZ CAREER TRACKER  |  {len(history)} rank records  |  Older history may be incomplete'
+        text=f'WASHIEZ CAREER TRACKER ({board_name})  |  {len(history)} rank records  |  Older history may be incomplete'
     )
 
     embeds = [summary]
@@ -314,7 +377,7 @@ def build_career_embeds(display_name, user_id, record, avatar_url=None):
                 inline=False
             )
         timeline.set_footer(
-            text=f'WASHIEZ CAREER TRACKER  |  PAGE {page_index + 1}/{len(history_pages)}  |  Dates are observation times'
+            text=f'Washiez Career Tracker ({board_name})  |  PAGE {page_index + 1}/{len(history_pages)}  |  Dates are observation times'
         )
         embeds.append(timeline)
 
@@ -322,7 +385,13 @@ def build_career_embeds(display_name, user_id, record, avatar_url=None):
 
 
 class CareerStatsView(discord.ui.View):
-    def __init__(self, embeds, owner_id):
+    """
+    Pycord View handling interactive pagination controls for career statistics embeds.
+
+    :param embeds: List of prepared discord.Embed objects to traverse.
+    :param owner_id: Discord User ID permitted to operate the buttons.
+    """
+    def __init__(self, embeds: List[discord.Embed], owner_id: int):
         super().__init__(timeout=180)
         self.embeds = embeds
         self.owner_id = owner_id
@@ -331,7 +400,13 @@ class CareerStatsView(discord.ui.View):
         self.overview_button.disabled = True
         self.next_button.disabled = len(embeds) <= 1
 
-    async def interaction_check(self, interaction):
+    async def interaction_check(self, interaction: discord.Interaction) -> bool:
+        """
+        Validate that the interaction author matches the component command requester.
+
+        :param interaction: Pycord interaction context.
+        :returns: True if user is owner, False otherwise.
+        """
         if interaction.user.id != self.owner_id:
             await interaction.response.send_message(
                 'Only the person who requested these stats can change pages.',
@@ -341,7 +416,13 @@ class CareerStatsView(discord.ui.View):
         return True
 
     @discord.ui.button(label='Previous', style=discord.ButtonStyle.secondary)
-    async def previous_button(self, button, interaction):
+    async def previous_button(self, button: discord.ui.Button, interaction: discord.Interaction):
+        """
+        Navigate to the previous embed page.
+
+        :param button: Button component instance triggered.
+        :param interaction: Pycord interaction context.
+        """
         self.page = max(0, self.page - 1)
         self.previous_button.disabled = self.page == 0
         self.overview_button.disabled = self.page == 0
@@ -349,7 +430,13 @@ class CareerStatsView(discord.ui.View):
         await interaction.response.edit_message(embed=self.embeds[self.page], view=self)
 
     @discord.ui.button(label='Overview', style=discord.ButtonStyle.secondary)
-    async def overview_button(self, button, interaction):
+    async def overview_button(self, button: discord.ui.Button, interaction: discord.Interaction):
+        """
+        Return to the primary summary embed page.
+
+        :param button: Button component instance triggered.
+        :param interaction: Pycord interaction context.
+        """
         self.page = 0
         self.previous_button.disabled = True
         self.overview_button.disabled = True
@@ -357,7 +444,13 @@ class CareerStatsView(discord.ui.View):
         await interaction.response.edit_message(embed=self.embeds[self.page], view=self)
 
     @discord.ui.button(label='Next', style=discord.ButtonStyle.primary)
-    async def next_button(self, button, interaction):
+    async def next_button(self, button: discord.ui.Button, interaction: discord.Interaction):
+        """
+        Navigate to the next embed page.
+
+        :param button: Button component instance triggered.
+        :param interaction: Pycord interaction context.
+        """
         self.page = min(len(self.embeds) - 1, self.page + 1)
         self.previous_button.disabled = self.page == 0
         self.overview_button.disabled = self.page == 0
@@ -365,12 +458,24 @@ class CareerStatsView(discord.ui.View):
         await interaction.response.edit_message(embed=self.embeds[self.page], view=self)
 
 
-def register_career_stats_command(bot, load_data=None):  # load_data kept so existing callers don't break
+def register_career_stats_command(bot: discord.Bot, load_data=None):
+    """
+    Register the /careerstats slash command onto the provided Pycord bot instance.
+
+    :param bot: Active discord.Bot or discord.Cog instance.
+    :param load_data: Optional legacy parameter for backward compatibility.
+    """
     @bot.slash_command(
         name='careerstats',
         description='View a Roblox member career history and promotions.'
     )
     async def career_stats_command(ctx: discord.ApplicationContext, roblox_user: str):
+        """
+        Command execution callback for displaying career statistics.
+
+        :param ctx: Application Context for the slash command invocation.
+        :param roblox_user: Target Roblox username or numeric user ID string.
+        """
         await ctx.defer()
         try:
             user = await fetch_roblox_user(roblox_user)
@@ -386,7 +491,7 @@ def register_career_stats_command(bot, load_data=None):  # load_data kept so exi
         display_name = user.get('name', user.get('username', roblox_user))
         try:
             record = await get_trello_record(display_name)
-        except (aiohttp.ClientError, asyncio.TimeoutError):
+        except Exception:
             await ctx.respond('Could not reach Trello right now. Please try again later.')
             return
 
@@ -400,3 +505,11 @@ def register_career_stats_command(bot, load_data=None):  # load_data kept so exi
         embeds = build_career_embeds(display_name, user_id, record, avatar_url)
         view = CareerStatsView(embeds, ctx.author.id)
         await ctx.respond(embed=embeds[0], view=view)
+
+def setup(bot: discord.Bot):
+    """
+    Setup function to register the career stats command with the bot.
+
+    :param bot: Active discord.Bot instance.
+    """
+    register_career_stats_command(bot)
