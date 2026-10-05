@@ -24,8 +24,10 @@ import asyncio
 import os
 import time
 from collections import OrderedDict
-from datetime import timezone
+from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional, Tuple
+
+import logging
 
 import aiohttp
 import discord
@@ -41,6 +43,7 @@ RANK_ORDER: Dict[str, int] = {}
 _record_cache: OrderedDict[Tuple[Tuple[str, ...], str], Tuple[float, Dict[str, Any]]] = OrderedDict()
 _CACHE_MAX, _CACHE_TTL = 128, 300
 
+logger = logging.getLogger(__name__)
 
 async def fetch_roblox_user(identifier: str) -> Optional[Dict[str, Any]]:
     """
@@ -97,48 +100,78 @@ async def fetch_roblox_avatar(user_id: str) -> Optional[str]:
         return None
 
 
-def _rank_events(parsed: Dict[str, Any]):
-    """
-    Generator extracting rank names and dates from a parsed card structure.
-
-    :param parsed: Parsed Trello card structure.
-    :returns: Yields tuples of (rank_name, datetime_object).
-    """
-    for team in TEAM_SECTIONS:
-        section = parsed.get(team)
-        if not isinstance(section, dict):
-            continue
-        for rank, details in section.items():
-            if rank != 'Dept' and isinstance(details, dict):
-                yield rank, parse_us_numeric_date(details.get('date'))
-
-
-def _epoch(dt) -> Optional[int]:
+def _epoch(dt: Optional[datetime]) -> Optional[int]:
     """
     Convert datetime object to integer UTC epoch timestamp.
 
     :param dt: Datetime object to convert.
     :returns: Integer UTC timestamp, or None if input was None.
     """
-    return int(dt.replace(tzinfo=timezone.utc).timestamp()) if dt else None
+    if not dt:
+        return None
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return int(dt.timestamp())
 
 
-def build_record(card: Dict[str, Any], board_id: str) -> Dict[str, Any]:
+def _rank_events(parsed: Dict[str, Any]):
     """
-    Transform raw Trello card data into structured career history and promo stats.
-
-    :param card: Raw Trello card dictionary.
-    :param board_id: The Trello board ID where the card was retrieved.
-    :returns: Dictionary containing parsed history entries, total promotion count, and board source info.
+    Yields tuples of (rank_name, datetime_object, timestamp_epoch).
+    Falls back to 'Final Date Parsed' from card title if rank date is missing/generic.
     """
-    parsed = parse_card(card)
-    events = sorted(
-        _rank_events(parsed),
-        key=lambda e: (e[1] is not None, e[1].timestamp() if e[1] else 0),
-    )
+    card_fallback_dt = parsed.get("Final Date Parsed")
+
+    for section_name, section in parsed.items():
+        if not isinstance(section, dict) or section_name in ("Username", "Final Date", "Final Date Parsed"):
+            continue
+
+        for rank, details in section.items():
+            if rank == "Dept":
+                continue
+
+            date_str = None
+            if isinstance(details, dict):
+                date_str = details.get("date")
+            elif isinstance(details, str):
+                date_str = details
+
+            dt = parse_us_numeric_date(date_str) if date_str else None
+            
+            # Fall back to card title date (e.g. 8/20/24) if rank date unavailable/unparseable
+            if dt is None and card_fallback_dt:
+                dt = card_fallback_dt
+
+            yield rank, dt, _epoch(dt)
+
+
+def build_record_from_cards(cards_with_boards: List[Tuple[Dict[str, Any], str]]) -> Dict[str, Any]:
+    """
+    Transform raw Trello cards data across boards into structured multi-tenure career history.
+
+    :param cards_with_boards: List of tuples (card, board_id).
+    :returns: Dictionary containing parsed merged history entries, promotion count, and board info.
+    """
+    raw_events = []
+    board_names = set()
+
+    for card, board_id in cards_with_boards:
+        parsed = parse_card(card)
+        board_names.add(BOARD_NAME_MAP.get(board_id, 'Unknown Board'))
+        for rank, dt, epoch in _rank_events(parsed):
+            raw_events.append((rank, dt, epoch))
+
+    # Sort events chronologically by timestamp epoch
+    raw_events.sort(key=lambda event: (event[2] is None, event[2] if event[2] is not None else 0))
+
+    # Deduplicate sequential identical rank entries
+    filtered_events = []
+    for rank, dt, epoch in raw_events:
+        if not filtered_events or filtered_events[-1][0] != rank or filtered_events[-1][2] != epoch:
+            filtered_events.append((rank, dt, epoch))
+
     history, promotions = [], 0
-    for rank, dt in events:
-        entry = {'rank': rank, 'start': _epoch(dt), 'end': None}
+    for rank, dt, epoch in filtered_events:
+        entry = {'rank': rank, 'start': epoch, 'end': None}
         if history:
             prev = history[-1]
             prev['end'] = entry['start']
@@ -148,12 +181,12 @@ def build_record(card: Dict[str, Any], board_id: str) -> Dict[str, Any]:
             promotions += up
         history.append(entry)
 
-    board_name = BOARD_NAME_MAP.get(board_id, 'Unknown Board')
+    primary_board_name = ', '.join(sorted(board_names))
     return {
         'history': history,
         'promotions': promotions,
-        'board_id': board_id,
-        'board_name': board_name
+        'board_id': cards_with_boards[0][1] if cards_with_boards else '',
+        'board_name': primary_board_name
     }
 
 
@@ -163,10 +196,11 @@ async def get_trello_record(
 ) -> Optional[Dict[str, Any]]:
     """
     Retrieve user career record across Trello boards mapped in BOARD_NAME_MAP with local caching.
+    Merges multiple cards across boards and tenures.
 
     :param username: Roblox username to look up.
     :param board_ids: Optional list of board IDs to check (defaults to all boards in BOARD_NAME_MAP).
-    :returns: Prepared record dict with history and promotion stats, or None if not found on any board.
+    :returns: Prepared record dict with merged history and promotion stats, or None if not found.
     """
     if not board_ids:
         board_ids = list(BOARD_NAME_MAP.keys())
@@ -181,24 +215,25 @@ async def get_trello_record(
     token = os.getenv('TRELLO_TOKEN')
     target = username.lower()
 
+    matching_cards: List[Tuple[Dict[str, Any], str]] = []
+
     for board_id in board_ids:
         try:
-            # Synchronous requests call wrapped in asyncio executor
             cards = await asyncio.to_thread(fetch_cards, board_id, api_key, token)
         except Exception:
             continue
 
-        card = next(
-            (c for c in cards if c['name'].split('|', 1)[0].strip().lower() == target),
-            None
-        )
+        for card in cards:
+            card_name_user = card['name'].split('|', 1)[0].strip().lower()
+            if card_name_user == target:
+                matching_cards.append((card, board_id))
 
-        if card:
-            record = build_record(card, board_id)
-            _record_cache[cache_key] = (time.time() + _CACHE_TTL, record)
-            if len(_record_cache) > _CACHE_MAX:
-                _record_cache.popitem(last=False)
-            return record
+    if matching_cards:
+        record = build_record_from_cards(matching_cards)
+        _record_cache[cache_key] = (time.time() + _CACHE_TTL, record)
+        if len(_record_cache) > _CACHE_MAX:
+            _record_cache.popitem(last=False)
+        return record
 
     return None
 
@@ -287,18 +322,18 @@ def build_career_embeds(
     )
     if avatar_url:
         summary.set_thumbnail(url=avatar_url)
-    summary.add_field(name='PROMOTIONS', value=f'**{promotion_count}**', inline=True)
-    summary.add_field(name='DEMOTIONS RECORDED', value=f'**{demotion_count}**', inline=True)
-    summary.add_field(name='RANKS HELD', value=f'**{len(unique_ranks)}**', inline=True)
-    summary.add_field(name='CHANGES TRACKED', value=f'**{max(0, len(history) - 1)}**', inline=True)
-    summary.add_field(name='TOTAL OBSERVED TENURE', value=f'**{format_duration(total_tracked)}**', inline=True)
+    summary.add_field(name='Promotions', value=f'**{promotion_count}**', inline=True)
+    summary.add_field(name='Demotions', value=f'**{demotion_count}**', inline=True)
+    summary.add_field(name='Ranks Held', value=f'**{len(unique_ranks)}**', inline=True)
+    summary.add_field(name='Changes Tracked', value=f'**{max(0, len(history) - 1)}**', inline=True)
+    summary.add_field(name='Total Observed Tenure', value=f'**{format_duration(total_tracked)}**', inline=True)
     summary.add_field(
-        name='CURRENT RANK TENURE',
+        name='Current rank tenure',
         value=f'**{format_duration(now - current_start)}**' if current_start else 'Unknown',
         inline=True
     )
     summary.add_field(
-        name='LONGEST OBSERVED RANK',
+        name='Longest observed rank',
         value=(f'**{longest_entry["rank"]}**\n{format_duration(longest_duration)}'
                if longest_entry else 'Not enough date data'),
         inline=True
@@ -329,17 +364,17 @@ def build_career_embeds(
     else:
         change_line = 'No promotion or demotion details were saved in this history yet.'
     summary.add_field(
-        name='LATEST CAREER MILESTONE',
+        name='Latest career milestone',
         value=change_line,
         inline=False
     )
     summary.add_field(
-        name='DATE PRECISION',
-        value='Dates show when the bot observed a rank change, not the exact Roblox event time.',
+        name='Date precision',
+        value='Dates show when ~~the bot observed a rank change, and/or~~ date obtained that is most accurate with public data by Trello board contributors, not the exact Roblox event time.',
         inline=False
     )
     summary.set_footer(
-        text=f'WASHIEZ CAREER TRACKER ({board_name})  |  {len(history)} rank records  |  Older history may be incomplete'
+        text=f'Washiez Career Tracker ({board_name})  |  {len(history)} rank records  |  Older history may be incomplete | Dates are observation times |  Data for {display_name} from {board_name}. Experimental. Copyright of Data by Trello Board owner, contributors or other entities. **/career_stats originally developed by bleuetor.** & modified for Rankspy (Washiez Variant) by Washiez Wiki: Bot Developers.'
     )
 
     embeds = [summary]
@@ -370,14 +405,14 @@ def build_career_embeds(
                 event_line = '**Starting rank**  |  Date predates tracking'
             else:
                 event_line = '**Rank observed**  |  Event type unavailable'
-            end_text = f'NEXT CHANGE DETECTED  <t:{end}:F>' if end else '**CURRENT RANK**  |  Still active'
+            end_text = f'Next change detected  <t:{end}:F>' if end else '**Current rank**  |  Still active'
             timeline.add_field(
                 name=f'{index:02d}  /  {entry["rank"]}',
                 value=f'{event_line}\n{start_text}\n{end_text}\nObserved tenure  **{duration_text}**',
                 inline=False
             )
         timeline.set_footer(
-            text=f'Washiez Career Tracker ({board_name})  |  PAGE {page_index + 1}/{len(history_pages)}  |  Dates are observation times'
+            text=f'WASHIEZ CAREER TRACKER ({board_name})  |  PAGE {page_index + 1}/{len(history_pages)}  |  Dates are observation times'
         )
         embeds.append(timeline)
 
@@ -491,8 +526,9 @@ def register_career_stats_command(bot: discord.Bot, load_data=None):
         display_name = user.get('name', user.get('username', roblox_user))
         try:
             record = await get_trello_record(display_name)
-        except Exception:
-            await ctx.respond('Could not reach Trello right now. Please try again later.')
+        except Exception as e:
+            await ctx.respond(f'Could not reach Trello right now. Please try again later. Error: {e}')
+            logger.error(f'Error fetching Trello record for {display_name}: {e}')
             return
 
         if not record or not record.get('history'):
