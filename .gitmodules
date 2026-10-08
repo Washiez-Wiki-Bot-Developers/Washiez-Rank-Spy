@@ -1,0 +1,3 @@
+[submodule "pycord"]
+	path = pycord
+	url = https://github.com/Washiez-Wiki-Bot-Developers/pycord
