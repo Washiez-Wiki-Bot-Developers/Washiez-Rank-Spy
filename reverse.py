@@ -1,31 +1,21 @@
-"""
-# reverse.py - regex searches over the rank bot's announcement messages (Pycord).
-Copyright (c) 2026 Rankspy (Washiez Variant) by Washiez Wiki: Bot Developers, 
-based on original work from MartinAstrea. Made with 🧼🫧 by WW:BD, Martin and MrT!
+"""regex_search.py - regex searches over the rank bot's announcement messages (Pycord).
 
-Licensed under GNU LGPL 3.0 License until further revision.
+Discord's search API has no regex support, so this works in two stages:
+  1. Server-side: the search API narrows by author/channel and an optional plain-text
+     `prefilter` (this keeps the number of messages we have to page through small).
+  2. Client-side: every candidate message is matched against your regex.
 
-Washiez-Wiki-Bot-Developers/Washiez-Rank-Spy
+If the search endpoint refuses the bot token, it falls back to scanning
+channel.history() with the same regex.
 
-:copyright: 2026 Washiez Wiki: Bot Developers (WW:BD)
-:license: GNU LGPL 3.0
-:original_author: MartinAstrea
-:contributors: WW:BD, Martin, MrT, LLMs
-:repository: https://github.com/Washiez-Wiki-Bot-Developers/Washiez-Rank-Spy
-
-### Descriptions
-Main entry point for the Washiez Rank Spy bot. Initializes the bot, sets up configurations, 
-and starts the main event loop. Handles command-line arguments and environment-specific settings.
-
-### LLM Usage
-This code uses heavily human supervised AI code. Majority should have been rewritten.
+Load with:  bot.load_extension("regex_search")
+Test with:  python regex_search.py
 """
 from __future__ import annotations
 import time
 
 import asyncio
 import re
-import logging  # Added for logging setup
 
 import discord
 from discord.ext import commands
@@ -41,6 +31,13 @@ except ImportError:
 
 import roblox
 
+import logging_setup, logging
+
+logger: logging.Logger = logging_setup.setup_logging(
+    name="reverse", rankspy_default_level=True
+)
+logger.setLevel(logging.DEBUG)  # Set to DEBUG for detailed trace, INFO for less verbosity
+
 # ---- config: adjust ---------------------------------------------------------
 RANK_BOT_ID = 987654321098765432
 ANNOUNCE_CHANNEL_ID = 123456789012345678
@@ -50,12 +47,9 @@ MAX_TEXT_LEN = 4000
 TMM_DISCORD_ID = 1276397232341520469
 # -----------------------------------------------------------------------------
 
-logger = logging.getLogger(__name__)  # Added scriptwide logger initialization
-
 
 def message_text(msg: discord.Message) -> str:
-    logger.debug("Executing message_text for message ID: %s", getattr(msg, 'id', None))  # Added logging line
-    """Content plus embed text, specialty bots announce via embeds."""
+    """Content plus embed text, since many bots announce via embeds."""
     parts = [msg.content or ""]
     for e in msg.embeds:
         parts += [e.title or "", e.description or ""]
@@ -67,24 +61,19 @@ def message_text(msg: discord.Message) -> str:
 
 
 def compile_pattern(pattern: str, flags: int = re.IGNORECASE):
-    logger.debug("Compiling regex pattern of length %d", len(pattern))  # Added logging line
     if len(pattern) > MAX_PATTERN_LEN:
-        logger.error("Pattern length %d exceeds max length %d", len(pattern), MAX_PATTERN_LEN)  # Added logging line
         raise ValueError(f"Pattern too long (max {MAX_PATTERN_LEN} chars).")
     return _re.compile(pattern, flags)
 
 
 def _matches(compiled, text: str) -> re.Match | None:
-    logger.debug("Evaluating regex match against text length %d", len(text))  # Added logging line
     try:
         return compiled.search(text, timeout=0.2) if HAS_TIMEOUT else compiled.search(text)
     except TimeoutError:
-        logger.warning("Regex matching timed out.")  # Added logging line
         return None
 
 
 async def _api_search(bot, guild_id, *, content, author_id, channel_id, page_size=25, max_pages=40):
-    logger.info("Starting API search for guild %s, author %s, channel %s", guild_id, author_id, channel_id)  # Added logging line
     """Yield raw message dicts from the guild search endpoint, paging with offset."""
     route = Route("GET", "/guilds/{guild_id}/messages/search", guild_id=guild_id)
     for page in range(max_pages):
@@ -104,15 +93,12 @@ async def _api_search(bot, guild_id, *, content, author_id, channel_id, page_siz
             data = await bot.http.request(route, params=params)
             if "messages" in data:
                 break
-            logger.debug("API search not ready, retrying after %s seconds", data.get("retry_after", 1))  # Added logging line
             await asyncio.sleep(float(data.get("retry_after", 1)))
         else:
-            logger.error("API search failed after 5 retries.")  # Added logging line
             return
 
         groups = data["messages"]
         if not groups:
-            logger.debug("API search returned no message groups on page %d", page)  # Added logging line
             return
         for group in groups:
             for raw in group:
@@ -123,7 +109,6 @@ async def _api_search(bot, guild_id, *, content, author_id, channel_id, page_siz
 
 
 async def _history_scan(bot, channel_id, author_id, limit):
-    logger.info("Falling back to history scan for channel %s with author %s up to limit %d", channel_id, author_id, limit)  # Added logging line
     channel = bot.get_channel(channel_id) or await bot.fetch_channel(channel_id)
     async for msg in channel.history(limit=limit):
         if msg.author.id == author_id:
@@ -138,8 +123,7 @@ async def search_by_author(
     content: str | None = None,
 ) -> list[discord.Message]:
     """Return up to `limit` messages by `author_id` across the guild, newest first."""
-    logger.info("search_by_author invoked for guild %s, author %s", guild_id, author_id)  # Added logging line
-    print(f"[DEBUG] Searching for messages by author {author_id} in guild {guild_id} with content filter: {content}")
+    logger.debug(f"Searching for messages by author {author_id} in guild {guild_id} with content filter: {content}")
     
     route = Route("GET", "/guilds/{guild_id}/messages/search", guild_id=guild_id)
     page_size = 25
@@ -162,10 +146,8 @@ async def search_by_author(
             data = await bot.http.request(route, params=params)
             if "messages" in data:
                 break
-            logger.debug("search_by_author retry triggered for offset %d", offset)  # Added logging line
             await asyncio.sleep(float(data.get("retry_after", 1)))
         else:
-            logger.warning("search_by_author aborted after max retries.")  # Added logging line
             break
 
         groups = data["messages"]
@@ -184,7 +166,6 @@ async def search_by_author(
             break
         offset += page_size
 
-    logger.debug("search_by_author returning %d messages", len(messages))  # Added logging line
     return messages[:limit]
 
 
@@ -200,7 +181,6 @@ async def regex_search(
     limit: int = 25,
     history_limit: int = 5000,
 ) -> list[tuple[discord.Message, re.Match]]:
-    logger.info("regex_search invoked with pattern: %s", pattern)  # Added logging line
     """Return up to `limit` (message, match) pairs, newest first."""
     compiled = compile_pattern(pattern, flags)
     results: list[tuple[discord.Message, re.Match]] = []
@@ -222,12 +202,64 @@ async def regex_search(
 
     try:
         await consume(api_messages())
-    except (discord.Forbidden, discord.HTTPException) as exc:
-        logger.warning("API search unavailable (%s), falling back to history scan", exc)  # Added logging line
+    except (discord.Forbidden, discord.HTTPException):
         results.clear()  # search endpoint unavailable for this token -> scan history
         await consume(_history_scan(bot, channel_id, author_id, history_limit))
     return results
 
+
+# class RegexSearch(commands.Cog):
+#     def __init__(self, bot: discord.Bot):
+#         self.bot = bot
+
+#     @discord.slash_command(name="regexlookup", description="Regex search over rank announcements")
+#     async def regexlookup(
+#         self,
+#         ctx: discord.ApplicationContext,
+#         pattern: discord.Option(str, "Regex, e.g. (promoted|demoted) to Captain"),
+#         prefilter: discord.Option(str, "Plain text to narrow the search first", required=False),
+#         limit: discord.Option(int, "Max results", min_value=1, max_value=25, default=10),
+#     ):
+#         await ctx.defer()
+#         try:
+#             hits = await regex_search(
+#                 self.bot, ctx.guild_id, pattern, prefilter=prefilter, limit=limit
+#             )
+#         except (re.error, ValueError) as exc:
+#             return await ctx.respond(f"Bad pattern: {exc}", ephemeral=True)
+
+#         if not hits:
+#             return await ctx.respond("No matches.")
+#         lines = [
+#             f"{msg.created_at:%Y-%m-%d} `{m.group(0)[:80]}` [link]({msg.jump_url})"
+#             for msg, m in hits
+#         ]
+#         await ctx.respond("\n".join(lines)[:2000])
+
+#     # @discord.slash_command(name="search", description="Find messages by author ID")
+#     # async def search(
+#     #     self,
+#     #     ctx: discord.ApplicationContext,
+#     #     author_id: discord.Option(str, "Author's user/bot ID"),  # str: IDs overflow slash int options
+#     #     limit: discord.Option(int, "Max results", min_value=1, max_value=50, default=10),
+#     # ):
+#     #     if not author_id.isdigit():
+#     #         return await ctx.respond("author_id must be numeric.", ephemeral=True)
+
+#     #     await ctx.defer()
+#     #     msgs = await search_by_author(self.bot, ctx.guild_id, int(author_id), limit)
+#     #     if not msgs:
+#     #         return await ctx.respond("No messages found.")
+
+#     #     lines = [
+#     #         f"{m.created_at:%Y-%m-%d} {(m.content or '[embed]')[:80]} [link]({m.jump_url})"
+#     #         for m in msgs
+#     #     ]
+#     #     await ctx.respond("\n".join(lines)[:2000])
+
+
+# def setup(bot: discord.Bot):
+#     bot.add_cog(RegexSearch(bot))
 
 async def get_single_user_dict_from_announcements(
     bot: discord.Bot,
@@ -237,9 +269,8 @@ async def get_single_user_dict_from_announcements(
     channel_id: int = ANNOUNCE_CHANNEL_ID,
     limit: int = 1000,
 ) -> dict:
-    logger.info("get_single_user_dict_from_announcements called for identifier: %s", user_ident)  # Added logging line
     """Returns user.json (should be) schema-compliant dictionary."""
-    print(f"[DEBUG] Searching for user {user_ident} in guild(s) {search_guild_id} with author {author_id}")
+    logger.debug(f"Searching for user {user_ident} in guild(s) {search_guild_id} with author {author_id}")
     
     if isinstance(user_ident, str):
         roblox_user = await roblox.RobloxUser.create(username=user_ident)
@@ -252,11 +283,12 @@ async def get_single_user_dict_from_announcements(
             bot, guild_id, author_id, limit=100, content=target_rob_id
         )
         if not hits:
-            logger.info("No direct hits found, running wide search for target_rob_id: %s", target_rob_id)  # Added logging line
             # Discord's index may not tokenise numbers inside URLs, so pull more and match locally
             wide = await search_by_author(bot, guild_id, TMM_DISCORD_ID, limit=500)
             hits = [m for m in wide if str(target_rob_id) in message_text(m)]
         
+        # Combined pattern handling both transitions and leaves based on your message format:
+        # Matches: [Username](URL) has [been] [action] [from {prev} to {curr}] [Role] {mention}
         user = {
             "epoch": int(time.time()),
             "user": {
@@ -267,7 +299,9 @@ async def get_single_user_dict_from_announcements(
         }
         
         pattern = re.compile(
-            r'^\[([^\]]+)\]\('                            # [Username] (Group 1)             r'(?:<)?https://(?:www\.)?roblox\.com/users/(\d+)/profile(?:>)?'  # URL with optional angle brackets, ID captured (Group 2)             r'\)\s+'                                      # Closing paren and whitespace
+            r'^\[([^\]]+)\]\('                            # [Username] (Group 1)
+            r'(?:<)?https://(?:www\.)?roblox\.com/users/(\d+)/profile(?:>)?'  # URL with optional angle brackets, ID captured (Group 2)
+            r'\)\s+'                                      # Closing paren and whitespace
             r'(?:has\s+(?:been\s+)?)?'                     # Optional "has been"
             r'([a-zA-Z]+)\s+'                             # Action (Group 3)
             r'(?:from\s+(.*?)\s+to\s+)?'                  # From rank (Group 4)
@@ -277,8 +311,7 @@ async def get_single_user_dict_from_announcements(
         for m in hits[::-1]:  # Reverse to get chronological order
             if match := pattern.match(m.content or ""):
                 username, user_id, action, from_rank, to_rank_or_left = match.groups()
-                logger.debug("Matched message %s: user=%s, action=%s", m.id, username, action)  # Added logging line
-                print(f"[DEBUG] Matched message {m.id}: user={username}, action={action}")
+                logger.debug(f"Matched message {m.id}: user={username}, action={action}")
                 
                 if action == "left":
                     from_rank = to_rank_or_left
@@ -304,19 +337,18 @@ async def get_single_user_dict_from_announcements(
                 }
                 
                 user["events"].append(event_dict)
-                print(f"[DEBUG] Appended event. Total events: {len(user['events'])}")
+                logger.debug(f"Appended event. Total events: {len(user['events'])}")
                 
                 if (not user["user"]["username"]) and (m == hits[::-1][-1]):
                     user["user"]["username"] = username
-                    logger.debug("Set fallback username: %s", username)  # Added logging line
-                    print(f"[DEBUG] Set fallback username: {username}")
+                    logger.debug(f"Set fallback username: {username}")
             else:
-                logger.debug("Message %s skipped (no pattern match)", m.id)  # Added logging line
-                print(f"[DEBUG] Message {m.id} skipped (no pattern match)")
-                print(f"[DEBUG] Content: {m.content or '[embed]'}")
+                logger.debug(f"Message {m.id} skipped (no pattern match)")
+                logger.debug(f"Content: {m.content or '[embed]'}")
         
         return user
-
+        # with open("user.json", "w") as f:
+        #     json.dump(user, f, indent=2)
 
 # ---- local test harness: only runs via `python regex_search.py` ---------------
 if __name__ == "__main__":
@@ -357,6 +389,7 @@ if __name__ == "__main__":
     )
     logger = cast(logging.Logger, logger)
 
+    # Avoid shadowing the module-level `logger` (which is annotated as logging.Logger).
     for name, logger_obj in logging.Logger.manager.loggerDict.items():
         if name.startswith("discord."):
             logging.getLogger(name).setLevel(logging.INFO)
@@ -380,7 +413,8 @@ if __name__ == "__main__":
         logger.info(f"Logged in as {bot.user.name}")
         await bot.change_presence(activity=discord.Game("Monitoring role changes"))
 
-        logger.info("Executing on_ready test sequence in test harness.")  # Added logging line
+        # Search the guild by author ID via the search API (see api_search.py)
+        # Search the guild by author ID via the search API (see api_search.py)
         msgs = await search_by_author(bot, guild_id, TEST_USER_ID, limit=50)
         logger.info(f"Found {len(msgs)} messages from {TEST_USER_ID}")
         
@@ -401,13 +435,17 @@ if __name__ == "__main__":
         table.add_column("Rank from", style="red")
         table.add_column("Rank to", style="green")
         
+        # Combined pattern handling both transitions and leaves based on your message format:
+        # Matches: [Username](URL) has [been] [action] [from {prev} to {curr}] [Role] {mention}
         pattern = re.compile(
-            r'^\[([^\]]+)\]\('                            # [Username] (Group 1)             r'(?:<)?https://(?:www\.)?roblox\.com/users/(\d+)/profile(?:>)?'  # URL with optional angle brackets, ID captured (Group 2)             r'\)\s+'                                      # Closing paren and whitespace
-            r'(?:has\s+(?:been\s+)?)?'                     # Optional "has been"
-            r'([a-zA-Z]+)\s+'                             # Action (Group 3)
-            r'(?:from\s+(.*?)\s+to\s+)?'                  # From rank (Group 4)
-            r'(.*?)(?:\s+<@&\d+>)?$'                      # To rank / role (Group 5)
-        )
+                    r'^\[([^\]]+)\]\('                            # [Username] (Group 1)
+                    r'(?:<)?https://(?:www\.)?roblox\.com/users/(\d+)/profile(?:>)?'  # URL with optional angle brackets, ID captured (Group 2)
+                    r'\)\s+'                                      # Closing paren and whitespace
+                    r'(?:has\s+(?:been\s+)?)?'                     # Optional "has been"
+                    r'([a-zA-Z]+)\s+'                             # Action (Group 3)
+                    r'(?:from\s+(.*?)\s+to\s+)?'                  # From rank (Group 4)
+                    r'(.*?)(?:\s+<@&\d+>)?$'                      # To rank / role (Group 5)
+                )
 
         from_role = ""
         to_role = ""
@@ -416,6 +454,8 @@ if __name__ == "__main__":
             action = ""
             if match := pattern.match(m.content or ""):
                 username, user_id, action, from_role, to_role_or_left = match.groups()
+                # https://www.roblox.com/users/3554009540/profile
+                # user_id = ...
                 
                 if action == "left":
                     from_role = to_role_or_left
@@ -424,6 +464,7 @@ if __name__ == "__main__":
                     to_role = to_role_or_left
 
                 print(f"User: {username} | Action: {action} | From: {from_role} | To: {to_role}")
+            
             
             table.add_row(
                 str(m.created_at),
@@ -451,10 +492,12 @@ if __name__ == "__main__":
         table.add_column("Rank from", style="red")
         table.add_column("Rank to", style="green")
         
+        # Search the bot's announcements in the guild that mention this ID
         hits = await search_by_author(
             bot, guild_id, TEST_USER_ID, limit=100, content=TARGET_ID
         )
         if not hits:
+            # Discord's index may not tokenise numbers inside URLs, so pull more and match locally
             wide = await search_by_author(bot, guild_id, TEST_USER_ID, limit=500)
             hits = [m for m in wide if TARGET_ID in message_text(m)]
 
@@ -464,12 +507,16 @@ if __name__ == "__main__":
             action = ""
             if match := pattern.match(m.content or ""):
                 username, user_id, action, from_role, to_role_or_left = match.groups()
+                # # https://www.roblox.com/users/3554009540/profile
+                # user_id = ...
                 
                 if action == "left":
                     from_role = to_role_or_left
                     to_role = "None"
                 else:
                     to_role = to_role_or_left
+
+                # print(f"User: {username} | Action: {action} | From: {from_role} | To: {to_role}")
 
             table.add_row(
                 str(m.created_at),
@@ -481,15 +528,165 @@ if __name__ == "__main__":
                 str(to_role or "")
             )
             
+        
         console.print(table)
         
         with open("messages.json", "w") as f:
             json.dump([m.content for m in msgs], f, indent=2, default=str)
         
+        
+        
+        
         print("Done. Check messages.json for the output.")
         print("Will attempt to structure the messages into a list of rank changes next.")
         
-        TEST_GUILD_ID = 1113097535796560014
+        # pyline: disable-next=W0105
+        """Use the following schema:{
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "Washiez Worker Document",
+            "description": "Schema for worker audit events and rank history log.",
+            "type": "object",
+            "properties": {
+                "epoch": {
+                "type": "integer",
+                "format": "int64",
+                "description": "UNIX timestamp of document update."
+                },
+                "user": { "$ref": "#/definitions/User" },
+                "guilds": {
+                "type": "object",
+                "additionalProperties": { "$ref": "#/definitions/GuildReference" },
+                "description": "Map of unique guild IDs to guild details for O(1) lookups."
+                },
+                "events": {
+                "type": "array",
+                "items": { "$ref": "#/definitions/Event" }
+                },
+                "rank_histories": {
+                "type": "array",
+                "items": { "$ref": "#/definitions/RankHistoryEvent" }
+                }
+            },
+            "required": ["epoch", "user", "guilds"],
+            "oneOf": [
+                { "required": ["events"] },
+                { "required": ["rank_histories"] }
+            ],
+            "additionalProperties": false,
+
+            "definitions": {
+                "User": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                    "type": "string",
+                    "pattern": "^[0-9]+$"
+                    },
+                    "username": { "type": "string" }
+                },
+                "required": ["id", "username"],
+                "additionalProperties": false
+                },
+
+                "GuildReference": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                    "type": "string",
+                    "pattern": "^[0-9]+$"
+                    },
+                    "name": { "type": "string" }
+                },
+                "required": ["id"],
+                "additionalProperties": false
+                },
+
+                "Event": {
+                "type": "object",
+                "properties": {
+                    "id": { "type": "string" },
+                    "action": { "type": "string" },
+                    "from_rank": { "type": "string" },
+                    "to_rank": { "type": "string" },
+                    "at": {
+                    "type": "integer",
+                    "format": "int64"
+                    },
+                    "date_kind": { "type": "string" },
+                    "guilds_used": {
+                    "type": "array",
+                    "items": { "type": "string", "pattern": "^[0-9]+$" },
+                    "description": "Array of guild IDs referenced from root guilds map."
+                    },
+                    "source": { "$ref": "#/definitions/Source" }
+                },
+                "required": [
+                    "id",
+                    "action",
+                    "from_rank",
+                    "to_rank",
+                    "at",
+                    "date_kind",
+                    "guilds_used",
+                    "source"
+                ],
+                "additionalProperties": false
+                },
+
+                "RankHistoryEvent": {
+                "type": "object",
+                "properties": {
+                    "id": { "type": "string" },
+                    "from_rank": { "type": "string" },
+                    "to_rank": { "type": "string" },
+                    "at": {
+                    "type": "integer",
+                    "format": "int64"
+                    },
+                    "guilds_used": {
+                    "type": "array",
+                    "items": { "type": "string", "pattern": "^[0-9]+$" },
+                    "description": "Array of guild IDs referenced from root guilds map."
+                    },
+                    "source": { "$ref": "#/definitions/Source" }
+                },
+                "required": ["id", "from_rank", "to_rank", "at", "guilds_used", "source"],
+                "additionalProperties": false
+                },
+
+                "Source": {
+                "type": "object",
+                "properties": {
+                    "kind": { "type": "string" },
+                    "guild_id": {
+                    "type": "string",
+                    "pattern": "^[0-9]+$"
+                    },
+                    "guild_name": { "type": "string" },
+                    "channel_id": {
+                    "type": "string",
+                    "pattern": "^[0-9]+$"
+                    },
+                    "message_id": {
+                    "type": "string",
+                    "pattern": "^[0-9]+$"
+                    },
+                    "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "maxLength": 200
+                    }
+                },
+                "required": ["kind", "guild_id", "channel_id", "message_id", "url"],
+                "additionalProperties": false
+                }
+            }
+        }"""
+        
+        # Clean rewrite:
+        # Aim: Create a user dict object of their roles.
+        TEST_GUILD_ID = 1113097535796560014 # WW
+        # TEST_USER_ID = 1276397232341520469 # TMM12
         
         user = await get_single_user_dict_from_announcements(
             bot, 9371807807, TEST_GUILD_ID, author_id=TEST_USER_ID, channel_id=ANNOUNCE_CHANNEL_ID, limit=1000
@@ -498,10 +695,16 @@ if __name__ == "__main__":
         with open("user.json", "w") as f:
             json.dump(user, f, indent=2)
 
+
+    # if __name__ == "__main__":
     try:
-        bot.load_extension("commands")
+        bot.load_extension("commands")  # This loads the commands from commands.py
+        # bot.load_extension("special_patches")  # This loads the commands from special_patches.py
     except Exception as e:
         logger.error(f"Failed to load commands extension: {e}")
+
+    # Register this file's cog directly (load_extension would import a second copy of the module)
+    # setup(bot)
 
     try:
         bot.run(TOKEN)

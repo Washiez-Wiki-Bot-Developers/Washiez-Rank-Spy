@@ -218,7 +218,7 @@ def setup(bot: MyBot):
     #         logger.error(f"Error in semaphore_info command: {e}")
     #         await ctx.followup(content="An error occurred while processing your request.")
 
-    logger.debug("Registering commands: trello_check_embed...")
+    logger.debug("Registering commands: trello_check...")
 
     @bot.slash_command(
         name="trello_check", description="Check both WPL and WCH Trello Boards for a user"
@@ -310,9 +310,15 @@ def setup(bot: MyBot):
                         for board_id, (color, tag) in board_ids.items()
                     }
                 
-                if board_id == board_names.get("WCH"):
-                    view.add_item(Button(label=f"Request to be added onto Washiez Community Hub (WCH)", url="https://discord.gg/g2PFKDbBCd"))
-                        
+                if name == "WCH":
+                    view.add_item(
+                        Button(
+                            label="Request to be added onto Washiez Community Hub (WCH)",
+                            url=WCH_INVITE_URL,
+                        )
+                    )
+                    # continue
+            
             # Append button link (message component) to each board's card
             # Create a button linking to the Trello board
 
@@ -328,6 +334,7 @@ def setup(bot: MyBot):
 
         logger.debug("Registering commands: trello_check_embed...")
 
+    logger.debug("Registering commands: chain_check")
     @bot.slash_command(
         name="chain_check", description="Check promotion and demotion history for a user"
     )
@@ -391,7 +398,7 @@ def setup(bot: MyBot):
                 embeds.append(chain_embed)
 
                 # Add buttons for the latest event URLs if present
-                for event in history_data.get("events", [])[:2]:
+                for event in history_data.get("events", [])[::-1][:2]:
                     source = event.get("source", {})
                     url = source.get("url")
                     if url:
@@ -403,6 +410,125 @@ def setup(bot: MyBot):
             return True
         except Exception as e:
             logger.exception("chain_check failed")
+            await interaction.followup.send(
+                f"An error occurred while processing your request.\n{str(e)}"
+            )
+            return False
+    
+    
+    logger.debug("Registering commands: check")
+    
+    BOARDS = {
+        "hcDUWrFo": (Color.orange(), "WPL"),
+        "8ttvsMXg": (Color.green(), "WCH"),
+    }
+    WCH_INVITE_URL = "https://discord.gg/g2PFKDbBCd"
+    BOT_ICON_URL = "https://static.wikia.nocookie.net/washiez/images/5/53/Washiez_Wiki_Bot_Developers.webp/revision/latest"
+
+    @bot.slash_command(
+        name="check",
+        description="Check Trello boards (WPL & WCH) and promotion/demotion history for a user",
+    )
+    async def check(
+        interaction: discord.Interaction,
+        username: str,
+        group_id: int = 10261023,
+        required_rank: str | None = None,
+    ):
+        await interaction.response.defer()
+        try:
+            logger.info("check command invoked.")
+            user = await RobloxUser.create(username)
+            logger.debug("RobloxUser built")
+
+            embeds = []
+            view = View()
+
+            # --- Primary user embed ---
+            thumbnail = await user.fetch_thumbnail("bust")
+            curr_rank = await user.get_rank(group_id)
+            logger.debug("Fetched rank for group_id %d: %s", group_id, curr_rank)
+
+            user_embed = Embed(title=user._username, color=10181046)
+            user_embed.set_author(name="User information: Check", icon_url=BOT_ICON_URL)
+            user_embed.set_thumbnail(url=thumbnail)
+            user_embed.add_field(
+                name="Joined Roblox", value=await user.get_joined_roblox(), inline=False
+            )
+            user_embed.add_field(name="Joined Washiez", value="Unknown", inline=False)
+            user_embed.add_field(name="Current Rank", value=curr_rank, inline=False)
+            user_embed.add_field(name="Profile URL", value=user.profile_url, inline=False)
+            embeds.append(user_embed)
+
+            # --- Trello board embeds ---
+            needle = username.lower()
+
+            for board_id, (color, name) in BOARDS.items():
+                logger.debug("Fetching cards for board_id %s (%s)", board_id, name)
+                cards = fetch_cards(board_id)
+                logger.debug("Fetched %d cards for %s", len(cards), name)
+
+                matches = [card for card in cards if needle in card["name"].lower()]
+
+                if not matches:
+                    embeds.append(
+                        Embed(description="No matching cards found.", color=color)
+                        .set_author(name=f"Trello User Information: {name} Board")
+                        .set_footer(
+                            text="No cards found with the specified username and rank criteria. Experimental. Copyright of Data by Trello Board owner, contributors or other entities."
+                        )
+                    )
+                    # Offer WCH access if the user isn't on that board
+                    if name == "WCH":
+                        view.add_item(
+                            Button(
+                                label="Request to be added onto Washiez Community Hub (WCH)",
+                                url=WCH_INVITE_URL,
+                            )
+                        )
+                    continue
+
+                icon = fetch_meta_bgimg_140(board_id)
+                logger.debug("Fetched meta background image for %s: %s", name, icon)
+                embeds.append(build_trello_board_embed(username, name, matches, color, icon=icon))
+
+                view.add_item(
+                    Button(label=f"Open {name} Trello Board", url=f"https://trello.com/b/{board_id}")
+                )
+                for card in matches[:2]:
+                    url = card.get("shortUrl")
+                    if url:
+                        view.add_item(Button(label=f"Open card on {name}", url=url))
+
+            # --- Promotion / demotion chain embed ---
+            history_data = await get_single_user_dict_from_announcements(
+                bot,
+                user._user_id,
+                interaction.guild.id,
+                1276397232341520469,
+                channel_id=ANNOUNCE_CHANNEL_ID,
+                limit=1000,
+            )
+
+            if not history_data or not history_data.get("events"):
+                chain_embed = Embed(description="No event history found.", color=Color.orange())
+                chain_embed.set_author(name=f"Chain User Information: {username}")
+                embeds.append(chain_embed)
+            else:
+                embeds.append(
+                    build_reverse_embed(username, history_data, Color.blue(), icon=thumbnail)
+                )
+                for event in history_data.get("events", [])[::-1][:2]:
+                    url = event.get("source", {}).get("url")
+                    if url:
+                        action_label = event.get("action", "event").capitalize()
+                        view.add_item(Button(label=f"Open {action_label} Message", url=url))
+
+            await interaction.followup.send(embeds=embeds, view=view)
+            logger.debug("check command completed.")
+            return True
+        except Exception as e:
+            logger.exception("check failed")
             await interaction.followup.send(
                 f"An error occurred while processing your request.\n{str(e)}"
             )

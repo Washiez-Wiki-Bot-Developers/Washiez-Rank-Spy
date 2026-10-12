@@ -386,7 +386,7 @@ def build_reverse_embed(username, history, color, icon=None):
             del from_rank_split
 
             field_name = to_rank# f"{action}: ({from_rank_initial} ->) {to_rank}"
-            embed.add_field(name=field_name, value=f"{action}: {from_rank} -> {to_rank}\n{date_str}", inline=True)#action != "Demoted")
+            embed.add_field(name=field_name, value=f"**{action}**: {from_rank} -> {to_rank}\n{date_str}", inline=True)#action != "Demoted")
             used_fields += 1
 
         footer_text = f"Data for {username}"
