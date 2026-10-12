@@ -12,6 +12,7 @@ Load with:  bot.load_extension("regex_search")
 Test with:  python regex_search.py
 """
 from __future__ import annotations
+import time
 
 import asyncio
 import re
@@ -28,11 +29,15 @@ except ImportError:
     _re = re
     HAS_TIMEOUT = False
 
+import roblox
+
 # ---- config: adjust ---------------------------------------------------------
 RANK_BOT_ID = 987654321098765432
 ANNOUNCE_CHANNEL_ID = 123456789012345678
 MAX_PATTERN_LEN = 200
 MAX_TEXT_LEN = 4000
+
+TMM_DISCORD_ID = 1276397232341520469
 # -----------------------------------------------------------------------------
 
 
@@ -194,59 +199,145 @@ async def regex_search(
     return results
 
 
-class RegexSearch(commands.Cog):
-    def __init__(self, bot: discord.Bot):
-        self.bot = bot
+# class RegexSearch(commands.Cog):
+#     def __init__(self, bot: discord.Bot):
+#         self.bot = bot
 
-    @discord.slash_command(name="regexlookup", description="Regex search over rank announcements")
-    async def regexlookup(
-        self,
-        ctx: discord.ApplicationContext,
-        pattern: discord.Option(str, "Regex, e.g. (promoted|demoted) to Captain"),
-        prefilter: discord.Option(str, "Plain text to narrow the search first", required=False),
-        limit: discord.Option(int, "Max results", min_value=1, max_value=25, default=10),
-    ):
-        await ctx.defer()
-        try:
-            hits = await regex_search(
-                self.bot, ctx.guild_id, pattern, prefilter=prefilter, limit=limit
-            )
-        except (re.error, ValueError) as exc:
-            return await ctx.respond(f"Bad pattern: {exc}", ephemeral=True)
+#     @discord.slash_command(name="regexlookup", description="Regex search over rank announcements")
+#     async def regexlookup(
+#         self,
+#         ctx: discord.ApplicationContext,
+#         pattern: discord.Option(str, "Regex, e.g. (promoted|demoted) to Captain"),
+#         prefilter: discord.Option(str, "Plain text to narrow the search first", required=False),
+#         limit: discord.Option(int, "Max results", min_value=1, max_value=25, default=10),
+#     ):
+#         await ctx.defer()
+#         try:
+#             hits = await regex_search(
+#                 self.bot, ctx.guild_id, pattern, prefilter=prefilter, limit=limit
+#             )
+#         except (re.error, ValueError) as exc:
+#             return await ctx.respond(f"Bad pattern: {exc}", ephemeral=True)
 
+#         if not hits:
+#             return await ctx.respond("No matches.")
+#         lines = [
+#             f"{msg.created_at:%Y-%m-%d} `{m.group(0)[:80]}` [link]({msg.jump_url})"
+#             for msg, m in hits
+#         ]
+#         await ctx.respond("\n".join(lines)[:2000])
+
+#     # @discord.slash_command(name="search", description="Find messages by author ID")
+#     # async def search(
+#     #     self,
+#     #     ctx: discord.ApplicationContext,
+#     #     author_id: discord.Option(str, "Author's user/bot ID"),  # str: IDs overflow slash int options
+#     #     limit: discord.Option(int, "Max results", min_value=1, max_value=50, default=10),
+#     # ):
+#     #     if not author_id.isdigit():
+#     #         return await ctx.respond("author_id must be numeric.", ephemeral=True)
+
+#     #     await ctx.defer()
+#     #     msgs = await search_by_author(self.bot, ctx.guild_id, int(author_id), limit)
+#     #     if not msgs:
+#     #         return await ctx.respond("No messages found.")
+
+#     #     lines = [
+#     #         f"{m.created_at:%Y-%m-%d} {(m.content or '[embed]')[:80]} [link]({m.jump_url})"
+#     #         for m in msgs
+#     #     ]
+#     #     await ctx.respond("\n".join(lines)[:2000])
+
+
+# def setup(bot: discord.Bot):
+#     bot.add_cog(RegexSearch(bot))
+
+async def get_single_user_dict_from_announcements(
+    bot: discord.Bot,
+    user_ident: text | int,
+    search_guild_id: int | list[int],
+    author_id: int = RANK_BOT_ID,
+    channel_id: int = ANNOUNCE_CHANNEL_ID,
+    limit: int = 1000,
+) -> dict:
+    """Returns user.json (should be) schema-compliant dictionary."""
+    if isinstance(user_ident, str):
+        roblox_user = await roblox.RobloxUser.create(username=user_ident)
+        target_rob_id = int(roblox_user.id)
+    elif isinstance(user_ident, int):
+        target_rob_id = int(user_ident)
+
+    for guild_id in (search_guild_id if isinstance(search_guild_id, list) else [search_guild_id]):
+        hits = await search_by_author(
+            bot, guild_id, author_id, limit=100, content=target_rob_id
+        )
         if not hits:
-            return await ctx.respond("No matches.")
-        lines = [
-            f"{msg.created_at:%Y-%m-%d} `{m.group(0)[:80]}` [link]({msg.jump_url})"
-            for msg, m in hits
-        ]
-        await ctx.respond("\n".join(lines)[:2000])
-
-    @discord.slash_command(name="search", description="Find messages by author ID")
-    async def search(
-        self,
-        ctx: discord.ApplicationContext,
-        author_id: discord.Option(str, "Author's user/bot ID"),  # str: IDs overflow slash int options
-        limit: discord.Option(int, "Max results", min_value=1, max_value=50, default=10),
-    ):
-        if not author_id.isdigit():
-            return await ctx.respond("author_id must be numeric.", ephemeral=True)
-
-        await ctx.defer()
-        msgs = await search_by_author(self.bot, ctx.guild_id, int(author_id), limit)
-        if not msgs:
-            return await ctx.respond("No messages found.")
-
-        lines = [
-            f"{m.created_at:%Y-%m-%d} {(m.content or '[embed]')[:80]} [link]({m.jump_url})"
-            for m in msgs
-        ]
-        await ctx.respond("\n".join(lines)[:2000])
-
-
-def setup(bot: discord.Bot):
-    bot.add_cog(RegexSearch(bot))
-
+            # Discord's index may not tokenise numbers inside URLs, so pull more and match locally
+            wide = await search_by_author(bot, guild_id, TMM_DISCORD_ID, limit=500)
+            hits = [m for m in wide if target_rob_id in message_text(m)]
+        
+        # Combined pattern handling both transitions and leaves based on your message format:
+        # Matches: [Username](URL) has [been] [action] [from {prev} to {curr}] [Role] {mention}
+        user = {
+            "epoch": int(time.time()),
+            "user": {
+                "id": str(target_rob_id),
+                "username": ""
+            },
+            "events": []
+        }
+        
+        pattern = re.compile(
+            r'^\[([^\]]+)\]\('                            # [Username] (Group 1)
+            r'(?:<)?https://(?:www\.)?roblox\.com/users/(\d+)/profile(?:>)?'  # URL with optional angle brackets, ID captured (Group 2)
+            r'\)\s+'                                      # Closing paren and whitespace
+            r'(?:has\s+(?:been\s+)?)?'                     # Optional "has been"
+            r'([a-zA-Z]+)\s+'                             # Action (Group 3)
+            r'(?:from\s+(.*?)\s+to\s+)?'                  # From rank (Group 4)
+            r'(.*?)(?:\s+<@&\d+>)?$'                      # To rank / role (Group 5)
+        )
+        
+        for m in hits[::-1]:  # Reverse to get chronological order
+            if match := pattern.match(m.content or ""):
+                username, user_id, action, from_rank, to_rank_or_left = match.groups()
+                print(f"[DEBUG] Matched message {m.id}: user={username}, action={action}")
+                
+                if action == "left":
+                    from_rank = to_rank_or_left
+                    to_rank = "None"
+                else:
+                    to_rank = to_rank_or_left
+                event_dict = {
+                    "epoch": int(time.time()),
+                    "id": str(m.id),
+                    "action": action,
+                    "from_rank": from_rank,
+                    "to_rank": to_rank,
+                    "at": int(m.created_at.timestamp()),
+                    "date_kind": "created",
+                    "source": {
+                        "kind": "discord",
+                        "guild_id": str(m.guild.id),
+                        "guild_name": m.guild.name,
+                        "channel_id": str(m.channel.id),
+                        "message_id": str(m.id),
+                        "url": m.jump_url
+                    }
+                }
+                
+                user["events"].append(event_dict)
+                print(f"[DEBUG] Appended event. Total events: {len(user['events'])}")
+                
+                if (not user["user"]["username"]) and (m == hits[::-1][-1]):
+                    user["user"]["username"] = username
+                    print(f"[DEBUG] Set fallback username: {username}")
+            else:
+                print(f"[DEBUG] Message {m.id} skipped (no pattern match)")
+                print(f"[DEBUG] Content: {m.content or '[embed]'}")
+        
+        return user
+        # with open("user.json", "w") as f:
+        #     json.dump(user, f, indent=2)
 
 # ---- local test harness: only runs via `python regex_search.py` ---------------
 if __name__ == "__main__":
@@ -300,7 +391,7 @@ if __name__ == "__main__":
 
     GROUP_ID = 10261023
     TOKEN = os.getenv("DISCORD_BOT_TOKEN")
-    TEST_GUILD_ID = 1113097535796560014
+    guild_id = 1113097535796560014
     TEST_USER_ID = 1276397232341520469
 
 
@@ -313,7 +404,7 @@ if __name__ == "__main__":
 
         # Search the guild by author ID via the search API (see api_search.py)
         # Search the guild by author ID via the search API (see api_search.py)
-        msgs = await search_by_author(bot, TEST_GUILD_ID, TEST_USER_ID, limit=50)
+        msgs = await search_by_author(bot, guild_id, TEST_USER_ID, limit=50)
         logger.info(f"Found {len(msgs)} messages from {TEST_USER_ID}")
         
         import rich
@@ -336,12 +427,14 @@ if __name__ == "__main__":
         # Combined pattern handling both transitions and leaves based on your message format:
         # Matches: [Username](URL) has [been] [action] [from {prev} to {curr}] [Role] {mention}
         pattern = re.compile(
-            r'^\[([^\]]+)\]\(([^)]+)\)\s+'                # [Username](URL)
-            r'(?:has\s+(?:been\s+)?)?'                     # optional "has" or "has been"
-            r'([a-zA-Z]+)\s+'                              # action (e.g., promoted, demoted, left)
-            r'(?:from\s+(.*?)\s+to\s+)?'                   # optional "from {prev} to {curr}"
-            r'(.*?)(?:\s+<@&\d+>)?$'                       # role + optional mention
-        )
+                    r'^\[([^\]]+)\]\('                            # [Username] (Group 1)
+                    r'(?:<)?https://(?:www\.)?roblox\.com/users/(\d+)/profile(?:>)?'  # URL with optional angle brackets, ID captured (Group 2)
+                    r'\)\s+'                                      # Closing paren and whitespace
+                    r'(?:has\s+(?:been\s+)?)?'                     # Optional "has been"
+                    r'([a-zA-Z]+)\s+'                             # Action (Group 3)
+                    r'(?:from\s+(.*?)\s+to\s+)?'                  # From rank (Group 4)
+                    r'(.*?)(?:\s+<@&\d+>)?$'                      # To rank / role (Group 5)
+                )
 
         from_role = ""
         to_role = ""
@@ -349,7 +442,9 @@ if __name__ == "__main__":
         for m in msgs:
             action = ""
             if match := pattern.match(m.content or ""):
-                username, url, action, from_role, to_role_or_left = match.groups()
+                username, user_id, action, from_role, to_role_or_left = match.groups()
+                # https://www.roblox.com/users/3554009540/profile
+                # user_id = ...
                 
                 if action == "left":
                     from_role = to_role_or_left
@@ -376,25 +471,218 @@ if __name__ == "__main__":
         TARGET_ID = "9371807807"
         print(f"Checking {TARGET_ID}")
 
+        table = Table(title="Announcements of this user")
+        
+        table.add_column("Created At", style="cyan", max_width=15)
+        table.add_column("Channel ID", style="magenta")
+        table.add_column("Jump URL", style="blue")
+        table.add_column("Content", style="green")
+        table.add_column("Action (P/D)", style="yellow", width=1)
+        table.add_column("Rank from", style="red")
+        table.add_column("Rank to", style="green")
+        
         # Search the bot's announcements in the guild that mention this ID
         hits = await search_by_author(
-            bot, TEST_GUILD_ID, TEST_USER_ID, limit=100, content=TARGET_ID
+            bot, guild_id, TEST_USER_ID, limit=100, content=TARGET_ID
         )
         if not hits:
             # Discord's index may not tokenise numbers inside URLs, so pull more and match locally
-            wide = await search_by_author(bot, TEST_GUILD_ID, TEST_USER_ID, limit=500)
+            wide = await search_by_author(bot, guild_id, TEST_USER_ID, limit=500)
             hits = [m for m in wide if TARGET_ID in message_text(m)]
 
         print(f"{len(hits)} messages mention {TARGET_ID}")
         for m in hits:
             print(m.created_at, m.jump_url, (m.content or "[embed]")[:120])
+            action = ""
+            if match := pattern.match(m.content or ""):
+                username, user_id, action, from_role, to_role_or_left = match.groups()
+                # # https://www.roblox.com/users/3554009540/profile
+                # user_id = ...
+                
+                if action == "left":
+                    from_role = to_role_or_left
+                    to_role = "None"
+                else:
+                    to_role = to_role_or_left
+
+                # print(f"User: {username} | Action: {action} | From: {from_role} | To: {to_role}")
+
+            table.add_row(
+                str(m.created_at),
+                str(m.channel.id),
+                str(m.jump_url),
+                str(m.content or "[embed]"),
+                str(action[:1]),
+                str(from_role or ""),
+                str(to_role or "")
+            )
+            
+        
+        console.print(table)
         
         with open("messages.json", "w") as f:
             json.dump([m.content for m in msgs], f, indent=2, default=str)
         
+        
+        
+        
         print("Done. Check messages.json for the output.")
         print("Will attempt to structure the messages into a list of rank changes next.")
         
+        # pyline: disable-next=W0105
+        """Use the following schema:{
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "Washiez Worker Document",
+            "description": "Schema for worker audit events and rank history log.",
+            "type": "object",
+            "properties": {
+                "epoch": {
+                "type": "integer",
+                "format": "int64",
+                "description": "UNIX timestamp of document update."
+                },
+                "user": { "$ref": "#/definitions/User" },
+                "guilds": {
+                "type": "object",
+                "additionalProperties": { "$ref": "#/definitions/GuildReference" },
+                "description": "Map of unique guild IDs to guild details for O(1) lookups."
+                },
+                "events": {
+                "type": "array",
+                "items": { "$ref": "#/definitions/Event" }
+                },
+                "rank_histories": {
+                "type": "array",
+                "items": { "$ref": "#/definitions/RankHistoryEvent" }
+                }
+            },
+            "required": ["epoch", "user", "guilds"],
+            "oneOf": [
+                { "required": ["events"] },
+                { "required": ["rank_histories"] }
+            ],
+            "additionalProperties": false,
+
+            "definitions": {
+                "User": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                    "type": "string",
+                    "pattern": "^[0-9]+$"
+                    },
+                    "username": { "type": "string" }
+                },
+                "required": ["id", "username"],
+                "additionalProperties": false
+                },
+
+                "GuildReference": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                    "type": "string",
+                    "pattern": "^[0-9]+$"
+                    },
+                    "name": { "type": "string" }
+                },
+                "required": ["id"],
+                "additionalProperties": false
+                },
+
+                "Event": {
+                "type": "object",
+                "properties": {
+                    "id": { "type": "string" },
+                    "action": { "type": "string" },
+                    "from_rank": { "type": "string" },
+                    "to_rank": { "type": "string" },
+                    "at": {
+                    "type": "integer",
+                    "format": "int64"
+                    },
+                    "date_kind": { "type": "string" },
+                    "guilds_used": {
+                    "type": "array",
+                    "items": { "type": "string", "pattern": "^[0-9]+$" },
+                    "description": "Array of guild IDs referenced from root guilds map."
+                    },
+                    "source": { "$ref": "#/definitions/Source" }
+                },
+                "required": [
+                    "id",
+                    "action",
+                    "from_rank",
+                    "to_rank",
+                    "at",
+                    "date_kind",
+                    "guilds_used",
+                    "source"
+                ],
+                "additionalProperties": false
+                },
+
+                "RankHistoryEvent": {
+                "type": "object",
+                "properties": {
+                    "id": { "type": "string" },
+                    "from_rank": { "type": "string" },
+                    "to_rank": { "type": "string" },
+                    "at": {
+                    "type": "integer",
+                    "format": "int64"
+                    },
+                    "guilds_used": {
+                    "type": "array",
+                    "items": { "type": "string", "pattern": "^[0-9]+$" },
+                    "description": "Array of guild IDs referenced from root guilds map."
+                    },
+                    "source": { "$ref": "#/definitions/Source" }
+                },
+                "required": ["id", "from_rank", "to_rank", "at", "guilds_used", "source"],
+                "additionalProperties": false
+                },
+
+                "Source": {
+                "type": "object",
+                "properties": {
+                    "kind": { "type": "string" },
+                    "guild_id": {
+                    "type": "string",
+                    "pattern": "^[0-9]+$"
+                    },
+                    "guild_name": { "type": "string" },
+                    "channel_id": {
+                    "type": "string",
+                    "pattern": "^[0-9]+$"
+                    },
+                    "message_id": {
+                    "type": "string",
+                    "pattern": "^[0-9]+$"
+                    },
+                    "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "maxLength": 200
+                    }
+                },
+                "required": ["kind", "guild_id", "channel_id", "message_id", "url"],
+                "additionalProperties": false
+                }
+            }
+        }"""
+        
+        # Clean rewrite:
+        # Aim: Create a user dict object of their roles.
+        TEST_GUILD_ID = 1113097535796560014 # WW
+        # TEST_USER_ID = 1276397232341520469 # TMM12
+        
+        user = await get_single_user_dict_from_announcements(
+            bot, 9371807807, TEST_GUILD_ID, author_id=TEST_USER_ID, channel_id=ANNOUNCE_CHANNEL_ID, limit=1000
+        )
+        
+        with open("user.json", "w") as f:
+            json.dump(user, f, indent=2)
 
 
     # if __name__ == "__main__":
