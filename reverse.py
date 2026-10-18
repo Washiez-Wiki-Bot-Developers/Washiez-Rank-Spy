@@ -689,7 +689,7 @@ if __name__ == "__main__":
         # TEST_USER_ID = 1276397232341520469 # TMM12
         
         user = await get_single_user_dict_from_announcements(
-            bot, 9371807807, TEST_GUILD_ID, author_id=TEST_USER_ID, channel_id=ANNOUNCE_CHANNEL_ID, limit=1000
+            bot, 4271093286, TEST_GUILD_ID, author_id=TEST_USER_ID, channel_id=ANNOUNCE_CHANNEL_ID, limit=1000
         )
         
         with open("user.json", "w") as f:
