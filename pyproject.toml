@@ -1,0 +1,40 @@
+[project]
+name = "washiez-rank-spy"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "MrT", email = "MrT-tak@outlook.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "aiofiles>=25.1.0",
+    "aiohttp>=3.14.3",
+    "aioquic>=1.3.0",
+    "asyncio>=4.0.0",
+    "colorama>=0.4.6",
+    "dotenv>=0.9.9",
+    "logtail-python>=0.5.1",
+    "orjson>=3.12.0",
+    "py-cord>=2.8.1",
+    "pytz>=2026.4",
+    "requests>=2.34.2",
+    "rich>=15.0.0",
+    "types-orjson>=3.6.2",
+]
+
+[project.scripts]
+washiez-rank-spy = "washiez_rank_spy:main"
+
+[build-system]
+requires = ["uv_build>=0.12.19,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "faker>=40.39.0",
+]
+
+[[tool.mypy.overrides]]
+module = "orjson"
+ignore_missing_imports = true

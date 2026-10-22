@@ -17,14 +17,13 @@ Washiez-Wiki-Bot-Developers/Washiez-Rank-Spy
 Main entry point for the Washiez Rank Spy bot. Initializes the bot, sets up configurations, 
 and starts the main event loop. Handles command-line arguments and environment-specific settings.
 """# pylint: disable-next=C0410
-import asyncio, os
-import json
-import logging
-import time
-from typing import cast
-import aiohttp
+import asyncio, time, logging, datetime
+from contextlib import nullcontext
+from collections import defaultdict
+from typing import AsyncGenerator, Any
 
-import discord
+# pylint: disable-next=C0410
+import aiohttp, discord
 from discord.ext import commands
 import dotenv
 
@@ -32,20 +31,14 @@ from discord_report_error_logs import DiscordErrorHandler
 from utils import safe_send, safe_send_and_pub, safe_reaction, safe_publish
 import special_patches
 
-from aiofiles import open as aiofiles_open
-
-import requests
-
 asyncio.set_event_loop(asyncio.new_event_loop())
 
 intents = discord.Intents.default()
 intents.guilds = True
-bot = commands.Bot(command_prefix="! ", intents=intents, reconnect=True)
+bot = TypedBot(command_prefix="!wwbd ", intents=intents, reconnect=True)
 
 # Set up logging
 import logging_setup
-
-from roblox import RobloxUser
 
 logger: logging.Logger = logging_setup.setup_logging(
     rankspy_default_level=True,
@@ -78,7 +71,6 @@ TIME_TRACKING_CHANNEL_ID = 1413620449912295645
 LOW_RANK_ROLE_MENTION = "<@&1328338426713342023>"
 MID_RANK_ROLE_MENTION = "<@&1328338484104134688>"
 HIGH_RANK_ROLE_MENTION = "<@&1328338542132330506>"
-#HIGH_RANK_ROLE_MENTION = "<@1114892999474815126> <@& 1328338542132330506>"
 
 DATA_FILE = "info.json"
 file_lock = asyncio.Lock()
@@ -91,18 +83,8 @@ LOW_RANKS = [
     "Head Operator",
 ]
 MID_RANKS = ["Shift Leader", "Supervisor", "Assistant Manager", "General Manager"]
-MGMT_RANKS = [
-    "Assistant Director",
-    "Junior Director",
-    "Senior Director",
-    "Head Director",
-]
-CORP_RANKS = [
-    "Corporate Intern",
-    "Junior Corporate",
-    "Senior Corporate",
-    "Head Corporate",
-]
+MGMT_RANKS = ["Assistant Director", "Junior Director", "Senior Director", "Head Director"]
+CORP_RANKS = ["Corporate Intern", "Junior Corporate", "Senior Corporate", "Head Corporate"]
 LS_RANKS = [
     "Chief Human Resources Officer",
     "Chief Public Relations Officer",
@@ -116,13 +98,9 @@ ET_RANKS = LOW_RANKS
 ST_RANKS = MID_RANKS
 HIGH_RANKS = MGMT_RANKS + CORP_RANKS + LS_RANKS
 ALL_RANKS = ET_RANKS + ST_RANKS + HIGH_RANKS
-ALL_M_RANKS_LIST = [ET_RANKS, ST_RANKS, MGMT_RANKS, CORP_RANKS, LS_RANKS]
+ALL_M_RANKS_LIST = [ET_RANKS,ST_RANKS,MGMT_RANKS,CORP_RANKS,LS_RANKS]
 
 ENABLE_ROPROXY_USAGE_FIRST_PRIORITY = False
-
-# Transient 5xx handling for the Roblox groups API (see fetch_users_in_role).
-MAX_5XX_RETRIES = 4
-RETRY_BASE_DELAY = 1.0  # seconds; doubled each attempt (1, 2, 4, 8)
 
 
 async def load_data():
@@ -198,65 +176,52 @@ async def fetch_roles(session, group_id):
         return []
 
 async def fetch_users_in_role(
-    session: aiohttp.ClientSession,
-    group_id: int,
-    role_id: int,
-    role_member_count: int | None = None,
-):
-    cursor = ""
-    next_page_task: asyncio.Task | None = None
+    session: aiohttp.ClientSession, group_id: int, role_id: int, 
+    role_member_count: int | None = None, is_rich_env: bool = True
+) -> AsyncGenerator[dict[str, Any], None]:
+    """Stream user membership records for a specific group role.
 
-    async def fetch_page(cursor: str):
-        url = f"https://groups.roblox.com/v1/groups/{group_id}/roles/{role_id}/users?limit=100&sortOrder=Asc"
-        if cursor:
-            url += f"&cursor={cursor}"
-
-        if ENABLE_ROPROXY_USAGE_FIRST_PRIORITY:
-            url = await retrieve_roproxy_url(url)
-
-        tries = 0
+    :param session: Active aiohttp ClientSession instance.
+    :param group_id: Target Roblox group identifier.
+    :param role_id: Target Roblox role identifier.
+    :param role_member_count: Expected member count for task scaling.
+    :param is_rich_env: Boolean toggle for terminal progress rendering.
+    :yields: Individual user dictionary records.
+    """
+    cursor, total = None, role_member_count or 0
+    url_base = f"https://groups.roblox.com/v1/groups/{group_id}/roles/{role_id}/users?limit=100"
+    
+    if not is_rich_env:
+        logger.info(f"Fetching users in role {role_id} (total: {total}) without rich progress...")
+    else:
+        progress_context = Progress(TextColumn("Fetched {task.completed}/{task.total}"), BarColumn(), TimeElapsedColumn(), transient=True) 
+    
+    async def main(progress_p=None, task=None):
         while True:
-            # Set when the page must be retried; the sleep happens after the
-            # response context exits so the connection is released first.
-            retry_delay: float | None = None
-
             async with session.get(
                 url, timeout=aiohttp.ClientTimeout(total=10)
             ) as response:
-                status = response.status
+                if response.status not in (200, 429) or str(response.status).startswith("5"):
+                    raise RuntimeError(f"HTTP {response.status}")
 
-                if 500 <= status < 600:
-                    # Transient upstream failure — retry this same page.
-                    tries += 1
-                    if tries > MAX_5XX_RETRIES:
-                        raise RuntimeError(
-                            f"Too many 5xx errors (last HTTP {status}), aborting."
+                data = await response.json()
+
+                if response.status == 429 or str(response.status).startswith("5"):
+                    if str(response.status).startswith("5"):
+                        logger.warning(
+                            "FUIR: 5xx error. This might be a sign of servers failing or block."
                         )
-                    retry_delay = RETRY_BASE_DELAY * (2 ** (tries - 1))
-                    logger.warning(
-                        f"FUIR: HTTP {status} from Roblox. "
-                        f"Retry {tries}/{MAX_5XX_RETRIES} in {retry_delay}s."
-                    )
-                elif status == 429:
-                    # Rate limited — fall back to RoProxy for this page.
+                        tries += 1
+                        if tries > 3:
+                            raise RuntimeError("Too many 5xx errors, aborting.")
+                        continue
                     roproxy_url = await retrieve_roproxy_url(url)
-                    logger.warning(
-                        f"Rate limited. Retrying with RoProxy: {roproxy_url}"
-                    )
-                    async with session.get(
-                        roproxy_url, timeout=aiohttp.ClientTimeout(total=10)
-                    ) as proxy_response:
+                    async with session.get(roproxy_url) as proxy_response:
                         if proxy_response.status != 200:
-                            raise RuntimeError(
-                                f"RoProxy failed: HTTP {proxy_response.status}"
-                            )
-                        return await proxy_response.json()
-                elif status != 200:
-                    raise RuntimeError(f"HTTP {status}")
-                else:
-                    return await response.json()
+                            raise RuntimeError("RoProxy failed")
+                        data = await proxy_response.json()
 
-            await asyncio.sleep(retry_delay)
+                return data
 
     # Initial fetch (blocking)
     data = await fetch_page(cursor)
@@ -287,34 +252,11 @@ async def fetch_users_in_role(
     return users
 
 
-def get_group_rank_name(user_id, group_id):
-    url = f"https://groups.roblox.com/v2/users/{user_id}/groups/roles"
-    response = requests.get(url)
-    response.raise_for_status()
-
-    for group in response.json()["data"]:
-        if group["group"]["id"] == group_id:
-            return group["role"]["name"]
-    return None
-
-
 async def monitor_role_changes(disallowed_rank_names=None):
-    message = "Bot started! Monitoring role changes..."
-    await safe_send(message, channel_id=TIME_TRACKING_CHANNEL_ID, bot=bot)  
-    
-    # List of users IDs who are within to AD+ ranks during this session
-    ad_plus_user_ids: dict[int] = []
-    """List of user IDs who are currently in AD+ ranks."""
-    
-    def has_been_promoted_or_demoted(current_index: int, prev_index: int) -> bool:
-        return (current_index != -1) and (prev_index != -1) and (current_index != prev_index)
-    
     async with aiohttp.ClientSession() as session:
         while True:
             start_time = time.time()
             logger.info("🔎 Checking for role changes...")
-            message = "Starting role check..."
-            await safe_send(message, channel_id=TIME_TRACKING_CHANNEL_ID, bot=bot)
 
             roles = await fetch_roles(session, GROUP_ID)
             if not roles:
@@ -334,11 +276,8 @@ async def monitor_role_changes(disallowed_rank_names=None):
                     f"Removed roles to restricted set of roles. \nRestricted for:{disallowed_rank_names}\nWe have {roles}"
                 )
 
-            bot.roles_dict = {role["id"]: role["name"] for role in roles}
-            bot.data = await load_data()
-            my_data = bot.data
-            data = bot.data
-            roles_dict = bot.roles_dict
+            roles_dict = {role["id"]: role["name"] for role in roles}
+            data = await load_data()
 
             roles_processed = 0
             users_checked = 0
@@ -348,76 +287,61 @@ async def monitor_role_changes(disallowed_rank_names=None):
                 users = await fetch_users_in_role(
                     session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
                 )
-
                 for user in users:
                     user_id = str(user["userId"])
-                    
-                    # Check if user role exists in record; skip if not present
-                    if user_id not in data["user_roles"]:
-                        data["user_roles"][user_id] = role["id"]
-                        users_checked += 1
-                        continue
-
                     current_rank = role["name"]
                     current_index = get_rank_index(current_rank)
-                    prev_role_id = data["user_roles"][user_id]
-                    prev_role_name = roles_dict.get(prev_role_id, "Unknown")
-                    prev_index = get_rank_index(prev_role_name)
 
-                    # 1. Early exit: No rank change
-                    if not has_been_promoted_or_demoted(current_index, prev_index):
-                        data["user_roles"][user_id] = role["id"]
-                        users_checked += 1
-                        continue
+                    if user_id in data["user_roles"]:
+                        prev_role_id = data["user_roles"][user_id]
+                        prev_role_name = roles_dict.get(prev_role_id, "Unknown")
+                        prev_index = get_rank_index(prev_role_name)
 
-                    action = "promoted" if current_index > prev_index else "demoted"
-
-                    # 2. Early exit: Special patch filter
-                    if not special_patches.check_user(user, current_rank, prev_role_name, action):
-                        data["user_roles"][user_id] = role["id"]
-                        users_checked += 1
-                        continue
-
-                    # 3. Verification check
-                    if get_group_rank_name(user["userId"], GROUP_ID) != current_rank:
-                        logger.warning(
-                            f"⚠️ Verification failed: {user['username']} is not actually {action} to {current_rank} according to Roblox. Skipping notification."
-                        )
-                        if bot.get_channel(TIME_TRACKING_CHANNEL_ID):
-                            await safe_send(
-                                message=f"⚠️ User {user['username']} likely has more than one role. Roblox API returns {get_group_rank_name(user['userId'], GROUP_ID)} when asked directly about user, found in {current_rank}. <@1114892999474815126>",
-                                channel_id=TIME_TRACKING_CHANNEL_ID,
-                                bot=bot,
+                        if (
+                            current_index != -1
+                            and prev_index != -1
+                            and current_index != prev_index
+                        ):
+                            action = (
+                                "promoted" if current_index > prev_index else "demoted"
                             )
-                        data["user_roles"][user_id] = role["id"]
-                        users_checked += 1
-                        continue
+                            channel_id, mention = get_rank_category_and_mention(
+                                current_rank
+                            )
 
-                    logger.info(f"✅ Verified {user['username']} is actually {action} to {current_rank}.")
+                            if not special_patches.check_user(
+                                user, current_rank, prev_role_name, action
+                            ):
+                                continue
 
-                    # Determine category & mention details
-                    channel_id, mention = get_rank_category_and_mention(
-                        prev_role_name if (prev_role_name in HIGH_RANKS and action == "demoted") else current_rank
-                    )
+                            if (prev_role_name in HIGH_RANKS) and action == "demoted":
+                                logger.info(
+                                    f"!! Demoted HIGH_RANK: {user['username']} to {current_rank}"
+                                )
+                                channel_id, mention = get_rank_category_and_mention(
+                                    prev_role_name
+                                )
 
-                    if prev_role_name in HIGH_RANKS and action == "demoted":
-                        logger.info(f"!! Demoted HIGH_RANK: {user['username']} to {current_rank}")
+                            if channel_id:
+                                channel = bot.get_channel(channel_id)
+                                if channel:
+                                    profile_link = f"[{user['username']}](<https://www.roblox.com/users/{user['userId']}/profile>)"  # ({user['userId']})"
+                                    message = f"{profile_link} has been {action} from {prev_role_name} to {current_rank} {mention}"
+                                    # message_obj = await channel.send(message)
+                                    message_obj = await safe_send_and_pub(
+                                        message=message, channel_id=channel_id, bot=bot
+                                    )
 
-                    # Process Discord message dispatch
-                    if channel_id and bot.get_channel(channel_id):
-                        profile_link = f"[{user['username']}](<https://www.roblox.com/users/{user['userId']}/profile>)"
-                        message = f"{profile_link} has been {action} from {prev_role_name} to {current_rank} {mention}"
-                        await safe_send_and_pub(message=message, channel_id=channel_id, bot=bot)
-                        logger.info(f"📢 {message}")
+                                    data["user_roles"][user_id] = role["id"]
 
-                    # Update role tracking and high rank tracking
+                                    # try:
+                                    #     await message_obj.publish()
+                                    # except discord.Forbidden as e:
+                                    #     print(f"Failed to publish: {e}")
+                                    # except discord.HTTPException as e:
+                                    #     print(f"HTTP error during publish: {e}")
+                                    logger.info(f"📢 {message}")
                     data["user_roles"][user_id] = role["id"]
-                    
-                    if current_rank in HIGH_RANKS and user_id not in ad_plus_user_ids:
-                        # Note: Ensure AD_plus_user_ids is initialized as a set() in your setup for optimal memory & lookup speed
-                        ad_plus_user_ids.add(user_id) if isinstance(ad_plus_user_ids, set) else ad_plus_user_ids.append(user_id)
-                        logger.info(f"AD+ user detected: {user['username']} ({user_id})")
-
                     users_checked += 1
                 roles_processed += 1
 
@@ -430,21 +354,13 @@ async def monitor_role_changes(disallowed_rank_names=None):
                 f"* ✅ Processed {roles_processed}/{len(roles)} roles.\n"
                 f"* 👥 Checked **{users_checked}** user entries.\n"
                 f"* ⏱ Time taken: **{duration:.2f} seconds**.\n"
-                f"* 🕐 Started at <t:{int(start_time)}:T>, ended at <t:{int(end_time)}:T>.\n\n"
-                f"* 🔍 Next check in approximately <t:{str(int(time.time() + 180))}:T>."
+                f"* 🕐 Started at <t:{int(start_time)}:T>, ended at <t:{int(end_time)}:T>."
             )
             time_channel = bot.get_channel(TIME_TRACKING_CHANNEL_ID)
             if time_channel:
                 # await time_channel.send(summary)
                 await safe_send(summary, channel_id=TIME_TRACKING_CHANNEL_ID, bot=bot)
             logger.info("✅ Cycle complete.")
-            
-            async with aiofiles_open("AD_plus_user_ids.csv", "w") as f:
-                # Convert to CSV first
-                csv_data = ",".join(str(user_id) for user_id in ad_plus_user_ids)
-                await f.write(csv_data)
-                logger.info("AD+ user IDs saved to AD_plus_user_ids.csv")
-            
             await asyncio.sleep(180)  # Check every 3 minutes
 
 
@@ -604,7 +520,7 @@ async def on_ready():
         logger.info("Starting monitor_role_changes task restricted to HO+...")
         all_lower_HO = []
         all_lower_HO.extend(LOW_RANKS)
-        # all_lower_HO.extend(MID_RANKS)
+        #all_lower_HO.extend(MID_RANKS)
         all_lower_HO.remove("Head Operator")
         all_lower_HO.remove("Customer")  # Incase of demotions
         all_lower_HO.append("Member")
@@ -614,13 +530,10 @@ async def on_ready():
 
 
 if __name__ == "__main__":
+    TOKEN = os.getenv("DISCORD_BOT_TOKEN")
     try:
-        bot.load_extension("commands")  # This loads the commands from commands.py
-        # bot.load_extension("special_patches")  # This loads the commands from special_patches.py
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        logger.info("Bot execution terminated by user.")
     except Exception as e:
-        logger.error(f"Failed to load commands extension: {e}")
-
-    try:
-        bot.run(TOKEN)
-    except Exception as e:
-        logger.error(f"Error running bot: {e}")
+        logger.error(f"Unexpected error: {e}")

@@ -1,0 +1,178 @@
+[
+    [
+        {
+            "id": "68ac5cc6541b519a3240f092",
+            "name": "hollvys",
+            "desc": "**Supervision Team**\nShift Leader: August 8th, 2022 [WashiezRanker]\nSupervisor: September 2nd, 2022 [exstvllar]\nService Manager: September 24th, 2022 [cae1aa]\nAssistant Manager: September 25th, 2022 [SM Removed]\nGeneral Manager: October 1st, 2022 [Promotional Batch]\n\n**Management Team**\nJunior Director: November 5th, 2022 [cae1aa]\nResigned: November 16th, 2022",
+            "shortUrl": "https://trello.com/c/G0NkRl6Y"
+        },
+        {
+            "Supervision Team": {
+                "Shift Leader": {
+                    "date": "August 8th, 2022",
+                    "promoter": [
+                        "WashiezRanker"
+                    ]
+                },
+                "Supervisor": {
+                    "date": "September 2nd, 2022",
+                    "promoter": [
+                        "exstvllar"
+                    ]
+                },
+                "Service Manager": {
+                    "date": "September 24th, 2022",
+                    "promoter": [
+                        "cae1aa"
+                    ]
+                },
+                "Assistant Manager": {
+                    "date": "September 25th, 2022",
+                    "promoter": [
+                        "SM Removed"
+                    ]
+                },
+                "General Manager": {
+                    "date": "October 1st, 2022",
+                    "promoter": [
+                        "Promotional Batch"
+                    ]
+                }
+            },
+            "Management Team": {
+                "Junior Director": {
+                    "date": "November 5th, 2022",
+                    "promoter": [
+                        "cae1aa"
+                    ]
+                },
+                "Resigned": {
+                    "date": "November 16th, 2022",
+                    "members": []
+                }
+            },
+            "Username": "hollvys",
+            "Final Date": null
+        }
+    ],
+    [
+        {
+            "id": "64c73dc9543e8fc946bc0192",
+            "name": "hollvys",
+            "desc": "**Supervision Team**\nShift Leader: November 25th, 2022 [WashiezRanker]\nSupervisor: January 16th, 2023 [aulxrs]\nAssistant Manager: February 5th, 2023 [Promotional Batch]\nGeneral Manager: February 18th, 2023 [Promotional Batch]\n\n**Management Team**\nJunior Director: March 4th, 2023 [Promotional Batch]\nSenior Director: June 25th, 2023 [Promotional Batch]\n\n**Public Relations of Corporate Team**\nCorporate Intern: July 25th, 2023 [passivekitty111, paceive]\nJunior Corporate: July 31st, 2023 [passivekitty111, paceive]\n\n**Human Resources of Corporate Team**\nJunior Corporate: August 22nd, 2023 [mrbrowncangomoo, aesriqa]\nSenior Corporate: October 12th, 2024 [mrbrowncangomoo, aesriqa]\nHead Corporate: September 1st, 2025 [mrbrowncangomoo, veonxis]\nResigned: February 15th, 2026\n\n---\n\n**Staff of the Week**\n\n- Management: April 9th, 2023\n- Public Relations: August 7th, 2023\n- Human Resources: December 24th, 2023\n- Human Resources: April 21st, 2024\n- Human Resources: June 30th, 2024\n- Human Resources: September 22nd, 2024\n- Human Resources: January 19th, 2025\n- Human Resources: February 23rd, 2025\n- Human Resources: May 18th, 2025\n- Human Resources: June 29th, 2025\n- Human Resources: October 19th, 2025\n- Human Resources: December 21st, 2025\n\n**Spring Awards 2025**\n\n- Nominee for Biggest Chatterbox Human Resources\n- Nominee for Most Dedicated Human Resources\n- Nominee for Best Overall Human Resources\n- Nominee for Most Likely to Fall Down the Rabbit Hole\n- Nominee for the Queen of Hearts Award",
+            "shortUrl": "https://trello.com/c/zN47T7PV"
+        },
+        {
+            "Supervision Team": {
+                "Shift Leader": {
+                    "date": "November 25th, 2022",
+                    "promoter": [
+                        "WashiezRanker"
+                    ]
+                },
+                "Supervisor": {
+                    "date": "January 16th, 2023",
+                    "promoter": [
+                        "aulxrs"
+                    ]
+                },
+                "Assistant Manager": {
+                    "date": "February 5th, 2023",
+                    "promoter": [
+                        "Promotional Batch"
+                    ]
+                },
+                "General Manager": {
+                    "date": "February 18th, 2023",
+                    "promoter": [
+                        "Promotional Batch"
+                    ]
+                }
+            },
+            "Management Team": {
+                "Junior Director": {
+                    "date": "March 4th, 2023",
+                    "promoter": [
+                        "Promotional Batch"
+                    ]
+                },
+                "Senior Director": {
+                    "date": "June 25th, 2023",
+                    "promoter": [
+                        "Promotional Batch"
+                    ]
+                }
+            },
+            "Corporate Team": {
+                "Dept": "Public Relations",
+                "Corporate Intern": {
+                    "date": "July 25th, 2023",
+                    "promoter": [
+                        "passivekitty111",
+                        "paceive"
+                    ]
+                },
+                "Junior Corporate": {
+                    "date": "August 22nd, 2023",
+                    "promoter": [
+                        "mrbrowncangomoo",
+                        "aesriqa"
+                    ]
+                },
+                "Senior Corporate": {
+                    "date": "October 12th, 2024",
+                    "promoter": [
+                        "mrbrowncangomoo",
+                        "aesriqa"
+                    ]
+                },
+                "Head Corporate": {
+                    "date": "September 1st, 2025",
+                    "promoter": [
+                        "mrbrowncangomoo",
+                        "veonxis"
+                    ]
+                },
+                "Resigned": {
+                    "date": "February 15th, 2026",
+                    "members": []
+                }
+            },
+            "Staff of the Week": {
+                "- Management": {
+                    "date": "April 9th, 2023",
+                    "members": []
+                },
+                "- Public Relations": {
+                    "date": "August 7th, 2023",
+                    "members": []
+                },
+                "- Human Resources": {
+                    "date": "December 21st, 2025",
+                    "members": []
+                }
+            },
+            "Spring Awards 2025": [
+                "Nominee for Biggest Chatterbox Human Resources",
+                "Nominee for Most Dedicated Human Resources",
+                "Nominee for Best Overall Human Resources",
+                "Nominee for Most Likely to Fall Down the Rabbit Hole",
+                "Nominee for the Queen of Hearts Award"
+            ],
+            "Username": "hollvys",
+            "Final Date": null
+        }
+    ],
+    [
+        {
+            "id": "68dc30cc522f55ac202765e9",
+            "name": "hollvys - 15",
+            "desc": "",
+            "shortUrl": "https://trello.com/c/6Z6T4C0x"
+        },
+        {
+            "Username": "hollvys - 15",
+            "Final Date": null
+        }
+    ]
+]
