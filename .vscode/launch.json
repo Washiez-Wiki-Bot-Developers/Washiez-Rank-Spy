@@ -9,7 +9,7 @@
             "name": "Python Debugger: App.py module",
             "type": "debugpy",
             "request": "launch",
-            "module": "app.py"
+            "module": "app"
         },
         {
             "name": "Python: Run Pytest",
