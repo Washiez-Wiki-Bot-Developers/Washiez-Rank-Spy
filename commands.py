@@ -1,27 +1,28 @@
 import platform
 import logging
-from aiohttp.web_urldispatcher import View
-import discord
 import sys
 import time
 from datetime import datetime, timezone, timedelta
 import threading, asyncio
-from discord.ext import commands
-
-from discord import Any, Embed, Color
-from discord.ui import View, Button
-
-import logging_setup
-from app import get_rank_index, get_rank_category_and_mention, get_group_rank_name, safe_send_and_pub, save_data, GROUP_ID, fetch_roles, DATA_FILE
-
-from app import ET_RANKS, ST_RANKS, MGMT_RANKS, CORP_RANKS, LS_RANKS
-from reverse import ANNOUNCE_CHANNEL_ID
-
-del CORP_RANKS, ET_RANKS, LS_RANKS, MGMT_RANKS, ST_RANKS
 
 import discord
+from discord import Embed, Color
+from discord.ui import View, Button
 from discord.ext import commands
-import logging
+
+import logging_setup
+from app import (
+    ALL_M_RANKS_LIST,
+    get_rank_index,
+    get_rank_category_and_mention,
+    get_group_rank_name,
+    safe_send_and_pub,
+    save_data,
+    GROUP_ID,
+    fetch_roles,
+    DATA_FILE,
+)
+
 from roblox import RobloxUser
 import special_patches
 
@@ -43,14 +44,21 @@ except ImportError as e:
     logger.error(f"Error importing modules: {e}")
 
 try:
-    from reverse import get_single_user_dict_from_announcements
+    from reverse import get_single_user_dict_from_announcements, ANNOUNCE_CHANNEL_ID
 except ImportError as e:
     logger.error(f"Error importing modules: {e}")
 
 from utils import build_trello_board_embed, build_reverse_embed
-from roblox import RobloxUser
 
 MAX_EMBED_DESC = 1024  # Discord embed field character limit
+BOARDS: dict[str, tuple[Color, str]] = {
+    "hcDUWrFo": (Color.orange(), "WPL"),
+    "8ttvsMXg": (Color.green(), "WCH"),
+}
+WCH_INVITE_URL: str = "https://discord.gg/g2PFKDbBCd"
+BOT_ICON_URL: str = (
+    "https://static.wikia.nocookie.net/washiez/images/5/53/Washiez_Wiki_Bot_Developers.webp/revision/latest"
+)
 
 
 class MyBot(commands.Bot):
@@ -83,17 +91,118 @@ async def threads_tasks():
     return results
 
 
+async def trello_check_main(
+    interaction: discord.Interaction, username: str, group_id: int = 10261023
+) -> tuple[list[Embed], View]:
+    """Execute Trello check sub-workflow and build embeds/views."""
+    user = await RobloxUser.create(username)
+    embeds: list[Embed] = []
+
+    # --- Primary user embed ---
+    user_embed = Embed(title=user._username, color=10181046)
+    user_embed.set_author(name="User information: Trello", icon_url=BOT_ICON_URL)
+    user_embed.set_thumbnail(url=await user.fetch_thumbnail("bust"))
+    
+    curr_rank = await user.get_rank(group_id)
+    user_embed.add_field(name="Joined Roblox", value=await user.get_joined_roblox(), inline=False)
+    user_embed.add_field(name="Joined Washiez", value="Unknown", inline=False)
+    user_embed.add_field(name="Current Rank", value=curr_rank, inline=False)
+    embeds.append(user_embed)
+
+    # --- Board embeds ---
+    view = View()
+    for board_id, (color, name) in BOARDS.items():
+        cards = fetch_cards(board_id)
+        matches = [card for card in cards if username in card["name"].lower()]
+        if not matches:
+            embeds.append(
+                Embed(description="No matching cards found.", color=color)
+                .set_author(name=f"Trello User Information: {name} Board")
+                .set_footer(
+                    text=(
+                        "No cards found with the specified username and rank"
+                        " criteria. Experimental. Copyright of Data by Trello"
+                        " Board owner, contributors or other entities."
+                    )
+                )
+            )
+            continue
+
+        icon = fetch_meta_bgimg_140(board_id)
+        embeds.append(build_trello_board_embed(username, name, matches, color, icon=icon))
+
+        button = Button(label=f"Open {name} Trello Board", url=f"https://trello.com/b/{board_id}")
+        view.add_item(button)
+
+        for card in matches[:2]:
+            url = card.get("shortUrl")
+            if url:
+                view.add_item(Button(label=f"Open card on {name}", url=url))
+
+        if name == "WCH":
+            view.add_item(
+                Button(
+                    label="Request to be added onto Washiez Community Hub (WCH)",
+                    url=WCH_INVITE_URL,
+                )
+            )
+    return embeds, view
+
+
+async def chain_check_main(
+    interaction: discord.Interaction, username: str, group_id: int = 10261023
+) -> tuple[list[Embed], View]:
+    """Execute event chain history sub-workflow and build embeds/views."""
+    user = await RobloxUser.create(username)
+    embeds: list[Embed] = []
+
+    # --- Primary user embed ---
+    user_embed = Embed(title=user._username, color=10181046)
+    user_embed.set_author(name="User information: Reverse Search", icon_url=BOT_ICON_URL)
+    user_embed.set_thumbnail(url=await user.fetch_thumbnail("bust"))
+
+    curr_rank = await user.get_rank(group_id)
+    user_embed.add_field(name="Joined Roblox", value=await user.get_joined_roblox(), inline=False)
+    user_embed.add_field(name="Joined Washiez", value="Unknown", inline=False)
+    user_embed.add_field(name="Current Rank", value=curr_rank, inline=False)
+    user_embed.add_field(name="Profile URL", value=user.profile_url, inline=False)
+    embeds.append(user_embed)
+
+    # --- History / Chain embed ---
+    history_data = await get_single_user_dict_from_announcements(
+        interaction.client,
+        user._user_id,
+        interaction.guild.id,
+        1276397232341520469,
+        channel_id=ANNOUNCE_CHANNEL_ID,
+        limit=1000,
+    )
+
+    view = View()
+
+    if not history_data or not history_data.get("events"):
+        chain_embed = Embed(description="No event history found.", color=Color.orange())
+        chain_embed.set_author(name=f"Chain User Information: {username}")
+        embeds.append(chain_embed)
+        return embeds, view
+    else:
+        color = Color.blue()
+        icon = await user.fetch_thumbnail("bust")
+        chain_embed = build_reverse_embed(username, history_data, color, icon=icon)
+        embeds.append(chain_embed)
+        for event in history_data.get("events", [])[::-1][:2]:
+            source = event.get("source", {})
+            url = source.get("url")
+            if url:
+                action_label = event.get("action", "event").capitalize()
+                view.add_item(Button(label=f"Open {action_label} Message", url=url))
+        return embeds, view
+
+
 def setup(bot: MyBot):
     logger.info("Loading commands extension.")
 
-    logger.debug("Registering commands: rinse_test...")
-
-    # Define the "rinse_test" command
-    @bot.slash_command(
-        name="rinse_test",
-        description="Test the bot's response time.",
-        #    guild_ids=[1113097535796560014]
-    )
+    @bot.slash_command(name="rinse_test", description="Test the bot's response time.")
     async def rinse_test(ctx: discord.ApplicationContext):
         try:
             logger.info("rinse_test command invoked.")
@@ -112,9 +221,6 @@ def setup(bot: MyBot):
             logger.error(f"Error in rinse_test command: {e}")
             await ctx.followup(content="An error occurred while processing your request.")
 
-    # Define the "ping" command
-    logger.debug("Registering commands: ping...")
-
     @bot.slash_command(
         name="ping", description="Check if bot is alive", guild_ids=[1113097535796560014]
     )
@@ -123,13 +229,10 @@ def setup(bot: MyBot):
         await ctx.respond("Pong!")
         logger.debug("Pong response sent.")
 
-    # Define the "shutdown" command with admin permissions
-    logger.debug("Registering commands: shutdown...")
-
     @bot.slash_command(
         name="shutdown",
         description="Shutdown the bot",
-        guild_ids=[1113097535796560014],  # Example guild ID for testing
+        guild_ids=[1113097535796560014],
         default_member_permissions=discord.Permissions(administrator=True),
     )
     async def shutdown_bot(ctx: discord.ApplicationContext):
@@ -137,37 +240,33 @@ def setup(bot: MyBot):
             await ctx.respond("🛑 Shutting down bot...")
             logger.info("Shutdown requested.")
             try:
-                await bot.close()  # Gracefully shutdown the bot
+                await bot.close()
             except Exception as e:
                 logger.error(f"Error during shutdown: {e}")
             if platform.system() == "Windows":
-                sys.exit(0)  # Exit the process
-            sys.exit(1)  # Exit the process whilst prventing auto-restart on Linux scripts
+                sys.exit(0)
+            sys.exit(1)
         except Exception as e:
             logger.error(f"Error in shutdown command: {e}")
             await ctx.followup(content="An error occurred while processing your request.")
 
-    # Restart command for Linux
     if platform.system() == "Linux":
-        logger.debug("Registering commands: restart...")
 
         @bot.slash_command(
             name="restart",
             description="Restart the bot",
-            guild_ids=[1113097535796560014],  # Example guild ID for testing
+            guild_ids=[1113097535796560014],
             default_member_permissions=discord.Permissions(administrator=True),
         )
         async def restart_bot(ctx: discord.ApplicationContext):
             try:
                 await ctx.respond("🔄 Restarting bot...")
                 logger.info("Restart requested.")
-                await bot.close()  # Gracefully shutdown the bot
-                sys.exit(0)  # Exit the process
+                await bot.close()
+                sys.exit(0)
             except Exception as e:
                 logger.error(f"Error in restart command: {e}")
                 await ctx.followup(content="An error occurred while processing your request.")
-
-    logger.debug("Registering commands: threads_tasks...")
 
     @bot.slash_command(
         name="threads_tasks",
@@ -197,134 +296,6 @@ def setup(bot: MyBot):
             logger.error(f"Error in threads_tasks command: {e}")
             await ctx.followup(content="An error occurred while processing your request.")
 
-    # logger.debug("Registering commands: semaphore_info...")
-    # @bot.slash_command(
-    #     name="semaphore_info",
-    #     description="Get semaphore information",
-    #     default_member_permissions=discord.Permissions(administrator=True),
-    #     guild_ids=[1113097535796560014],
-    # )
-    # async def semaphore_info_cmd(ctx: discord.ApplicationContext):
-    #     try:
-    #         # global roblox_limiter
-    #         logger.info("semaphore_info command invoked.")
-    #         await ctx.response.defer()
-    #         limiter = bot.Roblox_limiter
-    #         info = limiter.semaphore_info()
-    #         await ctx.respond(f"Semaphore Info:\n{info}")
-    #         logger.debug(info)
-    #         logger.debug("semaphore_info command completed.")
-    #     except Exception as e:
-    #         logger.error(f"Error in semaphore_info command: {e}")
-    #         await ctx.followup(content="An error occurred while processing your request.")
-
-    logger.debug("Registering commands: trello_check...")
-    async def trello_check_main(
-        interaction: discord.Interaction, username: str, group_id: int = 10261023
-    ) -> tuple[list[Embed], View]:
-        """Execute Trello check sub-workflow and build embeds/views.
-
-        :param interaction: Discord interaction context.
-        :param username: Target Roblox username.
-        :param group_id: Target Roblox group ID.
-        :returns: Tuple containing list of generated embeds and the UI view.
-        """
-        user = await RobloxUser.create(username)
-        embeds: list[Embed] = []
-
-        # --- Primary user embed ---
-        user_embed = Embed(
-            title=user._username,
-            color=10181046,
-        )
-        user_embed.set_author(
-            name="User information: Trello",
-            icon_url="https://static.wikia.nocookie.net/washiez/images/5/53/Washiez_Wiki_Bot_Developers.webp/revision/latest",
-        )
-        user_embed.set_thumbnail(url=await user.fetch_thumbnail("bust"))
-        logger.debug(
-            "RobloxUser: Fetched Thumbnail (bust) and set as thumbnail for embed."
-        )
-        curr_rank = await user.get_rank(group_id)
-        logger.debug(
-            "RobloxUser fetched current rank for group_id %d: %s", group_id, curr_rank
-        )
-        user_embed.add_field(
-            name="Joined Roblox", value=await user.get_joined_roblox(), inline=False
-        )
-        user_embed.add_field(name="Joined Washiez", value="Unknown", inline=False)
-        user_embed.add_field(name="Current Rank", value=curr_rank, inline=False)
-        embeds.append(user_embed)
-
-        # --- Board embeds ---
-        board_ids: dict[any, str] = {
-            "hcDUWrFo": (Color.orange(), "WPL"),
-            "8ttvsMXg": (Color.green(), "WCH"),
-        }
-        board_names: dict[any, str] | dict = {}
-        logger.debug("Starting to fetch and build embeds for Trello boards.")
-        view = View()
-        for board_id, (color, name) in board_ids.items():
-            logger.debug("Fetching cards for board_id %s (%s)", board_id, name)
-            cards = fetch_cards(board_id)
-            logger.debug(
-                "Fetched %d cards for board_id %s (%s)", len(cards), board_id, name
-            )
-            matches = [card for card in cards if username in card["name"].lower()]
-            if not matches:
-                embeds.append(
-                    Embed(description="No matching cards found.", color=color)
-                    .set_author(name=f"Trello User Information: {name} Board")
-                    .set_footer(
-                        text=(
-                            "No cards found with the specified username and rank"
-                            " criteria. Experimental. Copyright of Data by Trello"
-                            " Board owner, contributors or other entities."
-                        )
-                    )
-                )
-                continue
-            logger.debug("Fetching meta for board_id %s (%s)", board_id, name)
-            icon = fetch_meta_bgimg_140(board_id)
-            logger.debug(
-                "Fetched meta background image for board_id %s (%s): %s",
-                board_id,
-                name,
-                icon,
-            )
-            embeds.append(
-                build_trello_board_embed(username, name, matches, color, icon=icon)
-            )
-            button = Button(
-                label=f"Open {name} Trello Board",
-                url=f"https://trello.com/b/{board_id}",
-            )
-            view.add_item(button)
-            for card in matches[:2]:
-                url = card.get("shortUrl")
-                if url:
-                    view.add_item(Button(label=f"Open card on {name}", url=url))
-
-            if not board_names or board_names == {}:
-                board_names = {
-                    tag: (board_id, color)
-                    for board_id, (color, tag) in board_ids.items()
-                }
-
-            if name == "WCH":
-                view.add_item(
-                    Button(
-                        label=(
-                            "Request to be added onto Washiez Community Hub (WCH)"
-                        ),
-                        url=WCH_INVITE_URL,
-                    )
-                )
-        return embeds, view
-
-
-
-
     @bot.slash_command(
         name="trello_check",
         description="Check both WPL and WCH Trello Boards for a user",
@@ -335,105 +306,19 @@ def setup(bot: MyBot):
         group_id: int = 10261023,
         required_rank: str | None = None,
     ) -> bool:
-        """Handle /trello_check slash command.
-
-        :param interaction: Discord interaction context.
-        :param username: Target Roblox username.
-        :param group_id: Target Roblox group ID.
-        :param required_rank: Optional rank constraint.
-        :returns: Boolean status indicating command success.
-        """
         await interaction.response.defer()
         try:
             logger.info("trello_check command invoked.")
-            user = await RobloxUser.create(username)
-            logger.debug("RobloxUser built")
             embeds, view = await trello_check_main(interaction, username, group_id)
             await interaction.followup.send(embeds=embeds, view=view)
             logger.debug("trello_check command completed.")
             return True
         except Exception as e:
-            logger.exception("role_checking failed")
+            logger.exception("trello_check failed")
             await interaction.followup.send(
                 f"An error occurred while processing your request.\n{str(e)}"
             )
             return False
-
-
-    logger.debug("Registering commands: chain_check")
-    async def chain_check_main(
-        interaction: discord.Interaction, username: str, group_id: int = 10261023
-    ) -> tuple[list[Embed], View]:
-        """Execute event chain history sub-workflow and build embeds/views.
-
-        :param interaction: Discord interaction context.
-        :param username: Target Roblox username.
-        :param group_id: Target Roblox group ID.
-        :returns: Tuple containing list of generated embeds and the UI view.
-        """
-        user = await RobloxUser.create(username)
-        logger.debug("RobloxUser built")
-        embeds: list[Embed] = []
-
-        # --- Primary user embed ---
-        user_embed = Embed(
-            title=user._username,
-            color=10181046,
-        )
-        user_embed.set_author(
-            name="User information: Reverse Search",
-            icon_url="https://static.wikia.nocookie.net/washiez/images/5/53/Washiez_Wiki_Bot_Developers.webp/revision/latest",
-        )
-        user_embed.set_thumbnail(url=await user.fetch_thumbnail("bust"))
-        logger.debug(
-            "RobloxUser: Fetched Thumbnail (bust) and set as thumbnail for embed."
-        )
-        curr_rank = await user.get_rank(group_id)
-        logger.debug(
-            "RobloxUser fetched current rank for group_id %d: %s", group_id, curr_rank
-        )
-        user_embed.add_field(
-            name="Joined Roblox", value=await user.get_joined_roblox(), inline=False
-        )
-        user_embed.add_field(name="Joined Washiez", value="Unknown", inline=False)
-        user_embed.add_field(name="Current Rank", value=curr_rank, inline=False)
-        user_embed.add_field(name="Profile URL", value=user.profile_url, inline=False)
-        embeds.append(user_embed)
-
-        # --- History / Chain embed ---
-        history_data = await get_single_user_dict_from_announcements(
-            bot,
-            user._user_id,
-            interaction.guild.id,
-            1276397232341520469,
-            channel_id=ANNOUNCE_CHANNEL_ID,
-            limit=1000,
-        )
-
-        view = View()
-
-        if not history_data or not history_data.get("events"):
-            chain_embed = Embed(
-                description="No event history found.", color=Color.orange()
-            )
-            chain_embed.set_author(name=f"Chain User Information: {username}")
-            embeds.append(chain_embed)
-            return embeds, view
-        else:
-            color = Color.blue()
-            icon = await user.fetch_thumbnail("bust")
-            chain_embed = build_reverse_embed(username, history_data, color, icon=icon)
-            embeds.append(chain_embed)
-            for event in history_data.get("events", [])[::-1][:2]:
-                source = event.get("source", {})
-                url = source.get("url")
-                if url:
-                    action_label = event.get("action", "event").capitalize()
-                    view.add_item(Button(label=f"Open {action_label} Message", url=url))
-            return embeds, view
-
-
-
 
     @bot.slash_command(
         name="chain_check",
@@ -445,14 +330,6 @@ def setup(bot: MyBot):
         group_id: int = 10261023,
         required_rank: str | None = None,
     ) -> bool:
-        """Handle /chain_check slash command.
-
-        :param interaction: Discord interaction context.
-        :param username: Target Roblox username.
-        :param group_id: Target Roblox group ID.
-        :param required_rank: Optional rank constraint.
-        :returns: Boolean status indicating command success.
-        """
         await interaction.response.defer()
         try:
             logger.info("chain_check command invoked.")
@@ -467,24 +344,10 @@ def setup(bot: MyBot):
             )
             return False
 
-
-    logger.debug("Registering commands: check")
-
-    BOARDS: dict[str, tuple[Color, str]] = {
-        "hcDUWrFo": (Color.orange(), "WPL"),
-        "8ttvsMXg": (Color.green(), "WCH"),
-    }
-    WCH_INVITE_URL: str = "https://discord.gg/g2PFKDbBCd"
-    BOT_ICON_URL: str = (
-        "https://static.wikia.nocookie.net/washiez/images/5/53/Washiez_Wiki_Bot_Developers.webp/revision/latest"
-    )
-
-
     @bot.slash_command(
         name="check",
         description=(
-            "Check Trello boards (WPL & WCH) and promotion/demotion history for a"
-            " user"
+            "Check Trello boards (WPL & WCH) and promotion/demotion history for a user"
         ),
     )
     async def check(
@@ -493,19 +356,10 @@ def setup(bot: MyBot):
         group_id: int = 10261023,
         required_rank: str | None = None,
     ) -> bool:
-        """Handle /check combined slash command.
-
-        :param interaction: Discord interaction context.
-        :param username: Target Roblox username.
-        :param group_id: Target Roblox group ID.
-        :param required_rank: Optional rank constraint.
-        :returns: Boolean status indicating command success.
-        """
         await interaction.response.defer()
         try:
             logger.info("check command invoked.")
             user = await RobloxUser.create(username)
-            logger.debug("RobloxUser built")
 
             embeds: list[Embed] = []
             combined_view = View()
@@ -513,7 +367,6 @@ def setup(bot: MyBot):
             # --- Primary user embed ---
             thumbnail = await user.fetch_thumbnail("bust")
             curr_rank = await user.get_rank(group_id)
-            logger.debug("Fetched rank for group_id %d: %s", group_id, curr_rank)
 
             user_embed = Embed(title=user._username, color=10181046)
             user_embed.set_author(name="User information: Check", icon_url=BOT_ICON_URL)
@@ -530,7 +383,7 @@ def setup(bot: MyBot):
             embeds_trello, view_trello = await trello_check_main(
                 interaction, username, group_id
             )
-            embeds.extend(embeds_trello[1:])  # Skip duplicate user embed from main
+            embeds.extend(embeds_trello[1:])  # Skip duplicate user embed
             for item in view_trello.children:
                 combined_view.add_item(item)
 
@@ -538,7 +391,7 @@ def setup(bot: MyBot):
             embeds_chain, view_chain = await chain_check_main(
                 interaction, username, group_id
             )
-            embeds.extend(embeds_chain[1:])  # Skip duplicate user embed from main
+            embeds.extend(embeds_chain[1:])  # Skip duplicate user embed
             for item in view_chain.children:
                 combined_view.add_item(item)
 
@@ -551,28 +404,26 @@ def setup(bot: MyBot):
                 f"An error occurred while processing your request.\n{str(e)}"
             )
             return False
-    
-    logger.debug("Registering commands: check_user_roles...")
+
     @bot.slash_command(
         name="check_user_roles",
         description="Check which roles a user have and compare",
-        guild_ids=[1113097535796560014]
+        guild_ids=[1113097535796560014],
     )
     async def check_user_roles(ctx: discord.ApplicationContext, roblox_username: str):
         await ctx.defer()
-        
+
         try:
             data = ctx.bot.data
-            roles_dict = ctx.bot.roles_dict # Expected format: {role_id: role_name}
-            
-            # Create map for reverse lookup: {role_name: role_id}
+            roles_dict = ctx.bot.roles_dict  # Expected format: {role_id: role_name}
+
             name_to_id = {v: k for k, v in roles_dict.items()}
-            
+
             logger.info(f"role_checking invoked for {roblox_username}.")
             rblx_usr = await RobloxUser.create(roblox_username)
-            
+
             curr_rank = await rblx_usr.get_rank(10261023)
-            
+
             if not curr_rank:
                 await ctx.followup.send("User has no roles found in the group.")
                 return
@@ -584,57 +435,15 @@ def setup(bot: MyBot):
 
             prev_role_name = "N/A"
             prev_role_id = "N/A"
-            action = None
 
             if user_id in data["user_roles"]:
                 prev_role_id = data["user_roles"][user_id]
                 prev_role_name = roles_dict.get(prev_role_id, "Unknown")
-                prev_index = get_rank_index(prev_role_name)
 
-                if current_index != -1 and prev_index != -1 and current_index != prev_index:
-                    action = "promoted" if current_index > prev_index else "demoted"
-                    channel_id, mention = get_rank_category_and_mention(current_rank)
-                    if action == "demoted":
-                        logger.info(
-                            f"!! Demoted HIGH_RANK: {rblx_usr._username} to {current_rank}"
-                        )
-                        channel_id, mention = get_rank_category_and_mention(
-                            prev_role_name
-                        )
-
-                    if not special_patches.check_user({"userId": rblx_usr._user_id}, current_rank, prev_role_name, action):
-                        await ctx.followup.send("User is on the ignore list or special patch triggered.")
-                        return
-
-                    if get_group_rank_name(rblx_usr._user_id, GROUP_ID) == current_rank:
-                        if channel_id:
-                            profile_link = f"[{rblx_usr._username}](<https://www.roblox.com/users/{rblx_usr._user_id}/profile>)"
-                            message = f"{profile_link} has been {action} from {prev_role_name} to {current_rank} {mention}"
-                            await safe_send_and_pub(message=message, channel_id=channel_id, bot=bot)
-                            logger.debug(f"Notification sent for {rblx_usr._username} being {action} from {prev_role_name} to {current_rank}.")
-                            
-                            if current_role_id:
-                                data["user_roles"][user_id] = current_role_id
-                                await save_data(data)
-                            else:
-                                await ctx.followup.send(f"⚠️ Current role ID for {current_rank} not found in roles_dict.")
-                                return
-                        else:
-                            await ctx.followup.send(f"⚠️ No channel configured for {current_rank}.")
-                            return
-                    else:
-                        await ctx.followup.send(f"⚠️ Verification failed for {rblx_usr._username}.")
-                        return
-
-            # Response Embed
-            resp_embed = discord.Embed(title="User Role Check", color=discord.Color.blue())
-            resp_embed.add_field(name="User", value=f"{rblx_usr._username} (ID: {user_id})", inline=False)
-            resp_embed.add_field(name="Previous Role", value=f"{prev_role_name} (ID: {prev_role_id})", inline=True)
-            resp_embed.add_field(name="Current Role", value=f"{current_rank} (ID: {current_role_id})", inline=True)
-            resp_embed.add_field(name="Action", value=str(action.capitalize() if action else "None"), inline=False)
-            
-            await ctx.followup.send(embed=resp_embed)
-
+            await ctx.followup.send(
+                f"Current Rank: {current_rank} (ID: {current_role_id})\n"
+                f"Previous Rank: {prev_role_name} (ID: {prev_role_id})"
+            )
         except Exception as e:
             logger.exception("check_user_roles failed")
             await ctx.followup.send(f"An error occurred: {str(e)}")
@@ -1033,8 +842,12 @@ def setup(bot: MyBot):
     logger.info("Loading special_patches.py's commands...")
     bot.load_extension("special_patches")  # Load the commands from special_patches.py
     
+<<<<<<< HEAD
     logger.info("Loading career_stats.py's commands...")
     bot.load_extension("career_stats")  # Load the commands from career_stats.py
+=======
+    bot.load_extension("career_stats")
+>>>>>>> bb7797fb8e474f44d673c1fe3161f6e8dea9fdff
 
     logger.info("Commands registered successfully.")
 
