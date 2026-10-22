@@ -85229,3 +85229,25 @@ Traceback (most recent call last):
   File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.14/site-packages/aiohttp/streams.py", line 365, in _wait
     await waiter
 aiohttp.client_exceptions.ClientPayloadError: Response payload is not completed: <TransferEncodingError: 400, message='Not enough data to satisfy transfer length header.'>
+2026-10-22 12:16:42,848 [bot.commands] ERROR: chain_check failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 336, in chain_check
+    embeds, view = await chain_check_main(interaction, username, group_id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 173, in chain_check_main
+    interaction.client,
+    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'ApplicationContext' object has no attribute 'client'
+2026-10-22 12:17:16,694 [bot.commands] ERROR: check failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 391, in check
+    embeds_chain, view_chain = await chain_check_main(
+                               ^^^^^^^^^^^^^^^^^^^^^^^
+        interaction, username, group_id
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 173, in chain_check_main
+    interaction.client,
+    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'ApplicationContext' object has no attribute 'client'
