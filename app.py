@@ -302,7 +302,12 @@ async def monitor_role_changes(disallowed_rank_names=None):
     message = "Bot started! Monitoring role changes..."
     await safe_send(message, channel_id=TIME_TRACKING_CHANNEL_ID, bot=bot)  
     
-    AD_plus_user_ids: dict[int] = []
+    # List of users IDs who are within to AD+ ranks during this session
+    ad_plus_user_ids: dict[int] = []
+    """List of user IDs who are currently in AD+ ranks."""
+    
+    def has_been_promoted_or_demoted(current_index: int, prev_index: int) -> bool:
+        return (current_index != -1) and (prev_index != -1) and (current_index != prev_index)
     
     async with aiohttp.ClientSession() as session:
         while True:
@@ -346,91 +351,73 @@ async def monitor_role_changes(disallowed_rank_names=None):
 
                 for user in users:
                     user_id = str(user["userId"])
+                    
+                    # Check if user role exists in record; skip if not present
+                    if user_id not in data["user_roles"]:
+                        data["user_roles"][user_id] = role["id"]
+                        users_checked += 1
+                        continue
+
                     current_rank = role["name"]
                     current_index = get_rank_index(current_rank)
+                    prev_role_id = data["user_roles"][user_id]
+                    prev_role_name = roles_dict.get(prev_role_id, "Unknown")
+                    prev_index = get_rank_index(prev_role_name)
 
-                    if user_id in data["user_roles"]:
-                        prev_role_id = data["user_roles"][user_id]
-                        prev_role_name = roles_dict.get(prev_role_id, "Unknown")
-                        prev_index = get_rank_index(prev_role_name)
+                    # 1. Early exit: No rank change
+                    if not has_been_promoted_or_demoted(current_index, prev_index):
+                        data["user_roles"][user_id] = role["id"]
+                        users_checked += 1
+                        continue
 
-                        if (
-                            current_index != -1
-                            and prev_index != -1
-                            and current_index != prev_index
-                        ):
-                            action = (
-                                "promoted" if current_index > prev_index else "demoted"
+                    action = "promoted" if current_index > prev_index else "demoted"
+
+                    # 2. Early exit: Special patch filter
+                    if not special_patches.check_user(user, current_rank, prev_role_name, action):
+                        data["user_roles"][user_id] = role["id"]
+                        users_checked += 1
+                        continue
+
+                    # 3. Verification check
+                    if get_group_rank_name(user["userId"], GROUP_ID) != current_rank:
+                        logger.warning(
+                            f"⚠️ Verification failed: {user['username']} is not actually {action} to {current_rank} according to Roblox. Skipping notification."
+                        )
+                        if bot.get_channel(TIME_TRACKING_CHANNEL_ID):
+                            await safe_send(
+                                message=f"⚠️ User {user['username']} likely has more than one role. Roblox API returns {get_group_rank_name(user['userId'], GROUP_ID)} when asked directly about user, found in {current_rank}. <@1114892999474815126>",
+                                channel_id=TIME_TRACKING_CHANNEL_ID,
+                                bot=bot,
                             )
-                            channel_id, mention = get_rank_category_and_mention(
-                                current_rank
-                            )
+                        data["user_roles"][user_id] = role["id"]
+                        users_checked += 1
+                        continue
 
-                            if not special_patches.check_user(  # function returns True if the user shouldn't be
-                                user,
-                                current_rank,
-                                prev_role_name,
-                                action,  #  ignored for this change, False if
-                            ):  #                it should be processed as ignoredThat's why for not instruction
-                                continue
+                    logger.info(f"✅ Verified {user['username']} is actually {action} to {current_rank}.")
 
-                            if (
-                                get_group_rank_name(user["userId"], GROUP_ID)
-                                == current_rank
-                            ):
-                                logger.info(
-                                    f"✅ Verified {user['username']} is actually {action} to {current_rank}."
-                                )
-                            else:
-                                logger.warning(
-                                    f"⚠️ Verification failed: {user['username']} is not actually {action} to {current_rank} according to Roblox. Skipping notification."
-                                )
-                                notification_channel = bot.get_channel(
-                                    TIME_TRACKING_CHANNEL_ID
-                                )
-                                if notification_channel:
-                                    await safe_send(  # Sent when user likely has more than one role
-                                        message=f"⚠️ User {user['username']} likely has more than one role. Roblox API returns {get_group_rank_name(user['userId'], GROUP_ID)} when asked directly about user, found in {current_rank}. <@1114892999474815126>",
-                                        channel_id=TIME_TRACKING_CHANNEL_ID,
-                                        bot=bot,
-                                    )
-                                continue
+                    # Determine category & mention details
+                    channel_id, mention = get_rank_category_and_mention(
+                        prev_role_name if (prev_role_name in HIGH_RANKS and action == "demoted") else current_rank
+                    )
 
-                            if (prev_role_name in HIGH_RANKS) and action == "demoted":
-                                logger.info(
-                                    f"!! Demoted HIGH_RANK: {user['username']} to {current_rank}"
-                                )
-                                channel_id, mention = get_rank_category_and_mention(
-                                    prev_role_name
-                                )
+                    if prev_role_name in HIGH_RANKS and action == "demoted":
+                        logger.info(f"!! Demoted HIGH_RANK: {user['username']} to {current_rank}")
 
-                            if channel_id:
-                                channel = bot.get_channel(channel_id)
-                                if channel:
-                                    profile_link = f"[{user['username']}](<https://www.roblox.com/users/{user['userId']}/profile>)"  # ({user['userId']})"
-                                    message = f"{profile_link} has been {action} from {prev_role_name} to {current_rank} {mention}"
-                                    # message_obj = await channel.send(message)
-                                    message_obj = await safe_send_and_pub(
-                                        message=message, channel_id=channel_id, bot=bot
-                                    )
+                    # Process Discord message dispatch
+                    if channel_id and bot.get_channel(channel_id):
+                        profile_link = f"[{user['username']}](<https://www.roblox.com/users/{user['userId']}/profile>)"
+                        message = f"{profile_link} has been {action} from {prev_role_name} to {current_rank} {mention}"
+                        await safe_send_and_pub(message=message, channel_id=channel_id, bot=bot)
+                        logger.info(f"📢 {message}")
 
-                                    data["user_roles"][user_id] = role["id"]
-
-                                    # try:
-                                    #     await message_obj.publish()
-                                    # except discord.Forbidden as e:
-                                    #     print(f"Failed to publish: {e}")
-                                    # except discord.HTTPException as e:
-                                    #     print(f"HTTP error during publish: {e}")
-                                    logger.info(f"📢 {message}")
+                    # Update role tracking and high rank tracking
                     data["user_roles"][user_id] = role["id"]
                     
-                    if current_rank in HIGH_RANKS and (not user_id in AD_plus_user_ids):
-                        AD_plus_user_ids.append(user_id)
-                        logger.info(
-                            f"AD+ user detected: {user['username']} ({user_id})"
-                        )
-                    
+                    if current_rank in HIGH_RANKS and user_id not in ad_plus_user_ids:
+                        # Note: Ensure AD_plus_user_ids is initialized as a set() in your setup for optimal memory & lookup speed
+                        ad_plus_user_ids.add(user_id) if isinstance(ad_plus_user_ids, set) else ad_plus_user_ids.append(user_id)
+                        logger.info(f"AD+ user detected: {user['username']} ({user_id})")
+
                     users_checked += 1
                 roles_processed += 1
 
@@ -454,7 +441,7 @@ async def monitor_role_changes(disallowed_rank_names=None):
             
             async with aiofiles_open("AD_plus_user_ids.csv", "w") as f:
                 # Convert to CSV first
-                csv_data = ",".join(str(user_id) for user_id in AD_plus_user_ids)
+                csv_data = ",".join(str(user_id) for user_id in ad_plus_user_ids)
                 await f.write(csv_data)
                 logger.info("AD+ user IDs saved to AD_plus_user_ids.csv")
             
