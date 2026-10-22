@@ -839,15 +839,12 @@ def setup(bot: MyBot):
     #         await ctx.followup.send(f"An error occurred while processing your request.\n{str(e)}")
 
     logger.info("All commands located in commands.py registered successfully.")
+
     logger.info("Loading special_patches.py's commands...")
     bot.load_extension("special_patches")  # Load the commands from special_patches.py
-    
-<<<<<<< HEAD
+
     logger.info("Loading career_stats.py's commands...")
     bot.load_extension("career_stats")  # Load the commands from career_stats.py
-=======
-    bot.load_extension("career_stats")
->>>>>>> bb7797fb8e474f44d673c1fe3161f6e8dea9fdff
 
     logger.info("Commands registered successfully.")
 
