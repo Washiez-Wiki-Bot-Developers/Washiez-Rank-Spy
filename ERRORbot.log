@@ -85251,3 +85251,14 @@ Traceback (most recent call last):
     interaction.client,
     ^^^^^^^^^^^^^^^^^^
 AttributeError: 'ApplicationContext' object has no attribute 'client'
+2026-10-23 06:53:25,833 [bot.commands] ERROR: check_user_roles failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 423, in check_user_roles
+    rblx_usr = await RobloxUser.create(roblox_username)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 373, in create
+    self._user_id = await self._fetch_user_id_from_username(self._username)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 190, in _fetch_user_id_from_username
+    raise ValueError(f"Username '{username}' not found.")
+ValueError: Username '56412510' not found.
