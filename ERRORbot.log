@@ -98061,3 +98061,326 @@ Traceback (most recent call last):
         f"RoProxy failed: HTTP {proxy_response.status}"
     )
 RuntimeError: RoProxy failed: HTTP 429
+2026-11-02 20:55:20,825 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed: HTTP 429
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 454, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 285, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 250, in fetch_page
+    raise RuntimeError(
+        f"RoProxy failed: HTTP {proxy_response.status}"
+    )
+RuntimeError: RoProxy failed: HTTP 429
+2026-11-02 20:55:32,716 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed: HTTP 429
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 454, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 262, in fetch_users_in_role
+    data = await fetch_page(cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 250, in fetch_page
+    raise RuntimeError(
+        f"RoProxy failed: HTTP {proxy_response.status}"
+    )
+RuntimeError: RoProxy failed: HTTP 429
+2026-11-02 20:55:44,635 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed: HTTP 429
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 454, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 262, in fetch_users_in_role
+    data = await fetch_page(cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 250, in fetch_page
+    raise RuntimeError(
+        f"RoProxy failed: HTTP {proxy_response.status}"
+    )
+RuntimeError: RoProxy failed: HTTP 429
+2026-11-02 20:56:07,938 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed: HTTP 429
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 454, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 285, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 250, in fetch_page
+    raise RuntimeError(
+        f"RoProxy failed: HTTP {proxy_response.status}"
+    )
+RuntimeError: RoProxy failed: HTTP 429
+2026-11-02 20:56:21,948 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed: HTTP 429
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 454, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 285, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 250, in fetch_page
+    raise RuntimeError(
+        f"RoProxy failed: HTTP {proxy_response.status}"
+    )
+RuntimeError: RoProxy failed: HTTP 429
+2026-11-02 20:56:40,995 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed: HTTP 429
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 454, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 285, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 250, in fetch_page
+    raise RuntimeError(
+        f"RoProxy failed: HTTP {proxy_response.status}"
+    )
+RuntimeError: RoProxy failed: HTTP 429
+2026-11-02 20:56:57,845 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed: HTTP 429
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 454, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 285, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 250, in fetch_page
+    raise RuntimeError(
+        f"RoProxy failed: HTTP {proxy_response.status}"
+    )
+RuntimeError: RoProxy failed: HTTP 429
+2026-11-02 20:57:14,693 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed: HTTP 429
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 454, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 285, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 250, in fetch_page
+    raise RuntimeError(
+        f"RoProxy failed: HTTP {proxy_response.status}"
+    )
+RuntimeError: RoProxy failed: HTTP 429
+2026-11-02 20:57:30,836 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed: HTTP 429
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 454, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 285, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 250, in fetch_page
+    raise RuntimeError(
+        f"RoProxy failed: HTTP {proxy_response.status}"
+    )
+RuntimeError: RoProxy failed: HTTP 429
+2026-11-02 20:57:46,827 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed: HTTP 429
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 454, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 285, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 250, in fetch_page
+    raise RuntimeError(
+        f"RoProxy failed: HTTP {proxy_response.status}"
+    )
+RuntimeError: RoProxy failed: HTTP 429
+2026-11-02 20:57:58,516 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed: HTTP 429
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 454, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 262, in fetch_users_in_role
+    data = await fetch_page(cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 250, in fetch_page
+    raise RuntimeError(
+        f"RoProxy failed: HTTP {proxy_response.status}"
+    )
+RuntimeError: RoProxy failed: HTTP 429
+2026-11-02 20:58:20,223 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed: HTTP 429
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 454, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 285, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 250, in fetch_page
+    raise RuntimeError(
+        f"RoProxy failed: HTTP {proxy_response.status}"
+    )
+RuntimeError: RoProxy failed: HTTP 429
+2026-11-02 20:58:39,512 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed: HTTP 429
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 454, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 285, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 250, in fetch_page
+    raise RuntimeError(
+        f"RoProxy failed: HTTP {proxy_response.status}"
+    )
+RuntimeError: RoProxy failed: HTTP 429
+2026-11-02 20:58:58,770 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed: HTTP 429
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 454, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 285, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 250, in fetch_page
+    raise RuntimeError(
+        f"RoProxy failed: HTTP {proxy_response.status}"
+    )
+RuntimeError: RoProxy failed: HTTP 429
+2026-11-02 20:59:22,397 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed: HTTP 429
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 454, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 285, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 250, in fetch_page
+    raise RuntimeError(
+        f"RoProxy failed: HTTP {proxy_response.status}"
+    )
+RuntimeError: RoProxy failed: HTTP 429
+2026-11-02 20:59:38,549 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed: HTTP 429
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 454, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 285, in fetch_users_in_role
+    data = await fetch_page(data["nextPageCursor"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 250, in fetch_page
+    raise RuntimeError(
+        f"RoProxy failed: HTTP {proxy_response.status}"
+    )
+RuntimeError: RoProxy failed: HTTP 429
+2026-11-02 20:59:50,513 [bot] ERROR: ‼️ monitor_role_changes crashed: RoProxy failed: HTTP 429
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 454, in safe_monitor_wrapper
+    await monitor_role_changes(disallowed_rank_names)
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 348, in monitor_role_changes
+    users = await fetch_users_in_role(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        session, GROUP_ID, role["id"], role_member_count=role["memberCount"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 262, in fetch_users_in_role
+    data = await fetch_page(cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/app.py", line 250, in fetch_page
+    raise RuntimeError(
+        f"RoProxy failed: HTTP {proxy_response.status}"
+    )
+RuntimeError: RoProxy failed: HTTP 429
