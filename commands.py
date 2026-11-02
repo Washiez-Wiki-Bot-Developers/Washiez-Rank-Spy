@@ -170,7 +170,7 @@ async def chain_check_main(
 
     # --- History / Chain embed ---
     history_data = await get_single_user_dict_from_announcements(
-        interaction.client,
+        interaction.bot,
         user._user_id,
         interaction.guild.id,
         1276397232341520469,
