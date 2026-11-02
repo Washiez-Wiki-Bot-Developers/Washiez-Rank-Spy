@@ -1,0 +1,697 @@
+import asyncio
+import json
+import logging
+import time
+import os
+from typing import cast
+import aiohttp
+
+import discord
+from discord.ext import commands
+import dotenv
+
+from discord_report_error_logs import DiscordErrorHandler
+from utils import safe_send, safe_send_and_pub, safe_reaction, safe_publish
+import special_patches
+
+asyncio.set_event_loop(asyncio.new_event_loop())
+
+intents = discord.Intents.default()
+intents.guilds = True
+bot = commands.Bot(command_prefix="! ", intents=intents, reconnect=True)
+
+# Set up logging
+import logging_setup
+
+logger: logging.Logger = logging_setup.setup_logging(
+    rankspy_default_level=True,
+    bot=bot,
+    error_channel_id=os.getenv("TIME_TRACKING_CHANNEL_ID"),
+)
+logger = cast(logging.Logger, logger)
+
+# Avoid shadowing the module-level `logger` (which is annotated as logging.Logger).
+for name, logger_obj in logging.Logger.manager.loggerDict.items():
+    if name.startswith("discord."):
+        logging.getLogger(name).setLevel(logging.INFO)
+
+logging.getLogger("async_json").setLevel(logging.INFO)
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger("bot")
+
+dotenv.load_dotenv()
+
+GROUP_ID = 10261023
+TOKEN = os.getenv("DISCORD_BOT_TOKEN")
+
+# Channel IDs
+CUSTOMER_HEAD_OP_CHANNEL = 1413577828498276474
+SHIFT_LEADER_GEN_MANAGER_CHANNEL = 1413577873159229481
+JUNIOR_DIRECTOR_CHAIRMAN_CHANNEL = 1413578146120204298
+TIME_TRACKING_CHANNEL_ID = 1413620449912295645
+
+# Role mention IDs
+LOW_RANK_ROLE_MENTION = "<@&1328338426713342023>"
+MID_RANK_ROLE_MENTION = "<@&1328338484104134688>"
+HIGH_RANK_ROLE_MENTION = "~~<@ &1328338542132330506>~~ NO PING FOR TESTING"
+
+DATA_FILE = "info.json"
+file_lock = asyncio.Lock()
+
+LOW_RANKS = [
+    "Customer",
+    "Trainee",
+    "Junior Operator",
+    "Senior Operator",
+    "Head Operator",
+]
+MID_RANKS = ["Shift Leader", "Supervisor", "Assistant Manager", "General Manager"]
+MGMT_RANKS = [
+    "Assistant Director",
+    "Junior Director",
+    "Senior Director",
+    "Head Director",
+]
+CORP_RANKS = [
+    "Corporate Intern",
+    "Junior Corporate",
+    "Senior Corporate",
+    "Head Corporate",
+]
+LS_RANKS = [
+    "Chief Human Resources Officer",
+    "Chief Public Relations Officer",
+    "Chief Operating Officer",
+    "Chief Administrative Officer",
+    "Developer",
+    "Vice Chairman",
+    "Chairman",
+]
+ET_RANKS = LOW_RANKS
+ST_RANKS = MID_RANKS
+HIGH_RANKS = MGMT_RANKS + CORP_RANKS + LS_RANKS
+ALL_RANKS = ET_RANKS + ST_RANKS + HIGH_RANKS
+ALL_M_RANKS_LIST = [ET_RANKS, ST_RANKS, MGMT_RANKS, CORP_RANKS, LS_RANKS]
+
+ENABLE_ROPROXY_USAGE_FIRST_PRIORITY = False
+# Enable multi-role storage and multi-role notification mode
+ENABLE_MULTI_ROLE_MODE = True
+
+# Suppression window (7 weeks)
+SEVEN_WEEKS_SECONDS = 7 * 7 * 24 * 3600
+
+
+async def load_data():
+    async with file_lock:
+        try:
+            with open(DATA_FILE, "r") as f:
+                data = json.load(f)
+
+            # Ensure baseline structure
+            if "user_roles" not in data or not isinstance(data["user_roles"], dict):
+                data["user_roles"] = {}
+
+            # Normalize existing single-value entries to lists
+            for uid, roles in list(data["user_roles"].items()):
+                if roles is None:
+                    data["user_roles"][uid] = []
+                elif isinstance(roles, list):
+                    # unique, sorted
+                    try:
+                        data["user_roles"][uid] = sorted(list({int(r) for r in roles}))
+                    except Exception:
+                        data["user_roles"][uid] = roles
+                else:
+                    # single role id (int or str) -> list
+                    try:
+                        data["user_roles"][uid] = [int(roles)]
+                    except Exception:
+                        data["user_roles"][uid] = [roles]
+
+            # Ensure per-user metadata exists
+            if "user_meta" not in data or not isinstance(data["user_meta"], dict):
+                data["user_meta"] = {}
+
+            return data
+        except (FileNotFoundError, json.JSONDecodeError):
+            logger.info("Data file missing or corrupt. Creating fresh.")
+            return {"user_roles": {}, "user_meta": {}}
+
+
+async def save_data(data):
+    async with file_lock:
+        try:
+            with open(DATA_FILE, "w") as f:
+                json.dump(data, f)
+            logger.info("Data saved.")
+        except Exception as e:
+            logger.error(f"Failed saving data: {e}")
+
+
+def get_rank_category_and_mention(rank_name):
+    if rank_name in LOW_RANKS:
+        return CUSTOMER_HEAD_OP_CHANNEL, LOW_RANK_ROLE_MENTION
+    elif rank_name in MID_RANKS:
+        return SHIFT_LEADER_GEN_MANAGER_CHANNEL, MID_RANK_ROLE_MENTION
+    elif rank_name in HIGH_RANKS:
+        return JUNIOR_DIRECTOR_CHAIRMAN_CHANNEL, HIGH_RANK_ROLE_MENTION
+    return None, None
+
+
+def get_rank_index(rank_name):
+    if rank_name in LOW_RANKS:
+        return LOW_RANKS.index(rank_name)
+    elif rank_name in MID_RANKS:
+        return len(LOW_RANKS) + MID_RANKS.index(rank_name)
+    elif rank_name in HIGH_RANKS:
+        return len(LOW_RANKS) + len(MID_RANKS) + HIGH_RANKS.index(rank_name)
+    return -1
+
+
+async def retrieve_roproxy_url(url):
+    url = url.replace("roblox.com", "roproxy.com")
+    return url
+
+
+def compute_deltas(prev_list, curr_set):
+    """Return (added_set, removed_set) given prev stored list and current set."""
+    try:
+        prev_set = set(int(x) for x in prev_list) if prev_list else set()
+    except Exception:
+        prev_set = set()
+    added = set(curr_set) - prev_set
+    removed = prev_set - set(curr_set)
+    return added, removed
+
+
+def should_notify(user_meta: dict | None, now_ts: int) -> bool:
+    """Return True if notifications are allowed for this user now."""
+    if not user_meta:
+        return True
+    suppressed_until = int(user_meta.get("suppressed_until", 0))
+    return now_ts >= suppressed_until
+
+
+async def fetch_roles(session, group_id):
+    base_url = f"https://groups.roblox.com/v1/groups/{group_id}/roles"
+    try:
+        async with session.get(
+            base_url, timeout=aiohttp.ClientTimeout(total=10)
+        ) as response:
+            if response.status == 429:
+                # Rate limited — switch to RoProxy
+                roproxy_url = await retrieve_roproxy_url(base_url)
+                logger.warning(f"Rate limited. Retrying with RoProxy: {roproxy_url}")
+                async with session.get(
+                    roproxy_url, timeout=aiohttp.ClientTimeout(total=10)
+                ) as proxy_response:
+                    if proxy_response.status != 200:
+                        logger.error(f"RoProxy failed: {proxy_response.status}")
+                        return []
+                    data = await proxy_response.json()
+                    return data.get("roles", [])
+            elif response.status != 200:
+                logger.error(f"Failed to fetch roles: {response.status}")
+                return []
+            data = await response.json()
+            return data.get("roles", [])
+    except Exception as e:
+        logger.error(f"Error fetching roles: {e}")
+        return []
+
+
+async def fetch_users_in_role(
+    session: aiohttp.ClientSession,
+    group_id: int,
+    role_id: int,
+    role_member_count: int | None = None,
+):
+    cursor = ""
+    next_page_task: asyncio.Task | None = None
+
+    async def fetch_page(cursor: str):
+        url = f"https://groups.roblox.com/v1/groups/{group_id}/roles/{role_id}/users?limit=100&sortOrder=Asc"
+        if cursor:
+            url += f"&cursor={cursor}"
+
+        if ENABLE_ROPROXY_USAGE_FIRST_PRIORITY:
+            url = await retrieve_roproxy_url(url)
+
+        tries = 0
+        while True:
+            async with session.get(
+                url, timeout=aiohttp.ClientTimeout(total=10)
+            ) as response:
+                if response.status not in (200, 429) or str(response.status).startswith(
+                    "5"
+                ):
+                    raise RuntimeError(f"HTTP {response.status}")
+
+                data = await response.json()
+
+                if response.status == 429 or str(response.status).startswith("5"):
+                    if str(response.status).startswith("5"):
+                        logger.warning(
+                            "FUIR: 5xx error. This might be a sign of servers failing or block."
+                        )
+                        tries += 1
+                        if tries > 3:
+                            raise RuntimeError("Too many 5xx errors, aborting.")
+                        continue
+                    roproxy_url = await retrieve_roproxy_url(url)
+                    async with session.get(roproxy_url) as proxy_response:
+                        if proxy_response.status != 200:
+                            raise RuntimeError("RoProxy failed")
+                        data = await proxy_response.json()
+
+                return data
+
+    # Initial fetch (blocking)
+    data = await fetch_page(cursor)
+
+    while True:
+        users = data["data"]
+        total_users = len(users)
+        half_index = total_users // 2
+
+        # for index, user in enumerate(users):
+        #     # Start fetching next page once half is yielded
+        #     if index == half_index and data.get("nextPageCursor") and next_page_task is None:
+        #         next_page_task = asyncio.create_task(fetch_page(data["nextPageCursor"]))
+
+        #     yield user
+
+        # No more pages
+        if not data.get("nextPageCursor"):
+            break
+
+        # Wait for prefetched page (or fetch now if not started)
+        if next_page_task:
+            data = await next_page_task
+            next_page_task = None
+        else:
+            data = await fetch_page(data["nextPageCursor"])
+
+    return users
+
+
+async def monitor_role_changes(disallowed_rank_names=None):
+    async with aiohttp.ClientSession() as session:
+        while True:
+            start_time = time.time()
+            logger.info("🔎 Checking for role changes...")
+
+            roles = await fetch_roles(session, GROUP_ID)
+            if not roles:
+                await asyncio.sleep(10)
+                continue
+
+            if disallowed_rank_names:
+                logger.debug(
+                    "Removing roles from fetched list so only goes through the restricted role."
+                )
+                for role_name in disallowed_rank_names:
+                    roles = [r for r in roles if r["name"] != role_name]
+
+                logger.debug(
+                    f"Removed roles to restricted set of roles. \nRestricted for:{disallowed_rank_names}\nWe have {roles}"
+                )
+
+            if not role_name in 
+
+            roles_dict = {role["id"]: role["name"] for role in roles}
+            data = await load_data()
+
+            # Aggregate current user roles across all roles
+            current_user_roles: dict[str, set[int]] = {}
+            roles_processed = 0
+            users_checked = 0
+
+            for role in roles:
+                logger.info(f"Processing role: {role['name']} (ID: {role['id']})")
+                users = await fetch_users_in_role(
+                    session,
+                    GROUP_ID,
+                    role["id"],
+                    role_member_count=role.get("memberCount"),
+                )
+                for user in users:
+                    uid = str(user["userId"])
+                    current_user_roles.setdefault(uid, set()).add(int(role["id"]))
+                    users_checked += 1
+                roles_processed += 1
+
+            # Compute deltas and notify according to suppression policy
+            now_ts = int(time.time())
+            notified_users: set[str] = set()
+
+            # Helper to get highest-priority role id from a set (or None)
+            def highest_role(role_id_set: set[int] | None):
+                if not role_id_set:
+                    return None
+                best = None
+                best_index = -999
+                for rid in role_id_set:
+                    name = roles_dict.get(rid)
+                    if not name:
+                        continue
+                    idx = get_rank_index(name)
+                    if idx > best_index:
+                        best_index = idx
+                        best = rid
+                return best
+
+            # Iterate union of seen users
+            all_user_ids = set(list(data.get("user_roles", {}).keys())) | set(
+                current_user_roles.keys()
+            )
+
+            for uid in all_user_ids:
+                prev_list = (
+                    data.get("user_roles", {}).get(uid, [])
+                    if ENABLE_MULTI_ROLE_MODE
+                    else []
+                )
+                try:
+                    prev_set = set(int(x) for x in prev_list) if prev_list else set()
+                except Exception:
+                    prev_set = set()
+
+                curr_set = current_user_roles.get(uid, set())
+
+                added = curr_set - prev_set
+                removed = prev_set - curr_set
+
+                if not added and not removed:
+                    # still update stored roles to normalized form
+                    data.setdefault("user_roles", {})[uid] = sorted(list(curr_set))
+                    continue
+
+                user_meta = data.setdefault("user_meta", {}).get(uid, {})
+                suppressed_until = int(user_meta.get("suppressed_until", 0))
+
+                if now_ts < suppressed_until:
+                    # suppression active — skip notification
+                    data.setdefault("user_roles", {})[uid] = sorted(list(curr_set))
+                    continue
+
+                # Select notification target
+                top_curr = highest_role(curr_set)
+                top_prev = highest_role(prev_set)
+
+                # Determine channel and mention based on highest current role, fallback to prev
+                chosen_role_for_channel = top_curr or top_prev
+                chosen_role_name = (
+                    roles_dict.get(chosen_role_for_channel, None)
+                    if chosen_role_for_channel
+                    else None
+                )
+                channel_id, mention = (None, None)
+                if chosen_role_name:
+                    channel_id, mention = get_rank_category_and_mention(
+                        chosen_role_name
+                    )
+
+                # Compose a concise message
+                profile_link = f"[User](<https://www.roblox.com/users/{uid}/profile>)"
+                prev_names = [
+                    roles_dict.get(rid, str(rid))
+                    for rid in sorted(
+                        prev_set,
+                        key=lambda r: (
+                            get_rank_index(roles_dict.get(r, ""))
+                            if roles_dict.get(r)
+                            else -1
+                        ),
+                    )
+                ]
+                curr_names = [
+                    roles_dict.get(rid, str(rid))
+                    for rid in sorted(
+                        curr_set,
+                        key=lambda r: (
+                            get_rank_index(roles_dict.get(r, ""))
+                            if roles_dict.get(r)
+                            else -1
+                        ),
+                    )
+                ]
+
+                if added and not removed:
+                    # promoted / added roles
+                    top_added = highest_role(added)
+                    top_added_name = roles_dict.get(top_added, None)
+                    action = "promoted to" if top_added_name else "updated to"
+                    message = f"{profile_link} has been {action} {top_added_name} {mention if mention else ''}"
+                elif removed and not added:
+                    top_removed = highest_role(removed)
+                    top_removed_name = roles_dict.get(top_removed, None)
+                    action = "demoted from" if top_removed_name else "updated from"
+                    message = f"{profile_link} has been {action} {top_removed_name} {mention if mention else ''}"
+                else:
+                    # Both added and removed — summarize
+                    prev_str = ", ".join(prev_names) if prev_names else "no roles"
+                    curr_str = ", ".join(curr_names) if curr_names else "no roles"
+                    message = f"{profile_link} roles changed: {prev_str} → {curr_str} {mention if mention else ''}"
+
+                # Apply special patch check using top names
+                top_curr_name = roles_dict.get(top_curr, None) if top_curr else None
+                top_prev_name = roles_dict.get(top_prev, None) if top_prev else None
+                action_simple = "changed"
+                if added and not removed:
+                    action_simple = "promoted"
+                elif removed and not added:
+                    action_simple = "demoted"
+
+                # Run through special_patches.filter; if it returns False, skip notifying
+                fake_user_obj = {
+                    "userId": int(uid),
+                    "username": top_curr_name or top_prev_name or uid,
+                }
+                if not special_patches.check_user(
+                    fake_user_obj,
+                    top_curr_name or "",
+                    top_prev_name or "",
+                    action_simple,
+                ):
+                    data.setdefault("user_roles", {})[uid] = sorted(list(curr_set))
+                    # store meta suppression anyway to avoid immediate re-notify
+                    data.setdefault("user_meta", {}).setdefault(uid, {})
+                    continue
+
+                if channel_id:
+                    channel = bot.get_channel(channel_id)
+                    if channel:
+                        message_obj = await safe_send_and_pub(
+                            message=message, channel_id=channel_id, bot=bot
+                        )
+                        logger.info(f"📢 {message}")
+
+                # Record metadata and update stored roles
+                meta = data.setdefault("user_meta", {}).setdefault(uid, {})
+                meta["last_notified_ts"] = now_ts
+                meta["suppressed_until"] = now_ts + SEVEN_WEEKS_SECONDS
+                meta["last_notified_change"] = {
+                    "added": sorted(list(added)),
+                    "removed": sorted(list(removed)),
+                }
+
+                data.setdefault("user_roles", {})[uid] = sorted(list(curr_set))
+                notified_users.add(uid)
+
+            # Persist data after processing all users
+            await save_data(data)
+
+            end_time = time.time()
+            duration = end_time - start_time
+
+            summary = (
+                f"## 📊 **Cycle Summary**\n"
+                f"* ✅ Processed {roles_processed}/{len(roles)} roles.\n"
+                f"* 👥 Checked **{users_checked}** user entries.\n"
+                f"* ⏱ Time taken: **{duration:.2f} seconds**.\n"
+                f"* 🕐 Started at <t:{int(start_time)}:T>, ended at <t:{int(end_time)}:T>."
+            )
+            time_channel = bot.get_channel(TIME_TRACKING_CHANNEL_ID)
+            if time_channel:
+                await safe_send(summary, channel_id=TIME_TRACKING_CHANNEL_ID, bot=bot)
+            logger.info("✅ Cycle complete.")
+            await asyncio.sleep(180)  # Check every 3 minutes
+
+
+async def safe_monitor_wrapper(disallowed_rank_names=None):
+    while True:
+        try:
+            await monitor_role_changes(disallowed_rank_names)
+        except Exception as e:
+            logger.error(f"‼️ monitor_role_changes crashed: {e}", exc_info=True)
+            await asyncio.sleep(10)
+
+
+# @bot.slash_command(name="rinse_test", description="Test the bot's response time.")
+# async def rinse_test(ctx: discord.ApplicationContext):
+#     received_rough = time.monotonic()
+#     await ctx.defer(ephemeral=True)
+#     before = time.monotonic()
+#     await ctx.edit(content="Pinging...")
+#     after = time.monotonic()
+#     latency = round((after - before) * 1000)
+#     await ctx.edit(
+#         content=f"🧼 Foam response time: {latency} ms\nRequest received at {time.gmtime(received_rough)} sec — suds flow optimal 🫧"
+#     )
+
+# @bot.slash_command(
+#     name="threads_tasks",
+#     description="List all thread names and their asyncio tasks",
+#     default_member_permissions=discord.Permissions(administrator=True),
+# )
+# async def threads_tasks_apps_command(ctx: discord.ApplicationContext):
+#     threads_info = await threads_tasks()
+#     output = []
+
+#     # Build the text output
+#     for name, ident, tasks in threads_info:
+#         output.append(f"**Thread:** {name} (id={ident})")
+#         if tasks:
+#             output.append("  Tasks:")
+#             for t in tasks:
+#                 output.append(f"   - {t}")
+#         else:
+#             output.append("  No asyncio tasks")
+
+#     # Join into one big string
+#     full_text = "\n".join(output)
+
+#     # Split into chunks of <=2000 characters
+#     split_per_two_thousand = [
+#         full_text[i : i + 2000] for i in range(0, len(full_text), 2000)
+#     ]
+
+#     # Debug logging after the split
+#     for idx, part in enumerate(split_per_two_thousand):
+#         logging.debug(f"Chunk {idx} length: {len(part)}")
+
+#     # Send first chunk as the initial response
+#     await ctx.respond(split_per_two_thousand[0])
+
+#     # Send the rest as follow-ups
+#     for part in split_per_two_thousand[1:]:
+#         await ctx.send_followup(part)
+
+list_of_channels = [
+    TIME_TRACKING_CHANNEL_ID,
+    CUSTOMER_HEAD_OP_CHANNEL,
+    SHIFT_LEADER_GEN_MANAGER_CHANNEL,
+    JUNIOR_DIRECTOR_CHAIRMAN_CHANNEL,
+]
+
+
+# -------------------- CHANNEL TESTING --------------------
+async def test_single_channel_send_publish_react(channel):
+    chan = bot.get_channel(channel) or await bot.fetch_channel(channel)
+    if not chan:
+        return False, None
+
+    logger.debug(f"Testing channel: {chan.name} ({chan.id})")
+    logger.debug(f"Channel type: {chan.type}")
+
+    logger.debug("Sending test message...")
+    success, msg = await chan.send(
+        f"-# Testing bot permissions ({chan.name})",
+        channel_id=chan.id,
+        bot=bot,
+        silent=True,
+    )
+
+    if not success or not msg:
+        return False, None
+
+    logger.debug("Adding reaction to test message...")
+    # await safe_reaction(msg, emoji="✅", bot=bot)
+    msg = await msg.add_reaction("✅")
+
+    if chan.type == discord.ChannelType.news:
+        logger.debug("Publishing test message...")
+        msg.publish()
+        # asyncio.create_task(safe_publish(msg.id, channel_id=chan.id, bot=bot))
+
+    published_msg = msg
+
+    # if chan.type == discord.ChannelType.news:
+    #     published_msg = await safe_publish(msg.id, channel_id=chan.id)
+
+    # try:
+    #     await msg.delete()
+    # except Exception:
+    #     pass
+
+    logger.info(
+        f"{'.' * 10}\n✅ Channel test successful for {chan.name} ({chan.id})\n{'*' * 10}"
+    )
+
+    return True, msg
+
+
+@bot.slash_command(
+    name="test_publish", description="Test publishing to one or all channels"
+)
+@discord.guild_only()
+@discord.commands.option(
+    "channel",
+    description="Choose 'all' or a specific channel ID",
+    choices=[discord.OptionChoice(name="all", value="all")]
+    + [
+        discord.OptionChoice(name=f"Channel ({cid})", value=str(cid))
+        for cid in list_of_channels
+    ],
+)
+async def test_publish(interaction: discord.Interaction, channel: str):
+    await interaction.response.defer(ephemeral=True)
+    if channel == "all":
+        results = []
+        for cid in list_of_channels:
+            success, msg = await test_single_channel_send_publish_react(cid)
+            results.append(f"{'✅' if success else '❌'} <#{cid}>")
+        await interaction.followup.send("\n".join(results))
+    else:
+        cid = int(channel)
+        success, msg = await test_single_channel_send_publish_react(cid)
+        await interaction.followup(
+            content=f"{'✅' if success else '❌'} <#{cid}> — {msg}"
+        )
+
+
+role_monitor_task = None
+
+
+@bot.event
+async def on_ready():
+    global role_monitor_task
+
+    logger.info(f"Logged in as {bot.user.name}")
+    await bot.change_presence(activity=discord.Game("Monitoring role changes"))
+
+    if role_monitor_task is None or role_monitor_task.done():
+        logger.info("Starting monitor_role_changes task restricted to HO+...")
+        all_lower_HO = []
+        all_lower_HO.extend(LOW_RANKS)
+        # all_lower_HO.extend(MID_RANKS)
+        all_lower_HO.remove("Head Operator")
+        all_lower_HO.remove("Customer")  # Incase of demotions
+        all_lower_HO.append("Member")
+        role_monitor_task = bot.loop.create_task(safe_monitor_wrapper(all_lower_HO))
+    else:
+        logger.info("Monitor task already running, not starting another.")
+
+
+if __name__ == "__main__":
+    try:
+        bot.load_extension("commands")  # This loads the commands from commands.py
+        # bot.load_extension("special_patches")  # This loads the commands from special_patches.py
+    except Exception as e:
+        logger.error(f"Failed to load commands extension: {e}")
+
+    try:
+        bot.run(TOKEN)
+    except Exception as e:
+        logger.error(f"Error running bot: {e}")
