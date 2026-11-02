@@ -85354,3 +85354,12 @@ Traceback (most recent call last):
     interaction.client,
     ^^^^^^^^^^^^^^^^^^
 AttributeError: 'ApplicationContext' object has no attribute 'client'
+2026-11-02 17:19:01,524 [bot.commands] ERROR: chain_check failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 336, in chain_check
+    embeds, view = await chain_check_main(interaction, username, group_id)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 173, in chain_check_main
+    interaction.client,
+    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'ApplicationContext' object has no attribute 'client'
