@@ -608,7 +608,7 @@ async def on_ready():
         all_lower_HO.remove("Head Operator")
         all_lower_HO.remove("Customer")  # Incase of demotions
         all_lower_HO.append("Member")
-        role_monitor_task = bot.loop.create_task(safe_monitor_wrapper(all_lower_HO))
+        # role_monitor_task = bot.loop.create_task(safe_monitor_wrapper(all_lower_HO))
     else:
         logger.info("Monitor task already running, not starting another.")
 

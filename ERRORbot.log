@@ -207505,3 +207505,9 @@ Traceback (most recent call last):
         f"RoProxy failed: HTTP {proxy_response.status}"
     )
 RuntimeError: RoProxy failed: HTTP 429
+2026-11-03 21:16:05,432 [bot.commands] ERROR: check_role_users failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 510, in check_role_users
+    data = ctx.bot.data
+           ^^^^^^^^^^^^
+AttributeError: 'Bot' object has no attribute 'data'
