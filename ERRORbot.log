@@ -207529,3 +207529,15 @@ Traceback (most recent call last):
     data = ctx.bot.data
            ^^^^^^^^^^^^
 AttributeError: 'TypedBot' object has no attribute 'data'
+2026-11-04 20:41:42,910 [bot.commands] ERROR: Failed to fetch role members: 429
+2026-11-04 20:43:53,876 [bot.commands] ERROR: check_user_roles failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 423, in check_user_roles
+    rblx_usr = await RobloxUser.create(roblox_username)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 373, in create
+    self._user_id = await self._fetch_user_id_from_username(self._username)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 190, in _fetch_user_id_from_username
+    raise ValueError(f"Username '{username}' not found.")
+ValueError: Username 'chloserose67' not found.
