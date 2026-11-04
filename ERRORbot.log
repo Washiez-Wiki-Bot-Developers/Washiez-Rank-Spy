@@ -207511,3 +207511,9 @@ Traceback (most recent call last):
     data = ctx.bot.data
            ^^^^^^^^^^^^
 AttributeError: 'Bot' object has no attribute 'data'
+2026-11-04 20:28:18,806 [bot.commands] ERROR: check_role_users failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 510, in check_role_users
+    data = ctx.bot.data
+           ^^^^^^^^^^^^
+AttributeError: 'Bot' object has no attribute 'data'
