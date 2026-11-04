@@ -40,7 +40,30 @@ asyncio.set_event_loop(asyncio.new_event_loop())
 
 intents = discord.Intents.default()
 intents.guilds = True
-bot = commands.Bot(command_prefix="! ", intents=intents, reconnect=True)
+# bot = commands.Bot(command_prefix="! ", intents=intents, reconnect=True)
+class TypedBot(commands.Bot):
+    data: dict | list
+    
+    ROLE_PROGRESS_LOCK: asyncio.Lock
+    ROLE_PROGRESS: dict[str, dict[str, int | bool | float]]
+    roblox_limiter: "RobloxLimiter"
+    data_store: "AsyncJSONStore"  # pyright: ignore[reportUndefinedVariable]
+    _process_single_user_delta: callable  # Type hint for the method attached later
+
+    PRESENCE_UPDATE_INTERVAL: float = 10.0  # seconds
+    _last_presence_update: float = 0.0  # Timestamp of last presence update
+    
+    error_channel_id = 1414253925917393037
+
+    GROUP_ID = 10261023
+    
+    data_store: AsyncJSONStore
+
+
+global bot
+intents = discord.Intents.default()
+intents.guilds = True
+bot = TypedBot(command_prefix="!wwbd ", intents=intents, reconnect=True)
 
 # Set up logging
 import logging_setup
