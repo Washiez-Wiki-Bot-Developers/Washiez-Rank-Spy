@@ -106,6 +106,14 @@ HIGH_RANK_ROLE_MENTION = "<@&1328338542132330506>"
 DATA_FILE = "info.json"
 file_lock = asyncio.Lock()
 
+with open(DATA_FILE, "r") as f:
+    try:
+        with open(DATA_FILE, "r") as f:
+            bot.data = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+            logger.info("Data file missing or corrupt. Creating fresh.")
+            bot.data = {"user_roles": {}}
+
 LOW_RANKS = [
     "Customer",
     "Trainee",
@@ -156,7 +164,6 @@ async def load_data():
         except (FileNotFoundError, json.JSONDecodeError):
             logger.info("Data file missing or corrupt. Creating fresh.")
             return {"user_roles": {}}
-
 
 async def save_data(data):
     async with file_lock:
