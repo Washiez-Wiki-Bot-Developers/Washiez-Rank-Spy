@@ -246,9 +246,7 @@ async def fetch_users_in_role(
 
         tries = 0
         while True:
-            # Set when the page must be retried; the sleep happens after the
-            # response context exits so the connection is released first.
-            retry_delay: float | None = 1
+            retry_delay: float = 1.0
 
             async with session.get(
                 url, timeout=aiohttp.ClientTimeout(total=10)
@@ -256,7 +254,6 @@ async def fetch_users_in_role(
                 status = response.status
 
                 if 500 <= status < 600:
-                    # Transient upstream failure — retry this same page.
                     tries += 1
                     if tries > MAX_5XX_RETRIES:
                         raise RuntimeError(
@@ -268,20 +265,25 @@ async def fetch_users_in_role(
                         f"Retry {tries}/{MAX_5XX_RETRIES} in {retry_delay}s."
                     )
                 elif status == 429:
-                    # Rate limited — fall back to RoProxy for this page.
-                    roproxy_url = await retrieve_roproxy_url(url)
-                    logger.warning(
-                        f"Rate limited. Retrying with RoProxy: {roproxy_url}"
+                    # Extract X-RateLimit-Reset or Retry-After header
+                    reset_header = (
+                        response.headers.get("X-RateLimit-Reset") 
+                        or response.headers.get("Retry-After")
                     )
-                    async with session.get(
-                        roproxy_url, timeout=aiohttp.ClientTimeout(total=10)
-                    ) as proxy_response:
-                        if proxy_response.status != 200:
-                            raise RuntimeError(
-                                f"RoProxy failed: HTTP {proxy_response.status}"
-                            )
-                        # return await proxy_response.json()
-                        await asyncio.sleep(retry_delay)
+                    
+                    if reset_header:
+                        try:
+                            val = float(reset_header)
+                            # If epoch timestamp, compute delta; else treat as seconds
+                            retry_delay = max(0.1, val - time.time()) if val > 1e9 else val
+                        except ValueError:
+                            retry_delay = RETRY_BASE_DELAY * (2 ** tries)
+                    else:
+                        retry_delay = RETRY_BASE_DELAY * (2 ** tries)
+
+                    logger.warning(f"Rate limited (429). Waiting {retry_delay:.2f}s.")
+                    await asyncio.sleep(retry_delay)
+                    continue
                 elif status != 200:
                     raise RuntimeError(f"HTTP {status}")
                 else:
@@ -289,26 +291,14 @@ async def fetch_users_in_role(
 
             await asyncio.sleep(retry_delay)
 
-    # Initial fetch (blocking)
     data = await fetch_page(cursor)
 
     while True:
         users = data["data"]
-        total_users = len(users)
-        half_index = total_users // 2
-
-        # for index, user in enumerate(users):
-        #     # Start fetching next page once half is yielded
-        #     if index == half_index and data.get("nextPageCursor") and next_page_task is None:
-        #         next_page_task = asyncio.create_task(fetch_page(data["nextPageCursor"]))
-
-        #     yield user
-
-        # No more pages
+        
         if not data.get("nextPageCursor"):
             break
 
-        # Wait for prefetched page (or fetch now if not started)
         if next_page_task:
             data = await next_page_task
             next_page_task = None
