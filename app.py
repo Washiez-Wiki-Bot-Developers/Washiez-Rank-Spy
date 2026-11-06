@@ -248,7 +248,7 @@ async def fetch_users_in_role(
         while True:
             # Set when the page must be retried; the sleep happens after the
             # response context exits so the connection is released first.
-            retry_delay: float | None = None
+            retry_delay: float | None = 1
 
             async with session.get(
                 url, timeout=aiohttp.ClientTimeout(total=10)
@@ -280,7 +280,8 @@ async def fetch_users_in_role(
                             raise RuntimeError(
                                 f"RoProxy failed: HTTP {proxy_response.status}"
                             )
-                        return await proxy_response.json()
+                        # return await proxy_response.json()
+                        await asyncio.sleep(retry_delay)
                 elif status != 200:
                     raise RuntimeError(f"HTTP {status}")
                 else:
@@ -638,7 +639,7 @@ async def on_ready():
         all_lower_HO.remove("Head Operator")
         #all_lower_HO.remove("Customer")  # Incase of demotions
         all_lower_HO.append("Member")
-        # role_monitor_task = bot.loop.create_task(safe_monitor_wrapper(all_lower_HO))
+        role_monitor_task = bot.loop.create_task(safe_monitor_wrapper(all_lower_HO))
     else:
         logger.info("Monitor task already running, not starting another.")
 
