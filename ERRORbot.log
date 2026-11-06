@@ -207542,3 +207542,7 @@ Traceback (most recent call last):
     raise ValueError(f"Username '{username}' not found.")
 ValueError: Username 'chloserose67' not found.
 2026-11-05 18:16:40,683 [bot.commands] ERROR: Failed to fetch role members: 429
+2026-11-06 19:41:54,160 [bot.commands] ERROR: Failed to fetch role members: 429
+2026-11-06 19:42:34,258 [bot.commands] ERROR: Failed to fetch role members: 429
+2026-11-06 19:42:39,526 [bot.commands] ERROR: Failed to fetch role members: 429
+2026-11-06 19:42:46,350 [bot.commands] ERROR: Failed to fetch role members: 429
