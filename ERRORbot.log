@@ -207681,3 +207681,4 @@ Traceback (most recent call last):
     if delay <= 0:
        ^^^^^^^^^^
 TypeError: '<=' not supported between instances of 'NoneType' and 'int'
+2026-11-08 04:24:42,389 [bot.commands] ERROR: Failed to fetch role members: 429
