@@ -207683,3 +207683,5 @@ Traceback (most recent call last):
 TypeError: '<=' not supported between instances of 'NoneType' and 'int'
 2026-11-08 04:24:42,389 [bot.commands] ERROR: Failed to fetch role members: 429
 2026-11-08 18:58:30,709 [bot.commands] ERROR: Failed to fetch role members: 429
+2026-11-09 05:28:21,224 [bot.commands] ERROR: Failed to fetch role members: 429
+2026-11-09 05:28:35,226 [bot.commands] ERROR: Failed to fetch role members: 429
