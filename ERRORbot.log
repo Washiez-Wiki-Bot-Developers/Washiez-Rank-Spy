@@ -207763,3 +207763,4 @@ Traceback (most recent call last):
   File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/venv/lib/python3.14/site-packages/aiohttp/connector.py", line 1324, in _wrap_create_connection
     raise client_error(req.connection_key, exc) from exc
 aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host groups.roblox.com:443 ssl:default [Connect call failed ('128.116.2.3', 443)]
+2026-11-12 17:35:43,189 [bot.commands] ERROR: Failed to fetch role members: 429
