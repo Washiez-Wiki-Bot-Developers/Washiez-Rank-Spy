@@ -207933,3 +207933,16 @@ RuntimeError: Too many 5xx errors (last HTTP 503), aborting.
 2026-11-14 17:59:58,539 [bot.commands] ERROR: Failed to fetch role members: 429
 2026-11-14 21:52:10,151 [bot.commands] ERROR: Failed to fetch role members: 429
 2026-11-16 11:32:15,537 [bot.commands] ERROR: Failed to fetch role members: 429
+2026-11-16 12:13:18,365 [bot.commands] ERROR: check_user_roles failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 423, in check_user_roles
+    rblx_usr = await RobloxUser.create(roblox_username)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 373, in create
+    self._user_id = await self._fetch_user_id_from_username(self._username)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 190, in _fetch_user_id_from_username
+    raise ValueError(f"Username '{username}' not found.")
+ValueError: Username 'coolplayer6327' not found.
+2026-11-16 12:13:50,164 [bot.commands] ERROR: Failed to fetch role members: 429
+2026-11-16 12:14:03,587 [bot.commands] ERROR: Failed to fetch role members: 429
