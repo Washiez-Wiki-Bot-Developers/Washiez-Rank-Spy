@@ -207993,3 +207993,8 @@ RuntimeError: Too many 5xx errors (last HTTP 503), aborting.
 2026-11-20 18:14:43,145 [bot.commands] ERROR: Failed to fetch role members: 429
 2026-11-20 19:12:45,924 [bot.commands] ERROR: Failed to fetch role members: 429
 2026-11-20 21:51:30,128 [bot.commands] ERROR: Failed to fetch role members: 429
+2026-11-21 05:37:32,672 [bot.commands] ERROR: Failed to fetch role members: 429
+2026-11-21 05:38:16,777 [bot.commands] ERROR: Failed to fetch role members: 429
+2026-11-21 05:38:26,021 [bot.commands] ERROR: Failed to fetch role members: 429
+2026-11-21 05:38:35,713 [bot.commands] ERROR: Failed to fetch role members: 429
+2026-11-21 05:38:43,430 [bot.commands] ERROR: Failed to fetch role members: 429
