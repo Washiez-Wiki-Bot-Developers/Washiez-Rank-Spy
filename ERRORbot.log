@@ -208030,3 +208030,10 @@ ValueError: Username '4ceana' not found.
 2026-11-23 14:29:21,713 [bot.commands] ERROR: Failed to fetch role members: 429
 2026-11-23 14:30:50,182 [bot.commands] ERROR: Failed to fetch role members: 429
 2026-11-23 14:30:57,559 [bot.commands] ERROR: Failed to fetch role members: 429
+2026-11-24 16:47:38,940 [bot.commands] ERROR: role_checking failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 719, in role_checking
+    print(bot.ROLE_PROGRESS_LOCK)
+          ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TypedBot' object has no attribute 'ROLE_PROGRESS_LOCK'
+2026-11-24 16:47:48,518 [bot.commands] ERROR: Failed to fetch role members: 429
