@@ -208049,3 +208049,4 @@ Traceback (most recent call last):
   File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 190, in _fetch_user_id_from_username
     raise ValueError(f"Username '{username}' not found.")
 ValueError: Username '10607477968' not found.
+2026-11-25 17:27:35,721 [bot.commands] ERROR: Failed to fetch role members: 429
