@@ -208037,3 +208037,15 @@ Traceback (most recent call last):
           ^^^^^^^^^^^^^^^^^^^^^^
 AttributeError: 'TypedBot' object has no attribute 'ROLE_PROGRESS_LOCK'
 2026-11-24 16:47:48,518 [bot.commands] ERROR: Failed to fetch role members: 429
+2026-11-25 16:45:40,768 [bot.commands] ERROR: Failed to fetch role members: 429
+2026-11-25 16:46:05,326 [bot.commands] ERROR: check_user_roles failed
+Traceback (most recent call last):
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/commands.py", line 423, in check_user_roles
+    rblx_usr = await RobloxUser.create(roblox_username)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 373, in create
+    self._user_id = await self._fetch_user_id_from_username(self._username)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/CascadeProjects/WashiezWikiBotDevelopers/Washiez-Rank-Spy/roblox.py", line 190, in _fetch_user_id_from_username
+    raise ValueError(f"Username '{username}' not found.")
+ValueError: Username '10607477968' not found.
