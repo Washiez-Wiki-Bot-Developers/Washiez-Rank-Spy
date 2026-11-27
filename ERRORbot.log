@@ -208066,3 +208066,5 @@ ValueError: Username 'televathy' not found.
 2026-11-26 09:31:33,600 [bot.commands] ERROR: Failed to fetch role members: 429
 2026-11-26 09:31:43,614 [bot.commands] ERROR: Failed to fetch role members: 429
 2026-11-26 22:13:54,559 [bot.commands] ERROR: Failed to fetch role members: 429
+2026-11-27 22:17:50,012 [bot.commands] ERROR: Failed to fetch role members: 429
+2026-11-27 22:17:58,394 [bot.commands] ERROR: Failed to fetch role members: 429
